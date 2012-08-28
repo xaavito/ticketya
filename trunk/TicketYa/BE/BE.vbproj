@@ -68,7 +68,15 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
+    <Compile Include="BackupBE.vb" />
+    <Compile Include="BitacoraBE.vb" />
+    <Compile Include="ControlBE.vb" />
+    <Compile Include="FamiliaBE.vb" />
+    <Compile Include="FormularioBE.vb" />
+    <Compile Include="IdiomaBE.vb" />
+    <Compile Include="MensajeBE.vb" />
+    <Compile Include="PermisoBE.vb" />
+    <Compile Include="PersistibleBE.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -84,6 +92,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UsuarioBE.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
