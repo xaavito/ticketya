@@ -64,7 +64,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestorBitacoraBLL.vb" />
     <Compile Include="GestorFamiliaBLL.vb" />
+    <Compile Include="GestorFormularioBLL.vb" />
+    <Compile Include="GestorIdiomaBLL.vb" />
     <Compile Include="GestorPermisoBLL.vb" />
     <Compile Include="GestorUsuarioBLL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
