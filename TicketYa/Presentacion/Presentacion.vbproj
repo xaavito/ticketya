@@ -8,9 +8,9 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{14431111-F89A-4864-AB70-FF148025E37D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>Presentacion.My.MyApplication</StartupObject>
-    <RootNamespace>Presentacion</RootNamespace>
-    <AssemblyName>Presentacion</AssemblyName>
+    <StartupObject>TicketYa.My.MyApplication</StartupObject>
+    <RootNamespace>TicketYa</RootNamespace>
+    <AssemblyName>TicketYa</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -23,7 +23,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Presentacion.xml</DocumentationFile>
+    <DocumentationFile>TicketYa.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
@@ -33,7 +33,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Presentacion.xml</DocumentationFile>
+    <DocumentationFile>TicketYa.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -78,16 +78,23 @@
     <Compile Include="Intro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainForm.Designer.vb">
       <DependentUpon>MainForm.vb</DependentUpon>
     </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MDIPrincipal.Designer.vb">
-      <DependentUpon>MDIPrincipal.vb</DependentUpon>
+    <Compile Include="MyApplication.vb" />
+    <Compile Include="Principal.Designer.vb">
+      <DependentUpon>Principal.vb</DependentUpon>
     </Compile>
-    <Compile Include="MDIPrincipal.vb">
+    <Compile Include="Principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -110,8 +117,11 @@
     <EmbeddedResource Include="Intro.resx">
       <DependentUpon>Intro.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MDIPrincipal.resx">
-      <DependentUpon>MDIPrincipal.vb</DependentUpon>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal.resx">
+      <DependentUpon>Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -121,6 +131,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
