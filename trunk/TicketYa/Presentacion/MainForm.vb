@@ -31,4 +31,8 @@ Public Class MainForm
             Next ctrl
         End If
     End Sub
+
+    Protected Sub setIdioma()
+
+    End Sub
 End Class

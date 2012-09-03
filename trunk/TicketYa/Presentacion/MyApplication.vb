@@ -2,8 +2,6 @@
     Partial Friend Class MyApplication
 
         Protected Overrides Function OnStartup(ByVal eventArgs As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) As Boolean
-            MessageBox.Show("Test")
-
             Dim Splash As New Intro()
             Splash.Show()
 
@@ -22,7 +20,7 @@
             Dim ret As Boolean = False
             Dim frm As New Login
             If frm.ShowDialog = DialogResult.OK Then
-                
+                ret = True
             Else
                 End
             End If

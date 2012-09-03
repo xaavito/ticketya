@@ -19,107 +19,110 @@ Partial Class Login
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.UserTextBox = New System.Windows.Forms.TextBox()
+        Me.PassTextBox = New System.Windows.Forms.TextBox()
+        Me.UsuarioLabel = New System.Windows.Forms.Label()
+        Me.PassLabel = New System.Windows.Forms.Label()
+        Me.CambiarIdiomaLabel = New System.Windows.Forms.Label()
+        Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
+        Me.AceptarButton = New System.Windows.Forms.Button()
+        Me.CancelarButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'UserTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(127, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.UserTextBox.Location = New System.Drawing.Point(127, 27)
+        Me.UserTextBox.Name = "UserTextBox"
+        Me.UserTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.UserTextBox.TabIndex = 0
         '
-        'TextBox2
+        'PassTextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(127, 67)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.PassTextBox.Location = New System.Drawing.Point(127, 67)
+        Me.PassTextBox.Name = "PassTextBox"
+        Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.PassTextBox.TabIndex = 1
+        Me.PassTextBox.UseSystemPasswordChar = True
         '
-        'Label1
+        'UsuarioLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(37, 27)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Label1"
+        Me.UsuarioLabel.AutoSize = True
+        Me.UsuarioLabel.Location = New System.Drawing.Point(37, 27)
+        Me.UsuarioLabel.Name = "UsuarioLabel"
+        Me.UsuarioLabel.Size = New System.Drawing.Size(43, 13)
+        Me.UsuarioLabel.TabIndex = 2
+        Me.UsuarioLabel.Text = "Usuario"
         '
-        'Label2
+        'PassLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(37, 67)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Label2"
+        Me.PassLabel.AutoSize = True
+        Me.PassLabel.Location = New System.Drawing.Point(37, 67)
+        Me.PassLabel.Name = "PassLabel"
+        Me.PassLabel.Size = New System.Drawing.Size(61, 13)
+        Me.PassLabel.TabIndex = 3
+        Me.PassLabel.Text = "Contraseña"
         '
-        'Label3
+        'CambiarIdiomaLabel
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(37, 170)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Label3"
+        Me.CambiarIdiomaLabel.AutoSize = True
+        Me.CambiarIdiomaLabel.Location = New System.Drawing.Point(32, 173)
+        Me.CambiarIdiomaLabel.Name = "CambiarIdiomaLabel"
+        Me.CambiarIdiomaLabel.Size = New System.Drawing.Size(79, 13)
+        Me.CambiarIdiomaLabel.TabIndex = 4
+        Me.CambiarIdiomaLabel.Text = "Cambiar Idioma"
         '
-        'ComboBox1
+        'IdiomaComboBox
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(127, 170)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 5
+        Me.IdiomaComboBox.FormattingEnabled = True
+        Me.IdiomaComboBox.Location = New System.Drawing.Point(117, 170)
+        Me.IdiomaComboBox.Name = "IdiomaComboBox"
+        Me.IdiomaComboBox.Size = New System.Drawing.Size(130, 21)
+        Me.IdiomaComboBox.TabIndex = 5
         '
-        'Button1
+        'AceptarButton
         '
-        Me.Button1.Location = New System.Drawing.Point(69, 105)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.AceptarButton.Location = New System.Drawing.Point(69, 105)
+        Me.AceptarButton.Name = "AceptarButton"
+        Me.AceptarButton.Size = New System.Drawing.Size(75, 23)
+        Me.AceptarButton.TabIndex = 6
+        Me.AceptarButton.Text = "Aceptar"
+        Me.AceptarButton.UseVisualStyleBackColor = True
         '
-        'Button2
+        'CancelarButton
         '
-        Me.Button2.Location = New System.Drawing.Point(213, 105)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 23)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.CancelarButton.Location = New System.Drawing.Point(213, 105)
+        Me.CancelarButton.Name = "CancelarButton"
+        Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CancelarButton.TabIndex = 7
+        Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.UseVisualStyleBackColor = True
         '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(358, 273)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.ComboBox1)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.CancelarButton)
+        Me.Controls.Add(Me.AceptarButton)
+        Me.Controls.Add(Me.IdiomaComboBox)
+        Me.Controls.Add(Me.CambiarIdiomaLabel)
+        Me.Controls.Add(Me.PassLabel)
+        Me.Controls.Add(Me.UsuarioLabel)
+        Me.Controls.Add(Me.PassTextBox)
+        Me.Controls.Add(Me.UserTextBox)
         Me.Name = "Login"
+        Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents UserTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents PassTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
+    Friend WithEvents PassLabel As System.Windows.Forms.Label
+    Friend WithEvents CambiarIdiomaLabel As System.Windows.Forms.Label
+    Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents AceptarButton As System.Windows.Forms.Button
+    Friend WithEvents CancelarButton As System.Windows.Forms.Button
 
 End Class
