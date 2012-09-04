@@ -126,16 +126,25 @@
     End Property
 
 
-    Private _familias As FamiliaBE
-    Public Property familias() As FamiliaBE
+    Private _familias As List(Of FamiliaBE)
+    Public Property familias() As List(Of FamiliaBE)
         Get
             Return _familias
         End Get
-        Set(ByVal value As FamiliaBE)
+        Set(ByVal value As List(Of FamiliaBE))
             _familias = value
         End Set
     End Property
 
+    Public Function getPermisos() As List(Of PermisoBE)
+        Dim listaPermisos As New List(Of PermisoBE)
+        listaPermisos.AddRange(Me.permisos)
 
+        For Each familias As BE.FamiliaBE In Me.familias
+            listaPermisos.AddRange(familias.permisos)
+        Next familias
+
+        Return listaPermisos
+    End Function
 
 End Class
