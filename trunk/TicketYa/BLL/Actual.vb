@@ -1,8 +1,8 @@
 ﻿Public Class Actual
 
 
-    Private Property _usuario As BE.UsuarioBE
-    Public Property usuario() As BE.UsuarioBE
+    Private Shared Property _usuario As BE.UsuarioBE
+    Public Shared Property usuario() As BE.UsuarioBE
         Get
             Return _usuario
         End Get
@@ -12,8 +12,8 @@
     End Property
 
 
-    Private _idioma As BE.IdiomaBE
-    Public Property idioma() As BE.IdiomaBE
+    Private Shared _idioma As BE.IdiomaBE
+    Public Shared Property idioma() As BE.IdiomaBE
         Get
             Return _idioma
         End Get
