@@ -1,7 +1,35 @@
 ﻿Public Class GestorUsuarioBLL
 
-    Public Function buscarUsuario(ByVal usr As String, ByVal pass As String) As BE.UsuarioBE
-        Return Nothing
+    Public Shared Function buscarUsuario(ByVal usr As String, ByVal pass As String) As BE.UsuarioBE
+        Dim usuario As New BE.UsuarioBE
+        usuario.nombre = "Pepe"
+
+        Dim idioma As New BE.IdiomaBE
+        idioma.identificador = 1
+        idioma.descripcion = "Español"
+
+        usuario.idioma = idioma
+
+        Dim listaPermisos As New List(Of BE.PermisoBE)
+        Dim permiso As New BE.PermisoBE
+        permiso.identificador = 1
+        permiso.descripcion = "Buscar_Bitacora"
+
+        listaPermisos.Add(permiso)
+
+        usuario.permisos = listaPermisos
+
+        Dim listaFamilia As New List(Of BE.FamiliaBE)
+        Dim familia As New BE.FamiliaBE
+        familia.descripcion = "Administrador"
+        Dim permisoFamilia As New BE.PermisoBE
+        permiso.descripcion = "Bitacora"
+        familia.permisos.Add(permiso)
+        listaFamilia.Add(familia)
+
+        usuario.familias = listaFamilia
+
+        Return usuario
     End Function
 
     Public Function crearUsuario(ByVal usr As String,
