@@ -1,6 +1,4 @@
-﻿Imports BLL
-
-Namespace My
+﻿Namespace My
     Partial Friend Class MyApplication
 
         Protected Overrides Function OnStartup(ByVal eventArgs As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) As Boolean
@@ -22,7 +20,7 @@ Namespace My
             Dim ret As Boolean = False
             Dim frm As New Login
             If frm.ShowDialog = DialogResult.OK Then
-                BLL.SeguridadBLL.doLogin(frm.UserTextBox.Text, frm.PassTextBox.Text)
+                BLL.Actual.usuario = BLL.SeguridadBLL.doLogin(frm.UserTextBox.Text, frm.PassTextBox.Text)
                 ret = True
             Else
                 End

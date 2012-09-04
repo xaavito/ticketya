@@ -22,9 +22,11 @@
         Dim listaFamilia As New List(Of BE.FamiliaBE)
         Dim familia As New BE.FamiliaBE
         familia.descripcion = "Administrador"
+        Dim listaPermisosFamilia As New List(Of BE.PermisoBE)
         Dim permisoFamilia As New BE.PermisoBE
-        permiso.descripcion = "Bitacora"
-        familia.permisos.Add(permiso)
+        permisoFamilia.descripcion = "Bitacora"
+        listaPermisosFamilia.Add(permisoFamilia)
+        familia.permisos = listaPermisosFamilia
         listaFamilia.Add(familia)
 
         usuario.familias = listaFamilia
