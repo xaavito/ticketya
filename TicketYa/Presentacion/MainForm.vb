@@ -34,26 +34,29 @@ Public Class MainForm
 
     Protected Sub setIdioma()
         If (Me.HasChildren) Then
-            For Each ctrl As Control In Me.Controls
-                'MenuStrip
-                If TypeOf ctrl Is MenuStrip Then
-                    Dim menu As MenuStrip
-                    menu = DirectCast(ctrl, MenuStrip)
-                    For Each cabeceraMenu As ToolStripMenuItem In menu.Items
-                        For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
-                            If itemMenu.Tag.Equals("Buscar") Then
-                                itemMenu.Enabled = False
-                            End If
-                        Next
-                    Next cabeceraMenu
-                End If
-                If TypeOf ctrl Is Label Or
-                   TypeOf ctrl Is Button Then
-                    ctrl.Text = "Pepe"
-                End If
+            For Each mens As BE.MensajeControlBE In BLL.Actual.idioma.mensaje
+                For Each ctrl As Control In Me.Controls
+                    'MenuStrip
+                    If TypeOf ctrl Is MenuStrip Then
+                        Dim menu As MenuStrip
+                        menu = DirectCast(ctrl, MenuStrip)
+                        For Each cabeceraMenu As ToolStripMenuItem In menu.Items
+                            For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
+                                If itemMenu.Name.Equals(mens.control) Then
+                                    itemMenu.Text = mens.mensaje
+                                End If
+                            Next
+                        Next cabeceraMenu
+                    End If
+                    If (TypeOf ctrl Is Label Or
+                        TypeOf ctrl Is Button) And
+                        ctrl.Name.Equals(mens.control) Then
+                        ctrl.Text = mens.mensaje
+                    End If
 
-                'ctrl.Enabled = False
-            Next ctrl
+                    'ctrl.Enabled = False
+                Next ctrl
+            Next mens
         End If
     End Sub
 End Class
