@@ -75,6 +75,7 @@
     <Compile Include="FormularioBE.vb" />
     <Compile Include="IdiomaBE.vb" />
     <Compile Include="MensajeBE.vb" />
+    <Compile Include="MensajeControlBE.vb" />
     <Compile Include="PermisoBE.vb" />
     <Compile Include="PersistibleBE.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

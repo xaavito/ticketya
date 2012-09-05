@@ -25,15 +25,18 @@ Public Class IdiomaBE
     End Property
 
 
-    Private _mensajes As List(Of MensajeBE)
-    Public Property mensajes() As List(Of MensajeBE)
+
+    Private _mensaje As List(Of MensajeControlBE)
+
+    Public Property mensaje() As List(Of MensajeControlBE)
         Get
-            Return _mensajes
+            Return _mensaje
         End Get
-        Set(ByVal value As List(Of MensajeBE))
-            _mensajes = value
+        Set(ByVal value As List(Of MensajeControlBE))
+            _mensaje = value
         End Set
     End Property
+
 
 
 End Class
