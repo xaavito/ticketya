@@ -22,6 +22,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Seguridad", "Seguridad\Segu
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Utilitarios", "Utilitarios\Utilitarios.vbproj", "{48B32CBF-E466-4434-A3D1-9B863707D210}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Excepciones", "Excepciones\Excepciones.vbproj", "{3933B96F-EB72-489E-9D03-041867B6DEDC}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -98,6 +100,16 @@ Global
 		{48B32CBF-E466-4434-A3D1-9B863707D210}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{48B32CBF-E466-4434-A3D1-9B863707D210}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{48B32CBF-E466-4434-A3D1-9B863707D210}.Release|x86.ActiveCfg = Release|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

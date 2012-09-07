@@ -6,6 +6,7 @@
     End Sub
 
     Private Sub Init()
+        'Me.Name = "Login"
         Dim idiomas As List(Of BE.IdiomaBE)
         idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
         IdiomaComboBox.DataSource = idiomas

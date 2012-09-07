@@ -30,17 +30,6 @@
 
 
         Public Sub HandlerException(ByVal ex As Exception)
-
-
-
-
-        End Sub
-
-
-        Public Sub ReloadLanguage()
-
-
-
         End Sub
 
     End Class

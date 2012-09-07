@@ -7,10 +7,10 @@
     </ProductVersion>
     <SchemaVersion>
     </SchemaVersion>
-    <ProjectGuid>{48B32CBF-E466-4434-A3D1-9B863707D210}</ProjectGuid>
+    <ProjectGuid>{3933B96F-EB72-489E-9D03-041867B6DEDC}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Utilitarios</RootNamespace>
-    <AssemblyName>Utilitarios</AssemblyName>
+    <RootNamespace>Excepciones</RootNamespace>
+    <AssemblyName>Excepciones</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -21,7 +21,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>Utilitarios.xml</DocumentationFile>
+    <DocumentationFile>Excepciones.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -30,7 +30,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>Utilitarios.xml</DocumentationFile>
+    <DocumentationFile>Excepciones.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -64,7 +64,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encrypter.vb" />
+    <Compile Include="ExceptionManager.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

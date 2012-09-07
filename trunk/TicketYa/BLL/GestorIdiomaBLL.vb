@@ -44,6 +44,12 @@
         mensaje5.mensaje = "Password"
         listaMensajes.Add(mensaje5)
 
+        Dim mensaje6 As New BE.MensajeControlBE
+        mensaje6.formulario = "Login"
+        mensaje6.control = "CambiarIdiomaLabel"
+        mensaje6.mensaje = "Change Language"
+        listaMensajes.Add(mensaje6)
+
         idioma2.mensaje = listaMensajes
 
         Dim listaMensajes2 As New List(Of BE.MensajeControlBE)
