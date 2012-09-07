@@ -9,13 +9,11 @@ Public Class Principal
         InitializeComponent()
 
         'MessageBox.Show("Inicializacion Hijo")
-
-        getPermisos()
     End Sub
 
     
 
-    Private Sub BuscarPermisosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarPermisosToolStripMenuItem.Click
-        
+    Private Sub BuscarPermisosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarPermisos.Click
+
     End Sub
 End Class

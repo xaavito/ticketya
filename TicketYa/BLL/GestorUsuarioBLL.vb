@@ -13,7 +13,7 @@
         Dim listaPermisos As New List(Of BE.PermisoBE)
         Dim permiso As New BE.PermisoBE
         permiso.identificador = 1
-        permiso.descripcion = "Buscar_Bitacora"
+        permiso.descripcion = "BuscarBitacora"
 
         listaPermisos.Add(permiso)
 
@@ -26,6 +26,9 @@
         Dim permisoFamilia As New BE.PermisoBE
         permisoFamilia.descripcion = "Bitacora"
         listaPermisosFamilia.Add(permisoFamilia)
+        Dim permisoFamilia2 As New BE.PermisoBE
+        permisoFamilia2.descripcion = "Permisos"
+        listaPermisosFamilia.Add(permisoFamilia2)
         familia.permisos = listaPermisosFamilia
         listaFamilia.Add(familia)
 
@@ -51,13 +54,13 @@
         Return Nothing
     End Function
 
-    Public Function crearUsuario(ByVal usr As String,
-                                 ByVal pass As String,
-                                 ByVal nom As String,
-                                 ByVal ape As String,
-                                 ByVal mail As String,
-                                 ByVal dni As Long,
-                                 ByVal usuario As BE.UsuarioBE) As Boolean
+    Public Function modificarUsuario(ByVal usr As String,
+                                     ByVal pass As String,
+                                     ByVal nom As String,
+                                     ByVal ape As String,
+                                     ByVal mail As String,
+                                     ByVal dni As Long,
+                                     ByVal usuario As BE.UsuarioBE) As Boolean
         Return Nothing
     End Function
 

@@ -66,7 +66,7 @@ Partial Class Login
         'CambiarIdiomaLabel
         '
         Me.CambiarIdiomaLabel.AutoSize = True
-        Me.CambiarIdiomaLabel.Location = New System.Drawing.Point(32, 173)
+        Me.CambiarIdiomaLabel.Location = New System.Drawing.Point(12, 173)
         Me.CambiarIdiomaLabel.Name = "CambiarIdiomaLabel"
         Me.CambiarIdiomaLabel.Size = New System.Drawing.Size(79, 13)
         Me.CambiarIdiomaLabel.TabIndex = 4
