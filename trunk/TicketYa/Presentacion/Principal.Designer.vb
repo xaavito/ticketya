@@ -29,16 +29,16 @@ Partial Class Principal
         Me.BuscarPermisos = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarPermisos = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bitacora = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarBitacora = New System.Windows.Forms.ToolStripMenuItem()
         Me.Backup = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarBackup = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RealizarRestore = New System.Windows.Forms.ToolStripMenuItem()
         Me.Usuarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.BuscarBitacora = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarBackup = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RealizarRestore = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarUsuario = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AltaUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -82,6 +82,12 @@ Partial Class Principal
         Me.Bitacora.Tag = "Bitacora"
         Me.Bitacora.Text = "Bitacora"
         '
+        'BuscarBitacora
+        '
+        Me.BuscarBitacora.Name = "BuscarBitacora"
+        Me.BuscarBitacora.Size = New System.Drawing.Size(159, 22)
+        Me.BuscarBitacora.Text = "Buscar Bitacora"
+        '
         'Backup
         '
         Me.Backup.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarBackup, Me.RealizarRestore})
@@ -90,6 +96,18 @@ Partial Class Principal
         Me.Backup.Tag = "Backup"
         Me.Backup.Text = "Backup"
         '
+        'BuscarBackup
+        '
+        Me.BuscarBackup.Name = "BuscarBackup"
+        Me.BuscarBackup.Size = New System.Drawing.Size(164, 22)
+        Me.BuscarBackup.Text = "Buscar Backup"
+        '
+        'RealizarRestore
+        '
+        Me.RealizarRestore.Name = "RealizarRestore"
+        Me.RealizarRestore.Size = New System.Drawing.Size(164, 22)
+        Me.RealizarRestore.Text = "Realizar Restore"
+        '
         'Usuarios
         '
         Me.Usuarios.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarUsuario, Me.AltaUsuario})
@@ -97,6 +115,18 @@ Partial Class Principal
         Me.Usuarios.Size = New System.Drawing.Size(60, 20)
         Me.Usuarios.Tag = "Usuarios"
         Me.Usuarios.Text = "Usuarios"
+        '
+        'BuscarUsuario
+        '
+        Me.BuscarUsuario.Name = "BuscarUsuario"
+        Me.BuscarUsuario.Size = New System.Drawing.Size(156, 22)
+        Me.BuscarUsuario.Text = "Buscar Usuario"
+        '
+        'AltaUsuario
+        '
+        Me.AltaUsuario.Name = "AltaUsuario"
+        Me.AltaUsuario.Size = New System.Drawing.Size(156, 22)
+        Me.AltaUsuario.Text = "Alta Usuario"
         '
         'StatusStrip
         '
@@ -112,36 +142,6 @@ Partial Class Principal
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
-        '
-        'BuscarBitacora
-        '
-        Me.BuscarBitacora.Name = "BuscarBitacora"
-        Me.BuscarBitacora.Size = New System.Drawing.Size(159, 22)
-        Me.BuscarBitacora.Text = "Buscar Bitacora"
-        '
-        'BuscarBackup
-        '
-        Me.BuscarBackup.Name = "BuscarBackup"
-        Me.BuscarBackup.Size = New System.Drawing.Size(164, 22)
-        Me.BuscarBackup.Text = "Buscar Backup"
-        '
-        'RealizarRestore
-        '
-        Me.RealizarRestore.Name = "RealizarRestore"
-        Me.RealizarRestore.Size = New System.Drawing.Size(164, 22)
-        Me.RealizarRestore.Text = "Realizar Restore"
-        '
-        'BuscarUsuario
-        '
-        Me.BuscarUsuario.Name = "BuscarUsuario"
-        Me.BuscarUsuario.Size = New System.Drawing.Size(156, 22)
-        Me.BuscarUsuario.Text = "Buscar Usuario"
-        '
-        'AltaUsuario
-        '
-        Me.AltaUsuario.Name = "AltaUsuario"
-        Me.AltaUsuario.Size = New System.Drawing.Size(156, 22)
-        Me.AltaUsuario.Text = "Alta Usuario"
         '
         'Principal
         '
