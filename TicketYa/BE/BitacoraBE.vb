@@ -8,6 +8,15 @@
         Exito
     End Enum
 
+    Private _mensaje As String
+    Public Property mensaje() As String
+        Get
+            Return _mensaje
+        End Get
+        Set(ByVal value As String)
+            _mensaje = value
+        End Set
+    End Property
 
     Private _usuario As UsuarioBE
     Public Property usuario() As UsuarioBE
@@ -19,7 +28,6 @@
         End Set
     End Property
 
-
     Private _fecha As DateTime
     Public Property fecha() As DateTime
         Get
@@ -30,7 +38,6 @@
         End Set
     End Property
 
-
     Private _tipo As tipoError
     Public Property tipo() As tipoError
         Get
@@ -40,6 +47,4 @@
             _tipo = value
         End Set
     End Property
-
-
 End Class

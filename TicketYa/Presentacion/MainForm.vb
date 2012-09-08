@@ -2,14 +2,6 @@
 
 Public Class MainForm
 
-    Public Sub New()
-
-        ' Llamada necesaria para el diseñador.
-        InitializeComponent()
-
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-    End Sub
-
     Protected Sub getPermisos(ByVal permisos As List(Of BE.PermisoBE))
         For Each f As Form In My.Application.OpenForms
             If (Me.HasChildren) Then
@@ -62,8 +54,6 @@ Public Class MainForm
                         ctrl.Name.Equals(mens.control) Then
                         ctrl.Text = mens.mensaje
                     End If
-
-                    'ctrl.Enabled = False
                 Next ctrl
             Next mens
         End If
@@ -73,6 +63,7 @@ Public Class MainForm
         If Not Me.Name.Equals("Login") Then
             eliminarPermisos()
             getPermisos(BLL.Actual.usuario.getPermisos)
+            setIdioma()
         End If
     End Sub
 
@@ -80,7 +71,7 @@ Public Class MainForm
         For Each f As Form In My.Application.OpenForms
             If (Me.HasChildren) Then
                 For Each ctrl As Control In f.Controls
-                    'MenuStrip
+                    ' MenuStrip
                     If TypeOf ctrl Is MenuStrip Then
                         Dim menu As MenuStrip
                         menu = DirectCast(ctrl, MenuStrip)
@@ -91,7 +82,7 @@ Public Class MainForm
                             Next
                         Next cabeceraMenu
                     End If
-                    'Buttons
+                    ' Buttons
                     If TypeOf ctrl Is Button Then
                         ctrl.Enabled = False
                     End If
