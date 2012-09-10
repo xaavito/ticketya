@@ -154,6 +154,10 @@
       <Project>{38F3AABE-4289-404D-B853-FCE763A6604C}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.vbproj">
+      <Project>{3933B96F-EB72-489E-9D03-041867B6DEDC}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

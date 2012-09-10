@@ -112,6 +112,18 @@
       <Project>{9A53BC47-D894-4BE9-87B4-8BA0809FA41B}</Project>
       <Name>BE</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.vbproj">
+      <Project>{26F85DFA-BF9E-406A-AA43-32F1022EB662}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Seguridad\Seguridad.vbproj">
+      <Project>{B3F60CC4-254C-430A-9EB5-8EE83AE03DAD}</Project>
+      <Name>Seguridad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilitarios\Utilitarios.vbproj">
+      <Project>{48B32CBF-E466-4434-A3D1-9B863707D210}</Project>
+      <Name>Utilitarios</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

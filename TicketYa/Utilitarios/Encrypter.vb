@@ -1,6 +1,6 @@
 ﻿Imports System.Security.Cryptography
 
-Public Class EncryptDecryptClass
+Public Class Encrypter
 
 
     Private Shared m_strPassPhrase As String = "MyPriv@Password!$$"    '---- any text string is good here
@@ -13,7 +13,7 @@ Public Class EncryptDecryptClass
 
     'Encrypt Function: 
 
-    Friend Shared Function EncryptPasswordMD5(ByVal plainText As String, ByVal p_strSaltValue As String) As String
+    Public Shared Function EncryptPasswordMD5(ByVal plainText As String, ByVal p_strSaltValue As String) As String
 
         Dim strReturn As String = String.Empty
 
@@ -114,7 +114,7 @@ Public Class EncryptDecryptClass
 
     'Decrypt Function: 
 
-    Friend Shared Function DecryptPasswordMD5(ByVal cipherText As String, ByVal p_strSaltValue As String) As String
+    Public Shared Function DecryptPasswordMD5(ByVal cipherText As String, ByVal p_strSaltValue As String) As String
 
         Dim strReturn As String = String.Empty
 

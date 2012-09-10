@@ -3,38 +3,73 @@
 Public Class RepositorioSQL
     Implements IRepositorio
 
+    Dim con As SqlConnection
     Dim cmd As SqlCommand
-    Dim con As New SqlConnection("Integrated security=SSPI;Initial Catalog=encuesta; Data Source=localhost")
+    Dim adapter As SqlDataAdapter
+    Dim table As DataTable
+    Dim result As Integer
+    Dim tx As SqlTransaction
 
-
-    Public Sub addIntegerParam(ByVal p1 As String, ByVal p2 As Integer) Implements IRepositorio.addIntegerParam
-        cmd.Parameters.AddWithValue(p1, p2)
+    Public Sub crearComando(ByVal nombre As String) Implements IRepositorio.crearComando
+        con = New SqlConnection("Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;")
+        cmd = New SqlCommand
+        cmd.CommandType = CommandType.StoredProcedure
+        cmd.Connection = con
+        cmd.CommandText = nombre
     End Sub
 
-    Public Sub addStringParam(ByVal p1 As String, ByVal p2 As String) Implements IRepositorio.addStringParam
-        cmd.Parameters.AddWithValue(p1, p2)
+    Public Sub transactionON() Implements IRepositorio.transactionON
+        tx = con.BeginTransaction
+        cmd.Transaction = tx
     End Sub
 
-    Public Function ejecutarConEstado() As Integer Implements IRepositorio.ejecutarConEstado
-        Dim res As Integer
-        con.Open()
-        res = cmd.ExecuteNonQuery
-        con.Close()
-        Return res
-    End Function
+    Public Sub transactionCancel() Implements IRepositorio.transactionCancel
+        tx.Rollback()
+    End Sub
 
-    Public Function ejecutarConTabla() As System.Data.DataTable Implements IRepositorio.ejecutarConTabla
-        Dim table As New DataTable
-        Dim adap As New SqlDataAdapter
-        adap.SelectCommand = cmd
-        adap.Fill(table)
+    Public Sub transactionOK() Implements IRepositorio.transactionOK
+        tx.Commit()
+    End Sub
+
+    Public Sub clearParams() Implements IRepositorio.clearParams
+        cmd.Parameters.Clear()
+    End Sub
+
+    Public Function executeSearchWithAdapter() As DataTable Implements IRepositorio.executeSearchWithAdapter
+        adapter = New SqlDataAdapter
+        table = New DataTable
+        adapter.SelectCommand = cmd
+        adapter.Fill(table)
         Return table
     End Function
 
-    Public Sub generarAcceso(ByVal p1 As String) Implements IRepositorio.generarAcceso
+    Public Function executeSearch() As Integer Implements IRepositorio.executeSearch
+        con.Open()
+        result = cmd.ExecuteScalar()
+        con.Close()
+        Return result
+    End Function
+
+    Public Function executeSearchWithStatus() As Integer Implements IRepositorio.executeSearchWithStatus
+        Dim status As Integer
+        con.Open()
+        status = cmd.ExecuteNonQuery
+        con.Close()
+        Return status
+    End Function
+
+    Public Sub crearComandoDirecto(ByVal nombre As String)
+        con = New SqlConnection("Data Source=localhost;Initial Catalog=player1;Integrated Security=SSPI;")
         cmd = New SqlCommand
+        cmd.CommandType = CommandType.Text
         cmd.Connection = con
-        cmd.CommandType = CommandType.StoredProcedure
-        cmd.CommandText = p1
+        cmd.CommandText = nombre
     End Sub
+
+    Public Sub addParam(ByVal p1 As String, ByVal p2 As Object) Implements IRepositorio.addParam
+        cmd.Parameters.AddWithValue(p1, p2)
+    End Sub
+
+
+    
 End Class
