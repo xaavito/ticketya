@@ -1,9 +1,19 @@
 ﻿Public Interface IRepositorio
 
-    Sub generarAcceso(ByVal p1 As String)
-    Function ejecutarConTabla() As DataTable
-    Function ejecutarConEstado() As Integer
-    Sub addStringParam(ByVal p1 As String, ByVal p2 As String)
-    Sub addIntegerParam(ByVal p1 As String, ByVal p2 As Integer)
-
+    Sub crearComando(ByVal nombre As String)
+    Sub addParam(ByVal p1 As String, ByVal p2 As Object)
+    Sub transactionON()
+    
+    Sub transactionCancel()
+    
+    Sub transactionOK()
+    
+    Sub clearParams()
+    
+    Function executeSearchWithAdapter() As DataTable
+    
+    Function executeSearch() As Integer
+    
+    Function executeSearchWithStatus() As Integer
+    
 End Interface

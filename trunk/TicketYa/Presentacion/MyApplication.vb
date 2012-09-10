@@ -20,16 +20,21 @@
             Dim ret As Boolean = False
             Dim frm As New Login
             If frm.ShowDialog = DialogResult.OK Then
-                BLL.Actual.usuario = BLL.SeguridadBLL.doLogin(frm.UserTextBox.Text, frm.PassTextBox.Text)
-                ret = True
-            Else
-                End
+                Try
+                    BLL.Actual.usuario = BLL.SeguridadBLL.doLogin(frm.UserTextBox.Text, frm.PassTextBox.Text)
+                    ret = True
+                Catch ex As Excepciones.UsuarioNoEncontradoExcepcion
+                    Application.HandlerException(ex)
+                Catch ex As Exception
+                    Application.HandlerException(ex)
+                End Try
             End If
             Return ret
         End Function
 
 
         Public Sub HandlerException(ByVal ex As Exception)
+            MessageBox.Show("Error: " + ex.Message)
         End Sub
 
     End Class

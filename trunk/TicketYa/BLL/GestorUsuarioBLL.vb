@@ -2,7 +2,9 @@
 
     Public Shared Function buscarUsuario(ByVal usr As String, ByVal pass As String) As BE.UsuarioBE
         Dim usuario As New BE.UsuarioBE
-        usuario.nombre = "Pepe"
+        DAL.UsuarioDAL.buscarUsuario(usr, pass)
+        'Dim usuario As New BE.UsuarioBE
+        'usuario.nombre = "Pepe"
 
         Dim idioma As New BE.IdiomaBE
         idioma.identificador = 1
