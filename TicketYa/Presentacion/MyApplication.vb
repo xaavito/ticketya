@@ -34,8 +34,10 @@
 
 
         Public Sub HandlerException(ByVal ex As Exception)
-            MessageBox.Show("Error: " + ex.Message)
+            If (TypeOf ex Is Excepciones.ExceptionManager) Then
+                Dim excep = DirectCast(ex, Excepciones.ExceptionManager)
+                MsgBox("Error: " + excep.mensaje, excep.tipo)
+            End If
         End Sub
-
     End Class
 End Namespace
