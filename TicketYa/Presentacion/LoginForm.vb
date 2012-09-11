@@ -1,4 +1,4 @@
-﻿Public Class Login
+﻿Public Class LoginForm
     Inherits MainForm
 
     Private Sub LoginForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -13,7 +13,7 @@
         IdiomaComboBox.DisplayMember = "descripcion"
         IdiomaComboBox.ValueMember = "identificador"
     End Sub
-    
+
     Private Sub AceptarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AceptarButton.Click
         Me.Close()
         Me.DialogResult = Windows.Forms.DialogResult.OK

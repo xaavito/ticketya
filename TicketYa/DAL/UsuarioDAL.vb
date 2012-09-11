@@ -1,7 +1,7 @@
 ﻿Public Class UsuarioDAL
     'Dim repo As RepositorioFactory
     Public Shared Function buscarUsuario(ByVal usr As String,
-                           ByVal pass As String) As BE.UsuarioBE
+                                         ByVal pass As String) As BE.UsuarioBE
 
         Dim table As DataTable
 
@@ -17,8 +17,8 @@
             End If
             For Each pepe As DataRow In table.Rows
                 Dim usuario As New BE.UsuarioBE
-                usuario.nombre = table.Rows.Item(0).Item(0)
-                usuario.apellido = table.Rows.Item(0).Item(1)
+                usuario.nombre = pepe.Item(0)
+                usuario.apellido = pepe.Item(1)
                 usuario.usuario = usr
                 usuario.password = pass
                 Return usuario
