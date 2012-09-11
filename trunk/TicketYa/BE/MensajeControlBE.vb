@@ -1,4 +1,5 @@
 ﻿Public Class MensajeControlBE
+    Inherits PersistibleBE
 
     Private _formulario As String
     Public Property formulario() As String

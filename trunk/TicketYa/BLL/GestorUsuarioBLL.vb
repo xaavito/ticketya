@@ -1,11 +1,9 @@
 ﻿Public Class GestorUsuarioBLL
 
     Public Shared Function buscarUsuario(ByVal usr As String, ByVal pass As String) As BE.UsuarioBE
-        Dim usuario As New BE.UsuarioBE
-        DAL.UsuarioDAL.buscarUsuario(usr, pass)
-        'Dim usuario As New BE.UsuarioBE
-        'usuario.nombre = "Pepe"
-
+        Dim usuario As BE.UsuarioBE
+        usuario = DAL.UsuarioDAL.buscarUsuario(usr, pass)
+        
         Dim idioma As New BE.IdiomaBE
         idioma.identificador = 1
         idioma.descripcion = "Español"

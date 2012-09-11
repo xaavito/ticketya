@@ -18,7 +18,7 @@
 
         Private Function formLogin() As Boolean
             Dim ret As Boolean = False
-            Dim frm As New Login
+            Dim frm As New LoginForm
             If frm.ShowDialog = DialogResult.OK Then
                 Try
                     BLL.Actual.usuario = BLL.SeguridadBLL.doLogin(frm.UserTextBox.Text, frm.PassTextBox.Text)
@@ -36,7 +36,7 @@
         Public Sub HandlerException(ByVal ex As Exception)
             If (TypeOf ex Is Excepciones.ExceptionManager) Then
                 Dim excep = DirectCast(ex, Excepciones.ExceptionManager)
-                MsgBox("Error: " + excep.mensaje, excep.tipo)
+                MsgBox(excep.mensaje, excep.tipo)
             End If
         End Sub
     End Class
