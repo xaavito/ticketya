@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExceptionManager.vb" />
+    <Compile Include="FamiliaExcepcion.vb" />
     <Compile Include="IdiomaExcepcion.vb" />
     <Compile Include="MensajeExcepcion.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
