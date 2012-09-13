@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.vb" />
+    <Compile Include="FamiliaDAL.vb" />
     <Compile Include="IdiomaDAL.vb" />
     <Compile Include="IRepositorio.vb" />
     <Compile Include="MensajeDAL.vb" />
@@ -83,6 +84,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PermisoDAL.vb" />
     <Compile Include="RepositorioFactory.vb" />
     <Compile Include="RepositorioSQL.vb" />
     <Compile Include="UsuarioDAL.vb" />
@@ -114,6 +116,10 @@
     <ProjectReference Include="..\Excepciones\Excepciones.vbproj">
       <Project>{3933B96F-EB72-489E-9D03-041867B6DEDC}</Project>
       <Name>Excepciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Seguridad\Seguridad.vbproj">
+      <Project>{B3F60CC4-254C-430A-9EB5-8EE83AE03DAD}</Project>
+      <Name>Seguridad</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

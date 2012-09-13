@@ -8,3 +8,14 @@
         Me.mensaje = "Idiomas no encontrados"
     End Sub
 End Class
+
+Public Class IdiomaNoEncontradoExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("Idioma no encontrado")
+        Me.codigo = 1
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = "Idioma no encontrado"
+    End Sub
+End Class
