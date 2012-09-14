@@ -2,6 +2,7 @@
 
 Public Class MainForm
 
+
     Protected Sub getPermisos(ByVal permisos As List(Of BE.PermisoBE))
         For Each f As Form In My.Application.OpenForms
             If (Me.HasChildren) Then
@@ -12,18 +13,18 @@ Public Class MainForm
                             Dim menu As MenuStrip
                             menu = DirectCast(ctrl, MenuStrip)
                             For Each cabeceraMenu As ToolStripMenuItem In menu.Items
-                                If cabeceraMenu.Name.Equals(permiso.descripcion) Then
+                                If cabeceraMenu.Name.Equals(permiso.componente) Then
                                     cabeceraMenu.Enabled = True
                                 End If
                                 For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
-                                    If itemMenu.Name.Equals(permiso.descripcion) Then
+                                    If itemMenu.Name.Equals(permiso.componente) Then
                                         itemMenu.Enabled = True
                                     End If
                                 Next
                             Next cabeceraMenu
                         End If
                         If TypeOf ctrl Is Button Then
-                            If ctrl.Name.Equals(permiso.descripcion) Then
+                            If ctrl.Name.Equals(permiso.componente) Then
                                 ctrl.Enabled = True
                             End If
                         End If
@@ -60,9 +61,13 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         If Not Me.Name.Equals("Login") Then
+
             eliminarPermisos()
+            '' SI REVIENTA LA APLICACION COMENTAR TODO ESTO Y LIMPIAR Y LUEGO RE COMPILAR.
             getPermisos(BLL.Actual.usuario.getPermisos)
+            '' HASTA ACA
             setIdioma()
         End If
     End Sub
