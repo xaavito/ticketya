@@ -17,6 +17,8 @@
                 Dim permiso As New BE.PermisoBE
                 permiso.identificador = pepe.Item(0)
                 permiso.descripcion = pepe.Item(1)
+                permiso.componente = pepe.Item(2)
+                permiso.formulario = pepe.Item(3)
                 permisos.Add(permiso)
             Next
 
@@ -45,6 +47,8 @@
                 Dim permiso As New BE.PermisoBE
                 permiso.identificador = pepe.Item(0)
                 permiso.descripcion = pepe.Item(1)
+                permiso.componente = pepe.Item(2)
+                permiso.formulario = pepe.Item(3)
                 permisos.Add(permiso)
             Next
 

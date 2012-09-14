@@ -17,10 +17,14 @@
             End If
             For Each pepe As DataRow In table.Rows
                 Dim usuario As New BE.UsuarioBE
-                usuario.nombre = pepe.Item(0)
-                usuario.apellido = pepe.Item(1)
+                usuario.identificador = pepe.Item(0)
+                usuario.nombre = pepe.Item(1)
+                usuario.apellido = pepe.Item(2)
                 usuario.usuario = usr
                 usuario.password = pass
+                Dim idioma As New BE.IdiomaBE
+                idioma.identificador = pepe.Item(3)
+                usuario.idioma = idioma
                 Return usuario
             Next
 

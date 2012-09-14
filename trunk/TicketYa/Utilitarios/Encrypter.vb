@@ -8,12 +8,13 @@ Public Class Encrypter
     Private Shared m_strPasswordIterations As Integer = 2              '--- can be any number
     Private Shared m_strInitVector As String = "@1B2c3D4e5F6g7H8"      '--- must be 16 bytes
     Private Shared m_intKeySize As Integer = 256                       '--- can be 192 or 128
+    Private Shared strSaltValue As String = "00000000"
 
 
 
     'Encrypt Function: 
 
-    Public Shared Function EncryptPasswordMD5(ByVal plainText As String, ByVal p_strSaltValue As String) As String
+    Public Shared Function EncryptPasswordMD5(ByVal plainText As String) As String
 
         Dim strReturn As String = String.Empty
 
@@ -27,7 +28,7 @@ Public Class Encrypter
             initVectorBytes = System.Text.Encoding.ASCII.GetBytes(m_strInitVector)
 
             Dim saltValueBytes As Byte()
-            saltValueBytes = System.Text.Encoding.ASCII.GetBytes(p_strSaltValue)
+            saltValueBytes = System.Text.Encoding.ASCII.GetBytes(strSaltValue)
 
             ' Convert our plaintext into a byte array.
             ' Let us assume that plaintext contains UTF8-encoded characters.
