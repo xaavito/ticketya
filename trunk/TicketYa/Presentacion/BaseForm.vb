@@ -1,6 +1,6 @@
 ﻿Imports System.ComponentModel
 
-Public Class MainForm
+Public Class BaseForm
 
 
     Protected Sub getPermisos(ByVal permisos As List(Of BE.PermisoBE))
@@ -63,9 +63,9 @@ Public Class MainForm
     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim login As LoginForm
         If Not Me.Name.Equals("LoginForm") Then
-            eliminarPermisos()
+            'eliminarPermisos()
             '' SI REVIENTA LA APLICACION COMENTAR TODO ESTO Y LIMPIAR Y LUEGO RE COMPILAR.
-            getPermisos(BLL.Actual.usuario.getPermisos)
+            'getPermisos(BLL.Actual.usuario.getPermisos)
             '' HASTA ACA
             setIdioma()
         Else

@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class LoginForm
-    Inherits TicketYa.MainForm
+    Inherits TicketYa.BaseForm
 
     'Form invalida a Dispose para limpiar la lista de componentes.
     <System.Diagnostics.DebuggerNonUserCode()> _
