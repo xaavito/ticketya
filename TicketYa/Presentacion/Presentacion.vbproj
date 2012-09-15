@@ -72,6 +72,42 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BuscarBackupForm.Designer.vb">
+      <DependentUpon>BuscarBackupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarBackupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarBitacoraForm.Designer.vb">
+      <DependentUpon>BuscarBitacoraForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarBitacoraForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarPermisoForm.Designer.vb">
+      <DependentUpon>BuscarPermisoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarPermisoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarUsuarioForm.Designer.vb">
+      <DependentUpon>BuscarUsuarioForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarUsuarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarPermisosForm.Designer.vb">
+      <DependentUpon>GenerarPermisosForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarPermisosForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarUsuarioForm.Designer.vb">
+      <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarUsuarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Intro.Designer.vb">
       <DependentUpon>Intro.vb</DependentUpon>
     </Compile>
@@ -84,10 +120,10 @@
     <Compile Include="LoginForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.vb">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <Compile Include="BaseForm.Designer.vb">
+      <DependentUpon>BaseForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.vb">
+    <Compile Include="BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyApplication.vb" />
@@ -112,6 +148,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="RealizarRestoreForm.Designer.vb">
+      <DependentUpon>RealizarRestoreForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RealizarRestoreForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Intro.resx">
@@ -120,8 +162,8 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
-      <DependentUpon>MainForm.vb</DependentUpon>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>

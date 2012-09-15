@@ -1,5 +1,5 @@
 ﻿Public Class LoginForm
-    Inherits MainForm
+    Inherits BaseForm
 
     Public Sub Start()
         'Me.Name = "Login"
