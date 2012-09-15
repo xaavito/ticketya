@@ -12,12 +12,6 @@
         Dim listaPermisos As List(Of BE.PermisoBE)
         listaPermisos = DAL.PermisoDAL.buscarPermisoPersona(usuario.identificador)
 
-        'Dim permiso As New BE.PermisoBE
-        'permiso.identificador = 1
-        'permiso.descripcion = "BuscarBitacora"
-
-        'listaPermisos.Add(permiso)
-
         usuario.permisos = listaPermisos
 
         Dim listaFamilia As List(Of BE.FamiliaBE)
@@ -27,18 +21,6 @@
         For Each familia As BE.FamiliaBE In listaFamilia
             familia.permisos = DAL.PermisoDAL.buscarPermisoFamilia(familia.identificador)
         Next
-
-        'Dim familia As New BE.FamiliaBE
-        'familia.descripcion = "Administrador"
-        'Dim listaPermisosFamilia As New List(Of BE.PermisoBE)
-        'Dim permisoFamilia As New BE.PermisoBE
-        'permisoFamilia.descripcion = "Bitacora"
-        'listaPermisosFamilia.Add(permisoFamilia)
-        'Dim permisoFamilia2 As New BE.PermisoBE
-        'permisoFamilia2.descripcion = "Permisos"
-        'listaPermisosFamilia.Add(permisoFamilia2)
-        'familia.permisos = listaPermisosFamilia
-        'listaFamilia.Add(familia)
 
         usuario.familias = listaFamilia
 

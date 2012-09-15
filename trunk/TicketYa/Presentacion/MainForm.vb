@@ -61,14 +61,16 @@ Public Class MainForm
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        If Not Me.Name.Equals("Login") Then
-
+        Dim login As LoginForm
+        If Not Me.Name.Equals("LoginForm") Then
             eliminarPermisos()
             '' SI REVIENTA LA APLICACION COMENTAR TODO ESTO Y LIMPIAR Y LUEGO RE COMPILAR.
             getPermisos(BLL.Actual.usuario.getPermisos)
             '' HASTA ACA
             setIdioma()
+        Else
+            login = DirectCast(Me, LoginForm)
+            login.Start()
         End If
     End Sub
 

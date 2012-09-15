@@ -1,11 +1,7 @@
 ﻿Public Class LoginForm
     Inherits MainForm
 
-    Private Sub LoginForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Init()
-    End Sub
-
-    Private Sub Init()
+    Public Sub Start()
         'Me.Name = "Login"
         Dim idiomas As List(Of BE.IdiomaBE)
         idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
@@ -28,6 +24,4 @@
         BLL.Actual.idioma = DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE)
         Me.setIdioma()
     End Sub
-
-
 End Class

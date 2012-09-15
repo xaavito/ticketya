@@ -11,7 +11,7 @@
             repository.addParam("@idUsuario", p1)
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
-                Throw New Excepciones.IdiomaNoEncontradoExcepcion
+                Throw New Excepciones.PermisoNoEncontradoExcepcion
             End If
             For Each pepe As DataRow In table.Rows
                 Dim permiso As New BE.PermisoBE
@@ -23,7 +23,7 @@
             Next
 
         Catch ex As Exception
-            Throw New Excepciones.IdiomaNoEncontradoExcepcion
+            Throw New Excepciones.PermisoNoEncontradoExcepcion
         End Try
 
         Return permisos
@@ -41,7 +41,7 @@
             repository.addParam("@idFamilia", p1)
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
-                Throw New Excepciones.IdiomaNoEncontradoExcepcion
+                Throw New Excepciones.PermisoNoEncontradoExcepcion
             End If
             For Each pepe As DataRow In table.Rows
                 Dim permiso As New BE.PermisoBE
@@ -53,7 +53,7 @@
             Next
 
         Catch ex As Exception
-            Throw New Excepciones.IdiomaNoEncontradoExcepcion
+            Throw New Excepciones.PermisoNoEncontradoExcepcion
         End Try
 
         Return permisos

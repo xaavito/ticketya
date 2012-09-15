@@ -2,10 +2,10 @@
     Inherits ExceptionManager
 
     Public Sub New()
-        MyBase.new("Idiomas no encontrados")
-        Me.codigo = 1
+        MyBase.new("No hay Idiomas")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.NoHayIdioma
         Me.tipo = MsgBoxStyle.Exclamation
-        Me.mensaje = "Idiomas no encontrados"
+        Me.mensaje = "No hay Idiomas"
     End Sub
 End Class
 
@@ -13,9 +13,9 @@ Public Class IdiomaNoEncontradoExcepcion
     Inherits ExceptionManager
 
     Public Sub New()
-        MyBase.new("Idioma no encontrado")
-        Me.codigo = 1
+        MyBase.new("Idioma No encontrado")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.IdiomaNoEncontrado
         Me.tipo = MsgBoxStyle.Exclamation
-        Me.mensaje = "Idioma no encontrado"
+        Me.mensaje = "Idioma No encontrado"
     End Sub
 End Class
