@@ -25,6 +25,14 @@
                     ret = True
                 Catch ex As Excepciones.UsuarioNoEncontradoExcepcion
                     Application.HandlerException(ex)
+                Catch ex As Excepciones.IdiomaNoEncontradoExcepcion
+                    Application.HandlerException(ex)
+                Catch ex As Excepciones.PermisoNoEncontradoExcepcion
+                    Application.HandlerException(ex)
+                Catch ex As Excepciones.FamiliaNoEncontradaExcepcion
+                    Application.HandlerException(ex)
+                Catch ex As Excepciones.ConexionImposibleExcepcion
+                    Application.HandlerException(ex)
                 Catch ex As Exception
                     Application.HandlerException(ex)
                 End Try
@@ -36,7 +44,8 @@
         Public Sub HandlerException(ByVal ex As Exception)
             If (TypeOf ex Is Excepciones.ExceptionManager) Then
                 Dim excep = DirectCast(ex, Excepciones.ExceptionManager)
-                MsgBox(excep.mensaje, excep.tipo)
+                MsgBox(BLL.ExcepcionBLL.buscarExcepcion(BLL.Actual.idioma.identificador, excep.codigo),
+                       excep.tipo)
             End If
         End Sub
     End Class

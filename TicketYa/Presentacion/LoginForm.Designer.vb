@@ -98,7 +98,7 @@ Partial Class LoginForm
         Me.CancelarButton.Text = "Cancelar"
         Me.CancelarButton.UseVisualStyleBackColor = True
         '
-        'Login
+        'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(358, 273)
@@ -110,7 +110,7 @@ Partial Class LoginForm
         Me.Controls.Add(Me.UsuarioLabel)
         Me.Controls.Add(Me.PassTextBox)
         Me.Controls.Add(Me.UserTextBox)
-        Me.Name = "Login"
+        Me.Name = "LoginForm"
         Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -2,9 +2,9 @@
     Inherits ExceptionManager
 
     Public Sub New()
-        MyBase.new("Usuario No encontrado")
-        Me.codigo = 1
+        MyBase.new("Familia No encontrada")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.FamiliaNoEncontrada
         Me.tipo = MsgBoxStyle.Exclamation
-        Me.mensaje = "Usuario No encontrado"
+        Me.mensaje = "Familia No encontrada"
     End Sub
 End Class

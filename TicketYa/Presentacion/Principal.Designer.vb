@@ -36,11 +36,11 @@ Partial Class Principal
         Me.Usuarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -130,6 +130,12 @@ Partial Class Principal
         Me.AltaUsuario.Size = New System.Drawing.Size(156, 22)
         Me.AltaUsuario.Text = "Alta Usuario"
         '
+        'LogoutToolStripMenuItem
+        '
+        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
+        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.LogoutToolStripMenuItem.Text = "Logout"
+        '
         'StatusStrip
         '
         Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
@@ -153,12 +159,6 @@ Partial Class Principal
         Me.Label1.Size = New System.Drawing.Size(39, 13)
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Label1"
-        '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
         '
         'Principal
         '

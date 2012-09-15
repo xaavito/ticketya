@@ -39,13 +39,21 @@ Public Class RepositorioSQL
         adapter = New SqlDataAdapter
         table = New DataTable
         adapter.SelectCommand = cmd
-        adapter.Fill(table)
+        Try
+            adapter.Fill(table)
+        Catch ex As Exception
+            Throw New Excepciones.ConexionImposibleExcepcion
+        End Try
         Return table
     End Function
 
     Public Function executeSearch() As Integer Implements IRepositorio.executeSearch
         con.Open()
-        result = cmd.ExecuteScalar()
+        Try
+            result = cmd.ExecuteScalar()
+        Catch ex As Exception
+            Throw New Excepciones.ConexionImposibleExcepcion
+        End Try
         con.Close()
         Return result
     End Function
@@ -53,7 +61,11 @@ Public Class RepositorioSQL
     Public Function executeSearchWithStatus() As Integer Implements IRepositorio.executeSearchWithStatus
         Dim status As Integer
         con.Open()
-        status = cmd.ExecuteNonQuery
+        Try
+            cmd.ExecuteNonQuery()
+        Catch ex As Exception
+            Throw New Excepciones.ConexionImposibleExcepcion
+        End Try
         con.Close()
         Return status
     End Function
@@ -69,7 +81,4 @@ Public Class RepositorioSQL
     Public Sub addParam(ByVal p1 As String, ByVal p2 As Object) Implements IRepositorio.addParam
         cmd.Parameters.AddWithValue(p1, p2)
     End Sub
-
-
-    
 End Class

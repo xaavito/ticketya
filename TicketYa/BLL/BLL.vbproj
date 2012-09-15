@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actual.vb" />
+    <Compile Include="ExcepcionBLL.vb" />
     <Compile Include="GestorBitacoraBLL.vb" />
     <Compile Include="GestorFamiliaBLL.vb" />
     <Compile Include="GestorFormularioBLL.vb" />
@@ -115,10 +116,6 @@
     <ProjectReference Include="..\DAL\DAL.vbproj">
       <Project>{26F85DFA-BF9E-406A-AA43-32F1022EB662}</Project>
       <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Seguridad\Seguridad.vbproj">
-      <Project>{B3F60CC4-254C-430A-9EB5-8EE83AE03DAD}</Project>
-      <Name>Seguridad</Name>
     </ProjectReference>
     <ProjectReference Include="..\Utilitarios\Utilitarios.vbproj">
       <Project>{48B32CBF-E466-4434-A3D1-9B863707D210}</Project>
