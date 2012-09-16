@@ -1,9 +1,9 @@
 ﻿Public Class BitacoraBLL
 
 
-    Function setBitacora(ByVal usr As BE.UsuarioBE,
-                         ByVal mensaje As String,
-                         ByVal codigo As Integer) As Boolean
+    Public Shared Function setBitacora(ByVal usr As BE.UsuarioBE,
+                                       ByVal mensaje As String,
+                                       ByVal codigo As Integer) As Boolean
 
         DAL.BitacoraDAL.agregarBitacora(usr,
                                         mensaje,
@@ -11,11 +11,17 @@
         Return True
     End Function
 
-    Function getBitacora(ByVal usr As BE.UsuarioBE,
-                         ByVal mensaje As String,
-                         ByVal codigo As Integer,
-                         ByVal fecha As DateTime) As List(Of BE.BitacoraBE)
+    Public Shared Function getBitacora(ByVal usr As BE.UsuarioBE,
+                                       ByVal mensaje As String,
+                                       ByVal codigo As Integer,
+                                       ByVal fecha As DateTime) As List(Of BE.BitacoraBE)
 
-        Return Nothing
+
+        Return DAL.BitacoraDAL.buscarBitacora(usr,
+                                              mensaje,
+                                              codigo,
+                                              fecha,
+                                              Actual.idioma)
+
     End Function
 End Class

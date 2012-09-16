@@ -46,6 +46,11 @@ Public Class Principal
     End Sub
 
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
+        Try
+            BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, BLL.Actual.usuario.usuario, Utilitarios.Enumeradores.Bitacora.LogoutExitoso)
+        Catch excep As Excepciones.InsertExcepcion
+            My.Application.HandlerException(excep)
+        End Try
         Me.Close()
     End Sub
 End Class

@@ -59,10 +59,10 @@ Public Class RepositorioSQL
     End Function
 
     Public Function executeSearchWithStatus() As Integer Implements IRepositorio.executeSearchWithStatus
-        Dim status As Integer
+        Dim status As Integer = 0
         con.Open()
         Try
-            cmd.ExecuteNonQuery()
+            status = cmd.ExecuteNonQuery()
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
