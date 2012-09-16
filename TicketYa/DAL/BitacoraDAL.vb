@@ -28,7 +28,6 @@ Public Class BitacoraDAL
     End Function
 
     Public Shared Function buscarBitacora(ByVal usr As BE.UsuarioBE,
-                                          ByVal mensaje As String,
                                           ByVal codigo As Integer,
                                           ByVal fecha As DateTime,
                                           ByVal idioma As BE.IdiomaBE) As List(Of BE.BitacoraBE)
@@ -42,10 +41,11 @@ Public Class BitacoraDAL
             table = New DataTable
             repository.addParam("@idUsuario", usr.identificador)
             repository.addParam("@idIdioma", idioma.identificador)
+            repository.addParam("@codigo", codigo)
             repository.addParam("@fecha", fecha)
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
-                Throw New Excepciones.FamiliaNoEncontradaExcepcion
+                Throw New Excepciones.BitacoraNoEncontradaExcepcion
             End If
             For Each pepe As DataRow In table.Rows
                 Dim bit As String = ""
@@ -55,6 +55,7 @@ Public Class BitacoraDAL
                 bitacora.identificador = pepe.Item(0)
                 men = pepe.Item(1)
                 bit = pepe.Item(2)
+                bitacora.fecha = pepe.Item(3)
                 Dim info As String
 
                 Dim index As Integer
@@ -67,7 +68,37 @@ Public Class BitacoraDAL
             Next
 
         Catch ex As Exception
-            Throw New Excepciones.FamiliaNoEncontradaExcepcion
+            Throw New Excepciones.BitacoraNoEncontradaExcepcion
+        End Try
+
+        Return bitacoras
+    End Function
+
+    Shared Function listarTipoBitacoras() As List(Of BE.BitacoraBE)
+        Dim table As DataTable
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim bitacoras As New List(Of BE.BitacoraBE)
+        Try
+            repository.crearComando("LISTAR_TIPO_BITACORAS_SP")
+            table = New DataTable
+
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.BitacoraNoEncontradaExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim bit As String = ""
+                Dim men As String = ""
+
+                Dim bitacora As New BE.BitacoraBE
+                bitacora.identificador = pepe.Item(0)
+                bitacora.mensaje = pepe.Item(1)
+                bitacoras.Add(bitacora)
+            Next
+
+        Catch ex As Exception
+            Throw New Excepciones.BitacoraNoEncontradaExcepcion
         End Try
 
         Return bitacoras

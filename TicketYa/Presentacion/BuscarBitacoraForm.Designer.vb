@@ -19,22 +19,22 @@ Partial Class BuscarBitacoraForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.BitacorasDataGrid = New System.Windows.Forms.DataGridView()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.TipoLabel = New System.Windows.Forms.Label()
         Me.BuscarBitacoraButton = New System.Windows.Forms.Button()
         Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
         Me.TipoBitacoraComboBox = New System.Windows.Forms.ComboBox()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BitacorasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'BitacorasDataGrid
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 108)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(502, 157)
-        Me.DataGridView1.TabIndex = 0
+        Me.BitacorasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BitacorasDataGrid.Location = New System.Drawing.Point(12, 108)
+        Me.BitacorasDataGrid.Name = "BitacorasDataGrid"
+        Me.BitacorasDataGrid.Size = New System.Drawing.Size(759, 157)
+        Me.BitacorasDataGrid.TabIndex = 0
         '
         'UsuarioLabel
         '
@@ -56,7 +56,7 @@ Partial Class BuscarBitacoraForm
         '
         'BuscarBitacoraButton
         '
-        Me.BuscarBitacoraButton.Location = New System.Drawing.Point(439, 12)
+        Me.BuscarBitacoraButton.Location = New System.Drawing.Point(696, 8)
         Me.BuscarBitacoraButton.Name = "BuscarBitacoraButton"
         Me.BuscarBitacoraButton.Size = New System.Drawing.Size(75, 23)
         Me.BuscarBitacoraButton.TabIndex = 4
@@ -68,7 +68,7 @@ Partial Class BuscarBitacoraForm
         Me.UsuarioComboBox.FormattingEnabled = True
         Me.UsuarioComboBox.Location = New System.Drawing.Point(91, 10)
         Me.UsuarioComboBox.Name = "UsuarioComboBox"
-        Me.UsuarioComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.UsuarioComboBox.Size = New System.Drawing.Size(183, 21)
         Me.UsuarioComboBox.TabIndex = 6
         '
         'TipoBitacoraComboBox
@@ -76,27 +76,28 @@ Partial Class BuscarBitacoraForm
         Me.TipoBitacoraComboBox.FormattingEnabled = True
         Me.TipoBitacoraComboBox.Location = New System.Drawing.Point(91, 32)
         Me.TipoBitacoraComboBox.Name = "TipoBitacoraComboBox"
-        Me.TipoBitacoraComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.TipoBitacoraComboBox.Size = New System.Drawing.Size(183, 21)
         Me.TipoBitacoraComboBox.TabIndex = 7
         '
         'BuscarBitacoraForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(526, 277)
+        Me.ClientSize = New System.Drawing.Size(783, 334)
         Me.Controls.Add(Me.TipoBitacoraComboBox)
         Me.Controls.Add(Me.UsuarioComboBox)
         Me.Controls.Add(Me.BuscarBitacoraButton)
         Me.Controls.Add(Me.TipoLabel)
         Me.Controls.Add(Me.UsuarioLabel)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.BitacorasDataGrid)
         Me.Name = "BuscarBitacoraForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Bitacoras"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BitacorasDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents BitacorasDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents TipoLabel As System.Windows.Forms.Label
     Friend WithEvents BuscarBitacoraButton As System.Windows.Forms.Button

@@ -27,6 +27,10 @@
         Return usuario
     End Function
 
+    Public Shared Function buscarUsuario(ByVal usr As String) As List(Of BE.UsuarioBE)
+        Return DAL.UsuarioDAL.buscarUsuario(usr)
+    End Function
+
     Public Function crearUsuario(ByVal usr As String,
                                  ByVal pass As String,
                                  ByVal nom As String,
@@ -56,6 +60,10 @@
 
     Public Function obtenerEstadoUsuario(ByVal usr As BE.UsuarioBE) As Integer
         Return Nothing
+    End Function
+
+    Shared Function listarUsuarios() As List(Of BE.UsuarioBE)
+        Return DAL.UsuarioDAL.listarUsuarios()
     End Function
 
 End Class

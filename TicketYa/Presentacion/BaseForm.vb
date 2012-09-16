@@ -68,10 +68,13 @@ Public Class BaseForm
             'getPermisos(BLL.Actual.usuario.getPermisos)
             '' HASTA ACA
             setIdioma()
+            Me.WindowState = FormWindowState.Maximized
         Else
             login = DirectCast(Me, LoginForm)
             login.Start()
         End If
+
+        Me.StartPosition = FormStartPosition.CenterScreen
     End Sub
 
     Private Sub eliminarPermisos()
