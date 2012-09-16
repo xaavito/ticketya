@@ -9,4 +9,15 @@
         PermisoNoEncontrado = 7
         UsuarioNoEncontrado = 8
     End Enum
+
+    Enum Bitacora
+        LogueoFallido = 1
+        LogueoExitoso = 2
+    End Enum
+
+    Enum Excepcion
+        INFO = MsgBoxStyle.Information
+        WARNING = MsgBoxStyle.Exclamation
+        FATAL = MsgBoxStyle.Critical
+    End Enum
 End Class

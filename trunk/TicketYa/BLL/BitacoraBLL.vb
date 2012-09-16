@@ -1,11 +1,13 @@
-﻿Public Class Bitacora
+﻿Public Class BitacoraBLL
 
 
     Function setBitacora(ByVal usr As BE.UsuarioBE,
                          ByVal mensaje As String,
-                         ByVal codigo As Integer,
-                         ByVal fecha As DateTime) As Boolean
+                         ByVal codigo As Integer) As Boolean
 
+        DAL.BitacoraDAL.agregarBitacora(usr,
+                                        mensaje,
+                                        codigo)
         Return True
     End Function
 

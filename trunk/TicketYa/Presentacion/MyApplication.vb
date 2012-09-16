@@ -1,4 +1,6 @@
-﻿Namespace My
+﻿'Imports Seguridad
+Namespace My
+
     Partial Friend Class MyApplication
 
         Protected Overrides Function OnStartup(ByVal eventArgs As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) As Boolean

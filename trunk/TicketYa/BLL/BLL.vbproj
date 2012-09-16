@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Actual.vb" />
+    <Compile Include="BitacoraBLL.vb" />
     <Compile Include="ExcepcionBLL.vb" />
     <Compile Include="GestorBitacoraBLL.vb" />
     <Compile Include="GestorFamiliaBLL.vb" />
