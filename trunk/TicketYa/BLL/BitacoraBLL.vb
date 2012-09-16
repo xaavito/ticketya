@@ -18,7 +18,6 @@
 
 
         Return DAL.BitacoraDAL.buscarBitacora(usr,
-                                              mensaje,
                                               codigo,
                                               fecha,
                                               Actual.idioma)

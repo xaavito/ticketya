@@ -9,6 +9,8 @@
         PermisoNoEncontrado = 7
         UsuarioNoEncontrado = 8
         FalloInsert = 9
+        UsuariosNoEncontrados = 10
+        BitacoraNoEncontrada = 11
     End Enum
 
     Enum Bitacora

@@ -35,7 +35,6 @@
     End Property
 
     Protected Sub New(ByVal p1 As String)
-
         MyBase.New(p1)
     End Sub
 

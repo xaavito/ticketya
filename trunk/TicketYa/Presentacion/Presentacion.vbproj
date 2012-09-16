@@ -159,6 +159,12 @@
     <EmbeddedResource Include="BuscarBitacoraForm.resx">
       <DependentUpon>BuscarBitacoraForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarUsuarioForm.resx">
+      <DependentUpon>BuscarUsuarioForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarUsuarioForm.resx">
+      <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Intro.resx">
       <DependentUpon>Intro.vb</DependentUpon>
     </EmbeddedResource>
