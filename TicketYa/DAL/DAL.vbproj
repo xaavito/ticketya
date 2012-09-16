@@ -64,6 +64,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitacoraDAL.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="ExcepcionDAL.vb" />
     <Compile Include="FamiliaDAL.vb" />
@@ -117,10 +118,6 @@
     <ProjectReference Include="..\Excepciones\Excepciones.vbproj">
       <Project>{3933B96F-EB72-489E-9D03-041867B6DEDC}</Project>
       <Name>Excepciones</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Seguridad\Seguridad.vbproj">
-      <Project>{B3F60CC4-254C-430A-9EB5-8EE83AE03DAD}</Project>
-      <Name>Seguridad</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
