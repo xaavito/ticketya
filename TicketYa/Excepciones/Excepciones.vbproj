@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionExcepcion.vb" />
+    <Compile Include="DatosExcepcion.vb" />
     <Compile Include="ExExcepcion.vb" />
     <Compile Include="ExceptionManager.vb" />
     <Compile Include="FamiliaExcepcion.vb" />

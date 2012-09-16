@@ -8,11 +8,13 @@
         MensajeNoEncontrado = 6
         PermisoNoEncontrado = 7
         UsuarioNoEncontrado = 8
+        FalloInsert = 9
     End Enum
 
     Enum Bitacora
         LogueoFallido = 1
         LogueoExitoso = 2
+        LogoutExitoso = 3
     End Enum
 
     Enum Excepcion
