@@ -15,5 +15,7 @@
     Function executeSearch() As Integer
     
     Function executeSearchWithStatus() As Integer
+
+    Function executeSearchWithReturnValue() As Integer
     
 End Interface

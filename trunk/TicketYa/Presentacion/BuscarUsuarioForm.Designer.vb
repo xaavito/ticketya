@@ -23,6 +23,13 @@ Partial Class BuscarUsuarioForm
         Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.BuscarUsuariosButton = New System.Windows.Forms.Button()
         Me.UsuariosDataGrid = New System.Windows.Forms.DataGridView()
+        Me.ModificarUsuarioButton = New System.Windows.Forms.Button()
+        Me.EliminarUsuarioButton = New System.Windows.Forms.Button()
+        Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ApellidoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.UsuariosDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,16 +60,74 @@ Partial Class BuscarUsuarioForm
         '
         'UsuariosDataGrid
         '
+        Me.UsuariosDataGrid.AllowUserToAddRows = False
+        Me.UsuariosDataGrid.AllowUserToDeleteRows = False
         Me.UsuariosDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.UsuariosDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.identificador, Me.NombreColumn, Me.ApellidoColumn, Me.UsuarioColumn, Me.FechaColumn})
         Me.UsuariosDataGrid.Location = New System.Drawing.Point(28, 133)
         Me.UsuariosDataGrid.Name = "UsuariosDataGrid"
-        Me.UsuariosDataGrid.Size = New System.Drawing.Size(620, 228)
+        Me.UsuariosDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.UsuariosDataGrid.Size = New System.Drawing.Size(445, 228)
         Me.UsuariosDataGrid.TabIndex = 4
+        '
+        'ModificarUsuarioButton
+        '
+        Me.ModificarUsuarioButton.Location = New System.Drawing.Point(507, 183)
+        Me.ModificarUsuarioButton.Name = "ModificarUsuarioButton"
+        Me.ModificarUsuarioButton.Size = New System.Drawing.Size(75, 23)
+        Me.ModificarUsuarioButton.TabIndex = 8
+        Me.ModificarUsuarioButton.Text = "Modificar"
+        Me.ModificarUsuarioButton.UseVisualStyleBackColor = True
+        '
+        'EliminarUsuarioButton
+        '
+        Me.EliminarUsuarioButton.Location = New System.Drawing.Point(507, 268)
+        Me.EliminarUsuarioButton.Name = "EliminarUsuarioButton"
+        Me.EliminarUsuarioButton.Size = New System.Drawing.Size(75, 23)
+        Me.EliminarUsuarioButton.TabIndex = 9
+        Me.EliminarUsuarioButton.Text = "Eliminar"
+        Me.EliminarUsuarioButton.UseVisualStyleBackColor = True
+        '
+        'identificador
+        '
+        Me.identificador.DataPropertyName = "identificador"
+        Me.identificador.HeaderText = "identificador"
+        Me.identificador.Name = "identificador"
+        '
+        'NombreColumn
+        '
+        Me.NombreColumn.DataPropertyName = "nombre"
+        Me.NombreColumn.HeaderText = "Nombre"
+        Me.NombreColumn.Name = "NombreColumn"
+        Me.NombreColumn.ReadOnly = True
+        '
+        'ApellidoColumn
+        '
+        Me.ApellidoColumn.DataPropertyName = "apellido"
+        Me.ApellidoColumn.HeaderText = "Apellido"
+        Me.ApellidoColumn.Name = "ApellidoColumn"
+        Me.ApellidoColumn.ReadOnly = True
+        '
+        'UsuarioColumn
+        '
+        Me.UsuarioColumn.DataPropertyName = "usuario"
+        Me.UsuarioColumn.HeaderText = "Usuario"
+        Me.UsuarioColumn.Name = "UsuarioColumn"
+        Me.UsuarioColumn.ReadOnly = True
+        '
+        'FechaColumn
+        '
+        Me.FechaColumn.DataPropertyName = "fecha"
+        Me.FechaColumn.HeaderText = "Fecha"
+        Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
         '
         'BuscarUsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(677, 400)
+        Me.Controls.Add(Me.EliminarUsuarioButton)
+        Me.Controls.Add(Me.ModificarUsuarioButton)
         Me.Controls.Add(Me.UsuarioLabel)
         Me.Controls.Add(Me.UsuarioTextBox)
         Me.Controls.Add(Me.BuscarUsuariosButton)
@@ -79,5 +144,12 @@ Partial Class BuscarUsuarioForm
     Friend WithEvents UsuarioTextBox As System.Windows.Forms.TextBox
     Friend WithEvents BuscarUsuariosButton As System.Windows.Forms.Button
     Friend WithEvents UsuariosDataGrid As System.Windows.Forms.DataGridView
+    Friend WithEvents ModificarUsuarioButton As System.Windows.Forms.Button
+    Friend WithEvents EliminarUsuarioButton As System.Windows.Forms.Button
+    Friend WithEvents identificador As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NombreColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ApellidoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UsuarioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

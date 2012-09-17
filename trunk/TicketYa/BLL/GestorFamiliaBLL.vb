@@ -12,8 +12,8 @@
         Return Nothing
     End Function
 
-    Public Function listarFamilias(ByVal fam As String) As List(Of BE.FamiliaBE)
-        Return Nothing
+    Public Shared Function listarFamilias() As List(Of BE.FamiliaBE)
+        Return DAL.FamiliaDAL.listarFamilias()
     End Function
 
     Public Function modificarFamilia(ByVal fam As BE.FamiliaBE,

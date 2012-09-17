@@ -23,11 +23,11 @@ Partial Class GenerarUsuarioForm
         Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.PassLabel = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.PassTextBox = New System.Windows.Forms.TextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.NombreTextBox = New System.Windows.Forms.TextBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
@@ -71,12 +71,13 @@ Partial Class GenerarUsuarioForm
         Me.PassLabel.TabIndex = 5
         Me.PassLabel.Text = "Contraseña"
         '
-        'TextBox1
+        'PassTextBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(93, 38)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox1.TabIndex = 4
+        Me.PassTextBox.Location = New System.Drawing.Point(93, 38)
+        Me.PassTextBox.Name = "PassTextBox"
+        Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.PassTextBox.TabIndex = 4
         '
         'NombreLabel
         '
@@ -87,12 +88,12 @@ Partial Class GenerarUsuarioForm
         Me.NombreLabel.TabIndex = 7
         Me.NombreLabel.Text = "Nombre"
         '
-        'TextBox2
+        'NombreTextBox
         '
-        Me.TextBox2.Location = New System.Drawing.Point(93, 64)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.NombreTextBox.Location = New System.Drawing.Point(93, 64)
+        Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.NombreTextBox.TabIndex = 6
         '
         'ApellidoLabel
         '
@@ -103,12 +104,12 @@ Partial Class GenerarUsuarioForm
         Me.ApellidoLabel.TabIndex = 9
         Me.ApellidoLabel.Text = "Apellido"
         '
-        'TextBox3
+        'ApellidoTextBox
         '
-        Me.TextBox3.Location = New System.Drawing.Point(93, 90)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(140, 20)
-        Me.TextBox3.TabIndex = 8
+        Me.ApellidoTextBox.Location = New System.Drawing.Point(93, 90)
+        Me.ApellidoTextBox.Name = "ApellidoTextBox"
+        Me.ApellidoTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.ApellidoTextBox.TabIndex = 8
         '
         'FamiliaComboBox
         '
@@ -129,10 +130,13 @@ Partial Class GenerarUsuarioForm
         '
         'FamiliaDataGrid
         '
+        Me.FamiliaDataGrid.AllowUserToAddRows = False
+        Me.FamiliaDataGrid.AllowUserToDeleteRows = False
         Me.FamiliaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.FamiliaDataGrid.Enabled = False
         Me.FamiliaDataGrid.Location = New System.Drawing.Point(327, 12)
         Me.FamiliaDataGrid.Name = "FamiliaDataGrid"
-        Me.FamiliaDataGrid.Size = New System.Drawing.Size(160, 152)
+        Me.FamiliaDataGrid.Size = New System.Drawing.Size(218, 152)
         Me.FamiliaDataGrid.TabIndex = 12
         '
         'IdiomaLabel
@@ -172,11 +176,11 @@ Partial Class GenerarUsuarioForm
         Me.Controls.Add(Me.FamiliaLabel)
         Me.Controls.Add(Me.FamiliaComboBox)
         Me.Controls.Add(Me.ApellidoLabel)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.ApellidoTextBox)
         Me.Controls.Add(Me.NombreLabel)
-        Me.Controls.Add(Me.TextBox2)
+        Me.Controls.Add(Me.NombreTextBox)
         Me.Controls.Add(Me.PassLabel)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.PassTextBox)
         Me.Controls.Add(Me.UsuarioLabel)
         Me.Controls.Add(Me.UsuarioTextBox)
         Me.Controls.Add(Me.AltaUsuariosButton)
@@ -192,11 +196,11 @@ Partial Class GenerarUsuarioForm
     Friend WithEvents UsuarioTextBox As System.Windows.Forms.TextBox
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents PassLabel As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents PassTextBox As System.Windows.Forms.TextBox
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
     Friend WithEvents ApellidoLabel As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents ApellidoTextBox As System.Windows.Forms.TextBox
     Friend WithEvents FamiliaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
     Friend WithEvents FamiliaDataGrid As System.Windows.Forms.DataGridView

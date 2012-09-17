@@ -92,4 +92,42 @@
         Return listaUsuarios
     End Function
 
+    Shared Function altaUsuario(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal idiomaBE As BE.IdiomaBE, ByVal list As List(Of BE.FamiliaBE)) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("INSERTAR_USUARIO_SP")
+            'repository.transactionON()
+            repository.addParam("@usr", p1)
+            repository.addParam("@pass", p2)
+            repository.addParam("@nom", p3)
+            repository.addParam("@ape", p4)
+            repository.addParam("@idioma", idiomaBE.identificador)
+
+            result = repository.executeSearchWithReturnValue
+            If (result <= 0) Then
+                Throw New Excepciones.InsertExcepcion
+            End If
+
+            If (list.Count > 0) Then
+                repository.crearComando("INSERTAR_USUARIO_FAMILIA_SP")
+                For Each fam As BE.FamiliaBE In list
+                    repository.addParam("@idUsuario", result)
+                    repository.addParam("@idFamilia", fam.identificador)
+                    result = repository.executeSearchWithStatus
+                    If (result <= 0) Then
+                        Throw New Excepciones.InsertExcepcion
+                    End If
+                Next
+            End If
+            'repository.transactionOK()
+
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

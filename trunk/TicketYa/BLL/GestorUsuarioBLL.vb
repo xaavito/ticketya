@@ -66,4 +66,8 @@
         Return DAL.UsuarioDAL.listarUsuarios()
     End Function
 
+    Shared Function altaUsuario(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal idiomaBE As BE.IdiomaBE, ByVal list As List(Of BE.FamiliaBE))
+        Return DAL.UsuarioDAL.altaUsuario(p1, Utilitarios.Encrypter.EncryptPasswordMD5(p2), p3, p4, idiomaBE, list)
+    End Function
+
 End Class
