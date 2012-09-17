@@ -15,6 +15,9 @@
 
     Private Sub ModificarUsuarioButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarUsuarioButton.Click
         Dim pepe As String = UsuariosDataGrid.SelectedRows.Item(0).Cells.Item(0).Value
+        Dim usr As BE.UsuarioBE = DirectCast(UsuariosDataGrid.CurrentRow.DataBoundItem, BE.UsuarioBE)
+        'usr.identificador
+
         coco()
     End Sub
 
