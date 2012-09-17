@@ -9,9 +9,13 @@ Public Class RepositorioSQL
     Dim table As DataTable
     Dim result As Integer
     Dim tx As SqlTransaction
+    Dim r As String
+
 
     Public Sub crearComando(ByVal nombre As String) Implements IRepositorio.crearComando
-        con = New SqlConnection("Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;")
+        If con Is Nothing Then
+            con = New SqlConnection("Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;")
+        End If
         cmd = New SqlCommand
         cmd.CommandType = CommandType.StoredProcedure
         cmd.Connection = con
@@ -44,6 +48,7 @@ Public Class RepositorioSQL
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
+        clearParams()
         Return table
     End Function
 
@@ -54,6 +59,7 @@ Public Class RepositorioSQL
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
+        clearParams()
         con.Close()
         Return result
     End Function
@@ -66,6 +72,7 @@ Public Class RepositorioSQL
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
+        clearParams()
         con.Close()
         Return status
     End Function
@@ -81,4 +88,21 @@ Public Class RepositorioSQL
     Public Sub addParam(ByVal p1 As String, ByVal p2 As Object) Implements IRepositorio.addParam
         cmd.Parameters.AddWithValue(p1, p2)
     End Sub
+
+    Public Function executeWithReturnValue() As Integer Implements IRepositorio.executeSearchWithReturnValue
+        con.Open()
+        Try
+            Dim returnValue As SqlParameter = New SqlParameter
+            returnValue.ParameterName = "@Return_Value"
+            returnValue.Direction = ParameterDirection.ReturnValue
+            cmd.Parameters.Add(returnValue)
+            result = cmd.ExecuteNonQuery()
+            r = cmd.Parameters("@Return_Value").Value
+        Catch ex As Exception
+            Throw New Excepciones.ConexionImposibleExcepcion
+        End Try
+        clearParams()
+        con.Close()
+        Return r
+    End Function
 End Class

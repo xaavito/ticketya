@@ -11,6 +11,7 @@
         FalloInsert = 9
         UsuariosNoEncontrados = 10
         BitacoraNoEncontrada = 11
+        FamiliasNoEncontradas = 12
     End Enum
 
     Enum Bitacora
