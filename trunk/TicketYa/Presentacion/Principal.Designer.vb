@@ -40,13 +40,16 @@ Partial Class Principal
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Familias = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarFamilia = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarFamilia = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Permisos, Me.Bitacora, Me.Backup, Me.Usuarios, Me.LogoutToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Usuarios, Me.Familias, Me.Permisos, Me.Bitacora, Me.Backup, Me.LogoutToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
@@ -150,6 +153,25 @@ Partial Class Principal
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
         '
+        'Familias
+        '
+        Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilia, Me.GenerarFamilia})
+        Me.Familias.Name = "Familias"
+        Me.Familias.Size = New System.Drawing.Size(51, 20)
+        Me.Familias.Text = "Familia"
+        '
+        'BuscarFamilia
+        '
+        Me.BuscarFamilia.Name = "BuscarFamilia"
+        Me.BuscarFamilia.Size = New System.Drawing.Size(159, 22)
+        Me.BuscarFamilia.Text = "Buscar Familia"
+        '
+        'GenerarFamilia
+        '
+        Me.GenerarFamilia.Name = "GenerarFamilia"
+        Me.GenerarFamilia.Size = New System.Drawing.Size(159, 22)
+        Me.GenerarFamilia.Text = "Generar Familia"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -160,6 +182,7 @@ Partial Class Principal
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "Principal"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "TicketYa"
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
@@ -185,5 +208,8 @@ Partial Class Principal
     Friend WithEvents BuscarUsuario As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AltaUsuario As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Familias As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BuscarFamilia As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GenerarFamilia As System.Windows.Forms.ToolStripMenuItem
 
 End Class

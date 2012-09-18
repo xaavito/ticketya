@@ -19,40 +19,34 @@ Partial Class BuscarBitacoraForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BitacorasDataGrid = New System.Windows.Forms.DataGridView()
-        Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.TipoLabel = New System.Windows.Forms.Label()
-        Me.BuscarBitacoraButton = New System.Windows.Forms.Button()
-        Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
         Me.TipoBitacoraComboBox = New System.Windows.Forms.ComboBox()
+        Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
+        Me.BuscarBitacoraButton = New System.Windows.Forms.Button()
+        Me.TipoLabel = New System.Windows.Forms.Label()
+        Me.UsuarioLabel = New System.Windows.Forms.Label()
+        Me.BitacorasDataGrid = New System.Windows.Forms.DataGridView()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.BitacorasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BitacorasDataGrid
+        'TipoBitacoraComboBox
         '
-        Me.BitacorasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BitacorasDataGrid.Location = New System.Drawing.Point(12, 108)
-        Me.BitacorasDataGrid.Name = "BitacorasDataGrid"
-        Me.BitacorasDataGrid.Size = New System.Drawing.Size(759, 157)
-        Me.BitacorasDataGrid.TabIndex = 0
+        Me.TipoBitacoraComboBox.FormattingEnabled = True
+        Me.TipoBitacoraComboBox.Location = New System.Drawing.Point(91, 32)
+        Me.TipoBitacoraComboBox.Name = "TipoBitacoraComboBox"
+        Me.TipoBitacoraComboBox.Size = New System.Drawing.Size(183, 21)
+        Me.TipoBitacoraComboBox.TabIndex = 7
         '
-        'UsuarioLabel
+        'UsuarioComboBox
         '
-        Me.UsuarioLabel.AutoSize = True
-        Me.UsuarioLabel.Location = New System.Drawing.Point(13, 13)
-        Me.UsuarioLabel.Name = "UsuarioLabel"
-        Me.UsuarioLabel.Size = New System.Drawing.Size(43, 13)
-        Me.UsuarioLabel.TabIndex = 1
-        Me.UsuarioLabel.Text = "Usuario"
-        '
-        'TipoLabel
-        '
-        Me.TipoLabel.AutoSize = True
-        Me.TipoLabel.Location = New System.Drawing.Point(13, 35)
-        Me.TipoLabel.Name = "TipoLabel"
-        Me.TipoLabel.Size = New System.Drawing.Size(28, 13)
-        Me.TipoLabel.TabIndex = 2
-        Me.TipoLabel.Text = "Tipo"
+        Me.UsuarioComboBox.FormattingEnabled = True
+        Me.UsuarioComboBox.Location = New System.Drawing.Point(91, 10)
+        Me.UsuarioComboBox.Name = "UsuarioComboBox"
+        Me.UsuarioComboBox.Size = New System.Drawing.Size(183, 21)
+        Me.UsuarioComboBox.TabIndex = 6
         '
         'BuscarBitacoraButton
         '
@@ -63,21 +57,61 @@ Partial Class BuscarBitacoraForm
         Me.BuscarBitacoraButton.Text = "Buscar"
         Me.BuscarBitacoraButton.UseVisualStyleBackColor = True
         '
-        'UsuarioComboBox
+        'TipoLabel
         '
-        Me.UsuarioComboBox.FormattingEnabled = True
-        Me.UsuarioComboBox.Location = New System.Drawing.Point(91, 10)
-        Me.UsuarioComboBox.Name = "UsuarioComboBox"
-        Me.UsuarioComboBox.Size = New System.Drawing.Size(183, 21)
-        Me.UsuarioComboBox.TabIndex = 6
+        Me.TipoLabel.AutoSize = True
+        Me.TipoLabel.Location = New System.Drawing.Point(13, 35)
+        Me.TipoLabel.Name = "TipoLabel"
+        Me.TipoLabel.Size = New System.Drawing.Size(28, 13)
+        Me.TipoLabel.TabIndex = 2
+        Me.TipoLabel.Text = "Tipo"
         '
-        'TipoBitacoraComboBox
+        'UsuarioLabel
         '
-        Me.TipoBitacoraComboBox.FormattingEnabled = True
-        Me.TipoBitacoraComboBox.Location = New System.Drawing.Point(91, 32)
-        Me.TipoBitacoraComboBox.Name = "TipoBitacoraComboBox"
-        Me.TipoBitacoraComboBox.Size = New System.Drawing.Size(183, 21)
-        Me.TipoBitacoraComboBox.TabIndex = 7
+        Me.UsuarioLabel.AutoSize = True
+        Me.UsuarioLabel.Location = New System.Drawing.Point(13, 13)
+        Me.UsuarioLabel.Name = "UsuarioLabel"
+        Me.UsuarioLabel.Size = New System.Drawing.Size(43, 13)
+        Me.UsuarioLabel.TabIndex = 1
+        Me.UsuarioLabel.Text = "Usuario"
+        '
+        'BitacorasDataGrid
+        '
+        Me.BitacorasDataGrid.AllowUserToAddRows = False
+        Me.BitacorasDataGrid.AllowUserToDeleteRows = False
+        Me.BitacorasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BitacorasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn, Me.TipoColumn})
+        Me.BitacorasDataGrid.Enabled = False
+        Me.BitacorasDataGrid.Location = New System.Drawing.Point(12, 108)
+        Me.BitacorasDataGrid.Name = "BitacorasDataGrid"
+        Me.BitacorasDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
+        Me.BitacorasDataGrid.Size = New System.Drawing.Size(759, 157)
+        Me.BitacorasDataGrid.TabIndex = 0
+        '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Indentificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "mensaje"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        '
+        'FechaColumn
+        '
+        Me.FechaColumn.DataPropertyName = "fecha"
+        Me.FechaColumn.HeaderText = "Fecha"
+        Me.FechaColumn.Name = "FechaColumn"
+        '
+        'TipoColumn
+        '
+        Me.TipoColumn.DataPropertyName = "tipo"
+        Me.TipoColumn.HeaderText = "Tipo"
+        Me.TipoColumn.Name = "TipoColumn"
         '
         'BuscarBitacoraForm
         '
@@ -103,5 +137,9 @@ Partial Class BuscarBitacoraForm
     Friend WithEvents BuscarBitacoraButton As System.Windows.Forms.Button
     Friend WithEvents UsuarioComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents TipoBitacoraComboBox As System.Windows.Forms.ComboBox
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TipoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

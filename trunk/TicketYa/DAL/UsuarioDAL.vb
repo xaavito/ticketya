@@ -46,7 +46,7 @@
 
             table = New DataTable
             table = repository.executeSearchWithAdapter()
-            If (table.Rows.Count <> 1) Then
+            If (table.Rows.Count <= 0) Then
                 Throw New Excepciones.UsuariosNoEncontradosExcepcion
             End If
             For Each pepe As DataRow In table.Rows
@@ -82,6 +82,14 @@
                 usuario.nombre = pepe.Item(1)
                 usuario.apellido = pepe.Item(2)
                 usuario.usuario = pepe.Item(3)
+                usuario.activo = pepe.Item(4)
+                usuario.fechaAlta = pepe.Item(5)
+                If Not IsDBNull(pepe.Item(6)) Then
+                    usuario.fechaBaja = pepe.Item(6)
+                End If
+                Dim idioma As New BE.IdiomaBE
+                idioma.identificador = pepe.Item(7)
+                usuario.idioma = idioma
                 listaUsuarios.add(usuario)
             Next
 
@@ -94,6 +102,7 @@
 
     Shared Function altaUsuario(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal idiomaBE As BE.IdiomaBE, ByVal list As List(Of BE.FamiliaBE)) As Integer
         Dim result As Integer
+        Dim retorno As Integer
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
         Try
@@ -105,15 +114,78 @@
             repository.addParam("@ape", p4)
             repository.addParam("@idioma", idiomaBE.identificador)
 
-            result = repository.executeSearchWithReturnValue
-            If (result <= 0) Then
+            retorno = repository.executeSearchWithReturnValue
+            If (retorno <= 0) Then
                 Throw New Excepciones.InsertExcepcion
             End If
 
             If (list.Count > 0) Then
                 repository.crearComando("INSERTAR_USUARIO_FAMILIA_SP")
                 For Each fam As BE.FamiliaBE In list
-                    repository.addParam("@idUsuario", result)
+                    repository.addParam("@idUsuario", retorno)
+                    repository.addParam("@idFamilia", fam.identificador)
+                    result = repository.executeSearchWithStatus
+                    If (result <= 0) Then
+                        Throw New Excepciones.InsertExcepcion
+                    End If
+                Next
+            End If
+            'repository.transactionOK()
+
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function eliminarUsuario(ByVal p1 As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_USUARIO_SP")
+            repository.addParam("@usr", p1)
+            result = repository.executeSearchWithStatus()
+            If (result <= 0) Then
+                Throw New Excepciones.DeleteExcepcion
+            End If
+
+        Catch ex As Exception
+            Throw New Excepciones.DeleteExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function modificarUsuario(ByVal id As Integer, ByVal usr As String, ByVal pass As String, ByVal nom As String, ByVal ape As String, ByVal act As Integer, ByVal p7 As Integer, ByVal list As List(Of BE.FamiliaBE)) As Integer
+        Dim result As Integer
+        
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_USUARIO_SP")
+            'repository.transactionON()
+            repository.addParam("@id", id)
+            repository.addParam("@usr", usr)
+            repository.addParam("@pass", pass)
+            repository.addParam("@nom", nom)
+            repository.addParam("@ape", ape)
+            repository.addParam("@act", act)
+            repository.addParam("@idioma", p7)
+
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.InsertExcepcion
+            End If
+
+            repository.crearComando("REMOVER_USUARIO_FAMILIA_SP")
+            repository.addParam("@idUsuario", id)
+            result = repository.executeSearchWithStatus
+
+            If (list.Count > 0) Then
+                repository.crearComando("INSERTAR_USUARIO_FAMILIA_SP")
+                For Each fam As BE.FamiliaBE In list
+                    repository.addParam("@idUsuario", id)
                     repository.addParam("@idFamilia", fam.identificador)
                     result = repository.executeSearchWithStatus
                     If (result <= 0) Then

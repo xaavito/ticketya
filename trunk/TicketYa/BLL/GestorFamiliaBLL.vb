@@ -21,4 +21,16 @@
         Return Nothing
     End Function
 
+    Shared Function buscarFamilia(ByVal p1 As String) As Object
+        Return DAL.FamiliaDAL.buscarFamilias(p1)
+    End Function
+
+    Shared Function buscarFamilias(ByVal p1 As Integer) As List(Of BE.FamiliaBE)
+        Return DAL.FamiliaDAL.buscarFamilias(p1)
+    End Function
+
+    Shared Function altaFamilia(ByVal p1 As String) As Integer
+        Return DAL.FamiliaDAL.altaFamilia(p1)
+    End Function
+
 End Class
