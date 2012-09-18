@@ -100,4 +100,52 @@
 
         Return result
     End Function
+
+    Shared Function modificarFamilia(ByVal fam As Integer, ByVal desc As String) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_FAMILIA_SP")
+            repository.addParam("@descripcion", desc)
+            repository.addParam("@idFamilia", fam)
+
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.InsertExcepcion
+            End If
+
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function eliminarFamilia(ByVal fam As BE.FamiliaBE) As Boolean
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("CHECK_FAMILIA_ASOCIACION_SP")
+            repository.addParam("@idFamilia", fam.identificador)
+
+            result = repository.executeSearch
+            If (result <= 0) Then
+                repository.crearComando("ELIMINAR_FAMILIA_SP")
+                repository.addParam("@idFamilia", fam.identificador)
+
+                result = repository.executeSearchWithStatus
+                If (result <= 0) Then
+                    Throw New Excepciones.InsertExcepcion
+                End If
+            End If
+
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

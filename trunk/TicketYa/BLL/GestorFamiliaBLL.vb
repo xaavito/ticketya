@@ -4,8 +4,8 @@
         Return Nothing
     End Function
 
-    Public Function eliminarFamilia(ByVal fam As BE.FamiliaBE) As Boolean
-        Return Nothing
+    Public Shared Function eliminarFamilia(ByVal fam As BE.FamiliaBE) As Boolean
+        Return DAL.FamiliaDAL.eliminarFamilia(fam)
     End Function
 
     Public Function getPermisoFamilia(ByVal fam As BE.FamiliaBE) As List(Of BE.PermisoBE)
@@ -16,9 +16,9 @@
         Return DAL.FamiliaDAL.listarFamilias()
     End Function
 
-    Public Function modificarFamilia(ByVal fam As BE.FamiliaBE,
-                                     ByVal desc As String) As Boolean
-        Return Nothing
+    Public Shared Function modificarFamilia(ByVal fam As Integer,
+                                     ByVal desc As String) As Integer
+        Return DAL.FamiliaDAL.modificarFamilia(fam, desc)
     End Function
 
     Shared Function buscarFamilia(ByVal p1 As String) As Object

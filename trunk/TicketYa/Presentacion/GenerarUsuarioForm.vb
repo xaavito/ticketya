@@ -6,7 +6,7 @@
         InitializeComponent()
 
         FamiliaDataGrid.AutoGenerateColumns = False
-        initializeFamiliaDataGrid()
+        'initializeFamiliaDataGrid()
 
         Dim idiomas As List(Of BE.IdiomaBE)
         idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")

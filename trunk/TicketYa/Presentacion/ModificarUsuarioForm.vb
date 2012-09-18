@@ -10,7 +10,7 @@
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         FamiliaDataGrid.AutoGenerateColumns = False
-        initializeFamiliaDataGrid()
+        'initializeFamiliaDataGrid()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         'listaFamilias = New List(Of BE.FamiliaBE)
@@ -40,11 +40,11 @@
         setFamilias()
     End Sub
 
-    Private Sub initializeFamiliaDataGrid()
-        FamiliaDataGrid.ColumnCount = 2
-        FamiliaDataGrid.Columns(0).Name = "Identificador"
-        FamiliaDataGrid.Columns(1).Name = "Nombre"
-    End Sub
+    'Private Sub initializeFamiliaDataGrid()
+    '    FamiliaDataGrid.ColumnCount = 2
+    '    FamiliaDataGrid.Columns(0).Name = "Identificador"
+    '    FamiliaDataGrid.Columns(1).Name = "Nombre"
+    'End Sub
 
     Private Sub setFamilias()
 

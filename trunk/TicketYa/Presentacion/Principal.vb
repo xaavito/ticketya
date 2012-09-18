@@ -3,18 +3,6 @@
 Public Class Principal
     Inherits BaseForm
 
-    Private Sub BuscarPermisosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarPermisos.Click
-        Dim form As New BuscarPermisoForm
-        form.MdiParent = Me
-        form.Show()
-    End Sub
-
-    Private Sub GenerarPermisos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarPermisos.Click
-        Dim form As New GenerarPermisosForm
-        form.MdiParent = Me
-        form.Show()
-    End Sub
-
     Private Sub BuscarBitacora_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarBitacora.Click
         Dim form As New BuscarBitacoraForm
         form.MdiParent = Me
@@ -45,7 +33,7 @@ Public Class Principal
         form.Show()
     End Sub
 
-    Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LogoutToolStripMenuItem.Click
+    Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Logout.Click
         Try
             BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, BLL.Actual.usuario.usuario, Utilitarios.Enumeradores.Bitacora.LogoutExitoso)
         Catch excep As Excepciones.InsertExcepcion
@@ -65,4 +53,17 @@ Public Class Principal
         form.MdiParent = Me
         form.Show()
     End Sub
+
+    Private Sub GenerarPermisosUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosUsuario.Click
+        Dim form As New GenerarPermisoUsuarioForm
+        form.MdiParent = Me
+        form.Show()
+    End Sub
+
+    Private Sub GenerarPermisosFamilia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosFamilia.Click
+        Dim form As New GenerarPermisoFamiliaForm
+        form.MdiParent = Me
+        form.Show()
+    End Sub
+
 End Class
