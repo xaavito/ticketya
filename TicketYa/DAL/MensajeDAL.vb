@@ -15,7 +15,11 @@
             For Each pepe As DataRow In table.Rows
                 Dim mensaje As New BE.MensajeControlBE
                 mensaje.identificador = pepe.Item(0)
-                mensaje.formulario = pepe.Item(1)
+
+                If Not IsDBNull(pepe.Item(1)) Then
+                    mensaje.formulario = pepe.Item(1)
+                End If
+
                 mensaje.control = pepe.Item(2)
                 mensaje.mensaje = pepe.Item(3)
                 listaMensajes.Add(mensaje)

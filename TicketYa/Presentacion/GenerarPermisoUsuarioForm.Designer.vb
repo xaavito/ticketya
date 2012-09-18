@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class GenerarPermisosForm
+Partial Class GenerarPermisoUsuarioForm
     Inherits TicketYa.BaseForm
 
     'Form invalida a Dispose para limpiar la lista de componentes.
@@ -19,7 +19,17 @@ Partial Class GenerarPermisosForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
+        Me.SuspendLayout()
+        '
+        'BuscarPermisoForm
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.ClientSize = New System.Drawing.Size(522, 352)
+        Me.Name = "BuscarPermisoForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Permisos"
+        Me.ResumeLayout(False)
+
     End Sub
 
 End Class

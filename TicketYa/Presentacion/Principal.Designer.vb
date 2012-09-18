@@ -25,58 +25,97 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
+        Me.Usuarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Familias = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarFamilia = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarFamilia = New System.Windows.Forms.ToolStripMenuItem()
         Me.Permisos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarPermisos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarPermisos = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PermisosUsuario = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PermisosFamilia = New System.Windows.Forms.ToolStripMenuItem()
         Me.Bitacora = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarBitacora = New System.Windows.Forms.ToolStripMenuItem()
         Me.Backup = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarBackup = New System.Windows.Forms.ToolStripMenuItem()
         Me.RealizarRestore = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Usuarios = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarUsuario = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AltaUsuario = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogoutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Familias = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarFamilia = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarFamilia = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Usuarios, Me.Familias, Me.Permisos, Me.Bitacora, Me.Backup, Me.LogoutToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Usuarios, Me.Familias, Me.Permisos, Me.Bitacora, Me.Backup, Me.Logout})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
+        'Usuarios
+        '
+        Me.Usuarios.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarUsuario, Me.AltaUsuario})
+        Me.Usuarios.Name = "Usuarios"
+        Me.Usuarios.Size = New System.Drawing.Size(60, 20)
+        Me.Usuarios.Tag = "Usuarios"
+        Me.Usuarios.Text = "Usuarios"
+        '
+        'BuscarUsuario
+        '
+        Me.BuscarUsuario.Name = "BuscarUsuario"
+        Me.BuscarUsuario.Size = New System.Drawing.Size(156, 22)
+        Me.BuscarUsuario.Text = "Buscar Usuario"
+        '
+        'AltaUsuario
+        '
+        Me.AltaUsuario.Name = "AltaUsuario"
+        Me.AltaUsuario.Size = New System.Drawing.Size(156, 22)
+        Me.AltaUsuario.Text = "Alta Usuario"
+        '
+        'Familias
+        '
+        Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilia, Me.GenerarFamilia})
+        Me.Familias.Name = "Familias"
+        Me.Familias.Size = New System.Drawing.Size(51, 20)
+        Me.Familias.Text = "Familia"
+        '
+        'BuscarFamilia
+        '
+        Me.BuscarFamilia.Name = "BuscarFamilia"
+        Me.BuscarFamilia.Size = New System.Drawing.Size(159, 22)
+        Me.BuscarFamilia.Text = "Buscar Familia"
+        '
+        'GenerarFamilia
+        '
+        Me.GenerarFamilia.Name = "GenerarFamilia"
+        Me.GenerarFamilia.Size = New System.Drawing.Size(159, 22)
+        Me.GenerarFamilia.Text = "Generar Familia"
+        '
         'Permisos
         '
-        Me.Permisos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarPermisos, Me.GenerarPermisos})
+        Me.Permisos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermisosUsuario, Me.PermisosFamilia})
         Me.Permisos.Name = "Permisos"
         Me.Permisos.Size = New System.Drawing.Size(61, 20)
         Me.Permisos.Tag = "Permisos"
         Me.Permisos.Text = "Permisos"
         '
-        'BuscarPermisos
+        'PermisosUsuario
         '
-        Me.BuscarPermisos.Name = "BuscarPermisos"
-        Me.BuscarPermisos.Size = New System.Drawing.Size(169, 22)
-        Me.BuscarPermisos.Tag = "Buscar"
-        Me.BuscarPermisos.Text = "Buscar Permisos"
+        Me.PermisosUsuario.Name = "PermisosUsuario"
+        Me.PermisosUsuario.Size = New System.Drawing.Size(166, 22)
+        Me.PermisosUsuario.Tag = "Buscar"
+        Me.PermisosUsuario.Text = "Permisos Usuario"
         '
-        'GenerarPermisos
+        'PermisosFamilia
         '
-        Me.GenerarPermisos.Name = "GenerarPermisos"
-        Me.GenerarPermisos.Size = New System.Drawing.Size(169, 22)
-        Me.GenerarPermisos.Tag = "Generar"
-        Me.GenerarPermisos.Text = "Generar Permisos"
+        Me.PermisosFamilia.Name = "PermisosFamilia"
+        Me.PermisosFamilia.Size = New System.Drawing.Size(166, 22)
+        Me.PermisosFamilia.Tag = "Generar"
+        Me.PermisosFamilia.Text = "Permisos Familia"
         '
         'Bitacora
         '
@@ -112,31 +151,11 @@ Partial Class Principal
         Me.RealizarRestore.Size = New System.Drawing.Size(164, 22)
         Me.RealizarRestore.Text = "Realizar Restore"
         '
-        'Usuarios
+        'Logout
         '
-        Me.Usuarios.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarUsuario, Me.AltaUsuario})
-        Me.Usuarios.Name = "Usuarios"
-        Me.Usuarios.Size = New System.Drawing.Size(60, 20)
-        Me.Usuarios.Tag = "Usuarios"
-        Me.Usuarios.Text = "Usuarios"
-        '
-        'BuscarUsuario
-        '
-        Me.BuscarUsuario.Name = "BuscarUsuario"
-        Me.BuscarUsuario.Size = New System.Drawing.Size(156, 22)
-        Me.BuscarUsuario.Text = "Buscar Usuario"
-        '
-        'AltaUsuario
-        '
-        Me.AltaUsuario.Name = "AltaUsuario"
-        Me.AltaUsuario.Size = New System.Drawing.Size(156, 22)
-        Me.AltaUsuario.Text = "Alta Usuario"
-        '
-        'LogoutToolStripMenuItem
-        '
-        Me.LogoutToolStripMenuItem.Name = "LogoutToolStripMenuItem"
-        Me.LogoutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.LogoutToolStripMenuItem.Text = "Logout"
+        Me.Logout.Name = "Logout"
+        Me.Logout.Size = New System.Drawing.Size(52, 20)
+        Me.Logout.Text = "Logout"
         '
         'StatusStrip
         '
@@ -152,25 +171,6 @@ Partial Class Principal
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
-        '
-        'Familias
-        '
-        Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilia, Me.GenerarFamilia})
-        Me.Familias.Name = "Familias"
-        Me.Familias.Size = New System.Drawing.Size(51, 20)
-        Me.Familias.Text = "Familia"
-        '
-        'BuscarFamilia
-        '
-        Me.BuscarFamilia.Name = "BuscarFamilia"
-        Me.BuscarFamilia.Size = New System.Drawing.Size(159, 22)
-        Me.BuscarFamilia.Text = "Buscar Familia"
-        '
-        'GenerarFamilia
-        '
-        Me.GenerarFamilia.Name = "GenerarFamilia"
-        Me.GenerarFamilia.Size = New System.Drawing.Size(159, 22)
-        Me.GenerarFamilia.Text = "Generar Familia"
         '
         'Principal
         '
@@ -197,8 +197,8 @@ Partial Class Principal
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
     Friend WithEvents Permisos As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarPermisos As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GenerarPermisos As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PermisosUsuario As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PermisosFamilia As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Bitacora As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Backup As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Usuarios As System.Windows.Forms.ToolStripMenuItem
@@ -207,7 +207,7 @@ Partial Class Principal
     Friend WithEvents RealizarRestore As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarUsuario As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AltaUsuario As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents LogoutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Logout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Familias As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarFamilia As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarFamilia As System.Windows.Forms.ToolStripMenuItem

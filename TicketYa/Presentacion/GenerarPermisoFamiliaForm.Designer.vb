@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class BuscarPermisoForm
+Partial Class GenerarPermisoFamiliaForm
     Inherits TicketYa.BaseForm
 
     'Form invalida a Dispose para limpiar la lista de componentes.

@@ -48,12 +48,26 @@ Public Class BaseForm
                                     itemMenu.Text = mens.mensaje
                                 End If
                             Next
+                            If cabeceraMenu.Name.Equals(mens.control) Then
+                                cabeceraMenu.Text = mens.mensaje
+                            End If
                         Next cabeceraMenu
                     End If
                     If (TypeOf ctrl Is Label Or
                         TypeOf ctrl Is Button) And
                         ctrl.Name.Equals(mens.control) Then
                         ctrl.Text = mens.mensaje
+                    End If
+
+                    If (TypeOf ctrl Is DataGridView) Then
+                        Dim dataGrid As DataGridView
+                        dataGrid = DirectCast(ctrl, DataGridView)
+                        For Each col As DataGridViewColumn In dataGrid.Columns
+                            Debug.Print(col.Name)
+                            If col.Name.Equals(mens.control) Then
+                                col.HeaderText = mens.mensaje
+                            End If
+                        Next
                     End If
                 Next ctrl
             Next mens
