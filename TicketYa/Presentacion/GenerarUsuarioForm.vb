@@ -4,9 +4,9 @@
     Public Sub New()
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
+
+        FamiliaDataGrid.AutoGenerateColumns = False
         initializeFamiliaDataGrid()
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        'listaFamilias = New List(Of BE.FamiliaBE)
 
         Dim idiomas As List(Of BE.IdiomaBE)
         idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
@@ -30,12 +30,15 @@
 
     Private Sub AltaUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaUsuariosButton.Click
         Try
-            BLL.GestorUsuarioBLL.altaUsuario(UsuarioTextBox.Text,
+            If (BLL.GestorUsuarioBLL.altaUsuario(UsuarioTextBox.Text,
                                              PassTextBox.Text,
                                              NombreTextBox.Text,
                                              ApellidoTextBox.Text,
                                              DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
-                                             getFamilias())
+                                             getFamilias())) Then
+                MsgBox("Ususario Creado Existosamente")
+                limpiarParametros()
+            End If
 
         Catch ex As Excepciones.InsertExcepcion
             My.Application.HandlerException(ex)
@@ -61,4 +64,17 @@
         Return listaFamilias
     End Function
 
+    Private Sub limpiarParametros()
+        UsuarioTextBox.Text = ""
+        PassTextBox.Text = ""
+        NombreTextBox.Text = ""
+        ApellidoTextBox.Text = ""
+        FamiliaDataGrid.Rows.Clear()
+    End Sub
+
+    Private Sub QuitarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarFamiliaButton.Click
+        If (FamiliaDataGrid.SelectedRows.Count > 0) Then
+            FamiliaDataGrid.Rows.Remove(FamiliaDataGrid.SelectedRows(0))
+        End If
+    End Sub
 End Class

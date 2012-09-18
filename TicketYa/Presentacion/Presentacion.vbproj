@@ -84,6 +84,12 @@
     <Compile Include="BuscarBitacoraForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarFamiliaForm.Designer.vb">
+      <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarFamiliaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BuscarPermisoForm.Designer.vb">
       <DependentUpon>BuscarPermisoForm.vb</DependentUpon>
     </Compile>
@@ -94,6 +100,12 @@
       <DependentUpon>BuscarUsuarioForm.vb</DependentUpon>
     </Compile>
     <Compile Include="BuscarUsuarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarFamiliaForm.Designer.vb">
+      <DependentUpon>GenerarFamiliaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarFamiliaForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerarPermisosForm.Designer.vb">
@@ -124,6 +136,12 @@
       <DependentUpon>BaseForm.vb</DependentUpon>
     </Compile>
     <Compile Include="BaseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuarioForm.Designer.vb">
+      <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuarioForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MyApplication.vb" />
@@ -159,8 +177,14 @@
     <EmbeddedResource Include="BuscarBitacoraForm.resx">
       <DependentUpon>BuscarBitacoraForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarFamiliaForm.resx">
+      <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarUsuarioForm.resx">
       <DependentUpon>BuscarUsuarioForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarFamiliaForm.resx">
+      <DependentUpon>GenerarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarUsuarioForm.resx">
       <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
@@ -173,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUsuarioForm.resx">
+      <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.vb</DependentUpon>

@@ -53,4 +53,16 @@ Public Class Principal
         End Try
         Me.Close()
     End Sub
+
+    Private Sub BuscarFamilia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarFamilia.Click
+        Dim form As New BuscarFamiliaForm
+        form.MdiParent = Me
+        form.Show()
+    End Sub
+
+    Private Sub GenerarFamilia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarFamilia.Click
+        Dim form As New GenerarFamiliaForm
+        form.MdiParent = Me
+        form.Show()
+    End Sub
 End Class

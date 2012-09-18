@@ -31,9 +31,12 @@ Partial Class GenerarUsuarioForm
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
+        Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
         Me.AgregarFamiliaButton = New System.Windows.Forms.Button()
+        Me.QuitarFamiliaButton = New System.Windows.Forms.Button()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -133,11 +136,25 @@ Partial Class GenerarUsuarioForm
         Me.FamiliaDataGrid.AllowUserToAddRows = False
         Me.FamiliaDataGrid.AllowUserToDeleteRows = False
         Me.FamiliaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.FamiliaDataGrid.Enabled = False
+        Me.FamiliaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.FamiliaColumn})
         Me.FamiliaDataGrid.Location = New System.Drawing.Point(327, 12)
+        Me.FamiliaDataGrid.MultiSelect = False
         Me.FamiliaDataGrid.Name = "FamiliaDataGrid"
+        Me.FamiliaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FamiliaDataGrid.Size = New System.Drawing.Size(218, 152)
         Me.FamiliaDataGrid.TabIndex = 12
+        '
+        'Identificador
+        '
+        Me.Identificador.HeaderText = "Identificador"
+        Me.Identificador.Name = "Identificador"
+        Me.Identificador.Visible = False
+        '
+        'FamiliaColumn
+        '
+        Me.FamiliaColumn.DataPropertyName = "descripcion"
+        Me.FamiliaColumn.HeaderText = "Familia"
+        Me.FamiliaColumn.Name = "FamiliaColumn"
         '
         'IdiomaLabel
         '
@@ -165,10 +182,20 @@ Partial Class GenerarUsuarioForm
         Me.AgregarFamiliaButton.Text = "Agregar"
         Me.AgregarFamiliaButton.UseVisualStyleBackColor = True
         '
+        'QuitarFamiliaButton
+        '
+        Me.QuitarFamiliaButton.Location = New System.Drawing.Point(246, 146)
+        Me.QuitarFamiliaButton.Name = "QuitarFamiliaButton"
+        Me.QuitarFamiliaButton.Size = New System.Drawing.Size(75, 23)
+        Me.QuitarFamiliaButton.TabIndex = 16
+        Me.QuitarFamiliaButton.Text = "Quitar"
+        Me.QuitarFamiliaButton.UseVisualStyleBackColor = True
+        '
         'GenerarUsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(638, 199)
+        Me.Controls.Add(Me.QuitarFamiliaButton)
         Me.Controls.Add(Me.AgregarFamiliaButton)
         Me.Controls.Add(Me.IdiomaLabel)
         Me.Controls.Add(Me.IdiomaComboBox)
@@ -207,5 +234,8 @@ Partial Class GenerarUsuarioForm
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents AgregarFamiliaButton As System.Windows.Forms.Button
+    Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FamiliaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QuitarFamiliaButton As System.Windows.Forms.Button
 
 End Class

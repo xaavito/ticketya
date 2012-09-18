@@ -24,4 +24,9 @@
                                            ByVal idioma As BE.IdiomaBE) As Boolean
         Return Nothing
     End Function
+
+    Public Shared Function buscarIdioma(ByVal usr As BE.UsuarioBE) As BE.IdiomaBE
+        Return DAL.IdiomaDAL.buscarIdioma(usr.idioma.identificador)
+    End Function
+
 End Class

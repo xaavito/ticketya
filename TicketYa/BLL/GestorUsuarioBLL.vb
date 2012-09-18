@@ -1,9 +1,20 @@
 ﻿Public Class GestorUsuarioBLL
 
+    Shared Function modificarUsuario(ByVal id As Integer,
+                                     ByVal usr As String,
+                                     ByVal pass As String,
+                                     ByVal nom As String,
+                                     ByVal ape As String,
+                                     ByVal act As Integer,
+                                     ByVal idiomaBE As BE.IdiomaBE,
+                                     ByVal list As List(Of BE.FamiliaBE)) As Integer
+        Return DAL.UsuarioDAL.modificarUsuario(id, usr, Utilitarios.Encrypter.EncryptPasswordMD5(pass), nom, ape, act, idiomaBE.identificador, list)
+    End Function
+
     Public Shared Function buscarUsuario(ByVal usr As String, ByVal pass As String) As BE.UsuarioBE
         Dim usuario As BE.UsuarioBE
         usuario = DAL.UsuarioDAL.buscarUsuario(usr, pass)
-        
+
         Dim idioma As BE.IdiomaBE
         idioma = DAL.IdiomaDAL.buscarIdioma(usuario.idioma.identificador)
 
@@ -40,21 +51,11 @@
         Return Nothing
     End Function
 
-    Public Function eliminarUsuario(ByVal usr As BE.UsuarioBE) As Boolean
-        Return Nothing
+    Public Shared Function eliminarUsuario(ByVal usr As BE.UsuarioBE) As Integer
+        Return DAL.UsuarioDAL.eliminarUsuario(usr.identificador)
     End Function
 
     Public Function getPermisoUsuario(ByVal usr As BE.UsuarioBE) As List(Of BE.PermisoBE)
-        Return Nothing
-    End Function
-
-    Public Function modificarUsuario(ByVal usr As String,
-                                     ByVal pass As String,
-                                     ByVal nom As String,
-                                     ByVal ape As String,
-                                     ByVal mail As String,
-                                     ByVal dni As Long,
-                                     ByVal usuario As BE.UsuarioBE) As Boolean
         Return Nothing
     End Function
 
