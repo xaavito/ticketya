@@ -59,4 +59,31 @@
         Return permisos
     End Function
 
+    Shared Function listarPermisos() As List(Of BE.PermisoBE)
+        Dim table As DataTable
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim permisos As New List(Of BE.PermisoBE)
+        Try
+            repository.crearComando("LISTAR_PERMISOS_SP")
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.PermisoNoEncontradoExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim permiso As New BE.PermisoBE
+                permiso.identificador = pepe.Item(0)
+                permiso.componente = pepe.Item(1)
+                permiso.descripcion = pepe.Item(2)
+                permisos.Add(permiso)
+            Next
+
+        Catch ex As Exception
+            Throw New Excepciones.PermisoNoEncontradoExcepcion
+        End Try
+
+        Return permisos
+    End Function
+
 End Class

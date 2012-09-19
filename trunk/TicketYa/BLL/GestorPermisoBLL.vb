@@ -17,5 +17,17 @@
         Return Nothing
     End Function
 
+    Shared Function listarPermisos() As List(Of BE.PermisoBE)
+        Return DAL.PermisoDAL.listarPermisos()
+    End Function
+
+    Shared Function buscarPermisoFamilia(ByVal p1 As Integer) As List(Of BE.PermisoBE)
+        Return DAL.PermisoDAL.buscarPermisoFamilia(p1)
+    End Function
+
+    Shared Function altaPermisoFamilia(ByVal list As List(Of BE.PermisoBE)) As Boolean
+        Throw New NotImplementedException
+    End Function
+
 
 End Class

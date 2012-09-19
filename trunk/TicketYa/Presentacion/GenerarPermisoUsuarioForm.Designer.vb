@@ -21,11 +21,11 @@ Partial Class GenerarPermisoUsuarioForm
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'BuscarPermisoForm
+        'GenerarPermisoUsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(522, 352)
-        Me.Name = "BuscarPermisoForm"
+        Me.ClientSize = New System.Drawing.Size(796, 352)
+        Me.Name = "GenerarPermisoUsuarioForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Permisos"
         Me.ResumeLayout(False)

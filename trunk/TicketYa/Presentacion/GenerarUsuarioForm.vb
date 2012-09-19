@@ -31,16 +31,18 @@
     Private Sub AltaUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaUsuariosButton.Click
         Try
             If (BLL.GestorUsuarioBLL.altaUsuario(UsuarioTextBox.Text,
-                                             PassTextBox.Text,
-                                             NombreTextBox.Text,
-                                             ApellidoTextBox.Text,
-                                             DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
-                                             getFamilias())) Then
-                MsgBox("Ususario Creado Existosamente")
+                                                PassTextBox.Text,
+                                                NombreTextBox.Text,
+                                                ApellidoTextBox.Text,
+                                                DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
+                                                getFamilias())) Then
+                Throw New Excepciones.UsuarioCreadoExistosamente
                 limpiarParametros()
             End If
 
         Catch ex As Excepciones.InsertExcepcion
+            My.Application.HandlerException(ex)
+        Catch ex As Excepciones.UsuarioCreadoExistosamente
             My.Application.HandlerException(ex)
         End Try
 

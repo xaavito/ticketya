@@ -180,11 +180,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BuscarBackupForm.resx">
+      <DependentUpon>BuscarBackupForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarBitacoraForm.resx">
       <DependentUpon>BuscarBitacoraForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarFamiliaForm.resx">
       <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarPermisoFamiliaForm.resx">
+      <DependentUpon>GenerarPermisoFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarPermisoUsuarioForm.resx">
       <DependentUpon>GenerarPermisoUsuarioForm.vb</DependentUpon>
@@ -221,6 +227,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RealizarRestoreForm.resx">
+      <DependentUpon>RealizarRestoreForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

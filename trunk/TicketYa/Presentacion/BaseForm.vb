@@ -34,7 +34,7 @@ Public Class BaseForm
         Next f
     End Sub
 
-    Protected Sub setIdioma()
+    Public Sub setIdioma()
         If (Me.HasChildren) Then
             For Each mens As BE.MensajeControlBE In BLL.Actual.idioma.mensaje
                 For Each ctrl As Control In Me.Controls
@@ -75,6 +75,7 @@ Public Class BaseForm
     End Sub
 
     Private Sub MainForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        If Me.DesignMode Then Exit Sub
         Dim login As LoginForm
         If Not Me.Name.Equals("LoginForm") Then
             'eliminarPermisos()
@@ -100,7 +101,10 @@ Public Class BaseForm
                         Dim menu As MenuStrip
                         menu = DirectCast(ctrl, MenuStrip)
                         For Each cabeceraMenu As ToolStripMenuItem In menu.Items
-                            cabeceraMenu.Enabled = False
+                            If (Not cabeceraMenu.Name.Equals("Logout")) Then
+                                cabeceraMenu.Enabled = False
+                            End If
+
                             For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
                                 itemMenu.Enabled = False
                             Next

@@ -27,6 +27,7 @@
 
         Dim listaFamilia As List(Of BE.FamiliaBE)
 
+
         listaFamilia = DAL.FamiliaDAL.buscarFamilias(usuario.identificador)
 
         For Each familia As BE.FamiliaBE In listaFamilia

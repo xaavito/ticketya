@@ -67,6 +67,7 @@
     <Compile Include="Actual.vb" />
     <Compile Include="BitacoraBLL.vb" />
     <Compile Include="ExcepcionBLL.vb" />
+    <Compile Include="GestorBackupBLL.vb" />
     <Compile Include="GestorBitacoraBLL.vb" />
     <Compile Include="GestorFamiliaBLL.vb" />
     <Compile Include="GestorFormularioBLL.vb" />

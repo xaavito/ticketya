@@ -67,5 +67,11 @@
                 End Try
             End If
         End Sub
+
+        Public Sub cambiarIdioma()
+            For Each f As BaseForm In My.Application.OpenForms
+                f.setIdioma()
+            Next
+        End Sub
     End Class
 End Namespace
