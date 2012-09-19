@@ -47,13 +47,17 @@
     'End Sub
 
     Private Sub setFamilias()
+        Try
+            listaFamilias = BLL.GestorFamiliaBLL.buscarFamilias(usuario.identificador)
 
-        listaFamilias = BLL.GestorFamiliaBLL.buscarFamilias(usuario.identificador)
+            For Each fam As BE.FamiliaBE In listaFamilias
+                Dim row As String() = New String() {fam.identificador, fam.descripcion}
+                FamiliaDataGrid.Rows.Add(row)
+            Next
+        Catch ex As Excepciones.FamiliaNoEncontradaExcepcion
+            My.Application.HandlerException(ex)
+        End Try
 
-        For Each fam As BE.FamiliaBE In listaFamilias
-            Dim row As String() = New String() {fam.identificador, fam.descripcion}
-            FamiliaDataGrid.Rows.Add(row)
-        Next
 
     End Sub
     Private Sub AgregarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarFamiliaButton.Click
@@ -79,6 +83,8 @@
                                                       DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
                                                       getFamilias())) Then
                 MsgBox("Usuario Modificado Existosamente")
+                BLL.Actual.idioma = DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE)
+                My.Application.cambiarIdioma()
                 limpiarParametros()
                 Me.Close()
             End If

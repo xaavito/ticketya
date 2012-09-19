@@ -18,3 +18,14 @@ Public Class UsuariosNoEncontradosExcepcion
         Me.mensaje = "Usuario No encontrado"
     End Sub
 End Class
+
+Public Class UsuarioCreadoExistosamente
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("Usuario C")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.UsuarioCreadoExitosamente
+        Me.tipo = MsgBoxStyle.Information
+        Me.mensaje = "Usuario No encontrado"
+    End Sub
+End Class
