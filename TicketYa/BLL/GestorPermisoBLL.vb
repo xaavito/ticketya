@@ -29,5 +29,9 @@
         Throw New NotImplementedException
     End Function
 
+    Shared Function buscarPermisoUsuario(ByVal p1 As Integer) As List(Of BE.PermisoBE)
+        Throw New NotImplementedException
+    End Function
+
 
 End Class

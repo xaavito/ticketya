@@ -6,6 +6,7 @@
 
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
+
         PermisoDataGrid.AutoGenerateColumns = False
         FamiliaDataGrid.AutoGenerateColumns = False
         PermisosFamiliaDataGrid.AutoGenerateColumns = False
