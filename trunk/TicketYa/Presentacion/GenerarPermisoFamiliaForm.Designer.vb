@@ -23,6 +23,8 @@ Partial Class GenerarPermisoFamiliaForm
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IndentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PermisosFamiliaDataGrid = New System.Windows.Forms.DataGridView()
         Me.IdentificadorColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PermisoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -30,8 +32,6 @@ Partial Class GenerarPermisoFamiliaForm
         Me.QuitarPermisoButton = New System.Windows.Forms.Button()
         Me.GuardarPermisoButton = New System.Windows.Forms.Button()
         Me.CancelarButton = New System.Windows.Forms.Button()
-        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PermisoDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PermisosFamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +75,19 @@ Partial Class GenerarPermisoFamiliaForm
         Me.FamiliaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FamiliaDataGrid.Size = New System.Drawing.Size(184, 181)
         Me.FamiliaDataGrid.TabIndex = 1
+        '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.Visible = False
+        '
+        'UsuarioColumn
+        '
+        Me.UsuarioColumn.DataPropertyName = "descripcion"
+        Me.UsuarioColumn.HeaderText = "Familia"
+        Me.UsuarioColumn.Name = "UsuarioColumn"
         '
         'PermisosFamiliaDataGrid
         '
@@ -138,19 +151,6 @@ Partial Class GenerarPermisoFamiliaForm
         Me.CancelarButton.Text = "Cancelar"
         Me.CancelarButton.UseVisualStyleBackColor = True
         '
-        'IdentificadorColumn
-        '
-        Me.IdentificadorColumn.DataPropertyName = "identificador"
-        Me.IdentificadorColumn.HeaderText = "Identificador"
-        Me.IdentificadorColumn.Name = "IdentificadorColumn"
-        Me.IdentificadorColumn.Visible = False
-        '
-        'UsuarioColumn
-        '
-        Me.UsuarioColumn.DataPropertyName = "descripcion"
-        Me.UsuarioColumn.HeaderText = "Familia"
-        Me.UsuarioColumn.Name = "UsuarioColumn"
-        '
         'GenerarPermisoFamiliaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -164,7 +164,7 @@ Partial Class GenerarPermisoFamiliaForm
         Me.Controls.Add(Me.PermisoDataGrid)
         Me.Name = "GenerarPermisoFamiliaForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Permiso Familia"
+        Me.Text = "Permiso"
         CType(Me.PermisoDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PermisosFamiliaDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
