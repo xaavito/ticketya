@@ -147,7 +147,7 @@ Partial Class GenerarPermisoUsuarioForm
         '
         'UsuarioColumn
         '
-        Me.UsuarioColumn.DataPropertyName = "descripcion"
+        Me.UsuarioColumn.DataPropertyName = "nombre"
         Me.UsuarioColumn.HeaderText = "Usuario"
         Me.UsuarioColumn.Name = "UsuarioColumn"
         '

@@ -25,12 +25,24 @@
         Return DAL.PermisoDAL.buscarPermisoFamilia(p1)
     End Function
 
-    Shared Function altaPermisoFamilia(ByVal list As List(Of BE.PermisoBE)) As Boolean
-        Throw New NotImplementedException
+    Shared Function altaPermisoFamilia(ByVal fam As BE.FamiliaBE,
+                                       ByVal list As List(Of BE.PermisoBE)) As Integer
+        If Not fam.permisos Is Nothing Then
+            DAL.PermisoDAL.bajaPermisoFamilia(fam)
+        End If
+        Return DAL.PermisoDAL.altaPermisoFamilia(fam, list)
     End Function
 
     Shared Function buscarPermisoUsuario(ByVal p1 As Integer) As List(Of BE.PermisoBE)
-        Throw New NotImplementedException
+        Return DAL.PermisoDAL.buscarPermisoUsuario(p1)
+    End Function
+
+    Shared Function altaPermisoUsuario(ByVal usuarioBE As BE.UsuarioBE,
+                                       ByVal list As List(Of BE.PermisoBE)) As Integer
+        If Not usuarioBE.permisos Is Nothing Then
+            DAL.PermisoDAL.bajaPermisoUsuario(usuarioBE)
+        End If
+        Return DAL.PermisoDAL.altaPermisoUsuario(usuarioBE, list)
     End Function
 
 

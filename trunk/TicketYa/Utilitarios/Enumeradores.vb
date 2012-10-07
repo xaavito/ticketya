@@ -14,6 +14,7 @@
         FamiliasNoEncontradas = 12
         FalloDelete = 13
         UsuarioCreadoExitosamente = 14
+        PermisoNoAsociado = 15
     End Enum
 
     Enum Bitacora
