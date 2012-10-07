@@ -21,7 +21,8 @@
             form = New ModificarFamiliaForm
             'form.MdiParent = Me.Parent
             form.addFamilia(fam)
-            form.Show()
+            form.ShowDialog()
+
         End If
     End Sub
 

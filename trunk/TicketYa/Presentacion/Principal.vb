@@ -21,18 +21,6 @@ Public Class Principal
         form.Show()
     End Sub
 
-    Private Sub BuscarUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarUsuario.Click
-        Dim form As New BuscarUsuarioForm
-        form.MdiParent = Me
-        form.Show()
-    End Sub
-
-    Private Sub AltaUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaUsuario.Click
-        Dim form As New GenerarUsuarioForm
-        form.MdiParent = Me
-        form.Show()
-    End Sub
-
     Private Sub LogoutToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Logout.Click
         Try
             BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, BLL.Actual.usuario.usuario, Utilitarios.Enumeradores.Bitacora.LogoutExitoso)
@@ -42,28 +30,39 @@ Public Class Principal
         Me.Close()
     End Sub
 
-    Private Sub BuscarFamilia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarFamilia.Click
+    Private Sub BuscarUsuariosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarUsuarios.Click
+        Dim form As New BuscarUsuarioForm
+        form.MdiParent = Me
+        form.Show()
+    End Sub
+
+    Private Sub GenerarUsusariosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarUsuarios.Click
+        Dim form As New GenerarUsuarioForm
+        form.MdiParent = Me
+        form.Show()
+    End Sub
+
+    Private Sub BuscarFamiliasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarFamilia.Click
         Dim form As New BuscarFamiliaForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub GenerarFamilia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarFamilia.Click
+    Private Sub GenerarFamiliasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarFamilia.Click
         Dim form As New GenerarFamiliaForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub GenerarPermisosUsuario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosUsuario.Click
+    Private Sub PermisosUsuarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosUsuario.Click
         Dim form As New GenerarPermisoUsuarioForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub GenerarPermisosFamilia_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosFamilia.Click
+    Private Sub PermisoFamiliaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisoFamilia.Click
         Dim form As New GenerarPermisoFamiliaForm
         form.MdiParent = Me
         form.Show()
     End Sub
-
 End Class
