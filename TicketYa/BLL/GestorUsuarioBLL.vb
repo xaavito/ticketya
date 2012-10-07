@@ -21,7 +21,7 @@
         usuario.idioma = idioma
 
         Dim listaPermisos As List(Of BE.PermisoBE)
-        listaPermisos = DAL.PermisoDAL.buscarPermisoPersona(usuario.identificador)
+        listaPermisos = DAL.PermisoDAL.buscarPermisoUsuario(usuario.identificador)
 
         usuario.permisos = listaPermisos
 

@@ -22,12 +22,13 @@
     End Sub
 
     Private Sub FamiliaDataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles FamiliaDataGrid.CellMouseClick
-
+        PermisosFamiliaDataGrid.Rows.Clear()
         fam = DirectCast(FamiliaDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
         Dim listaPermisos As List(Of BE.PermisoBE)
         Try
             listaPermisos = BLL.GestorPermisoBLL.buscarPermisoFamilia(fam.identificador)
-            PermisosFamiliaDataGrid.Rows.Clear()
+            fam.permisos = listaPermisos
+            'PermisosFamiliaDataGrid.Rows.Clear()
             For Each perm As BE.PermisoBE In listaPermisos
                 Dim row As String() = New String() {perm.identificador, perm.descripcion}
                 PermisosFamiliaDataGrid.Rows.Add(row)
@@ -38,11 +39,22 @@
     End Sub
 
     Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click
+        Dim permisoExistente As Boolean = False
         perm = DirectCast(PermisoDataGrid.CurrentRow.DataBoundItem, BE.PermisoBE)
         If Not (perm Is Nothing And fam Is Nothing) Then
             Dim row As String() = New String() {perm.identificador, perm.descripcion}
-            PermisosFamiliaDataGrid.Rows.Add(row)
+
+            For Each elem As DataGridViewRow In PermisosFamiliaDataGrid.Rows
+                If (elem.Cells.Item(0).Value = perm.identificador) Then
+                    permisoExistente = True
+                    Exit For
+                End If
+            Next
+            If (permisoExistente = False) Then
+                PermisosFamiliaDataGrid.Rows.Add(row)
+            End If
         End If
+        
     End Sub
 
     Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click
@@ -53,13 +65,13 @@
 
     Private Sub GuardarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GuardarPermisoButton.Click
         Try
-            If (BLL.GestorPermisoBLL.altaPermisoFamilia(getPermisosFamilia)) Then
-                Throw New Excepciones.PermisosAsociadosExitosamente
+            If (BLL.GestorPermisoBLL.altaPermisoFamilia(fam, getPermisosFamilia) <= 0) Then
+                Throw New Excepciones.AsociacionDePermisosExcepcion
             End If
 
         Catch ex As Excepciones.InsertExcepcion
             My.Application.HandlerException(ex)
-        Catch ex As Excepciones.PermisosAsociadosExitosamente
+        Catch ex As Excepciones.AsociacionDePermisosExcepcion
             My.Application.HandlerException(ex)
         End Try
     End Sub
@@ -71,7 +83,7 @@
     Private Function getPermisosFamilia() As List(Of BE.PermisoBE)
         Dim listaPermisos = New List(Of BE.PermisoBE)
         Dim p As BE.PermisoBE
-        For Each row As DataGridViewRow In FamiliaDataGrid.Rows
+        For Each row As DataGridViewRow In PermisosFamiliaDataGrid.Rows
             p = New BE.PermisoBE
             p.identificador = row.Cells(0).Value
             p.descripcion = row.Cells(1).Value
