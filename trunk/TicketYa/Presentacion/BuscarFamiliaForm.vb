@@ -19,10 +19,8 @@
 
         If (Not fam Is Nothing) Then
             form = New ModificarFamiliaForm
-            'form.MdiParent = Me.Parent
             form.addFamilia(fam)
             form.ShowDialog()
-
         End If
     End Sub
 
@@ -32,11 +30,10 @@
         If (Not fam Is Nothing) Then
             If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
                 MsgBox("Usuario Eliminado Exitosamente")
-                'UsuariosDataGrid.Refresh() no funca esto???
-
+                
                 buscarFamilia(FamiliaTextBox.Text)
             Else
-                MsgBox("Familia tiene usuarios asociados, por favor desasociar antes de eleminar")
+                MsgBox("Familia tiene usuarios asociados, por favor desasociar antes de eliminar")
             End If
         End If
     End Sub
