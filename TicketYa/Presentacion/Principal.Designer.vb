@@ -25,12 +25,6 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.Bitacora = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarBitacora = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Backup = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarBackup = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RealizarRestore = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.Administracion = New System.Windows.Forms.ToolStripMenuItem()
         Me.Usuarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarUsuarios = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,15 +35,6 @@ Partial Class Principal
         Me.Permisos = New System.Windows.Forms.ToolStripMenuItem()
         Me.PermisosUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.PermisoFamilia = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Idioma = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarIdioma = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarIdioma = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarIdioma3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarIdioma3 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.ConfiguracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IdiomaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarIdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,62 +42,28 @@ Partial Class Principal
         Me.BackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarBackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RealizarRestoreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.MiUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Bitacora, Me.Backup, Me.Logout, Me.Administracion, Me.IdiomaToolStripMenuItem, Me.ConfiguracionToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Administracion, Me.ConfiguracionToolStripMenuItem, Me.Logout, Me.MiUsuarioToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
         '
-        'Bitacora
-        '
-        Me.Bitacora.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarBitacora})
-        Me.Bitacora.Name = "Bitacora"
-        Me.Bitacora.Size = New System.Drawing.Size(58, 20)
-        Me.Bitacora.Tag = "Bitacora"
-        Me.Bitacora.Text = "Bitacora"
-        '
-        'BuscarBitacora
-        '
-        Me.BuscarBitacora.Name = "BuscarBitacora"
-        Me.BuscarBitacora.Size = New System.Drawing.Size(159, 22)
-        Me.BuscarBitacora.Text = "Buscar Bitacora"
-        '
-        'Backup
-        '
-        Me.Backup.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarBackup, Me.RealizarRestore})
-        Me.Backup.Name = "Backup"
-        Me.Backup.Size = New System.Drawing.Size(53, 20)
-        Me.Backup.Tag = "Backup"
-        Me.Backup.Text = "Backup"
-        '
-        'BuscarBackup
-        '
-        Me.BuscarBackup.Name = "BuscarBackup"
-        Me.BuscarBackup.Size = New System.Drawing.Size(164, 22)
-        Me.BuscarBackup.Text = "Buscar Backup"
-        '
-        'RealizarRestore
-        '
-        Me.RealizarRestore.Name = "RealizarRestore"
-        Me.RealizarRestore.Size = New System.Drawing.Size(164, 22)
-        Me.RealizarRestore.Text = "Realizar Restore"
-        '
-        'Logout
-        '
-        Me.Logout.Name = "Logout"
-        Me.Logout.Size = New System.Drawing.Size(52, 20)
-        Me.Logout.Text = "Logout"
-        '
         'Administracion
         '
-        Me.Administracion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Usuarios, Me.Familias, Me.Permisos, Me.Idioma})
+        Me.Administracion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Usuarios, Me.Familias, Me.Permisos})
         Me.Administracion.Name = "Administracion"
         Me.Administracion.Size = New System.Drawing.Size(88, 20)
         Me.Administracion.Text = "Administracion"
@@ -174,62 +125,9 @@ Partial Class Principal
         Me.PermisoFamilia.Size = New System.Drawing.Size(166, 22)
         Me.PermisoFamilia.Text = "Permiso Familia"
         '
-        'Idioma
-        '
-        Me.Idioma.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarIdioma, Me.GenerarIdioma})
-        Me.Idioma.Name = "Idioma"
-        Me.Idioma.Size = New System.Drawing.Size(152, 22)
-        Me.Idioma.Text = "Idioma"
-        '
-        'BuscarIdioma
-        '
-        Me.BuscarIdioma.Name = "BuscarIdioma"
-        Me.BuscarIdioma.Size = New System.Drawing.Size(159, 22)
-        Me.BuscarIdioma.Text = "Buscar Idioma"
-        '
-        'GenerarIdioma
-        '
-        Me.GenerarIdioma.Name = "GenerarIdioma"
-        Me.GenerarIdioma.Size = New System.Drawing.Size(159, 22)
-        Me.GenerarIdioma.Text = "Generar Idioma"
-        '
-        'IdiomaToolStripMenuItem
-        '
-        Me.IdiomaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarIdioma3, Me.GenerarIdioma3})
-        Me.IdiomaToolStripMenuItem.Name = "IdiomaToolStripMenuItem"
-        Me.IdiomaToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
-        Me.IdiomaToolStripMenuItem.Text = "Idioma"
-        '
-        'BuscarIdioma3
-        '
-        Me.BuscarIdioma3.Name = "BuscarIdioma3"
-        Me.BuscarIdioma3.Size = New System.Drawing.Size(159, 22)
-        Me.BuscarIdioma3.Text = "Buscar Idioma"
-        '
-        'GenerarIdioma3
-        '
-        Me.GenerarIdioma3.Name = "GenerarIdioma3"
-        Me.GenerarIdioma3.Size = New System.Drawing.Size(159, 22)
-        Me.GenerarIdioma3.Text = "Generar Idioma"
-        '
-        'StatusStrip
-        '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
-        Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
-        Me.StatusStrip.TabIndex = 7
-        Me.StatusStrip.Text = "StatusStrip"
-        '
-        'ToolStripStatusLabel
-        '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
-        Me.ToolStripStatusLabel.Text = "Estado"
-        '
         'ConfiguracionToolStripMenuItem
         '
-        Me.ConfiguracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem1, Me.BackupToolStripMenuItem})
+        Me.ConfiguracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem1, Me.BackupToolStripMenuItem, Me.BitacoraToolStripMenuItem})
         Me.ConfiguracionToolStripMenuItem.Name = "ConfiguracionToolStripMenuItem"
         Me.ConfiguracionToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
         Me.ConfiguracionToolStripMenuItem.Text = "Configuracion"
@@ -272,6 +170,39 @@ Partial Class Principal
         Me.RealizarRestoreToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.RealizarRestoreToolStripMenuItem.Text = "Realizar Restore"
         '
+        'BitacoraToolStripMenuItem
+        '
+        Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
+        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BitacoraToolStripMenuItem.Text = "Bitacora"
+        '
+        'Logout
+        '
+        Me.Logout.Name = "Logout"
+        Me.Logout.Size = New System.Drawing.Size(52, 20)
+        Me.Logout.Text = "Logout"
+        '
+        'StatusStrip
+        '
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip.Name = "StatusStrip"
+        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
+        Me.StatusStrip.TabIndex = 7
+        Me.StatusStrip.Text = "StatusStrip"
+        '
+        'ToolStripStatusLabel
+        '
+        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
+        Me.ToolStripStatusLabel.Text = "Estado"
+        '
+        'MiUsuarioToolStripMenuItem
+        '
+        Me.MiUsuarioToolStripMenuItem.Name = "MiUsuarioToolStripMenuItem"
+        Me.MiUsuarioToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
+        Me.MiUsuarioToolStripMenuItem.Text = "Mi Usuario"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -296,11 +227,6 @@ Partial Class Principal
     Friend WithEvents ToolStripStatusLabel As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents StatusStrip As System.Windows.Forms.StatusStrip
     Friend WithEvents MenuStrip As System.Windows.Forms.MenuStrip
-    Friend WithEvents Bitacora As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Backup As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarBitacora As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarBackup As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RealizarRestore As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Logout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Administracion As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Usuarios As System.Windows.Forms.ToolStripMenuItem
@@ -312,12 +238,6 @@ Partial Class Principal
     Friend WithEvents Permisos As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PermisosUsuario As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PermisoFamilia As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents IdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarIdioma3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GenerarIdioma3 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Idioma As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarIdioma As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GenerarIdioma As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConfiguracionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents IdiomaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarIdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -325,5 +245,7 @@ Partial Class Principal
     Friend WithEvents BackupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarBackupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RealizarRestoreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BitacoraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MiUsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

@@ -15,6 +15,7 @@
         FalloDelete = 13
         UsuarioCreadoExitosamente = 14
         PermisoNoAsociado = 15
+        IdiomaNoCreado = 16
     End Enum
 
     Enum Bitacora

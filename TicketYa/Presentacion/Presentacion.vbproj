@@ -90,6 +90,18 @@
     <Compile Include="BuscarFamiliaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarIdiomaForm.Designer.vb">
+      <DependentUpon>BuscarIdiomaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarIdiomaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarIdiomaForm.Designer.vb">
+      <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarIdiomaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GenerarPermisoUsuarioForm.Designer.vb">
       <DependentUpon>GenerarPermisoUsuarioForm.vb</DependentUpon>
     </Compile>
@@ -144,6 +156,12 @@
     <Compile Include="ModificarFamiliaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModificarIdiomaForm.Designer.vb">
+      <DependentUpon>ModificarIdiomaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarIdiomaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModificarUsuarioForm.Designer.vb">
       <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>
     </Compile>
@@ -189,6 +207,12 @@
     <EmbeddedResource Include="BuscarFamiliaForm.resx">
       <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarIdiomaForm.resx">
+      <DependentUpon>BuscarIdiomaForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarIdiomaForm.resx">
+      <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarPermisoFamiliaForm.resx">
       <DependentUpon>GenerarPermisoFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarFamiliaForm.resx">
       <DependentUpon>ModificarFamiliaForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarIdiomaForm.resx">
+      <DependentUpon>ModificarIdiomaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioForm.resx">
       <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>
