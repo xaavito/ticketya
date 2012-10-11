@@ -5,6 +5,7 @@
         InitializeComponent()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         BitacorasDataGrid.AutoGenerateColumns = False
+
         Dim usuarios As List(Of BE.UsuarioBE)
         usuarios = BLL.GestorUsuarioBLL.listarUsuarios()
         UsuarioComboBox.DataSource = usuarios
