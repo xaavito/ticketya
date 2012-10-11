@@ -16,22 +16,28 @@
         usuario = DAL.UsuarioDAL.buscarUsuario(usr, pass)
 
         Dim idioma As BE.IdiomaBE
-        idioma = DAL.IdiomaDAL.buscarIdioma(usuario.idioma.identificador)
+        idioma = BLL.GestorIdiomaBLL.buscarIdioma(usuario.idioma.identificador)
+        'idioma = DAL.IdiomaDAL.buscarIdioma(usuario.idioma.identificador)
 
         usuario.idioma = idioma
 
         Dim listaPermisos As List(Of BE.PermisoBE)
-        listaPermisos = DAL.PermisoDAL.buscarPermisoUsuario(usuario.identificador)
+        ' deberia estar todo encpasulado??? mmmmmm yo creo que si
+        pepe()
+        listaPermisos = BLL.GestorPermisoBLL.buscarPermisoUsuario(usuario.identificador)
+
+        'listaPermisos = DAL.PermisoDAL.buscarPermisoUsuario(usuario.identificador)
 
         usuario.permisos = listaPermisos
 
         Dim listaFamilia As List(Of BE.FamiliaBE)
 
-
-        listaFamilia = DAL.FamiliaDAL.buscarFamilias(usuario.identificador)
+        listaFamilia = BLL.GestorFamiliaBLL.buscarFamilias(usuario.identificador)
+        'listaFamilia = DAL.FamiliaDAL.buscarFamilias(usuario.identificador)
 
         For Each familia As BE.FamiliaBE In listaFamilia
-            familia.permisos = DAL.PermisoDAL.buscarPermisoFamilia(familia.identificador)
+            familia.permisos = BLL.GestorPermisoBLL.buscarPermisoFamilia(familia.identificador)
+            'familia.permisos = DAL.PermisoDAL.buscarPermisoFamilia(familia.identificador)
         Next
 
         usuario.familias = listaFamilia

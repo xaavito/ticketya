@@ -38,5 +38,26 @@ Public Class IdiomaBE
     End Property
 
 
+    Private _listaExcepciones As List(Of Excepciones.ExceptionManager)
+    Public Property listaExcepciones() As List(Of Excepciones.ExceptionManager)
+        Get
+            Return _listaExcepciones
+        End Get
+        Set(ByVal value As List(Of Excepciones.ExceptionManager))
+            _listaExcepciones = value
+        End Set
+    End Property
+
+
+    Private _bitacorasBase As List(Of BE.BitacoraBE)
+    Public Property bitacorasBase() As List(Of BE.BitacoraBE)
+        Get
+            Return _bitacorasBase
+        End Get
+        Set(ByVal value As List(Of BE.BitacoraBE))
+            _bitacorasBase = value
+        End Set
+    End Property
+
 
 End Class

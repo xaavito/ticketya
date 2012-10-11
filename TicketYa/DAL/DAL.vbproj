@@ -125,6 +125,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BD\BU BD 2012-09-13.sql" />
+    <Content Include="BD\BU BD 2012-09-18 v2.sql" />
+    <Content Include="BD\BU BD 2012-09-18.sql" />
+    <Content Include="BD\BU BD 20121009.sql" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\BE\BE.vbproj">
       <Project>{9A53BC47-D894-4BE9-87B4-8BA0809FA41B}</Project>
       <Name>BE</Name>
@@ -134,13 +140,6 @@
       <Name>Excepciones</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="BD\BU BD 2012-09-13.sql" />
-    <Content Include="BD\BU BD 2012-09-18 v2.sql" />
-    <Content Include="BD\BU BD 2012-09-18.sql" />
-    <Content Include="BD\BU BD 20121009.sql" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

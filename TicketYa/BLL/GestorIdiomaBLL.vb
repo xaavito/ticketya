@@ -14,6 +14,8 @@
 
         For Each idioma As BE.IdiomaBE In listaIdiomas
             idioma.mensaje = DAL.MensajeDAL.buscarMensajes(idioma.identificador)
+            idioma.listaExcepciones = BLL.ExcepcionBLL.buscarExcepciones(idioma.identificador)
+            idioma.bitacorasBase = BLL.BitacoraBLL.getBitacoras(idioma.identificador)
         Next
 
         Return listaIdiomas
