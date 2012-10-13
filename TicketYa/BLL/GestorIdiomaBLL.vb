@@ -15,7 +15,7 @@
         For Each idioma As BE.IdiomaBE In listaIdiomas
             idioma.mensaje = DAL.MensajeDAL.buscarMensajes(idioma.identificador)
             idioma.listaExcepciones = BLL.ExcepcionBLL.buscarExcepciones(idioma.identificador)
-            idioma.bitacorasBase = BLL.BitacoraBLL.getBitacoras(idioma.identificador)
+            idioma.bitacorasBase = BLL.BitacoraBLL.getBitacorasBase(idioma.identificador)
         Next
 
         Return listaIdiomas
@@ -31,9 +31,41 @@
         Return DAL.IdiomaDAL.buscarIdioma(usr.idioma.identificador)
     End Function
 
-    Public Shared Function generarIdioma(ByVal p1 As Integer,
-                                         ByVal p2 As String) As Integer
-        Return DAL.IdiomaDAL.generarIdioma(p1, p2)
+    'Public Shared Function generarIdioma(ByVal idiomaBaseId As Integer,
+    '                                     ByVal nuevoIdiomaNombre As String) As Integer
+    '    'SEPPPPP()
+    '    'METER EL PROTOTYPE EN VEZ DE LLAMAR A LA BD
+    '    Return DAL.IdiomaDAL.generarIdiomaFromBase(idiomaBaseId, nuevoIdiomaNombre)
+    'End Function
+
+    Shared Function buscarIdioma(ByVal idiomaId As Integer) As BE.IdiomaBE
+        Return DAL.IdiomaDAL.buscarIdioma(idiomaId)
+    End Function
+
+    Shared Function clonarIdioma(ByVal idiomaBase As BE.IdiomaBE) As BE.IdiomaBE
+        Return idiomaBase.clonar()
+    End Function
+
+    Shared Function guardarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
+        Dim newIdiomaId As Integer = DAL.IdiomaDAL.guardarIdioma(idioma)
+
+        If newIdiomaId > 0 Then
+            For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+                DAL.BitacoraDAL.guardarBitacora(bit, newIdiomaId)
+            Next
+            For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+                DAL.ExcepcionDAL.guardarExcepecion(exc, newIdiomaId)
+            Next
+            For Each men As BE.MensajeControlBE In idioma.mensaje
+                DAL.MensajeControlDAL.guardarMensaje(men, newIdiomaId)
+            Next
+        End If
+
+        Return newIdiomaId
+    End Function
+
+    Shared Function getExcepcion(ByVal p1 As Integer) As Integer
+        Throw New NotImplementedException
     End Function
 
 End Class

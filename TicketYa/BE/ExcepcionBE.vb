@@ -1,5 +1,5 @@
-﻿Public Class ExceptionManager
-    Inherits Exception
+﻿Public Class ExcepcionBE
+    Inherits PersistibleBE
 
 
     Private _codigo As Integer
@@ -12,6 +12,7 @@
         End Set
     End Property
 
+
     Private _mensaje As String
     Public Property mensaje() As String
         Get
@@ -21,25 +22,5 @@
             _mensaje = value
         End Set
     End Property
-
-
-    Private _tipo As MsgBoxStyle
-
-    Public Property tipo() As MsgBoxStyle
-        Get
-            Return _tipo
-        End Get
-        Set(ByVal value As MsgBoxStyle)
-            _tipo = value
-        End Set
-    End Property
-
-    Protected Sub New(ByVal p1 As String)
-        MyBase.New(p1)
-    End Sub
-
-    Public Sub New()
-
-    End Sub
 
 End Class

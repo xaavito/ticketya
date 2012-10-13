@@ -1,6 +1,7 @@
 ﻿
 Public Class IdiomaBE
     Inherits PersistibleBE
+    Implements IClonable
 
 
     Private _descripcion As String
@@ -38,26 +39,34 @@ Public Class IdiomaBE
     End Property
 
 
-    Private _listaExcepciones As List(Of Excepciones.ExceptionManager)
-    Public Property listaExcepciones() As List(Of Excepciones.ExceptionManager)
+    Private _listaExcepciones As List(Of ExcepcionBE)
+    Public Property listaExcepciones() As List(Of ExcepcionBE)
         Get
             Return _listaExcepciones
         End Get
-        Set(ByVal value As List(Of Excepciones.ExceptionManager))
+        Set(ByVal value As List(Of ExcepcionBE))
             _listaExcepciones = value
         End Set
     End Property
 
 
-    Private _bitacorasBase As List(Of BE.BitacoraBE)
-    Public Property bitacorasBase() As List(Of BE.BitacoraBE)
+    Private _bitacorasBase As List(Of BE.MensajeBitacoraBE)
+    Public Property bitacorasBase() As List(Of BE.MensajeBitacoraBE)
         Get
             Return _bitacorasBase
         End Get
-        Set(ByVal value As List(Of BE.BitacoraBE))
+        Set(ByVal value As List(Of BE.MensajeBitacoraBE))
             _bitacorasBase = value
         End Set
     End Property
 
-
+    Public Function clonar() As Object Implements IClonable.clonar
+        Dim idiomaNuevo As New IdiomaBE
+        idiomaNuevo.descripcion = Me.descripcion
+        idiomaNuevo.fechaAlta = DateTime.Today
+        idiomaNuevo.mensaje = Me.mensaje
+        idiomaNuevo.listaExcepciones = Me.listaExcepciones
+        idiomaNuevo.bitacorasBase = Me.bitacorasBase
+        Return idiomaNuevo
+    End Function
 End Class

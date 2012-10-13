@@ -23,4 +23,9 @@
                                               Actual.idioma)
 
     End Function
+
+    Shared Function getBitacorasBase(ByVal idiomaId As Integer) As List(Of BE.MensajeBitacoraBE)
+        Return DAL.BitacoraDAL.buscarBitacorasBase(idiomaId)
+    End Function
+
 End Class
