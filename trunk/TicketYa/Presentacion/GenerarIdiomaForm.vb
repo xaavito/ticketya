@@ -18,8 +18,13 @@
     End Sub
 
     Private Sub GenerarIdiomaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarIdiomaButton.Click
+        Dim idioma As BE.IdiomaBE
+        idioma = BLL.GestorIdiomaBLL.clonarIdioma(DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE))
+        idioma.descripcion = IdiomaTextBox.Text
+
         Try
-            If (BLL.GestorIdiomaBLL.generarIdioma(IdiomaComboBox.SelectedValue, IdiomaTextBox.Text) <= 0) Then
+            idioma.identificador = BLL.GestorIdiomaBLL.guardarIdioma(idioma)
+            If (idioma.identificador <= 0) Then
                 Throw New Excepciones.GeneracionDeIdiomaExcepcion
             End If
 

@@ -71,4 +71,22 @@
         Return result
     End Function
 
+    Shared Function guardarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("GENERAR_IDIOMA_SP")
+            repository.addParam("@nom", idioma.descripcion)
+            result = repository.executeSearch
+            If (result <= 0) Then
+                Throw New Excepciones.GeneracionDeIdiomaExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.GeneracionDeIdiomaExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

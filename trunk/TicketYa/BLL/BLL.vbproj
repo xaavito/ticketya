@@ -119,6 +119,10 @@
       <Project>{26F85DFA-BF9E-406A-AA43-32F1022EB662}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Excepciones\Excepciones.vbproj">
+      <Project>{3933B96F-EB72-489E-9D03-041867B6DEDC}</Project>
+      <Name>Excepciones</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utilitarios\Utilitarios.vbproj">
       <Project>{48B32CBF-E466-4434-A3D1-9B863707D210}</Project>
       <Name>Utilitarios</Name>

@@ -12,6 +12,7 @@
             If (table.Rows.Count <= 0) Then
                 Throw New Excepciones.NoHayMensajesExcepcion
             End If
+            'SELECT mc.idIdioma, f.descripcion as formulario, f.identificador as idFormulario, c.descripcion as control, c.identificador as idControl, mc.mensaje
             For Each pepe As DataRow In table.Rows
                 Dim mensaje As New BE.MensajeControlBE
                 mensaje.identificador = pepe.Item(0)
@@ -20,8 +21,13 @@
                     mensaje.formulario = pepe.Item(1)
                 End If
 
-                mensaje.control = pepe.Item(2)
-                mensaje.mensaje = pepe.Item(3)
+                If Not IsDBNull(pepe.Item(2)) Then
+                    mensaje.idFormulario = pepe.Item(2)
+                End If
+
+                mensaje.control = pepe.Item(3)
+                mensaje.idControl = pepe.Item(4)
+                mensaje.mensaje = pepe.Item(5)
                 listaMensajes.Add(mensaje)
             Next
 

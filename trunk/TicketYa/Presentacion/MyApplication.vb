@@ -60,7 +60,7 @@
             If (TypeOf ex Is Excepciones.ExceptionManager) Then
                 Dim excep = DirectCast(ex, Excepciones.ExceptionManager)
                 Try
-                    MsgBox(BLL.ExcepcionBLL.buscarExcepcion(BLL.Actual.idioma.identificador, excep.codigo), excep.tipo)
+                    MsgBox(BLL.ExcepcionBLL.buscarExcepcion(excep.codigo), excep.tipo)
                 Catch e As Excepciones.ExcepcionNoEncontradaExcepcion
                     Application.HandlerException(e)
                 End Try

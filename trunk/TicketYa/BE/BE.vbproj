@@ -71,10 +71,13 @@
     <Compile Include="BackupBE.vb" />
     <Compile Include="BitacoraBE.vb" />
     <Compile Include="ControlBE.vb" />
+    <Compile Include="ExcepcionBE.vb" />
     <Compile Include="FamiliaBE.vb" />
     <Compile Include="FormularioBE.vb" />
+    <Compile Include="IClonable.vb" />
     <Compile Include="IdiomaBE.vb" />
     <Compile Include="MensajeBE.vb" />
+    <Compile Include="MensajeBitacoraBE.vb" />
     <Compile Include="MensajeControlBE.vb" />
     <Compile Include="PermisoBE.vb" />
     <Compile Include="PersistibleBE.vb" />

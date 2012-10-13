@@ -23,7 +23,8 @@
 
         Dim listaPermisos As List(Of BE.PermisoBE)
         ' deberia estar todo encpasulado??? mmmmmm yo creo que si
-        pepe()
+        ' meter COMPOSITE
+        'pepe()
         listaPermisos = BLL.GestorPermisoBLL.buscarPermisoUsuario(usuario.identificador)
 
         'listaPermisos = DAL.PermisoDAL.buscarPermisoUsuario(usuario.identificador)

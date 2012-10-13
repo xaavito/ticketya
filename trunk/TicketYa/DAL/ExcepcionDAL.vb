@@ -24,4 +24,55 @@
 
         Return excep
     End Function
+
+    Shared Function buscarExcepciones(ByVal idioma As Integer) As List(Of BE.ExcepcionBE)
+        Dim table As DataTable
+        Dim excep As BE.ExcepcionBE
+        Dim listExcep As New List(Of BE.ExcepcionBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_EXCEPCIONES_SP")
+            table = New DataTable
+            repository.addParam("@idIdioma", idioma)
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.ExcepcionNoEncontradaExcepcion
+            End If
+            For Each row As DataRow In table.Rows
+                excep = New BE.ExcepcionBE
+                excep.codigo = row.Item(0)
+                excep.mensaje = row.Item(1)
+                listExcep.Add(excep)
+            Next
+
+        Catch ex As Exception
+            Throw New Excepciones.ExcepcionNoEncontradaExcepcion
+        End Try
+
+        Return listExcep
+    End Function
+
+    Shared Function guardarExcepecion(ByVal exc As BE.ExcepcionBE, ByVal newIdiomaId As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim bitacoras As New List(Of BE.BitacoraBE)
+        Try
+            repository.crearComando("GUARDAR_EXCEPCIONES_SP")
+            repository.addParam("@idIdioma", newIdiomaId)
+            repository.addParam("@excBase", exc.codigo)
+            repository.addParam("@excMensaje", exc.mensaje)
+            result = repository.executeSearchWithStatus()
+            If (result <= 0) Then
+                Throw New Excepciones.InsertExcepcion
+            End If
+
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class
