@@ -5,7 +5,7 @@
         Try
             If (BLL.GestorFamiliaBLL.modificarFamilia(familia.identificador,
                                                       FamiliaTextBox.Text)) Then
-                MsgBox(Excepciones.FamiliaModificadaExitosamenteExcepcion)
+                MsgBox(New Excepciones.FamiliaModificadaExitosamenteExcepcion)
                 'limpiarParametros()
                 Me.Close()
             End If

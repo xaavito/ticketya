@@ -82,7 +82,7 @@
                                                       ActivoCheckBox.Checked,
                                                       DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
                                                       getFamilias())) Then
-                MsgBox(Excepciones.UsuarioModificadoExitosamenteExcepcion)
+                MsgBox(New Excepciones.UsuarioModificadoExitosamenteExcepcion)
                 BLL.Actual.idioma = DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE)
                 My.Application.cambiarIdioma()
                 limpiarParametros()

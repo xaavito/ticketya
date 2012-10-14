@@ -29,11 +29,11 @@
         fam = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
         If (Not fam Is Nothing) Then
             If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
-                MsgBox(Excepciones.FamiliaEliminadaExitosamenteExcepcion)
+                MsgBox(New Excepciones.FamiliaEliminadaExitosamenteExcepcion)
                 
                 buscarFamilia(FamiliaTextBox.Text)
             Else
-                MsgBox(Excepciones.FamiliaTieneUsuariosAsociadosExcepcion)
+                MsgBox(New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion)
             End If
         End If
     End Sub
