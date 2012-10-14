@@ -29,3 +29,25 @@ Public Class UsuarioCreadoExistosamente
         Me.mensaje = "Usuario No encontrado"
     End Sub
 End Class
+
+Public Class UsuarioEliminadoExistosamenteExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("Usuario C")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.UsuarioEliminadoExitosamente
+        Me.tipo = MsgBoxStyle.Information
+        Me.mensaje = "Usuario No encontrado"
+    End Sub
+End Class
+
+Public Class UsuarioModificadoExitosamenteExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("Usuario C")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.UsuarioModificadoExitosamente
+        Me.tipo = MsgBoxStyle.Information
+        Me.mensaje = "Usuario No encontrado"
+    End Sub
+End Class

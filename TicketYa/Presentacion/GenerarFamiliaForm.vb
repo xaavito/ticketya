@@ -4,7 +4,7 @@
     Private Sub AltaFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaFamiliaButton.Click
         Try
             If (BLL.GestorFamiliaBLL.altaFamilia(FamiliaTextBox.Text)) Then
-                MsgBox(Excepciones.FamiliaCreadaExistosamenteExcepcion)
+                MsgBox(New Excepciones.FamiliaCreadaExistosamenteExcepcion)
                 limpiarParametros()
             End If
 

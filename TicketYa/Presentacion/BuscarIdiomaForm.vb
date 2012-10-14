@@ -10,11 +10,11 @@
         If (Not idioma Is Nothing) Then
             If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 1) Then
 
-                MsgBox(Excepciones.IdiomaEliminadoExistosamenteExcepcion)
+                MsgBox(New Excepciones.IdiomaEliminadoExistosamenteExcepcion)
 
                 buscarIdiomas()
             Else
-                MsgBox(Excepciones.IdiomaTieneUsuariosAsociadosExcepcion)
+                MsgBox(New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion)
             End If
         End If
 

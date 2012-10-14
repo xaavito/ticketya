@@ -16,9 +16,15 @@
         UsuarioCreadoExitosamente = 14
         PermisoNoAsociado = 15
         IdiomaNoCreado = 16
-
         IdiomaGeneradoExistosamente = 17
-
+        FamiliasCreadaExitosamente = 18
+        FamiliasEliminadaExitosamente = 19
+        FamiliaTieneUsuariosAsociados = 20
+        FamiliaModificadaExitosamente = 21
+        IdiomaEliminadoExitosamente = 22
+        IdiomaTieneUsuariosAsociados = 23
+        UsuarioEliminadoExitosamente = 24
+        UsuarioModificadoExitosamente = 25
     End Enum
 
     Enum Bitacora
