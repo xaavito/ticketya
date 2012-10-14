@@ -51,26 +51,6 @@
         Return idioma
     End Function
 
-    Public Shared Function generarIdioma(ByVal p1 As Integer,
-                                         ByVal p2 As String) As Integer
-        Dim result As Integer
-
-        Dim repository As IRepositorio = RepositorioFactory.Create()
-        Try
-            repository.crearComando("GENERAR_IDIOMA_SP")
-            repository.addParam("@nom", p2)
-            repository.addParam("@base", p1)
-            result = repository.executeSearchWithStatus()
-            If (result <= 0) Then
-                Throw New Excepciones.GeneracionDeIdiomaExcepcion
-            End If
-        Catch ex As Exception
-            Throw New Excepciones.GeneracionDeIdiomaExcepcion
-        End Try
-
-        Return result
-    End Function
-
     Shared Function guardarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
         Dim result As Integer
 

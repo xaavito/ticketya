@@ -4,8 +4,19 @@
         Return Nothing
     End Function
 
-    Public Shared Function eliminarIdioma(ByVal idioma As BE.IdiomaBE) As Boolean
-        Return Nothing
+    Public Shared Function eliminarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
+
+        For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+            DAL.BitacoraDAL.eliminarBitacora(bit, idioma.identificador)
+        Next
+        For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+            DAL.ExcepcionDAL.eliminarExcepecion(exc, idioma.identificador)
+        Next
+        For Each men As BE.MensajeControlBE In idioma.mensaje
+            DAL.MensajeControlDAL.eliminarMensaje(men, idioma.identificador)
+        Next
+        Return DAL.IdiomaDAL.eliminarIdioma(idioma.identificador)
+
     End Function
 
     Public Shared Function listarIdiomas(ByVal desc As String) As List(Of BE.IdiomaBE)
@@ -30,13 +41,6 @@
     Public Shared Function buscarIdioma(ByVal usr As BE.UsuarioBE) As BE.IdiomaBE
         Return DAL.IdiomaDAL.buscarIdioma(usr.idioma.identificador)
     End Function
-
-    'Public Shared Function generarIdioma(ByVal idiomaBaseId As Integer,
-    '                                     ByVal nuevoIdiomaNombre As String) As Integer
-    '    'SEPPPPP()
-    '    'METER EL PROTOTYPE EN VEZ DE LLAMAR A LA BD
-    '    Return DAL.IdiomaDAL.generarIdiomaFromBase(idiomaBaseId, nuevoIdiomaNombre)
-    'End Function
 
     Shared Function buscarIdioma(ByVal idiomaId As Integer) As BE.IdiomaBE
         Return DAL.IdiomaDAL.buscarIdioma(idiomaId)
@@ -64,8 +68,22 @@
         Return newIdiomaId
     End Function
 
-    Shared Function getExcepcion(ByVal p1 As Integer) As Integer
-        Throw New NotImplementedException
+    Shared Function modificarIdioma(ByVal idioma As BE.IdiomaBE) As Boolean
+        Dim newIdiomaId As Integer = DAL.IdiomaDAL.modificarIdioma(idioma)
+
+        If newIdiomaId > 0 Then
+            For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+                DAL.BitacoraDAL.modificarBitacora(bit, newIdiomaId)
+            Next
+            For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+                DAL.ExcepcionDAL.modificarExcepecion(exc, newIdiomaId)
+            Next
+            For Each men As BE.MensajeControlBE In idioma.mensaje
+                DAL.MensajeControlDAL.modificarMensaje(men, newIdiomaId)
+            Next
+        End If
+
+        Return newIdiomaId
     End Function
 
 End Class
