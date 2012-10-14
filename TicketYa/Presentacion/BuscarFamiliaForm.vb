@@ -29,11 +29,11 @@
         fam = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
         If (Not fam Is Nothing) Then
             If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
-                MsgBox("Usuario Eliminado Exitosamente")
+                MsgBox(Excepciones.FamiliaEliminadaExitosamenteExcepcion)
                 
                 buscarFamilia(FamiliaTextBox.Text)
             Else
-                MsgBox("Familia tiene usuarios asociados, por favor desasociar antes de eliminar")
+                MsgBox(Excepciones.FamiliaTieneUsuariosAsociadosExcepcion)
             End If
         End If
     End Sub
