@@ -96,6 +96,9 @@
     <Compile Include="BuscarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controles\MyTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="GenerarIdiomaForm.Designer.vb">
       <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>
     </Compile>
@@ -351,6 +354,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1350173099_Modify.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\whiteCrossBlueBackground.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
