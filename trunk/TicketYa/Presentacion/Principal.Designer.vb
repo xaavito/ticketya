@@ -24,6 +24,7 @@ Partial Class Principal
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Principal))
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.Administracion = New System.Windows.Forms.ToolStripMenuItem()
         Me.Usuarios = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,10 +45,10 @@ Partial Class Principal
         Me.RealizarRestoreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MiUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.MiUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -64,25 +65,29 @@ Partial Class Principal
         'Administracion
         '
         Me.Administracion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Usuarios, Me.Familias, Me.Permisos})
+        Me.Administracion.Image = CType(resources.GetObject("Administracion.Image"), System.Drawing.Image)
         Me.Administracion.Name = "Administracion"
-        Me.Administracion.Size = New System.Drawing.Size(88, 20)
+        Me.Administracion.Size = New System.Drawing.Size(104, 20)
         Me.Administracion.Text = "Administracion"
         '
         'Usuarios
         '
         Me.Usuarios.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarUsuarios, Me.GenerarUsuarios})
+        Me.Usuarios.Image = CType(resources.GetObject("Usuarios.Image"), System.Drawing.Image)
         Me.Usuarios.Name = "Usuarios"
         Me.Usuarios.Size = New System.Drawing.Size(152, 22)
         Me.Usuarios.Text = "Usuarios"
         '
         'BuscarUsuarios
         '
+        Me.BuscarUsuarios.Image = CType(resources.GetObject("BuscarUsuarios.Image"), System.Drawing.Image)
         Me.BuscarUsuarios.Name = "BuscarUsuarios"
         Me.BuscarUsuarios.Size = New System.Drawing.Size(168, 22)
         Me.BuscarUsuarios.Text = "Buscar Usuarios"
         '
         'GenerarUsuarios
         '
+        Me.GenerarUsuarios.Image = CType(resources.GetObject("GenerarUsuarios.Image"), System.Drawing.Image)
         Me.GenerarUsuarios.Name = "GenerarUsuarios"
         Me.GenerarUsuarios.Size = New System.Drawing.Size(168, 22)
         Me.GenerarUsuarios.Text = "Generar Usuarios"
@@ -90,18 +95,21 @@ Partial Class Principal
         'Familias
         '
         Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilia, Me.GenerarFamilia})
+        Me.Familias.Image = CType(resources.GetObject("Familias.Image"), System.Drawing.Image)
         Me.Familias.Name = "Familias"
         Me.Familias.Size = New System.Drawing.Size(152, 22)
         Me.Familias.Text = "Familia"
         '
         'BuscarFamilia
         '
+        Me.BuscarFamilia.Image = CType(resources.GetObject("BuscarFamilia.Image"), System.Drawing.Image)
         Me.BuscarFamilia.Name = "BuscarFamilia"
         Me.BuscarFamilia.Size = New System.Drawing.Size(164, 22)
         Me.BuscarFamilia.Text = "Buscar Familias"
         '
         'GenerarFamilia
         '
+        Me.GenerarFamilia.Image = CType(resources.GetObject("GenerarFamilia.Image"), System.Drawing.Image)
         Me.GenerarFamilia.Name = "GenerarFamilia"
         Me.GenerarFamilia.Size = New System.Drawing.Size(164, 22)
         Me.GenerarFamilia.Text = "Generar Familias"
@@ -128,25 +136,29 @@ Partial Class Principal
         'ConfiguracionToolStripMenuItem
         '
         Me.ConfiguracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem1, Me.BackupToolStripMenuItem, Me.BitacoraToolStripMenuItem})
+        Me.ConfiguracionToolStripMenuItem.Image = CType(resources.GetObject("ConfiguracionToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ConfiguracionToolStripMenuItem.Name = "ConfiguracionToolStripMenuItem"
-        Me.ConfiguracionToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
+        Me.ConfiguracionToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
         Me.ConfiguracionToolStripMenuItem.Text = "Configuracion"
         '
         'IdiomaToolStripMenuItem1
         '
         Me.IdiomaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarIdiomaToolStripMenuItem, Me.GenerarIdiomaToolStripMenuItem})
+        Me.IdiomaToolStripMenuItem1.Image = CType(resources.GetObject("IdiomaToolStripMenuItem1.Image"), System.Drawing.Image)
         Me.IdiomaToolStripMenuItem1.Name = "IdiomaToolStripMenuItem1"
         Me.IdiomaToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.IdiomaToolStripMenuItem1.Text = "Idioma"
         '
         'BuscarIdiomaToolStripMenuItem
         '
+        Me.BuscarIdiomaToolStripMenuItem.Image = CType(resources.GetObject("BuscarIdiomaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.BuscarIdiomaToolStripMenuItem.Name = "BuscarIdiomaToolStripMenuItem"
         Me.BuscarIdiomaToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.BuscarIdiomaToolStripMenuItem.Text = "Buscar Idioma"
         '
         'GenerarIdiomaToolStripMenuItem
         '
+        Me.GenerarIdiomaToolStripMenuItem.Image = CType(resources.GetObject("GenerarIdiomaToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GenerarIdiomaToolStripMenuItem.Name = "GenerarIdiomaToolStripMenuItem"
         Me.GenerarIdiomaToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.GenerarIdiomaToolStripMenuItem.Text = "Generar Idioma"
@@ -154,6 +166,7 @@ Partial Class Principal
         'BackupToolStripMenuItem
         '
         Me.BackupToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarBackupToolStripMenuItem, Me.RealizarRestoreToolStripMenuItem})
+        Me.BackupToolStripMenuItem.Image = CType(resources.GetObject("BackupToolStripMenuItem.Image"), System.Drawing.Image)
         Me.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem"
         Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BackupToolStripMenuItem.Text = "Backup"
@@ -172,15 +185,24 @@ Partial Class Principal
         '
         'BitacoraToolStripMenuItem
         '
+        Me.BitacoraToolStripMenuItem.Image = CType(resources.GetObject("BitacoraToolStripMenuItem.Image"), System.Drawing.Image)
         Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
         Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BitacoraToolStripMenuItem.Text = "Bitacora"
         '
         'Logout
         '
+        Me.Logout.Image = CType(resources.GetObject("Logout.Image"), System.Drawing.Image)
         Me.Logout.Name = "Logout"
-        Me.Logout.Size = New System.Drawing.Size(52, 20)
+        Me.Logout.Size = New System.Drawing.Size(68, 20)
         Me.Logout.Text = "Logout"
+        '
+        'MiUsuarioToolStripMenuItem
+        '
+        Me.MiUsuarioToolStripMenuItem.Image = CType(resources.GetObject("MiUsuarioToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.MiUsuarioToolStripMenuItem.Name = "MiUsuarioToolStripMenuItem"
+        Me.MiUsuarioToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
+        Me.MiUsuarioToolStripMenuItem.Text = "Mi Usuario"
         '
         'StatusStrip
         '
@@ -196,12 +218,6 @@ Partial Class Principal
         Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
         Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
         Me.ToolStripStatusLabel.Text = "Estado"
-        '
-        'MiUsuarioToolStripMenuItem
-        '
-        Me.MiUsuarioToolStripMenuItem.Name = "MiUsuarioToolStripMenuItem"
-        Me.MiUsuarioToolStripMenuItem.Size = New System.Drawing.Size(68, 20)
-        Me.MiUsuarioToolStripMenuItem.Text = "Mi Usuario"
         '
         'Principal
         '

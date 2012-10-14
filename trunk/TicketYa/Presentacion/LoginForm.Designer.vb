@@ -19,6 +19,7 @@ Partial Class LoginForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
         Me.UserTextBox = New System.Windows.Forms.TextBox()
         Me.PassTextBox = New System.Windows.Forms.TextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
@@ -82,20 +83,26 @@ Partial Class LoginForm
         '
         'AceptarButton
         '
+        Me.AceptarButton.Image = CType(resources.GetObject("AceptarButton.Image"), System.Drawing.Image)
+        Me.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.AceptarButton.Location = New System.Drawing.Point(69, 105)
         Me.AceptarButton.Name = "AceptarButton"
         Me.AceptarButton.Size = New System.Drawing.Size(75, 23)
         Me.AceptarButton.TabIndex = 6
         Me.AceptarButton.Text = "Aceptar"
+        Me.AceptarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AceptarButton.UseVisualStyleBackColor = True
         '
         'CancelarButton
         '
-        Me.CancelarButton.Location = New System.Drawing.Point(213, 105)
+        Me.CancelarButton.Image = CType(resources.GetObject("CancelarButton.Image"), System.Drawing.Image)
+        Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CancelarButton.Location = New System.Drawing.Point(210, 105)
         Me.CancelarButton.Name = "CancelarButton"
         Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
         Me.CancelarButton.TabIndex = 7
         Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.CancelarButton.UseVisualStyleBackColor = True
         '
         'LoginForm
