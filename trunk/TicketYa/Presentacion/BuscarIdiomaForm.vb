@@ -9,11 +9,12 @@
         idioma = DirectCast(IdiomasDataGrid.CurrentRow.DataBoundItem, BE.IdiomaBE)
         If (Not idioma Is Nothing) Then
             If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 1) Then
-                MsgBox("Idioma Eliminado Exitosamente Eliminado Exitosamente")
+
+                MsgBox(Excepciones.IdiomaEliminadoExistosamenteExcepcion)
 
                 buscarIdiomas()
             Else
-                MsgBox("Idioma tiene usuarios asociados, por favor desasociar antes de eliminar")
+                MsgBox(Excepciones.IdiomaTieneUsuariosAsociadosExcepcion)
             End If
         End If
 

@@ -30,7 +30,7 @@
         usr = DirectCast(UsuariosDataGrid.CurrentRow.DataBoundItem, BE.UsuarioBE)
         If (Not usr Is Nothing) Then
             If (BLL.GestorUsuarioBLL.eliminarUsuario(usr) = 1) Then
-                MsgBox("Usuario Eliminado Exitosamente")
+                MsgBox(Excepciones.UsuarioEliminadoExistosamenteExcepcion)
                 'UsuariosDataGrid.Refresh() no funca esto???
 
                 buscarUsuario(UsuarioTextBox.Text)
