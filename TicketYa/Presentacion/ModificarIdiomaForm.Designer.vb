@@ -38,7 +38,7 @@ Partial Class ModificarIdiomaForm
         Me.idFormulario = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idControl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
-        Me.IdiomaTextBox = New System.Windows.Forms.TextBox()
+        Me.IdiomaTextBox = New MyTextBox()
         Me.GuardarIdiomaButton = New System.Windows.Forms.Button()
         Me.CancelarButton = New System.Windows.Forms.Button()
         CType(Me.ExcepcionesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -243,7 +243,7 @@ Partial Class ModificarIdiomaForm
     Friend WithEvents MensajesDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents ControlesDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
-    Friend WithEvents IdiomaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents IdiomaTextBox As MyTextBox
     Friend WithEvents GuardarIdiomaButton As System.Windows.Forms.Button
     Friend WithEvents CodigoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MensajeColumn As System.Windows.Forms.DataGridViewTextBoxColumn

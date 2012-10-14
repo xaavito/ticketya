@@ -20,7 +20,7 @@ Partial Class ModificarFamiliaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaTextBox = New System.Windows.Forms.TextBox()
+        Me.FamiliaTextBox = New MyTextBox()
         Me.ModificarFamiliaButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -64,7 +64,7 @@ Partial Class ModificarFamiliaForm
 
     End Sub
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
-    Friend WithEvents FamiliaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents FamiliaTextBox As MyTextBox
     Friend WithEvents ModificarFamiliaButton As System.Windows.Forms.Button
 
 End Class

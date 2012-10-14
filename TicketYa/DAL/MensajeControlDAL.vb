@@ -22,4 +22,12 @@
         Return result
     End Function
 
+    Shared Sub eliminarMensaje(ByVal men As BE.MensajeControlBE, ByVal p2 As Integer)
+        Throw New NotImplementedException
+    End Sub
+
+    Shared Sub modificarMensaje(ByVal men As BE.MensajeControlBE, ByVal newIdiomaId As Integer)
+        Throw New NotImplementedException
+    End Sub
+
 End Class

@@ -8,6 +8,8 @@
 
         For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
             DAL.BitacoraDAL.eliminarBitacora(bit, idioma.identificador)
+            'TODO: Generar
+
         Next
         For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
             DAL.ExcepcionDAL.eliminarExcepecion(exc, idioma.identificador)

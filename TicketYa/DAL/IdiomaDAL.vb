@@ -69,4 +69,12 @@
         Return result
     End Function
 
+    Shared Function eliminarIdioma(ByVal p1 As Integer) As Integer
+        Throw New NotImplementedException
+    End Function
+
+    Shared Function modificarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
+        Throw New NotImplementedException
+    End Function
+
 End Class

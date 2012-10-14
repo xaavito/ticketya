@@ -30,6 +30,8 @@ Public Class MyTextBox
         If Regex.IsMatch(Me.Text, "\s") Then
             'Throw New EspacioEnBlancoExcepcion
             errorProvider.SetError(Me, "No debe tener espacios")
+        Else
+            'errorProvider.Clear()
         End If
 
     End Sub
@@ -39,6 +41,8 @@ Public Class MyTextBox
             If Not Regex.IsMatch(Me.Text, "^[A-Z0-9 a-z]*$") Then
                 errorProvider.SetError(Me, "Debe tener un valor")
                 'Throw New StringAlfanumericoExcepcion
+            Else
+                'errorProvider.Clear()
             End If
         End If
     End Sub

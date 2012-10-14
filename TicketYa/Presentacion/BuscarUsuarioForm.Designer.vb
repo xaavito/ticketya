@@ -22,7 +22,7 @@ Partial Class BuscarUsuarioForm
         Me.EliminarUsuarioButton = New System.Windows.Forms.Button()
         Me.ModificarUsuarioButton = New System.Windows.Forms.Button()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
+        Me.UsuarioTextBox = New MyTextBox()
         Me.BuscarUsuariosButton = New System.Windows.Forms.Button()
         Me.UsuariosDataGrid = New System.Windows.Forms.DataGridView()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -156,7 +156,7 @@ Partial Class BuscarUsuarioForm
 
     End Sub
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
-    Friend WithEvents UsuarioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents UsuarioTextBox As MyTextBox
     Friend WithEvents BuscarUsuariosButton As System.Windows.Forms.Button
     Friend WithEvents UsuariosDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents ModificarUsuarioButton As System.Windows.Forms.Button

@@ -20,14 +20,14 @@ Partial Class GenerarUsuarioForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.AltaUsuariosButton = New System.Windows.Forms.Button()
-        Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
+        Me.UsuarioTextBox = New MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.PassLabel = New System.Windows.Forms.Label()
-        Me.PassTextBox = New System.Windows.Forms.TextBox()
+        Me.PassTextBox = New MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.NombreTextBox = New System.Windows.Forms.TextBox()
+        Me.NombreTextBox = New MyTextBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
-        Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
+        Me.ApellidoTextBox = New MyTextBox()
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
@@ -220,14 +220,14 @@ Partial Class GenerarUsuarioForm
 
     End Sub
     Friend WithEvents AltaUsuariosButton As System.Windows.Forms.Button
-    Friend WithEvents UsuarioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents UsuarioTextBox As MyTextBox
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents PassLabel As System.Windows.Forms.Label
-    Friend WithEvents PassTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents PassTextBox As MyTextBox
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
-    Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents NombreTextBox As MyTextBox
     Friend WithEvents ApellidoLabel As System.Windows.Forms.Label
-    Friend WithEvents ApellidoTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ApellidoTextBox As MyTextBox
     Friend WithEvents FamiliaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
     Friend WithEvents FamiliaDataGrid As System.Windows.Forms.DataGridView

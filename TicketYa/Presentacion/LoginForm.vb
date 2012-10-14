@@ -8,6 +8,9 @@
         IdiomaComboBox.DataSource = idiomas
         IdiomaComboBox.DisplayMember = "descripcion"
         IdiomaComboBox.ValueMember = "identificador"
+
+        UserTextBox.sinEspacio = True
+        UserTextBox.alfanumerico = True
     End Sub
 
     Private Sub AceptarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AceptarButton.Click
