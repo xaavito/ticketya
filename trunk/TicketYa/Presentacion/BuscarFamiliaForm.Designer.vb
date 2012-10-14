@@ -22,7 +22,7 @@ Partial Class BuscarFamiliaForm
         Me.EliminarFamiliaButton = New System.Windows.Forms.Button()
         Me.ModificarFamiliaButton = New System.Windows.Forms.Button()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaTextBox = New System.Windows.Forms.TextBox()
+        Me.FamiliaTextBox = New MyTextBox()
         Me.BuscarFamiliasButton = New System.Windows.Forms.Button()
         Me.FamiliasDataGrid = New System.Windows.Forms.DataGridView()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -120,7 +120,7 @@ Partial Class BuscarFamiliaForm
     Friend WithEvents EliminarFamiliaButton As System.Windows.Forms.Button
     Friend WithEvents ModificarFamiliaButton As System.Windows.Forms.Button
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
-    Friend WithEvents FamiliaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents FamiliaTextBox As MyTextBox
     Friend WithEvents BuscarFamiliasButton As System.Windows.Forms.Button
     Friend WithEvents FamiliasDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents identificador As System.Windows.Forms.DataGridViewTextBoxColumn

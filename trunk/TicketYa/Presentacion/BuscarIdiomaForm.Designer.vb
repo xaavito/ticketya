@@ -19,7 +19,7 @@ Partial Class BuscarIdiomaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.IdiomaTextBox = New System.Windows.Forms.TextBox()
+        Me.IdiomaTextBox = New MyTextBox()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.BuscarIdiomaButton = New System.Windows.Forms.Button()
         Me.IdiomasDataGrid = New System.Windows.Forms.DataGridView()
@@ -112,7 +112,7 @@ Partial Class BuscarIdiomaForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents IdiomaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents IdiomaTextBox As MyTextBox
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents BuscarIdiomaButton As System.Windows.Forms.Button
     Friend WithEvents IdiomasDataGrid As System.Windows.Forms.DataGridView

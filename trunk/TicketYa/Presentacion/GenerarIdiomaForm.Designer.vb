@@ -23,7 +23,7 @@ Partial Class GenerarIdiomaForm
         Me.IdiomaBaseLabel = New System.Windows.Forms.Label()
         Me.GenerarIdiomaButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.IdiomaTextBox = New System.Windows.Forms.TextBox()
+        Me.IdiomaTextBox = New MyTextBox()
         Me.SuspendLayout()
         '
         'IdiomaComboBox
@@ -87,6 +87,6 @@ Partial Class GenerarIdiomaForm
     Friend WithEvents IdiomaBaseLabel As System.Windows.Forms.Label
     Friend WithEvents GenerarIdiomaButton As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents IdiomaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents IdiomaTextBox As MyTextBox
 
 End Class

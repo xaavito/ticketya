@@ -20,7 +20,7 @@ Partial Class GenerarFamiliaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaTextBox = New System.Windows.Forms.TextBox()
+        Me.FamiliaTextBox = New MyTextBox()
         Me.AltaFamiliaButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -64,7 +64,7 @@ Partial Class GenerarFamiliaForm
 
     End Sub
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
-    Friend WithEvents FamiliaTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents FamiliaTextBox As MyTextBox
     Friend WithEvents AltaFamiliaButton As System.Windows.Forms.Button
 
 End Class

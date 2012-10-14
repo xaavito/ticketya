@@ -29,13 +29,13 @@ Partial Class ModificarUsuarioForm
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
-        Me.ApellidoTextBox = New System.Windows.Forms.TextBox()
+        Me.ApellidoTextBox = New MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.NombreTextBox = New System.Windows.Forms.TextBox()
+        Me.NombreTextBox = New MyTextBox()
         Me.PassLabel = New System.Windows.Forms.Label()
-        Me.PassTextBox = New System.Windows.Forms.TextBox()
+        Me.PassTextBox = New MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
+        Me.UsuarioTextBox = New MyTextBox()
         Me.ModificarUsuariosButton = New System.Windows.Forms.Button()
         Me.ActivoLabel = New System.Windows.Forms.Label()
         Me.ActivoCheckBox = New System.Windows.Forms.CheckBox()
@@ -251,13 +251,13 @@ Partial Class ModificarUsuarioForm
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
     Friend WithEvents FamiliaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents ApellidoLabel As System.Windows.Forms.Label
-    Friend WithEvents ApellidoTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents ApellidoTextBox As MyTextBox
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
-    Friend WithEvents NombreTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents NombreTextBox As MyTextBox
     Friend WithEvents PassLabel As System.Windows.Forms.Label
-    Friend WithEvents PassTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents PassTextBox As MyTextBox
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
-    Friend WithEvents UsuarioTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents UsuarioTextBox As MyTextBox
     Friend WithEvents ModificarUsuariosButton As System.Windows.Forms.Button
     Friend WithEvents ActivoLabel As System.Windows.Forms.Label
     Friend WithEvents ActivoCheckBox As System.Windows.Forms.CheckBox

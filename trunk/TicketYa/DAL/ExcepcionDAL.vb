@@ -75,4 +75,12 @@
         Return result
     End Function
 
+    Shared Sub eliminarExcepecion(ByVal exc As BE.ExcepcionBE, ByVal p2 As Integer)
+        Throw New NotImplementedException
+    End Sub
+
+    Shared Sub modificarExcepecion(ByVal exc As BE.ExcepcionBE, ByVal newIdiomaId As Integer)
+        Throw New NotImplementedException
+    End Sub
+
 End Class

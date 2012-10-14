@@ -184,4 +184,12 @@ Public Class BitacoraDAL
 
     End Function
 
+    Shared Sub eliminarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal p2 As Integer)
+        Throw New NotImplementedException
+    End Sub
+
+    Shared Sub modificarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal newIdiomaId As Integer)
+        Throw New NotImplementedException
+    End Sub
+
 End Class

@@ -20,8 +20,8 @@ Partial Class LoginForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
-        Me.UserTextBox = New System.Windows.Forms.TextBox()
-        Me.PassTextBox = New System.Windows.Forms.TextBox()
+        Me.UserTextBox = New MyTextBox()
+        Me.PassTextBox = New MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.PassLabel = New System.Windows.Forms.Label()
         Me.CambiarIdiomaLabel = New System.Windows.Forms.Label()
@@ -123,8 +123,8 @@ Partial Class LoginForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents UserTextBox As System.Windows.Forms.TextBox
-    Friend WithEvents PassTextBox As System.Windows.Forms.TextBox
+    Friend WithEvents UserTextBox As MyTextBox
+    Friend WithEvents PassTextBox As MyTextBox
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents PassLabel As System.Windows.Forms.Label
     Friend WithEvents CambiarIdiomaLabel As System.Windows.Forms.Label

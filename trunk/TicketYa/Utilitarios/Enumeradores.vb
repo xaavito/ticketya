@@ -16,6 +16,9 @@
         UsuarioCreadoExitosamente = 14
         PermisoNoAsociado = 15
         IdiomaNoCreado = 16
+
+        IdiomaGeneradoExistosamente = 17
+
     End Enum
 
     Enum Bitacora
