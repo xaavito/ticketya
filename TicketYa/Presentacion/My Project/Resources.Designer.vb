@@ -59,5 +59,131 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
+        
+        Friend ReadOnly Property _1350171020_tick_circle() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171020_tick_circle", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171138_cancel() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171138_cancel", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171151_Profile() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171151_Profile", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171195_edit_language() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171195_edit_language", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171251_license() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171251_license", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171308_book() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171308_book", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171334_application_exit() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171334_application_exit", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171451_backup_restore() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171451_backup_restore", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171472_people() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171472_people", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350171726_ticket() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350171726_ticket", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172131_data_management() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172131_data_management", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172161_configuration() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172161_configuration", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172417_lock_unlock() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172417_lock_unlock", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172460_system_config_language() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172460_system_config_language", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172478_Language() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172478_Language", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172894_xmag() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172894_xmag", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350172977_folder_new() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350172977_folder_new", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property _1350173099_Modify() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1350173099_Modify", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
     End Module
 End Namespace
