@@ -4,6 +4,18 @@ Public Class MyTextBox
     Inherits TextBox
 
     Dim errorProvider As New ErrorProvider
+    Dim hasExistingErrorOnSpace As Boolean = False
+    Dim hasExistingErrorOnAlfanumerico As Boolean = False
+
+    Private _boton As Button
+    Public Property boton() As Button
+        Get
+            Return _boton
+        End Get
+        Set(ByVal value As Button)
+            _boton = value
+        End Set
+    End Property
 
     Private _sinEspacio As Boolean
     Public Property sinEspacio() As Boolean
@@ -27,22 +39,21 @@ Public Class MyTextBox
     End Property
 
     Public Sub SinEspacios()
-        If Regex.IsMatch(Me.Text, "\s") Then
-            'Throw New EspacioEnBlancoExcepcion
+        If Regex.IsMatch(Me.Text, "\s") And Me.Text.Length > 0 Then
             errorProvider.SetError(Me, "No debe tener espacios")
+            hasExistingErrorOnSpace = True
         Else
-            'errorProvider.Clear()
+            hasExistingErrorOnSpace = False
         End If
-
     End Sub
 
     Public Sub esAlfanumerico()
         If Not String.IsNullOrEmpty(Me.Text) Then
             If Not Regex.IsMatch(Me.Text, "^[A-Z0-9 a-z]*$") Then
                 errorProvider.SetError(Me, "Debe tener un valor")
-                'Throw New StringAlfanumericoExcepcion
+                hasExistingErrorOnAlfanumerico = True
             Else
-                'errorProvider.Clear()
+                hasExistingErrorOnAlfanumerico = False
             End If
         End If
     End Sub
@@ -55,5 +66,22 @@ Public Class MyTextBox
         If alfanumerico = True Then
             esAlfanumerico()
         End If
+
+        checkFixedError()
     End Sub
+
+    Private Sub checkFixedError()
+        If (hasExistingErrorOnAlfanumerico = False And hasExistingErrorOnSpace = False) Then
+            errorProvider.Clear()
+
+            If Not boton Is Nothing Then
+                boton.Enabled = True
+            End If
+        Else
+            If Not boton Is Nothing Then
+                boton.Enabled = False
+            End If
+        End If
+    End Sub
+
 End Class

@@ -22,7 +22,7 @@ Partial Class BuscarIdiomaForm
         Me.IdiomaTextBox = New MyTextBox()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.BuscarIdiomaButton = New System.Windows.Forms.Button()
-        Me.IdiomasDataGrid = New System.Windows.Forms.DataGridView()
+        Me.IdiomasDataGrid = New MyDataGrid()
         Me.Identifcador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EliminarIdiomaButton = New System.Windows.Forms.Button()

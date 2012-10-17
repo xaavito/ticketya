@@ -24,7 +24,7 @@ Partial Class BuscarFamiliaForm
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaTextBox = New MyTextBox()
         Me.BuscarFamiliasButton = New System.Windows.Forms.Button()
-        Me.FamiliasDataGrid = New System.Windows.Forms.DataGridView()
+        Me.FamiliasDataGrid = New MyDataGrid()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.FamiliasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()

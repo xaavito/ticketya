@@ -96,6 +96,9 @@
     <Compile Include="BuscarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controles\MyDataGrid.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\MyTextBox.vb">
       <SubType>Component</SubType>
     </Compile>

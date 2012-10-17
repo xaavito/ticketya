@@ -20,8 +20,8 @@ Partial Class LoginForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
-        Me.UserTextBox = New MyTextBox()
-        Me.PassTextBox = New MyTextBox()
+        Me.UserTextBox = New TicketYa.MyTextBox()
+        Me.PassTextBox = New TicketYa.MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.PassLabel = New System.Windows.Forms.Label()
         Me.CambiarIdiomaLabel = New System.Windows.Forms.Label()
@@ -32,16 +32,22 @@ Partial Class LoginForm
         '
         'UserTextBox
         '
+        Me.UserTextBox.alfanumerico = False
+        Me.UserTextBox.boton = Nothing
         Me.UserTextBox.Location = New System.Drawing.Point(127, 27)
         Me.UserTextBox.Name = "UserTextBox"
+        Me.UserTextBox.sinEspacio = False
         Me.UserTextBox.Size = New System.Drawing.Size(100, 20)
         Me.UserTextBox.TabIndex = 0
         '
         'PassTextBox
         '
+        Me.PassTextBox.alfanumerico = False
+        Me.PassTextBox.boton = Nothing
         Me.PassTextBox.Location = New System.Drawing.Point(127, 67)
         Me.PassTextBox.Name = "PassTextBox"
         Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassTextBox.sinEspacio = False
         Me.PassTextBox.Size = New System.Drawing.Size(100, 20)
         Me.PassTextBox.TabIndex = 1
         Me.PassTextBox.UseSystemPasswordChar = True

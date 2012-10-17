@@ -20,7 +20,7 @@ Partial Class ModificarFamiliaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaTextBox = New MyTextBox()
+        Me.FamiliaTextBox = New TicketYa.MyTextBox()
         Me.ModificarFamiliaButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -35,8 +35,10 @@ Partial Class ModificarFamiliaForm
         '
         'FamiliaTextBox
         '
+        Me.FamiliaTextBox.alfanumerico = False
         Me.FamiliaTextBox.Location = New System.Drawing.Point(128, 29)
         Me.FamiliaTextBox.Name = "FamiliaTextBox"
+        Me.FamiliaTextBox.sinEspacio = False
         Me.FamiliaTextBox.Size = New System.Drawing.Size(140, 20)
         Me.FamiliaTextBox.TabIndex = 14
         '

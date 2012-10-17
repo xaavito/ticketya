@@ -23,19 +23,19 @@ Partial Class ModificarUsuarioForm
         Me.AgregarFamiliaButton = New System.Windows.Forms.Button()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
-        Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
+        Me.FamiliaDataGrid = New TicketYa.MyDataGrid()
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
-        Me.ApellidoTextBox = New MyTextBox()
+        Me.ApellidoTextBox = New TicketYa.MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.NombreTextBox = New MyTextBox()
+        Me.NombreTextBox = New TicketYa.MyTextBox()
         Me.PassLabel = New System.Windows.Forms.Label()
-        Me.PassTextBox = New MyTextBox()
+        Me.PassTextBox = New TicketYa.MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.UsuarioTextBox = New MyTextBox()
+        Me.UsuarioTextBox = New TicketYa.MyTextBox()
         Me.ModificarUsuariosButton = New System.Windows.Forms.Button()
         Me.ActivoLabel = New System.Windows.Forms.Label()
         Me.ActivoCheckBox = New System.Windows.Forms.CheckBox()
@@ -81,11 +81,13 @@ Partial Class ModificarUsuarioForm
         '
         Me.FamiliaDataGrid.AllowUserToAddRows = False
         Me.FamiliaDataGrid.AllowUserToDeleteRows = False
+        Me.FamiliaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.FamiliaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.FamiliaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.FamiliaColumn})
         Me.FamiliaDataGrid.Location = New System.Drawing.Point(330, 12)
         Me.FamiliaDataGrid.MultiSelect = False
         Me.FamiliaDataGrid.Name = "FamiliaDataGrid"
+        Me.FamiliaDataGrid.RowHeadersVisible = False
         Me.FamiliaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FamiliaDataGrid.Size = New System.Drawing.Size(218, 152)
         Me.FamiliaDataGrid.TabIndex = 28
@@ -130,8 +132,10 @@ Partial Class ModificarUsuarioForm
         '
         'ApellidoTextBox
         '
+        Me.ApellidoTextBox.alfanumerico = False
         Me.ApellidoTextBox.Location = New System.Drawing.Point(96, 90)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
+        Me.ApellidoTextBox.sinEspacio = False
         Me.ApellidoTextBox.Size = New System.Drawing.Size(140, 20)
         Me.ApellidoTextBox.TabIndex = 24
         '
@@ -146,8 +150,10 @@ Partial Class ModificarUsuarioForm
         '
         'NombreTextBox
         '
+        Me.NombreTextBox.alfanumerico = False
         Me.NombreTextBox.Location = New System.Drawing.Point(96, 64)
         Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.sinEspacio = False
         Me.NombreTextBox.Size = New System.Drawing.Size(140, 20)
         Me.NombreTextBox.TabIndex = 22
         '
@@ -162,9 +168,11 @@ Partial Class ModificarUsuarioForm
         '
         'PassTextBox
         '
+        Me.PassTextBox.alfanumerico = False
         Me.PassTextBox.Location = New System.Drawing.Point(96, 38)
         Me.PassTextBox.Name = "PassTextBox"
         Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassTextBox.sinEspacio = False
         Me.PassTextBox.Size = New System.Drawing.Size(140, 20)
         Me.PassTextBox.TabIndex = 20
         '
@@ -179,8 +187,10 @@ Partial Class ModificarUsuarioForm
         '
         'UsuarioTextBox
         '
+        Me.UsuarioTextBox.alfanumerico = False
         Me.UsuarioTextBox.Location = New System.Drawing.Point(96, 12)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
+        Me.UsuarioTextBox.sinEspacio = False
         Me.UsuarioTextBox.Size = New System.Drawing.Size(140, 20)
         Me.UsuarioTextBox.TabIndex = 18
         '
@@ -245,7 +255,6 @@ Partial Class ModificarUsuarioForm
     Friend WithEvents AgregarFamiliaButton As System.Windows.Forms.Button
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents FamiliaDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FamiliaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
@@ -261,5 +270,6 @@ Partial Class ModificarUsuarioForm
     Friend WithEvents ModificarUsuariosButton As System.Windows.Forms.Button
     Friend WithEvents ActivoLabel As System.Windows.Forms.Label
     Friend WithEvents ActivoCheckBox As System.Windows.Forms.CheckBox
+    Friend WithEvents FamiliaDataGrid As TicketYa.MyDataGrid
 
 End Class

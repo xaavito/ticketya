@@ -30,7 +30,7 @@ Partial Class GenerarUsuarioForm
         Me.ApellidoTextBox = New MyTextBox()
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
+        Me.FamiliaDataGrid = New MyDataGrid()
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
