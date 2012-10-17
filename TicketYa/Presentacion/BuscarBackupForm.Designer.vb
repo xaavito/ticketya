@@ -19,7 +19,7 @@ Partial Class BuscarBackupForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BackupDataGrid = New System.Windows.Forms.DataGridView()
+        Me.BackupDataGrid = New MyDataGrid()
         Me.RealizarBackupButton = New System.Windows.Forms.Button()
         Me.EliminarBackupButton = New System.Windows.Forms.Button()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

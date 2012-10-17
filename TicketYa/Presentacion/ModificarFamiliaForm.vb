@@ -1,6 +1,7 @@
 ﻿Public Class ModificarFamiliaForm
     Dim familia As BE.FamiliaBE
 
+
     Private Sub ModificarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarFamiliaButton.Click
         Try
             If (BLL.GestorFamiliaBLL.modificarFamilia(familia.identificador,
@@ -20,4 +21,7 @@
         FamiliaTextBox.Text = familia.descripcion
     End Sub
 
+    Private Sub ModificarFamiliaForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Normal
+    End Sub
 End Class

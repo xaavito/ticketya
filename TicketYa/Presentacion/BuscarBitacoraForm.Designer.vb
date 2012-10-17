@@ -24,7 +24,7 @@ Partial Class BuscarBitacoraForm
         Me.BuscarBitacoraButton = New System.Windows.Forms.Button()
         Me.TipoLabel = New System.Windows.Forms.Label()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.BitacorasDataGrid = New System.Windows.Forms.DataGridView()
+        Me.BitacorasDataGrid = New MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

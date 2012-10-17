@@ -1,20 +1,10 @@
 ﻿Public Class ModificarIdiomaForm
     Dim idioma As BE.IdiomaBE
 
-    Public Sub New()
-
-        ' Llamada necesaria para el diseñador.
-        InitializeComponent()
-
-        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        Me.WindowState = FormWindowState.Normal
-    End Sub
-
     Private Sub GuardarIdiomaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GuardarIdiomaButton.Click
         idioma.descripcion = IdiomaTextBox.Text
         Try
             If (BLL.GestorIdiomaBLL.modificarIdioma(idioma)) Then
-                'MsgBox("Idioma Modificado Existosamente")
                 Throw New Excepciones.IdiomaModificadoExistosamente
                 Me.Close()
             End If
@@ -34,5 +24,9 @@
 
     Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarButton.Click
         Me.Close()
+    End Sub
+
+    Private Sub ModificarIdiomaForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.WindowState = FormWindowState.Normal
     End Sub
 End Class

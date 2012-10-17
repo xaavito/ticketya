@@ -24,7 +24,7 @@ Partial Class BuscarUsuarioForm
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.UsuarioTextBox = New MyTextBox()
         Me.BuscarUsuariosButton = New System.Windows.Forms.Button()
-        Me.UsuariosDataGrid = New System.Windows.Forms.DataGridView()
+        Me.UsuariosDataGrid = New MyDataGrid()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ActivoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

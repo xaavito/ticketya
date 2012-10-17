@@ -2,7 +2,6 @@
 
 Public Class BaseForm
 
-
     Protected Sub getPermisos(ByVal permisos As List(Of BE.PermisoBE))
         For Each f As Form In My.Application.OpenForms
             If (Me.HasChildren) Then

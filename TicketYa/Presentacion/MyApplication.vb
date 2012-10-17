@@ -51,6 +51,8 @@
                 Catch ex As Exception
                     Application.HandlerException(ex)
                 End Try
+            Else
+                Environment.Exit(1)
             End If
             Return ret
         End Function

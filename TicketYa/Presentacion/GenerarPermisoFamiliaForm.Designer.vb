@@ -19,13 +19,13 @@ Partial Class GenerarPermisoFamiliaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PermisoDataGrid = New System.Windows.Forms.DataGridView()
+        Me.PermisoDataGrid = New MyDataGrid()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IndentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FamiliaDataGrid = New System.Windows.Forms.DataGridView()
+        Me.FamiliaDataGrid = New MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PermisosFamiliaDataGrid = New System.Windows.Forms.DataGridView()
+        Me.PermisosFamiliaDataGrid = New MyDataGrid()
         Me.IdentificadorColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PermisoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AgregarPermisoButton = New System.Windows.Forms.Button()
