@@ -10,11 +10,18 @@ Public Class RepositorioSQL
     Dim result As Integer
     Dim tx As SqlTransaction
     Dim r As String
+    Private _conString As String = System.Configuration.ConfigurationManager.ConnectionStrings.Item(1).ToString
 
+    Public ReadOnly Property conString() As String
+        Get
+            Return _conString
+        End Get
+    End Property
 
     Public Sub crearComando(ByVal nombre As String) Implements IRepositorio.crearComando
         If con Is Nothing Then
-            con = New SqlConnection("Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;")
+            'con = New SqlConnection("Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;")
+            con = New SqlConnection(ConString)
         End If
         cmd = New SqlCommand
         cmd.CommandType = CommandType.StoredProcedure
@@ -78,7 +85,7 @@ Public Class RepositorioSQL
     End Function
 
     Public Sub crearComandoDirecto(ByVal nombre As String)
-        con = New SqlConnection("Data Source=localhost;Initial Catalog=player1;Integrated Security=SSPI;")
+        con = New SqlConnection(ConString)
         cmd = New SqlCommand
         cmd.CommandType = CommandType.Text
         cmd.Connection = con

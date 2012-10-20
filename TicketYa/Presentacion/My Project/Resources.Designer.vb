@@ -60,135 +60,135 @@ Namespace My.Resources
             End Set
         End Property
         
-        Friend ReadOnly Property _1350171020_tick_circle() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171020_tick_circle1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171020_tick_circle", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171020_tick_circle1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171138_cancel() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171138_cancel1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171138_cancel", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171138_cancel1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171151_Profile() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171151_Profile1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171151_Profile", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171151_Profile1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171195_edit_language() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171251_license1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171195_edit_language", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171251_license1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171251_license() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171308_book1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171251_license", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171308_book1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171308_book() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171334_application_exit1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171308_book", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171334_application_exit1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171334_application_exit() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171451_backup_restore1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171334_application_exit", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171451_backup_restore1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171451_backup_restore() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171472_people1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171451_backup_restore", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171472_people1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171472_people() As System.Drawing.Icon
+        Friend ReadOnly Property _1350171726_ticket1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171472_people", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350171726_ticket1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350171726_ticket() As System.Drawing.Icon
+        Friend ReadOnly Property _1350172131_data_management1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350171726_ticket", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350172131_data_management1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172131_data_management() As System.Drawing.Icon
+        Friend ReadOnly Property _1350172161_configuration1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172131_data_management", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350172161_configuration1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172161_configuration() As System.Drawing.Icon
+        Friend ReadOnly Property _1350172417_lock_unlock1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172161_configuration", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350172417_lock_unlock1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172417_lock_unlock() As System.Drawing.Icon
+        Friend ReadOnly Property _1350172460_system_config_language1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172417_lock_unlock", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350172460_system_config_language1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172460_system_config_language() As System.Drawing.Icon
+        Friend ReadOnly Property _1350172894_xmag1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172460_system_config_language", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350172894_xmag1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172478_Language() As System.Drawing.Icon
+        Friend ReadOnly Property _1350172977_folder_new1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172478_Language", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350172977_folder_new1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172894_xmag() As System.Drawing.Icon
+        Friend ReadOnly Property _1350173099_Modify1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172894_xmag", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("_1350173099_Modify1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350172977_folder_new() As System.Drawing.Icon
+        Friend ReadOnly Property add() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350172977_folder_new", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("add", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property _1350173099_Modify() As System.Drawing.Icon
+        Friend ReadOnly Property add_1_icon() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("_1350173099_Modify", resourceCulture)
-                Return CType(obj,System.Drawing.Icon)
+                Dim obj As Object = ResourceManager.GetObject("add_1_icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         
-        Friend ReadOnly Property whiteCrossBlueBackground() As System.Drawing.Bitmap
+        Friend ReadOnly Property permission() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("whiteCrossBlueBackground", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("permission", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

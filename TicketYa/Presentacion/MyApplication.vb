@@ -5,6 +5,8 @@
 
         Protected Overrides Function OnStartup(ByVal eventArgs As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) As Boolean
             Dim Splash As New Intro()
+            Splash.Name = "TicketYa"
+            'Splash.ProductVersion
             Splash.Show()
 
             Dim auth As Boolean = False

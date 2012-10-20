@@ -34,7 +34,7 @@ Partial Class LoginForm
         '
         Me.UserTextBox.alfanumerico = False
         Me.UserTextBox.boton = Nothing
-        Me.UserTextBox.Location = New System.Drawing.Point(127, 27)
+        Me.UserTextBox.Location = New System.Drawing.Point(127, 12)
         Me.UserTextBox.Name = "UserTextBox"
         Me.UserTextBox.sinEspacio = False
         Me.UserTextBox.Size = New System.Drawing.Size(100, 20)
@@ -44,7 +44,7 @@ Partial Class LoginForm
         '
         Me.PassTextBox.alfanumerico = False
         Me.PassTextBox.boton = Nothing
-        Me.PassTextBox.Location = New System.Drawing.Point(127, 67)
+        Me.PassTextBox.Location = New System.Drawing.Point(127, 44)
         Me.PassTextBox.Name = "PassTextBox"
         Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PassTextBox.sinEspacio = False
@@ -55,7 +55,7 @@ Partial Class LoginForm
         'UsuarioLabel
         '
         Me.UsuarioLabel.AutoSize = True
-        Me.UsuarioLabel.Location = New System.Drawing.Point(37, 27)
+        Me.UsuarioLabel.Location = New System.Drawing.Point(37, 15)
         Me.UsuarioLabel.Name = "UsuarioLabel"
         Me.UsuarioLabel.Size = New System.Drawing.Size(43, 13)
         Me.UsuarioLabel.TabIndex = 2
@@ -64,7 +64,7 @@ Partial Class LoginForm
         'PassLabel
         '
         Me.PassLabel.AutoSize = True
-        Me.PassLabel.Location = New System.Drawing.Point(37, 67)
+        Me.PassLabel.Location = New System.Drawing.Point(37, 47)
         Me.PassLabel.Name = "PassLabel"
         Me.PassLabel.Size = New System.Drawing.Size(61, 13)
         Me.PassLabel.TabIndex = 3
@@ -73,7 +73,7 @@ Partial Class LoginForm
         'CambiarIdiomaLabel
         '
         Me.CambiarIdiomaLabel.AutoSize = True
-        Me.CambiarIdiomaLabel.Location = New System.Drawing.Point(12, 173)
+        Me.CambiarIdiomaLabel.Location = New System.Drawing.Point(63, 121)
         Me.CambiarIdiomaLabel.Name = "CambiarIdiomaLabel"
         Me.CambiarIdiomaLabel.Size = New System.Drawing.Size(79, 13)
         Me.CambiarIdiomaLabel.TabIndex = 4
@@ -82,7 +82,7 @@ Partial Class LoginForm
         'IdiomaComboBox
         '
         Me.IdiomaComboBox.FormattingEnabled = True
-        Me.IdiomaComboBox.Location = New System.Drawing.Point(117, 170)
+        Me.IdiomaComboBox.Location = New System.Drawing.Point(161, 118)
         Me.IdiomaComboBox.Name = "IdiomaComboBox"
         Me.IdiomaComboBox.Size = New System.Drawing.Size(130, 21)
         Me.IdiomaComboBox.TabIndex = 5
@@ -91,7 +91,7 @@ Partial Class LoginForm
         '
         Me.AceptarButton.Image = CType(resources.GetObject("AceptarButton.Image"), System.Drawing.Image)
         Me.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AceptarButton.Location = New System.Drawing.Point(69, 105)
+        Me.AceptarButton.Location = New System.Drawing.Point(91, 80)
         Me.AceptarButton.Name = "AceptarButton"
         Me.AceptarButton.Size = New System.Drawing.Size(75, 23)
         Me.AceptarButton.TabIndex = 6
@@ -103,7 +103,7 @@ Partial Class LoginForm
         '
         Me.CancelarButton.Image = CType(resources.GetObject("CancelarButton.Image"), System.Drawing.Image)
         Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CancelarButton.Location = New System.Drawing.Point(210, 105)
+        Me.CancelarButton.Location = New System.Drawing.Point(184, 80)
         Me.CancelarButton.Name = "CancelarButton"
         Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
         Me.CancelarButton.TabIndex = 7
@@ -114,7 +114,7 @@ Partial Class LoginForm
         'LoginForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(358, 273)
+        Me.ClientSize = New System.Drawing.Size(344, 161)
         Me.Controls.Add(Me.CancelarButton)
         Me.Controls.Add(Me.AceptarButton)
         Me.Controls.Add(Me.IdiomaComboBox)

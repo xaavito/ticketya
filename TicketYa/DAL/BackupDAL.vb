@@ -7,9 +7,11 @@ Public Class BackupDAL
     'TODO buscar path relativo
     Public Shared Sub BackUp(ByVal path As String)
 
-        Dim connectionString As String
-        connectionString = "Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;"
-        Dim builder As New SqlConnectionStringBuilder(connectionString)
+        'Dim connectionString As String
+        Dim repo As New RepositorioSQL
+
+        'connectionString = 
+        Dim builder As New SqlConnectionStringBuilder(repo.conString)
         Dim connection As New ServerConnection(builder.DataSource)
         Dim sqlServer As New Server(connection)
 
@@ -49,9 +51,10 @@ Public Class BackupDAL
 
     End Sub
 
-    Public Shared Sub Restore(ByVal path As String, ByVal connectionString As String)
+    Public Shared Sub Restore(ByVal path As String)
+        Dim repo As New RepositorioSQL
 
-        Dim builder As New SqlConnectionStringBuilder(connectionString)
+        Dim builder As New SqlConnectionStringBuilder(repo.conString)
         Dim connection As New ServerConnection(builder.DataSource)
         Dim sqlServer As New Server(connection)
 

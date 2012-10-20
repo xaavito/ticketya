@@ -296,70 +296,70 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1350171020_tick_circle.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171138_cancel.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171151_Profile.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171156_group.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171195_edit-language.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171251_license.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171275_site_backup_and_restore.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171308_book.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171334_application-exit.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171472_people.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350171451_backup-restore.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\1350171726_ticket.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1350171138_cancel1.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172131_data_management.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172161_configuration.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172478_Language.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172417_lock_unlock.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172460_system-config-language.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172894_xmag.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350172977_folder-new.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1350173099_Modify.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\whiteCrossBlueBackground.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171020_tick_circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171138_cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171151_Profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171251_license.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171308_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171334_application-exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171451_backup-restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171472_people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350171726_ticket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350172131_data_management.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350172161_configuration.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350172417_lock_unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350172894_xmag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350172977_folder-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350173099_Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1350172460_system-config-language.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\js.permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\permission.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add-1-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
