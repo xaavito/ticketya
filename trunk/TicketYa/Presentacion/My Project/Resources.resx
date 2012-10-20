@@ -118,61 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="_1350171308_book" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171308_book.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171020_tick_circle1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171020_tick_circle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171451_backup_restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171451_backup-restore.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171138_cancel1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171138_cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171138_cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171138_cancel.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171151_Profile1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171151_Profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171195_edit_language" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171195_edit-language.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171251_license1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171251_license.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171151_Profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171151_Profile.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171308_book1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171308_book.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171726_ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171726_ticket.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171334_application_exit1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171334_application-exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171472_people" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171472_people.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171451_backup_restore1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171451_backup-restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171251_license" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171251_license.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171472_people1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171472_people.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171334_application_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171334_application-exit.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350171726_ticket1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350171726_ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350171020_tick_circle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350171020_tick_circle.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350172131_data_management1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350172131_data_management.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172131_data_management" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172131_data_management.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350172161_configuration1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350172161_configuration.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172161_configuration" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172161_configuration.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350172417_lock_unlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350172417_lock_unlock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172417_lock_unlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172417_lock_unlock.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350172894_xmag1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350172894_xmag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172460_system_config_language" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172460_system-config-language.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350172977_folder_new1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350172977_folder-new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172478_Language" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172478_Language.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350173099_Modify1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350173099_Modify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172894_xmag" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172894_xmag.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350172977_folder_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350172977_folder-new.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="add_1_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add-1-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_1350173099_Modify" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1350173099_Modify.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="permission" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\permission.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="whiteCrossBlueBackground" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\whiteCrossBlueBackground.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="_1350172460_system_config_language1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1350172460_system-config-language.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

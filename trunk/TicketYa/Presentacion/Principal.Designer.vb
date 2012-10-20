@@ -75,7 +75,7 @@ Partial Class Principal
         Me.Usuarios.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarUsuarios, Me.GenerarUsuarios})
         Me.Usuarios.Image = CType(resources.GetObject("Usuarios.Image"), System.Drawing.Image)
         Me.Usuarios.Name = "Usuarios"
-        Me.Usuarios.Size = New System.Drawing.Size(127, 22)
+        Me.Usuarios.Size = New System.Drawing.Size(152, 22)
         Me.Usuarios.Text = "Usuarios"
         '
         'BuscarUsuarios
@@ -97,7 +97,7 @@ Partial Class Principal
         Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilia, Me.GenerarFamilia})
         Me.Familias.Image = CType(resources.GetObject("Familias.Image"), System.Drawing.Image)
         Me.Familias.Name = "Familias"
-        Me.Familias.Size = New System.Drawing.Size(127, 22)
+        Me.Familias.Size = New System.Drawing.Size(152, 22)
         Me.Familias.Text = "Familia"
         '
         'BuscarFamilia
@@ -117,18 +117,21 @@ Partial Class Principal
         'Permisos
         '
         Me.Permisos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermisosUsuario, Me.PermisoFamilia})
+        Me.Permisos.Image = CType(resources.GetObject("Permisos.Image"), System.Drawing.Image)
         Me.Permisos.Name = "Permisos"
-        Me.Permisos.Size = New System.Drawing.Size(127, 22)
+        Me.Permisos.Size = New System.Drawing.Size(152, 22)
         Me.Permisos.Text = "Permisos"
         '
         'PermisosUsuario
         '
+        Me.PermisosUsuario.Image = CType(resources.GetObject("PermisosUsuario.Image"), System.Drawing.Image)
         Me.PermisosUsuario.Name = "PermisosUsuario"
         Me.PermisosUsuario.Size = New System.Drawing.Size(166, 22)
         Me.PermisosUsuario.Text = "Permisos Usuario"
         '
         'PermisoFamilia
         '
+        Me.PermisoFamilia.Image = CType(resources.GetObject("PermisoFamilia.Image"), System.Drawing.Image)
         Me.PermisoFamilia.Name = "PermisoFamilia"
         Me.PermisoFamilia.Size = New System.Drawing.Size(166, 22)
         Me.PermisoFamilia.Text = "Permiso Familia"
@@ -173,12 +176,14 @@ Partial Class Principal
         '
         'BuscarBackupToolStripMenuItem
         '
+        Me.BuscarBackupToolStripMenuItem.Image = CType(resources.GetObject("BuscarBackupToolStripMenuItem.Image"), System.Drawing.Image)
         Me.BuscarBackupToolStripMenuItem.Name = "BuscarBackupToolStripMenuItem"
         Me.BuscarBackupToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.BuscarBackupToolStripMenuItem.Text = "Buscar Backup"
         '
         'RealizarRestoreToolStripMenuItem
         '
+        Me.RealizarRestoreToolStripMenuItem.Image = CType(resources.GetObject("RealizarRestoreToolStripMenuItem.Image"), System.Drawing.Image)
         Me.RealizarRestoreToolStripMenuItem.Name = "RealizarRestoreToolStripMenuItem"
         Me.RealizarRestoreToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.RealizarRestoreToolStripMenuItem.Text = "Realizar Restore"
