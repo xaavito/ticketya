@@ -6,18 +6,21 @@
 
     Public Shared Function eliminarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
 
-        For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
-            DAL.BitacoraDAL.eliminarBitacora(bit, idioma.identificador)
-            'TODO: Generar
+        If DAL.IdiomaDAL.checkIdiomasAsignados(idioma.identificador) = 0 Then
+            For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+                DAL.BitacoraDAL.eliminarBitacora(bit, idioma.identificador)
+            Next
+            For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+                DAL.ExcepcionDAL.eliminarExcepecion(exc, idioma.identificador)
+            Next
+            For Each men As BE.MensajeControlBE In idioma.mensaje
+                DAL.MensajeControlDAL.eliminarMensaje(men, idioma.identificador)
+            Next
 
-        Next
-        For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
-            DAL.ExcepcionDAL.eliminarExcepecion(exc, idioma.identificador)
-        Next
-        For Each men As BE.MensajeControlBE In idioma.mensaje
-            DAL.MensajeControlDAL.eliminarMensaje(men, idioma.identificador)
-        Next
-        Return DAL.IdiomaDAL.eliminarIdioma(idioma.identificador)
+            Return DAL.IdiomaDAL.eliminarIdioma(idioma.identificador)
+        Else
+            Return 2
+        End If
 
     End Function
 

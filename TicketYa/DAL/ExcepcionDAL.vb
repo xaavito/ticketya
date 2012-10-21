@@ -75,9 +75,24 @@
         Return result
     End Function
 
-    Shared Sub eliminarExcepecion(ByVal exc As BE.ExcepcionBE, ByVal p2 As Integer)
-        Throw New NotImplementedException
-    End Sub
+    Shared Function eliminarExcepecion(ByVal exc As BE.ExcepcionBE, ByVal p2 As Integer)
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_EXCEPCION_SP")
+            repository.addParam("@idIdioma", p2)
+            repository.addParam("@idExcBase", exc.codigo)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.EliminarExcepcionExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.EliminarExcepcionExcepcion
+        End Try
+
+        Return result
+    End Function
 
     Shared Function modificarExcepecion(ByVal exc As BE.ExcepcionBE, ByVal newIdiomaId As Integer) As Integer
         Dim result As Integer

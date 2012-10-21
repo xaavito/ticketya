@@ -70,7 +70,21 @@
     End Function
 
     Shared Function eliminarIdioma(ByVal p1 As Integer) As Integer
-        Throw New NotImplementedException
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_IDIOMA_SP")
+            repository.addParam("@idIdioma", p1)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.EliminarIdiomaExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.EliminarIdiomaExcepcion
+        End Try
+
+        Return result
     End Function
 
     Shared Function modificarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
@@ -87,6 +101,24 @@
             End If
         Catch ex As Exception
             Throw New Excepciones.ModificacionDeIdiomaExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function checkIdiomasAsignados(ByVal p1 As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("CHEKEAR_IDIOMA_ASIGNADO_SP")
+            repository.addParam("@idIdioma", p1)
+            result = repository.executeSearch
+            If (result < 0) Then
+                Throw New Excepciones.IdiomaNoEncontradoExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.IdiomaNoEncontradoExcepcion
         End Try
 
         Return result

@@ -12,6 +12,10 @@
         UserTextBox.sinEspacio = True
         UserTextBox.alfanumerico = True
         UserTextBox.boton = AceptarButton
+
+        PassTextBox.sinEspacio = True
+        PassTextBox.alfanumerico = True
+        PassTextBox.boton = AceptarButton
     End Sub
 
     Private Sub AceptarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AceptarButton.Click
@@ -33,8 +37,4 @@
     Private Sub Login_FormClosed(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Me.FormClosing
         Me.DialogResult = Windows.Forms.DialogResult.Cancel
     End Sub
-
-    'Private Sub loginform_load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-    '    Me.StartPosition = FormStartPosition.CenterScreen
-    'End Sub
 End Class

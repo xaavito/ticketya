@@ -25,6 +25,15 @@
         IdiomaTieneUsuariosAsociados = 23
         UsuarioEliminadoExitosamente = 24
         UsuarioModificadoExitosamente = 25
+        ModificacionDeIdioma = 26
+        EliminarMensajeControl = 27
+        ModificacionDeMensajeControl = 28
+        EliminarBitacora = 29
+        ModificacionDeBitacora = 30
+        EliminarExcepcion = 31
+        ModificacionDeExcepcion = 32
+        EliminarIdioma = 33
+
     End Enum
 
     Enum Bitacora
