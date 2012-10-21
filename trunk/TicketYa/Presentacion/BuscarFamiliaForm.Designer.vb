@@ -19,11 +19,11 @@ Partial Class BuscarFamiliaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.EliminarFamiliaButton = New System.Windows.Forms.Button()
-        Me.ModificarFamiliaButton = New System.Windows.Forms.Button()
+        Me.EliminarFamiliaButton = New MyButton()
+        Me.ModificarFamiliaButton = New MyButton()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaTextBox = New MyTextBox()
-        Me.BuscarFamiliasButton = New System.Windows.Forms.Button()
+        Me.BuscarFamiliasButton = New MyButton()
         Me.FamiliasDataGrid = New MyDataGrid()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

@@ -19,7 +19,7 @@ Partial Class GenerarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.AltaUsuariosButton = New System.Windows.Forms.Button()
+        Me.AltaUsuariosButton = New MyButton()
         Me.UsuarioTextBox = New MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.PassLabel = New System.Windows.Forms.Label()
@@ -35,8 +35,8 @@ Partial Class GenerarUsuarioForm
         Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
-        Me.AgregarFamiliaButton = New System.Windows.Forms.Button()
-        Me.QuitarFamiliaButton = New System.Windows.Forms.Button()
+        Me.AgregarFamiliaButton = New MyButton()
+        Me.QuitarFamiliaButton = New MyButton()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '

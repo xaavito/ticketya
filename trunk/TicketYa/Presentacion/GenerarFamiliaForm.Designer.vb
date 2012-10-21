@@ -21,7 +21,7 @@ Partial Class GenerarFamiliaForm
     Private Sub InitializeComponent()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaTextBox = New MyTextBox()
-        Me.AltaFamiliaButton = New System.Windows.Forms.Button()
+        Me.AltaFamiliaButton = New MyButton()
         Me.SuspendLayout()
         '
         'FamiliaLabel

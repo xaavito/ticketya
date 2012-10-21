@@ -19,10 +19,10 @@ Partial Class GenerarPermisoUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.CancelarButton = New System.Windows.Forms.Button()
-        Me.GuardarPermisoButton = New System.Windows.Forms.Button()
-        Me.QuitarPermisoButton = New System.Windows.Forms.Button()
-        Me.AgregarPermisoButton = New System.Windows.Forms.Button()
+        Me.CancelarButton = New MyButton()
+        Me.GuardarPermisoButton = New MyButton()
+        Me.QuitarPermisoButton = New MyButton()
+        Me.AgregarPermisoButton = New MyButton()
         Me.PermisosUsuarioDataGrid = New MyDataGrid()
         Me.IdentificadorColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PermisoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

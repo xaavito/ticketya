@@ -188,8 +188,24 @@ Public Class BitacoraDAL
         Throw New NotImplementedException
     End Sub
 
-    Shared Sub modificarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal newIdiomaId As Integer)
-        Throw New NotImplementedException
-    End Sub
+    Shared Function modificarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal newIdiomaId As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_BITACORA_SP")
+            repository.addParam("@idIdioma", newIdiomaId)
+            repository.addParam("@idBitBase", bit.idBase)
+            repository.addParam("@bitMensaje", bit.mensaje)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.ModificacionDeBitacoraExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.ModificacionDeBitacoraExcepcion
+        End Try
+
+        Return result
+    End Function
 
 End Class

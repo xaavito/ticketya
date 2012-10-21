@@ -19,6 +19,7 @@ Partial Class ModificarIdiomaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ModificarIdiomaForm))
         Me.ExcepcionLabel = New System.Windows.Forms.Label()
         Me.MensajeBitacoraLabel = New System.Windows.Forms.Label()
         Me.ControlesLabel = New System.Windows.Forms.Label()
@@ -39,8 +40,8 @@ Partial Class ModificarIdiomaForm
         Me.idControl = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaTextBox = New TicketYa.MyTextBox()
-        Me.GuardarIdiomaButton = New System.Windows.Forms.Button()
-        Me.CancelarButton = New System.Windows.Forms.Button()
+        Me.GuardarIdiomaButton = New TicketYa.MyButton()
+        Me.CancelarButton = New TicketYa.MyButton()
         CType(Me.ExcepcionesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MensajesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ControlesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,11 +77,14 @@ Partial Class ModificarIdiomaForm
         'ExcepcionesDataGrid
         '
         Me.ExcepcionesDataGrid.AllowUserToAddRows = False
+        Me.ExcepcionesDataGrid.AllowUserToDeleteRows = False
+        Me.ExcepcionesDataGrid.AllowUserToResizeRows = False
         Me.ExcepcionesDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ExcepcionesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ExcepcionesDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CodigoColumn, Me.MensajeColumn, Me.IdentificadorColumn})
         Me.ExcepcionesDataGrid.Location = New System.Drawing.Point(9, 82)
         Me.ExcepcionesDataGrid.Name = "ExcepcionesDataGrid"
+        Me.ExcepcionesDataGrid.ReadOnly = True
         Me.ExcepcionesDataGrid.RowHeadersVisible = False
         Me.ExcepcionesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ExcepcionesDataGrid.Size = New System.Drawing.Size(472, 150)
@@ -112,11 +116,14 @@ Partial Class ModificarIdiomaForm
         'MensajesDataGrid
         '
         Me.MensajesDataGrid.AllowUserToAddRows = False
+        Me.MensajesDataGrid.AllowUserToDeleteRows = False
+        Me.MensajesDataGrid.AllowUserToResizeRows = False
         Me.MensajesDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.MensajesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MensajesDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdBaseColumn, Me.MensajeColumn2, Me.identificador})
         Me.MensajesDataGrid.Location = New System.Drawing.Point(9, 265)
         Me.MensajesDataGrid.Name = "MensajesDataGrid"
+        Me.MensajesDataGrid.ReadOnly = True
         Me.MensajesDataGrid.RowHeadersVisible = False
         Me.MensajesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MensajesDataGrid.Size = New System.Drawing.Size(472, 150)
@@ -127,6 +134,7 @@ Partial Class ModificarIdiomaForm
         Me.IdBaseColumn.DataPropertyName = "idBase"
         Me.IdBaseColumn.HeaderText = "IdBase"
         Me.IdBaseColumn.Name = "IdBaseColumn"
+        Me.IdBaseColumn.ReadOnly = True
         Me.IdBaseColumn.Visible = False
         '
         'MensajeColumn2
@@ -134,22 +142,27 @@ Partial Class ModificarIdiomaForm
         Me.MensajeColumn2.DataPropertyName = "mensaje"
         Me.MensajeColumn2.HeaderText = "Mensaje"
         Me.MensajeColumn2.Name = "MensajeColumn2"
+        Me.MensajeColumn2.ReadOnly = True
         '
         'identificador
         '
         Me.identificador.DataPropertyName = "identificador"
         Me.identificador.HeaderText = "Identificador"
         Me.identificador.Name = "identificador"
+        Me.identificador.ReadOnly = True
         Me.identificador.Visible = False
         '
         'ControlesDataGrid
         '
         Me.ControlesDataGrid.AllowUserToAddRows = False
+        Me.ControlesDataGrid.AllowUserToDeleteRows = False
+        Me.ControlesDataGrid.AllowUserToResizeRows = False
         Me.ControlesDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ControlesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.ControlesDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.FormularioColumn, Me.ControlColumn, Me.Mensaje, Me.Identificador2, Me.idFormulario, Me.idControl})
         Me.ControlesDataGrid.Location = New System.Drawing.Point(9, 454)
         Me.ControlesDataGrid.Name = "ControlesDataGrid"
+        Me.ControlesDataGrid.ReadOnly = True
         Me.ControlesDataGrid.RowHeadersVisible = False
         Me.ControlesDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ControlesDataGrid.Size = New System.Drawing.Size(472, 152)
@@ -160,24 +173,28 @@ Partial Class ModificarIdiomaForm
         Me.FormularioColumn.DataPropertyName = "formulario"
         Me.FormularioColumn.HeaderText = "Formulario"
         Me.FormularioColumn.Name = "FormularioColumn"
+        Me.FormularioColumn.ReadOnly = True
         '
         'ControlColumn
         '
         Me.ControlColumn.DataPropertyName = "control"
         Me.ControlColumn.HeaderText = "Control"
         Me.ControlColumn.Name = "ControlColumn"
+        Me.ControlColumn.ReadOnly = True
         '
         'Mensaje
         '
         Me.Mensaje.DataPropertyName = "mensaje"
         Me.Mensaje.HeaderText = "Mensaje"
         Me.Mensaje.Name = "Mensaje"
+        Me.Mensaje.ReadOnly = True
         '
         'Identificador2
         '
         Me.Identificador2.DataPropertyName = "identificador"
         Me.Identificador2.HeaderText = "Identificador"
         Me.Identificador2.Name = "Identificador2"
+        Me.Identificador2.ReadOnly = True
         Me.Identificador2.Visible = False
         '
         'idFormulario
@@ -185,6 +202,7 @@ Partial Class ModificarIdiomaForm
         Me.idFormulario.DataPropertyName = "idFormulario"
         Me.idFormulario.HeaderText = "idFormulario"
         Me.idFormulario.Name = "idFormulario"
+        Me.idFormulario.ReadOnly = True
         Me.idFormulario.Visible = False
         '
         'idControl
@@ -192,6 +210,7 @@ Partial Class ModificarIdiomaForm
         Me.idControl.DataPropertyName = "idControl"
         Me.idControl.HeaderText = "idControl"
         Me.idControl.Name = "idControl"
+        Me.idControl.ReadOnly = True
         Me.idControl.Visible = False
         '
         'IdiomaLabel
@@ -206,6 +225,7 @@ Partial Class ModificarIdiomaForm
         'IdiomaTextBox
         '
         Me.IdiomaTextBox.alfanumerico = False
+        Me.IdiomaTextBox.boton = Nothing
         Me.IdiomaTextBox.Location = New System.Drawing.Point(56, 10)
         Me.IdiomaTextBox.Name = "IdiomaTextBox"
         Me.IdiomaTextBox.sinEspacio = False
@@ -214,20 +234,26 @@ Partial Class ModificarIdiomaForm
         '
         'GuardarIdiomaButton
         '
-        Me.GuardarIdiomaButton.Location = New System.Drawing.Point(647, 283)
+        Me.GuardarIdiomaButton.Image = CType(resources.GetObject("GuardarIdiomaButton.Image"), System.Drawing.Image)
+        Me.GuardarIdiomaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GuardarIdiomaButton.Location = New System.Drawing.Point(645, 635)
         Me.GuardarIdiomaButton.Name = "GuardarIdiomaButton"
-        Me.GuardarIdiomaButton.Size = New System.Drawing.Size(75, 23)
+        Me.GuardarIdiomaButton.Size = New System.Drawing.Size(80, 23)
         Me.GuardarIdiomaButton.TabIndex = 8
         Me.GuardarIdiomaButton.Text = "Guardar"
+        Me.GuardarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GuardarIdiomaButton.UseVisualStyleBackColor = True
         '
         'CancelarButton
         '
-        Me.CancelarButton.Location = New System.Drawing.Point(777, 283)
+        Me.CancelarButton.Image = CType(resources.GetObject("CancelarButton.Image"), System.Drawing.Image)
+        Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CancelarButton.Location = New System.Drawing.Point(775, 635)
         Me.CancelarButton.Name = "CancelarButton"
         Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
         Me.CancelarButton.TabIndex = 9
         Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.CancelarButton.UseVisualStyleBackColor = True
         '
         'ModificarIdiomaForm
@@ -258,7 +284,6 @@ Partial Class ModificarIdiomaForm
     Friend WithEvents ControlesLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaTextBox As MyTextBox
-    Friend WithEvents GuardarIdiomaButton As System.Windows.Forms.Button
     Friend WithEvents CodigoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MensajeColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -271,9 +296,10 @@ Partial Class ModificarIdiomaForm
     Friend WithEvents Identificador2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idFormulario As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idControl As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CancelarButton As System.Windows.Forms.Button
     Friend WithEvents ExcepcionesDataGrid As TicketYa.MyDataGrid
     Friend WithEvents MensajesDataGrid As TicketYa.MyDataGrid
     Friend WithEvents ControlesDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents GuardarIdiomaButton As TicketYa.MyButton
+    Friend WithEvents CancelarButton As TicketYa.MyButton
 
 End Class

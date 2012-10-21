@@ -96,6 +96,9 @@
     <Compile Include="BuscarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Controles\MyButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\MyDataGrid.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -360,6 +363,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

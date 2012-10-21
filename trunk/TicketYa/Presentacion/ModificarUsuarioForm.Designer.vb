@@ -19,8 +19,8 @@ Partial Class ModificarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.QuitarFamiliaButton = New System.Windows.Forms.Button()
-        Me.AgregarFamiliaButton = New System.Windows.Forms.Button()
+        Me.QuitarFamiliaButton = New MyButton()
+        Me.AgregarFamiliaButton = New MyButton()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaDataGrid = New TicketYa.MyDataGrid()
@@ -36,7 +36,7 @@ Partial Class ModificarUsuarioForm
         Me.PassTextBox = New TicketYa.MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.UsuarioTextBox = New TicketYa.MyTextBox()
-        Me.ModificarUsuariosButton = New System.Windows.Forms.Button()
+        Me.ModificarUsuariosButton = New MyButton()
         Me.ActivoLabel = New System.Windows.Forms.Label()
         Me.ActivoCheckBox = New System.Windows.Forms.CheckBox()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()

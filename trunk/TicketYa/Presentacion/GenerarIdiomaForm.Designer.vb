@@ -21,7 +21,7 @@ Partial Class GenerarIdiomaForm
     Private Sub InitializeComponent()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
         Me.IdiomaBaseLabel = New System.Windows.Forms.Label()
-        Me.GenerarIdiomaButton = New System.Windows.Forms.Button()
+        Me.GenerarIdiomaButton = New MyButton()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.IdiomaTextBox = New MyTextBox()
         Me.SuspendLayout()

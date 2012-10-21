@@ -20,8 +20,8 @@ Partial Class BuscarBackupForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.BackupDataGrid = New MyDataGrid()
-        Me.RealizarBackupButton = New System.Windows.Forms.Button()
-        Me.EliminarBackupButton = New System.Windows.Forms.Button()
+        Me.RealizarBackupButton = New MyButton()
+        Me.EliminarBackupButton = New MyButton()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
