@@ -184,9 +184,24 @@ Public Class BitacoraDAL
 
     End Function
 
-    Shared Sub eliminarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal p2 As Integer)
-        Throw New NotImplementedException
-    End Sub
+    Shared Function eliminarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal p2 As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_BITACORA_SP")
+            repository.addParam("@idIdioma", p2)
+            repository.addParam("@idBitBase", bit.idBase)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.EliminarBitacoraExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.EliminarBitacoraExcepcion
+        End Try
+
+        Return result
+    End Function
 
     Shared Function modificarBitacora(ByVal bit As BE.MensajeBitacoraBE, ByVal newIdiomaId As Integer) As Integer
         Dim result As Integer

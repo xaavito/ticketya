@@ -42,6 +42,9 @@ Partial Class ModificarIdiomaForm
         Me.IdiomaTextBox = New TicketYa.MyTextBox()
         Me.GuardarIdiomaButton = New TicketYa.MyButton()
         Me.CancelarButton = New TicketYa.MyButton()
+        Me.ExcepcionTextBox = New TicketYa.MyTextBox()
+        Me.ControlTextBox = New TicketYa.MyTextBox()
+        Me.BitacoraTextBox = New TicketYa.MyTextBox()
         CType(Me.ExcepcionesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MensajesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ControlesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -256,10 +259,43 @@ Partial Class ModificarIdiomaForm
         Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.CancelarButton.UseVisualStyleBackColor = True
         '
+        'ExcepcionTextBox
+        '
+        Me.ExcepcionTextBox.alfanumerico = False
+        Me.ExcepcionTextBox.boton = Nothing
+        Me.ExcepcionTextBox.Location = New System.Drawing.Point(545, 142)
+        Me.ExcepcionTextBox.Name = "ExcepcionTextBox"
+        Me.ExcepcionTextBox.sinEspacio = False
+        Me.ExcepcionTextBox.Size = New System.Drawing.Size(305, 20)
+        Me.ExcepcionTextBox.TabIndex = 10
+        '
+        'ControlTextBox
+        '
+        Me.ControlTextBox.alfanumerico = False
+        Me.ControlTextBox.boton = Nothing
+        Me.ControlTextBox.Location = New System.Drawing.Point(545, 519)
+        Me.ControlTextBox.Name = "ControlTextBox"
+        Me.ControlTextBox.sinEspacio = False
+        Me.ControlTextBox.Size = New System.Drawing.Size(305, 20)
+        Me.ControlTextBox.TabIndex = 11
+        '
+        'BitacoraTextBox
+        '
+        Me.BitacoraTextBox.alfanumerico = False
+        Me.BitacoraTextBox.boton = Nothing
+        Me.BitacoraTextBox.Location = New System.Drawing.Point(545, 331)
+        Me.BitacoraTextBox.Name = "BitacoraTextBox"
+        Me.BitacoraTextBox.sinEspacio = False
+        Me.BitacoraTextBox.Size = New System.Drawing.Size(305, 20)
+        Me.BitacoraTextBox.TabIndex = 12
+        '
         'ModificarIdiomaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(879, 687)
+        Me.Controls.Add(Me.BitacoraTextBox)
+        Me.Controls.Add(Me.ControlTextBox)
+        Me.Controls.Add(Me.ExcepcionTextBox)
         Me.Controls.Add(Me.CancelarButton)
         Me.Controls.Add(Me.GuardarIdiomaButton)
         Me.Controls.Add(Me.IdiomaTextBox)
@@ -301,5 +337,8 @@ Partial Class ModificarIdiomaForm
     Friend WithEvents ControlesDataGrid As TicketYa.MyDataGrid
     Friend WithEvents GuardarIdiomaButton As TicketYa.MyButton
     Friend WithEvents CancelarButton As TicketYa.MyButton
+    Friend WithEvents ExcepcionTextBox As TicketYa.MyTextBox
+    Friend WithEvents ControlTextBox As TicketYa.MyTextBox
+    Friend WithEvents BitacoraTextBox As TicketYa.MyTextBox
 
 End Class

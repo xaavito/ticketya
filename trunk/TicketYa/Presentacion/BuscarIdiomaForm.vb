@@ -8,10 +8,8 @@
         Dim idioma As BE.IdiomaBE
         idioma = DirectCast(IdiomasDataGrid.CurrentRow.DataBoundItem, BE.IdiomaBE)
         If (Not idioma Is Nothing) Then
-            If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 1) Then
-
+            If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 0) Then
                 MsgBox(New Excepciones.IdiomaEliminadoExistosamenteExcepcion)
-
                 buscarIdiomas()
             Else
                 MsgBox(New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion)
