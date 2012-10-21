@@ -19,7 +19,7 @@ Partial Class RealizarRestoreForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RealizarRestoreButton = New System.Windows.Forms.Button()
+        Me.RealizarRestoreButton = New MyButton()
         Me.DataGridView1 = New MyDataGrid()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()

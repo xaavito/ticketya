@@ -74,7 +74,22 @@
     End Function
 
     Shared Function modificarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
-        Throw New NotImplementedException
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_IDIOMA_SP")
+            repository.addParam("@idIdioma", idioma.identificador)
+            repository.addParam("@descIdioma", idioma.descripcion)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.ModificacionDeIdiomaExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.ModificacionDeIdiomaExcepcion
+        End Try
+
+        Return result
     End Function
 
 End Class

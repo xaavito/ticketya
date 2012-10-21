@@ -21,7 +21,7 @@ Partial Class BuscarBitacoraForm
     Private Sub InitializeComponent()
         Me.TipoBitacoraComboBox = New System.Windows.Forms.ComboBox()
         Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
-        Me.BuscarBitacoraButton = New System.Windows.Forms.Button()
+        Me.BuscarBitacoraButton = New MyButton()
         Me.TipoLabel = New System.Windows.Forms.Label()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.BitacorasDataGrid = New MyDataGrid()

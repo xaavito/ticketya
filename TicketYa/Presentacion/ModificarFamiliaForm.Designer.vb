@@ -21,7 +21,7 @@ Partial Class ModificarFamiliaForm
     Private Sub InitializeComponent()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaTextBox = New TicketYa.MyTextBox()
-        Me.ModificarFamiliaButton = New System.Windows.Forms.Button()
+        Me.ModificarFamiliaButton = New MyButton()
         Me.SuspendLayout()
         '
         'FamiliaLabel

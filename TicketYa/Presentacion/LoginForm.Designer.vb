@@ -26,8 +26,8 @@ Partial Class LoginForm
         Me.PassLabel = New System.Windows.Forms.Label()
         Me.CambiarIdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
-        Me.AceptarButton = New System.Windows.Forms.Button()
-        Me.CancelarButton = New System.Windows.Forms.Button()
+        Me.AceptarButton = New MyButton()
+        Me.CancelarButton = New MyButton()
         Me.SuspendLayout()
         '
         'UserTextBox

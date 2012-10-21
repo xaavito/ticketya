@@ -19,11 +19,11 @@ Partial Class BuscarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.EliminarUsuarioButton = New System.Windows.Forms.Button()
-        Me.ModificarUsuarioButton = New System.Windows.Forms.Button()
+        Me.EliminarUsuarioButton = New MyButton()
+        Me.ModificarUsuarioButton = New MyButton()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.UsuarioTextBox = New MyTextBox()
-        Me.BuscarUsuariosButton = New System.Windows.Forms.Button()
+        Me.BuscarUsuariosButton = New MyButton()
         Me.UsuariosDataGrid = New MyDataGrid()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ActivoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

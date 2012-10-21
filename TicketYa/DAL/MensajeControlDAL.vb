@@ -26,8 +26,24 @@
         Throw New NotImplementedException
     End Sub
 
-    Shared Sub modificarMensaje(ByVal men As BE.MensajeControlBE, ByVal newIdiomaId As Integer)
-        Throw New NotImplementedException
-    End Sub
+    Shared Function modificarMensaje(ByVal men As BE.MensajeControlBE, ByVal newIdiomaId As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_MENSAJE_CONTROL_SP")
+            repository.addParam("@idIdioma", newIdiomaId)
+            repository.addParam("@idMensajeControl", men.identificador)
+            repository.addParam("@controlMensaje", men.mensaje)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.ModificacionDeMensajeControlExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.ModificacionDeMensajeControlExcepcion
+        End Try
+
+        Return result
+    End Function
 
 End Class
