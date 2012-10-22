@@ -19,15 +19,19 @@ Partial Class ModificarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.QuitarFamiliaButton = New MyButton()
-        Me.AgregarFamiliaButton = New MyButton()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ModificarUsuarioForm))
+        Me.FamiliasDataGrid = New TicketYa.MyDataGrid()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ActivoCheckBox = New System.Windows.Forms.CheckBox()
+        Me.ActivoLabel = New System.Windows.Forms.Label()
+        Me.QuitarFamiliaButton = New TicketYa.MyButton()
+        Me.AgregarFamiliaButton = New TicketYa.MyButton()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaDataGrid = New TicketYa.MyDataGrid()
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
         Me.ApellidoTextBox = New TicketYa.MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
@@ -36,34 +40,88 @@ Partial Class ModificarUsuarioForm
         Me.PassTextBox = New TicketYa.MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.UsuarioTextBox = New TicketYa.MyTextBox()
-        Me.ModificarUsuariosButton = New MyButton()
-        Me.ActivoLabel = New System.Windows.Forms.Label()
-        Me.ActivoCheckBox = New System.Windows.Forms.CheckBox()
+        Me.ModificarUsuariosButton = New TicketYa.MyButton()
+        CType(Me.FamiliasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'FamiliasDataGrid
+        '
+        Me.FamiliasDataGrid.AllowUserToAddRows = False
+        Me.FamiliasDataGrid.AllowUserToDeleteRows = False
+        Me.FamiliasDataGrid.AllowUserToResizeRows = False
+        Me.FamiliasDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.FamiliasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.FamiliasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.UsuarioColumn})
+        Me.FamiliasDataGrid.Location = New System.Drawing.Point(324, 161)
+        Me.FamiliasDataGrid.Name = "FamiliasDataGrid"
+        Me.FamiliasDataGrid.ReadOnly = True
+        Me.FamiliasDataGrid.RowHeadersVisible = False
+        Me.FamiliasDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.FamiliasDataGrid.Size = New System.Drawing.Size(224, 152)
+        Me.FamiliasDataGrid.TabIndex = 36
+        '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
+        Me.IdentificadorColumn.Visible = False
+        '
+        'UsuarioColumn
+        '
+        Me.UsuarioColumn.DataPropertyName = "descripcion"
+        Me.UsuarioColumn.HeaderText = "Familia"
+        Me.UsuarioColumn.Name = "UsuarioColumn"
+        Me.UsuarioColumn.ReadOnly = True
+        '
+        'ActivoCheckBox
+        '
+        Me.ActivoCheckBox.AutoSize = True
+        Me.ActivoCheckBox.Location = New System.Drawing.Point(96, 141)
+        Me.ActivoCheckBox.Name = "ActivoCheckBox"
+        Me.ActivoCheckBox.Size = New System.Drawing.Size(15, 14)
+        Me.ActivoCheckBox.TabIndex = 34
+        Me.ActivoCheckBox.UseVisualStyleBackColor = True
+        '
+        'ActivoLabel
+        '
+        Me.ActivoLabel.AutoSize = True
+        Me.ActivoLabel.Location = New System.Drawing.Point(16, 141)
+        Me.ActivoLabel.Name = "ActivoLabel"
+        Me.ActivoLabel.Size = New System.Drawing.Size(37, 13)
+        Me.ActivoLabel.TabIndex = 33
+        Me.ActivoLabel.Text = "Activo"
+        '
         'QuitarFamiliaButton
         '
-        Me.QuitarFamiliaButton.Location = New System.Drawing.Point(249, 146)
+        Me.QuitarFamiliaButton.Image = CType(resources.GetObject("QuitarFamiliaButton.Image"), System.Drawing.Image)
+        Me.QuitarFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.QuitarFamiliaButton.Location = New System.Drawing.Point(243, 229)
         Me.QuitarFamiliaButton.Name = "QuitarFamiliaButton"
         Me.QuitarFamiliaButton.Size = New System.Drawing.Size(75, 23)
         Me.QuitarFamiliaButton.TabIndex = 32
         Me.QuitarFamiliaButton.Text = "Quitar"
+        Me.QuitarFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.QuitarFamiliaButton.UseVisualStyleBackColor = True
         '
         'AgregarFamiliaButton
         '
-        Me.AgregarFamiliaButton.Location = New System.Drawing.Point(249, 116)
+        Me.AgregarFamiliaButton.Image = CType(resources.GetObject("AgregarFamiliaButton.Image"), System.Drawing.Image)
+        Me.AgregarFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AgregarFamiliaButton.Location = New System.Drawing.Point(243, 200)
         Me.AgregarFamiliaButton.Name = "AgregarFamiliaButton"
         Me.AgregarFamiliaButton.Size = New System.Drawing.Size(75, 23)
         Me.AgregarFamiliaButton.TabIndex = 31
         Me.AgregarFamiliaButton.Text = "Agregar"
+        Me.AgregarFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AgregarFamiliaButton.UseVisualStyleBackColor = True
         '
         'IdiomaLabel
         '
         Me.IdiomaLabel.AutoSize = True
-        Me.IdiomaLabel.Location = New System.Drawing.Point(15, 146)
+        Me.IdiomaLabel.Location = New System.Drawing.Point(15, 118)
         Me.IdiomaLabel.Name = "IdiomaLabel"
         Me.IdiomaLabel.Size = New System.Drawing.Size(38, 13)
         Me.IdiomaLabel.TabIndex = 30
@@ -72,7 +130,7 @@ Partial Class ModificarUsuarioForm
         'IdiomaComboBox
         '
         Me.IdiomaComboBox.FormattingEnabled = True
-        Me.IdiomaComboBox.Location = New System.Drawing.Point(96, 143)
+        Me.IdiomaComboBox.Location = New System.Drawing.Point(96, 115)
         Me.IdiomaComboBox.Name = "IdiomaComboBox"
         Me.IdiomaComboBox.Size = New System.Drawing.Size(140, 21)
         Me.IdiomaComboBox.TabIndex = 29
@@ -81,12 +139,14 @@ Partial Class ModificarUsuarioForm
         '
         Me.FamiliaDataGrid.AllowUserToAddRows = False
         Me.FamiliaDataGrid.AllowUserToDeleteRows = False
+        Me.FamiliaDataGrid.AllowUserToResizeRows = False
         Me.FamiliaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.FamiliaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.FamiliaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.FamiliaColumn})
-        Me.FamiliaDataGrid.Location = New System.Drawing.Point(330, 12)
+        Me.FamiliaDataGrid.Location = New System.Drawing.Point(19, 161)
         Me.FamiliaDataGrid.MultiSelect = False
         Me.FamiliaDataGrid.Name = "FamiliaDataGrid"
+        Me.FamiliaDataGrid.ReadOnly = True
         Me.FamiliaDataGrid.RowHeadersVisible = False
         Me.FamiliaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FamiliaDataGrid.Size = New System.Drawing.Size(218, 152)
@@ -96,6 +156,7 @@ Partial Class ModificarUsuarioForm
         '
         Me.Identificador.HeaderText = "Identificador"
         Me.Identificador.Name = "Identificador"
+        Me.Identificador.ReadOnly = True
         Me.Identificador.Visible = False
         '
         'FamiliaColumn
@@ -103,23 +164,7 @@ Partial Class ModificarUsuarioForm
         Me.FamiliaColumn.DataPropertyName = "descripcion"
         Me.FamiliaColumn.HeaderText = "Familia"
         Me.FamiliaColumn.Name = "FamiliaColumn"
-        '
-        'FamiliaLabel
-        '
-        Me.FamiliaLabel.AutoSize = True
-        Me.FamiliaLabel.Location = New System.Drawing.Point(15, 119)
-        Me.FamiliaLabel.Name = "FamiliaLabel"
-        Me.FamiliaLabel.Size = New System.Drawing.Size(39, 13)
-        Me.FamiliaLabel.TabIndex = 27
-        Me.FamiliaLabel.Text = "Familia"
-        '
-        'FamiliaComboBox
-        '
-        Me.FamiliaComboBox.FormattingEnabled = True
-        Me.FamiliaComboBox.Location = New System.Drawing.Point(96, 116)
-        Me.FamiliaComboBox.Name = "FamiliaComboBox"
-        Me.FamiliaComboBox.Size = New System.Drawing.Size(140, 21)
-        Me.FamiliaComboBox.TabIndex = 26
+        Me.FamiliaColumn.ReadOnly = True
         '
         'ApellidoLabel
         '
@@ -133,6 +178,7 @@ Partial Class ModificarUsuarioForm
         'ApellidoTextBox
         '
         Me.ApellidoTextBox.alfanumerico = False
+        Me.ApellidoTextBox.boton = Nothing
         Me.ApellidoTextBox.Location = New System.Drawing.Point(96, 90)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
         Me.ApellidoTextBox.sinEspacio = False
@@ -151,6 +197,7 @@ Partial Class ModificarUsuarioForm
         'NombreTextBox
         '
         Me.NombreTextBox.alfanumerico = False
+        Me.NombreTextBox.boton = Nothing
         Me.NombreTextBox.Location = New System.Drawing.Point(96, 64)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.sinEspacio = False
@@ -169,9 +216,9 @@ Partial Class ModificarUsuarioForm
         'PassTextBox
         '
         Me.PassTextBox.alfanumerico = False
+        Me.PassTextBox.boton = Nothing
         Me.PassTextBox.Location = New System.Drawing.Point(96, 38)
         Me.PassTextBox.Name = "PassTextBox"
-        Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.PassTextBox.sinEspacio = False
         Me.PassTextBox.Size = New System.Drawing.Size(140, 20)
         Me.PassTextBox.TabIndex = 20
@@ -188,6 +235,7 @@ Partial Class ModificarUsuarioForm
         'UsuarioTextBox
         '
         Me.UsuarioTextBox.alfanumerico = False
+        Me.UsuarioTextBox.boton = Nothing
         Me.UsuarioTextBox.Location = New System.Drawing.Point(96, 12)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
         Me.UsuarioTextBox.sinEspacio = False
@@ -196,35 +244,21 @@ Partial Class ModificarUsuarioForm
         '
         'ModificarUsuariosButton
         '
+        Me.ModificarUsuariosButton.Image = CType(resources.GetObject("ModificarUsuariosButton.Image"), System.Drawing.Image)
+        Me.ModificarUsuariosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ModificarUsuariosButton.Location = New System.Drawing.Point(554, 12)
         Me.ModificarUsuariosButton.Name = "ModificarUsuariosButton"
         Me.ModificarUsuariosButton.Size = New System.Drawing.Size(75, 23)
         Me.ModificarUsuariosButton.TabIndex = 17
-        Me.ModificarUsuariosButton.Text = "Modificar"
+        Me.ModificarUsuariosButton.Text = "Guardar"
+        Me.ModificarUsuariosButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ModificarUsuariosButton.UseVisualStyleBackColor = True
-        '
-        'ActivoLabel
-        '
-        Me.ActivoLabel.AutoSize = True
-        Me.ActivoLabel.Location = New System.Drawing.Point(16, 169)
-        Me.ActivoLabel.Name = "ActivoLabel"
-        Me.ActivoLabel.Size = New System.Drawing.Size(37, 13)
-        Me.ActivoLabel.TabIndex = 33
-        Me.ActivoLabel.Text = "Activo"
-        '
-        'ActivoCheckBox
-        '
-        Me.ActivoCheckBox.AutoSize = True
-        Me.ActivoCheckBox.Location = New System.Drawing.Point(96, 169)
-        Me.ActivoCheckBox.Name = "ActivoCheckBox"
-        Me.ActivoCheckBox.Size = New System.Drawing.Size(15, 14)
-        Me.ActivoCheckBox.TabIndex = 34
-        Me.ActivoCheckBox.UseVisualStyleBackColor = True
         '
         'ModificarUsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(650, 311)
+        Me.ClientSize = New System.Drawing.Size(650, 345)
+        Me.Controls.Add(Me.FamiliasDataGrid)
         Me.Controls.Add(Me.ActivoCheckBox)
         Me.Controls.Add(Me.ActivoLabel)
         Me.Controls.Add(Me.QuitarFamiliaButton)
@@ -232,8 +266,6 @@ Partial Class ModificarUsuarioForm
         Me.Controls.Add(Me.IdiomaLabel)
         Me.Controls.Add(Me.IdiomaComboBox)
         Me.Controls.Add(Me.FamiliaDataGrid)
-        Me.Controls.Add(Me.FamiliaLabel)
-        Me.Controls.Add(Me.FamiliaComboBox)
         Me.Controls.Add(Me.ApellidoLabel)
         Me.Controls.Add(Me.ApellidoTextBox)
         Me.Controls.Add(Me.NombreLabel)
@@ -246,19 +278,16 @@ Partial Class ModificarUsuarioForm
         Me.Name = "ModificarUsuarioForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar Usuario"
+        CType(Me.FamiliasDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents QuitarFamiliaButton As System.Windows.Forms.Button
-    Friend WithEvents AgregarFamiliaButton As System.Windows.Forms.Button
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FamiliaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
-    Friend WithEvents FamiliaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents ApellidoLabel As System.Windows.Forms.Label
     Friend WithEvents ApellidoTextBox As MyTextBox
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
@@ -267,9 +296,14 @@ Partial Class ModificarUsuarioForm
     Friend WithEvents PassTextBox As MyTextBox
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents UsuarioTextBox As MyTextBox
-    Friend WithEvents ModificarUsuariosButton As System.Windows.Forms.Button
     Friend WithEvents ActivoLabel As System.Windows.Forms.Label
     Friend WithEvents ActivoCheckBox As System.Windows.Forms.CheckBox
     Friend WithEvents FamiliaDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents QuitarFamiliaButton As TicketYa.MyButton
+    Friend WithEvents AgregarFamiliaButton As TicketYa.MyButton
+    Friend WithEvents ModificarUsuariosButton As TicketYa.MyButton
+    Friend WithEvents FamiliasDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UsuarioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

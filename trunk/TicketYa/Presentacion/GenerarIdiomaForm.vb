@@ -26,8 +26,12 @@
             idioma.identificador = BLL.GestorIdiomaBLL.guardarIdioma(idioma)
             If (idioma.identificador <= 0) Then
                 Throw New Excepciones.GeneracionDeIdiomaExcepcion
+            Else
+                Throw New Excepciones.GeneracionDeIdiomaExitosa
             End If
 
+        Catch ex As Excepciones.GeneracionDeIdiomaExitosa
+            My.Application.HandlerException(ex)
         Catch ex As Excepciones.InsertExcepcion
             My.Application.HandlerException(ex)
         Catch ex As Excepciones.GeneracionDeIdiomaExcepcion

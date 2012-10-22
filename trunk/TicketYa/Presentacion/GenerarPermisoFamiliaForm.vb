@@ -7,9 +7,6 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
-        PermisoDataGrid.AutoGenerateColumns = False
-        FamiliaDataGrid.AutoGenerateColumns = False
-        PermisosFamiliaDataGrid.AutoGenerateColumns = False
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
         Dim permisos As List(Of BE.PermisoBE)

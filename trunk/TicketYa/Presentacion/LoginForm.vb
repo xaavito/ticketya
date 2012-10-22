@@ -4,7 +4,19 @@
     Public Sub Start()
         Me.StartPosition = FormStartPosition.CenterScreen
         Dim idiomas As List(Of BE.IdiomaBE)
-        idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
+
+        Try
+            idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
+        Catch ex As Excepciones.BitacoraNoEncontradaExcepcion
+            My.Application.HandlerException(ex)
+        Catch ex As Excepciones.NoHayMensajesExcepcion
+            My.Application.HandlerException(ex)
+        Catch ex As Excepciones.ExcepcionNoEncontradaExcepcion
+            My.Application.HandlerException(ex)
+        Catch ex As Exception
+            My.Application.HandlerException(ex)
+        End Try
+
         IdiomaComboBox.DataSource = idiomas
         IdiomaComboBox.DisplayMember = "descripcion"
         IdiomaComboBox.ValueMember = "identificador"

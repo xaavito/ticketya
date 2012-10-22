@@ -89,6 +89,7 @@
                 End If
                 Dim idioma As New BE.IdiomaBE
                 idioma.identificador = pepe.Item(7)
+                usuario.password = pepe.Item(8)
                 usuario.idioma = idioma
                 listaUsuarios.add(usuario)
             Next

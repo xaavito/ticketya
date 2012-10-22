@@ -45,6 +45,9 @@ Partial Class ModificarIdiomaForm
         Me.ExcepcionTextBox = New TicketYa.MyTextBox()
         Me.ControlTextBox = New TicketYa.MyTextBox()
         Me.BitacoraTextBox = New TicketYa.MyTextBox()
+        Me.AceptarExcepcionButton = New TicketYa.MyButton()
+        Me.AceptarBitacoraButton = New TicketYa.MyButton()
+        Me.AceptarControlesButton = New TicketYa.MyButton()
         CType(Me.ExcepcionesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MensajesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ControlesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -289,10 +292,49 @@ Partial Class ModificarIdiomaForm
         Me.BitacoraTextBox.Size = New System.Drawing.Size(305, 20)
         Me.BitacoraTextBox.TabIndex = 12
         '
+        'AceptarExcepcionButton
+        '
+        Me.AceptarExcepcionButton.Image = CType(resources.GetObject("AceptarExcepcionButton.Image"), System.Drawing.Image)
+        Me.AceptarExcepcionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AceptarExcepcionButton.Location = New System.Drawing.Point(656, 169)
+        Me.AceptarExcepcionButton.Name = "AceptarExcepcionButton"
+        Me.AceptarExcepcionButton.Size = New System.Drawing.Size(75, 23)
+        Me.AceptarExcepcionButton.TabIndex = 13
+        Me.AceptarExcepcionButton.Text = "Aceptar"
+        Me.AceptarExcepcionButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AceptarExcepcionButton.UseVisualStyleBackColor = True
+        '
+        'AceptarBitacoraButton
+        '
+        Me.AceptarBitacoraButton.Image = CType(resources.GetObject("AceptarBitacoraButton.Image"), System.Drawing.Image)
+        Me.AceptarBitacoraButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AceptarBitacoraButton.Location = New System.Drawing.Point(656, 357)
+        Me.AceptarBitacoraButton.Name = "AceptarBitacoraButton"
+        Me.AceptarBitacoraButton.Size = New System.Drawing.Size(75, 23)
+        Me.AceptarBitacoraButton.TabIndex = 14
+        Me.AceptarBitacoraButton.Text = "Aceptar"
+        Me.AceptarBitacoraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AceptarBitacoraButton.UseVisualStyleBackColor = True
+        '
+        'AceptarControlesButton
+        '
+        Me.AceptarControlesButton.Image = CType(resources.GetObject("AceptarControlesButton.Image"), System.Drawing.Image)
+        Me.AceptarControlesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AceptarControlesButton.Location = New System.Drawing.Point(656, 545)
+        Me.AceptarControlesButton.Name = "AceptarControlesButton"
+        Me.AceptarControlesButton.Size = New System.Drawing.Size(75, 23)
+        Me.AceptarControlesButton.TabIndex = 15
+        Me.AceptarControlesButton.Text = "Aceptar"
+        Me.AceptarControlesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AceptarControlesButton.UseVisualStyleBackColor = True
+        '
         'ModificarIdiomaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(879, 687)
+        Me.Controls.Add(Me.AceptarControlesButton)
+        Me.Controls.Add(Me.AceptarBitacoraButton)
+        Me.Controls.Add(Me.AceptarExcepcionButton)
         Me.Controls.Add(Me.BitacoraTextBox)
         Me.Controls.Add(Me.ControlTextBox)
         Me.Controls.Add(Me.ExcepcionTextBox)
@@ -340,5 +382,8 @@ Partial Class ModificarIdiomaForm
     Friend WithEvents ExcepcionTextBox As TicketYa.MyTextBox
     Friend WithEvents ControlTextBox As TicketYa.MyTextBox
     Friend WithEvents BitacoraTextBox As TicketYa.MyTextBox
+    Friend WithEvents AceptarExcepcionButton As TicketYa.MyButton
+    Friend WithEvents AceptarBitacoraButton As TicketYa.MyButton
+    Friend WithEvents AceptarControlesButton As TicketYa.MyButton
 
 End Class

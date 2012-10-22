@@ -7,15 +7,20 @@
     Private Sub EliminarIdiomaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarIdiomaButton.Click
         Dim idioma As BE.IdiomaBE
         idioma = DirectCast(IdiomasDataGrid.CurrentRow.DataBoundItem, BE.IdiomaBE)
-        If (Not idioma Is Nothing) Then
-            If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 0) Then
-                MsgBox(New Excepciones.IdiomaEliminadoExistosamenteExcepcion)
-                buscarIdiomas()
-            Else
-                MsgBox(New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion)
+        Try
+            If (Not idioma Is Nothing) Then
+                If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 1) Then
+                    buscarIdiomas()
+                    Throw New Excepciones.IdiomaEliminadoExistosamenteExcepcion
+                Else
+                    Throw New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
+                End If
             End If
-        End If
-
+        Catch ex As Excepciones.IdiomaEliminadoExistosamenteExcepcion
+            My.Application.HandlerException(ex)
+        Catch ex As Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
+            My.Application.HandlerException(ex)
+        End Try
     End Sub
 
     Private Sub ModificarIdiomaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarIdiomaButton.Click
