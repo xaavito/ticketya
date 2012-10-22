@@ -4,7 +4,6 @@
 
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
-        UsuariosDataGrid.AutoGenerateColumns = False
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
     End Sub
 

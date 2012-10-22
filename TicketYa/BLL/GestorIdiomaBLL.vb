@@ -78,13 +78,13 @@
 
         If newIdiomaId > 0 Then
             For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
-                DAL.BitacoraDAL.modificarBitacora(bit, newIdiomaId)
+                DAL.BitacoraDAL.modificarBitacora(bit, idioma.identificador)
             Next
             For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
-                DAL.ExcepcionDAL.modificarExcepecion(exc, newIdiomaId)
+                DAL.ExcepcionDAL.modificarExcepecion(exc, idioma.identificador)
             Next
             For Each men As BE.MensajeControlBE In idioma.mensaje
-                DAL.MensajeControlDAL.modificarMensaje(men, newIdiomaId)
+                DAL.MensajeControlDAL.modificarMensaje(men, idioma.identificador)
             Next
         End If
 

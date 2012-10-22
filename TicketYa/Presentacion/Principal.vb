@@ -79,6 +79,8 @@ Public Class Principal
     End Sub
 
     Private Sub MiUsuarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MiUsuarioToolStripMenuItem.Click
-
+        Dim form = New ModificarUsuarioForm
+        form.addUsuario(BLL.Actual.usuario)
+        Form.Show()
     End Sub
 End Class

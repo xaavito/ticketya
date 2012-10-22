@@ -117,4 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="ModificarFamiliaButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAVRJREFUOE9j9M7o
+        /f/v31+Gf3//ADGQ/geh/0NpGB+rGFANA8iAjYeu/F9/8NL/X1eOEYXnrj/4f87a/f/1nSL/ww1w9I0h
+        SjPIEpBaDAN6Fmz9/+/3L6Jwdt0U7AYQ6wWcBgwDF3y+eJRgTHw8f/g/zjDonLvpf9us9f+bp6/53zBl
+        5f/aicv+V/Ut/l/eteB/Sfvc/4Uts/7nNU7Hb4Bfdt9/9+S2/y5xDf8doqr+24YW/7cKzP1v7pP+39gj
+        8b+JWxx+A7wyev5/+frj/5s3b/7fuHHj/4cPH/7/+PHj/6tXr/6/fPXmv4FzNHYDFm05/h/kBZABIJDX
+        NPt/WuVEFAO+ffuG3YCuBTvAeWHBpqNwA2BeQHYBVgOANs73TOv63zFv2/91+y8SZQBKZmIAAo/Uzvmg
+        gHNNaP7vHFf//8yZMzixqWfKf2P3hP+GLrHg3AgADJEHYboZYN0AAAAASUVORK5CYII=
+</value>
+  </data>
 </root>

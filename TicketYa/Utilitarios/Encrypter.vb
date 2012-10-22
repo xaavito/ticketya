@@ -115,7 +115,7 @@ Public Class Encrypter
 
     'Decrypt Function: 
 
-    Public Shared Function DecryptPasswordMD5(ByVal cipherText As String, ByVal p_strSaltValue As String) As String
+    Public Shared Function DecryptPasswordMD5(ByVal cipherText As String) As String
 
         Dim strReturn As String = String.Empty
 
@@ -130,7 +130,7 @@ Public Class Encrypter
             initVectorBytes = System.Text.Encoding.ASCII.GetBytes(m_strInitVector)
 
             Dim saltValueBytes As Byte()
-            saltValueBytes = System.Text.Encoding.ASCII.GetBytes(p_strSaltValue)
+            saltValueBytes = System.Text.Encoding.ASCII.GetBytes(strSaltValue)
 
             ' Convert our ciphertext into a byte array.
             Dim cipherTextBytes As Byte()

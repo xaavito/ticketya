@@ -19,9 +19,10 @@ Partial Class ModificarFamiliaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ModificarFamiliaForm))
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaTextBox = New TicketYa.MyTextBox()
-        Me.ModificarFamiliaButton = New MyButton()
+        Me.ModificarFamiliaButton = New TicketYa.MyButton()
         Me.SuspendLayout()
         '
         'FamiliaLabel
@@ -36,6 +37,7 @@ Partial Class ModificarFamiliaForm
         'FamiliaTextBox
         '
         Me.FamiliaTextBox.alfanumerico = False
+        Me.FamiliaTextBox.boton = Nothing
         Me.FamiliaTextBox.Location = New System.Drawing.Point(128, 29)
         Me.FamiliaTextBox.Name = "FamiliaTextBox"
         Me.FamiliaTextBox.sinEspacio = False
@@ -44,17 +46,20 @@ Partial Class ModificarFamiliaForm
         '
         'ModificarFamiliaButton
         '
+        Me.ModificarFamiliaButton.Image = CType(resources.GetObject("ModificarFamiliaButton.Image"), System.Drawing.Image)
+        Me.ModificarFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ModificarFamiliaButton.Location = New System.Drawing.Point(353, 26)
         Me.ModificarFamiliaButton.Name = "ModificarFamiliaButton"
         Me.ModificarFamiliaButton.Size = New System.Drawing.Size(75, 23)
         Me.ModificarFamiliaButton.TabIndex = 13
-        Me.ModificarFamiliaButton.Text = "Modificar"
+        Me.ModificarFamiliaButton.Text = "Guardar"
+        Me.ModificarFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ModificarFamiliaButton.UseVisualStyleBackColor = True
         '
         'ModificarFamiliaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(666, 332)
+        Me.ClientSize = New System.Drawing.Size(493, 90)
         Me.Controls.Add(Me.FamiliaLabel)
         Me.Controls.Add(Me.FamiliaTextBox)
         Me.Controls.Add(Me.ModificarFamiliaButton)
@@ -67,6 +72,6 @@ Partial Class ModificarFamiliaForm
     End Sub
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
     Friend WithEvents FamiliaTextBox As MyTextBox
-    Friend WithEvents ModificarFamiliaButton As System.Windows.Forms.Button
+    Friend WithEvents ModificarFamiliaButton As TicketYa.MyButton
 
 End Class

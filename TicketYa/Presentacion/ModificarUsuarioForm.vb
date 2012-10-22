@@ -9,7 +9,6 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        FamiliaDataGrid.AutoGenerateColumns = False
         'initializeFamiliaDataGrid()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
@@ -23,15 +22,13 @@
 
         Dim familias As List(Of BE.FamiliaBE)
         familias = BLL.GestorFamiliaBLL.listarFamilias()
-        FamiliaComboBox.DataSource = familias
-        FamiliaComboBox.DisplayMember = "descripcion"
-        FamiliaComboBox.ValueMember = "identificador"
+        FamiliasDataGrid.DataSource = familias
     End Sub
 
     Sub addUsuario(ByVal usr As BE.UsuarioBE)
         usuario = usr
         UsuarioTextBox.Text = usr.usuario
-        'PassTextBox.Text = usr.password
+        PassTextBox.Text = Utilitarios.Encrypter.DecryptPasswordMD5(usr.password)
         NombreTextBox.Text = usr.nombre
         ApellidoTextBox.Text = usr.apellido
         ActivoCheckBox.Checked = usr.activo
@@ -39,12 +36,6 @@
         IdiomaComboBox.SelectedValue = usr.idioma.identificador
         setFamilias()
     End Sub
-
-    'Private Sub initializeFamiliaDataGrid()
-    '    FamiliaDataGrid.ColumnCount = 2
-    '    FamiliaDataGrid.Columns(0).Name = "Identificador"
-    '    FamiliaDataGrid.Columns(1).Name = "Nombre"
-    'End Sub
 
     Private Sub setFamilias()
         Try
@@ -61,7 +52,7 @@
 
     End Sub
     Private Sub AgregarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarFamiliaButton.Click
-        Dim familia As BE.FamiliaBE = DirectCast(FamiliaComboBox.SelectedItem, BE.FamiliaBE)
+        Dim familia As BE.FamiliaBE = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
         Dim row As String() = New String() {familia.identificador, familia.descripcion}
         FamiliaDataGrid.Rows.Add(row)
     End Sub

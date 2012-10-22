@@ -36,7 +36,7 @@ Public Class IdiomaModificadoExistosamente
 
     Public Sub New()
         MyBase.new("Idioma No encontrado")
-        Me.codigo = Utilitarios.Enumeradores.Excepeciones.IdiomaGeneradoExistosamente
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.IdiomaModificadoExistosamente
         Me.tipo = MsgBoxStyle.Exclamation
         Me.mensaje = "Idioma No encontrado"
     End Sub
@@ -86,3 +86,13 @@ Public Class EliminarIdiomaExcepcion
     End Sub
 End Class
 
+Public Class GeneracionDeIdiomaExitosa
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("Idioma No encontrado")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.IdiomaGeneradoExistosamente
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = "Idioma No encontrado"
+    End Sub
+End Class

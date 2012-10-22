@@ -8,11 +8,16 @@
     End Function
 
     Shared Function buscarExcepcion(ByVal p1 As Integer) As String
-        For Each excep As BE.ExcepcionBE In BLL.Actual.idioma.listaExcepciones
-            If (excep.codigo = p1) Then
-                Return excep.mensaje
-            End If
-        Next
+        If Not BLL.Actual.idioma Is Nothing Then
+            For Each excep As BE.ExcepcionBE In BLL.Actual.idioma.listaExcepciones
+                If (excep.codigo = p1) Then
+                    Return excep.mensaje
+                End If
+            Next
+        Else
+            Return "Error Trayendo error!"
+        End If
+
         Throw New Excepciones.ExcepcionNoEncontradaExcepcion
     End Function
 

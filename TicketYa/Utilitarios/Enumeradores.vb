@@ -33,7 +33,7 @@
         EliminarExcepcion = 31
         ModificacionDeExcepcion = 32
         EliminarIdioma = 33
-
+        IdiomaModificadoExistosamente = 34
     End Enum
 
     Enum Bitacora
