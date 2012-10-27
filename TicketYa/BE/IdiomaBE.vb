@@ -64,9 +64,27 @@ Public Class IdiomaBE
         Dim idiomaNuevo As New IdiomaBE
         idiomaNuevo.descripcion = Me.descripcion
         idiomaNuevo.fechaAlta = DateTime.Today
-        idiomaNuevo.mensaje = Me.mensaje
-        idiomaNuevo.listaExcepciones = Me.listaExcepciones
-        idiomaNuevo.bitacorasBase = Me.bitacorasBase
+
+        Dim mensajes As New List(Of BE.MensajeControlBE)
+        For Each men As BE.MensajeControlBE In Me.mensaje
+            mensajes.Add(men.clonar())
+        Next
+
+        idiomaNuevo.mensaje = mensajes
+
+        Dim listaExcepciones As New List(Of BE.ExcepcionBE)
+        For Each exc As BE.ExcepcionBE In Me.listaExcepciones
+            listaExcepciones.Add(exc.clonar())
+        Next
+
+        idiomaNuevo.listaExcepciones = listaExcepciones
+
+        Dim menBit As New List(Of BE.MensajeBitacoraBE)
+        For Each bit As BE.MensajeBitacoraBE In Me.bitacorasBase
+            menBit.Add(bit.clonar())
+        Next
+
+        idiomaNuevo.bitacorasBase = menBit
         Return idiomaNuevo
     End Function
 End Class

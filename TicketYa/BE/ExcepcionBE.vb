@@ -1,5 +1,6 @@
 ﻿Public Class ExcepcionBE
     Inherits PersistibleBE
+    Implements IClonable
 
 
     Private _codigo As Integer
@@ -23,4 +24,10 @@
         End Set
     End Property
 
+    Public Function clonar() As Object Implements IClonable.clonar
+        Dim newObj As New ExcepcionBE
+        newObj.mensaje = Me.mensaje
+        newObj.codigo = Me.codigo
+        Return newObj
+    End Function
 End Class

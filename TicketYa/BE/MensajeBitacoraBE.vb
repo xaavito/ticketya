@@ -1,6 +1,6 @@
 ﻿Public Class MensajeBitacoraBE
     Inherits PersistibleBE
-
+    Implements IClonable
 
     Private _idBase As Integer
     Public Property idBase() As Integer
@@ -24,4 +24,10 @@
     End Property
 
 
+    Public Function clonar() As Object Implements IClonable.clonar
+        Dim newObj As New MensajeBitacoraBE
+        newObj.idBase = Me.idBase
+        newObj.mensaje = Me.mensaje
+        Return newObj
+    End Function
 End Class

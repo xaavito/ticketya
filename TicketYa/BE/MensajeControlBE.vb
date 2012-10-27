@@ -1,5 +1,7 @@
 ﻿Public Class MensajeControlBE
     Inherits PersistibleBE
+    Implements IClonable
+
 
     Private _formulario As String
     Public Property formulario() As String
@@ -50,4 +52,14 @@
             _mensaje = value
         End Set
     End Property
+
+    Public Function clonar() As Object Implements IClonable.clonar
+        Dim newObj As New MensajeControlBE
+        newObj.formulario = Me.formulario
+        newObj.idFormulario = Me.idFormulario
+        newObj.control = Me.control
+        newObj.idControl = Me.idControl
+        newObj.mensaje = Me.mensaje
+        Return newObj
+    End Function
 End Class
