@@ -15,10 +15,15 @@ Public Class BaseForm
                                 If cabeceraMenu.Name.Equals(permiso.componente) Then
                                     cabeceraMenu.Enabled = True
                                 End If
-                                For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
+                                For Each itemMenu As ToolStripMenuItem In cabeceraMenu.DropDownItems
                                     If itemMenu.Name.Equals(permiso.componente) Then
                                         itemMenu.Enabled = True
                                     End If
+                                    For Each subItemMenu As ToolStripMenuItem In itemMenu.DropDownItems
+                                        If subItemMenu.Name.Equals(permiso.componente) Then
+                                            subItemMenu.Enabled = True
+                                        End If
+                                    Next
                                 Next
                             Next cabeceraMenu
                         End If
@@ -42,10 +47,15 @@ Public Class BaseForm
                         Dim menu As MenuStrip
                         menu = DirectCast(ctrl, MenuStrip)
                         For Each cabeceraMenu As ToolStripMenuItem In menu.Items
-                            For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
+                            For Each itemMenu As ToolStripMenuItem In cabeceraMenu.DropDownItems
                                 If itemMenu.Name.Equals(mens.control) Then
                                     itemMenu.Text = mens.mensaje
                                 End If
+                                For Each subItemMenu As ToolStripMenuItem In itemMenu.DropDownItems
+                                    If subItemMenu.Name.Equals(mens.control) Then
+                                        subItemMenu.Text = mens.mensaje
+                                    End If
+                                Next
                             Next
                             If cabeceraMenu.Name.Equals(mens.control) Then
                                 cabeceraMenu.Text = mens.mensaje
@@ -104,14 +114,21 @@ Public Class BaseForm
                                 cabeceraMenu.Enabled = False
                             End If
 
-                            For Each itemMenu As ToolStripItem In cabeceraMenu.DropDownItems
+                            For Each itemMenu As ToolStripMenuItem In cabeceraMenu.DropDownItems
                                 itemMenu.Enabled = False
+                                For Each subItemMenu As ToolStripMenuItem In itemMenu.DropDownItems
+                                    subItemMenu.Enabled = False
+                                Next
                             Next
                         Next cabeceraMenu
                     End If
                     ' Buttons
                     If TypeOf ctrl Is Button Then
-                        ctrl.Enabled = False
+                        Dim boton As MyButton
+                        boton = DirectCast(ctrl, MyButton)
+                        If Not boton.Name.Contains("Cancelar") Then
+                            ctrl.Enabled = False
+                        End If
                     End If
                 Next ctrl
             End If

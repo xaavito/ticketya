@@ -23,7 +23,7 @@ Partial Class GenerarIdiomaForm
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
         Me.IdiomaBaseLabel = New System.Windows.Forms.Label()
         Me.GenerarIdiomaButton = New TicketYa.MyButton()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.NombreIdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaTextBox = New TicketYa.MyTextBox()
         Me.SuspendLayout()
         '
@@ -56,14 +56,14 @@ Partial Class GenerarIdiomaForm
         Me.GenerarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GenerarIdiomaButton.UseVisualStyleBackColor = True
         '
-        'Label1
+        'NombreIdiomaLabel
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(44, 13)
-        Me.Label1.TabIndex = 9
-        Me.Label1.Text = "Nombre"
+        Me.NombreIdiomaLabel.AutoSize = True
+        Me.NombreIdiomaLabel.Location = New System.Drawing.Point(12, 17)
+        Me.NombreIdiomaLabel.Name = "NombreIdiomaLabel"
+        Me.NombreIdiomaLabel.Size = New System.Drawing.Size(44, 13)
+        Me.NombreIdiomaLabel.TabIndex = 9
+        Me.NombreIdiomaLabel.Text = "Nombre"
         '
         'IdiomaTextBox
         '
@@ -80,7 +80,7 @@ Partial Class GenerarIdiomaForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(393, 87)
         Me.Controls.Add(Me.IdiomaTextBox)
-        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.NombreIdiomaLabel)
         Me.Controls.Add(Me.GenerarIdiomaButton)
         Me.Controls.Add(Me.IdiomaComboBox)
         Me.Controls.Add(Me.IdiomaBaseLabel)
@@ -92,7 +92,7 @@ Partial Class GenerarIdiomaForm
     End Sub
     Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents IdiomaBaseLabel As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents NombreIdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaTextBox As MyTextBox
     Friend WithEvents GenerarIdiomaButton As TicketYa.MyButton
 
