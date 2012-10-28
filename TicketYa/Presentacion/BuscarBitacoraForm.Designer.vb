@@ -19,12 +19,13 @@ Partial Class BuscarBitacoraForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuscarBitacoraForm))
         Me.TipoBitacoraComboBox = New System.Windows.Forms.ComboBox()
         Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
-        Me.BuscarBitacoraButton = New MyButton()
+        Me.BuscarBitacoraButton = New TicketYa.MyButton()
         Me.TipoLabel = New System.Windows.Forms.Label()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.BitacorasDataGrid = New MyDataGrid()
+        Me.BitacorasDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,11 +51,14 @@ Partial Class BuscarBitacoraForm
         '
         'BuscarBitacoraButton
         '
+        Me.BuscarBitacoraButton.Image = CType(resources.GetObject("BuscarBitacoraButton.Image"), System.Drawing.Image)
+        Me.BuscarBitacoraButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BuscarBitacoraButton.Location = New System.Drawing.Point(696, 8)
         Me.BuscarBitacoraButton.Name = "BuscarBitacoraButton"
         Me.BuscarBitacoraButton.Size = New System.Drawing.Size(75, 23)
         Me.BuscarBitacoraButton.TabIndex = 4
         Me.BuscarBitacoraButton.Text = "Buscar"
+        Me.BuscarBitacoraButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarBitacoraButton.UseVisualStyleBackColor = True
         '
         'TipoLabel
@@ -79,11 +83,15 @@ Partial Class BuscarBitacoraForm
         '
         Me.BitacorasDataGrid.AllowUserToAddRows = False
         Me.BitacorasDataGrid.AllowUserToDeleteRows = False
+        Me.BitacorasDataGrid.AllowUserToResizeRows = False
+        Me.BitacorasDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BitacorasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BitacorasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn, Me.TipoColumn})
         Me.BitacorasDataGrid.Enabled = False
         Me.BitacorasDataGrid.Location = New System.Drawing.Point(12, 108)
         Me.BitacorasDataGrid.Name = "BitacorasDataGrid"
+        Me.BitacorasDataGrid.ReadOnly = True
+        Me.BitacorasDataGrid.RowHeadersVisible = False
         Me.BitacorasDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.BitacorasDataGrid.Size = New System.Drawing.Size(759, 157)
         Me.BitacorasDataGrid.TabIndex = 0
@@ -93,6 +101,7 @@ Partial Class BuscarBitacoraForm
         Me.IdentificadorColumn.DataPropertyName = "identificador"
         Me.IdentificadorColumn.HeaderText = "Indentificador"
         Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
         Me.IdentificadorColumn.Visible = False
         '
         'DescripcionColumn
@@ -100,18 +109,21 @@ Partial Class BuscarBitacoraForm
         Me.DescripcionColumn.DataPropertyName = "mensaje"
         Me.DescripcionColumn.HeaderText = "Descripcion"
         Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
         '
         'FechaColumn
         '
         Me.FechaColumn.DataPropertyName = "fecha"
         Me.FechaColumn.HeaderText = "Fecha"
         Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
         '
         'TipoColumn
         '
         Me.TipoColumn.DataPropertyName = "tipo"
         Me.TipoColumn.HeaderText = "Tipo"
         Me.TipoColumn.Name = "TipoColumn"
+        Me.TipoColumn.ReadOnly = True
         '
         'BuscarBitacoraForm
         '
@@ -131,15 +143,15 @@ Partial Class BuscarBitacoraForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents BitacorasDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents TipoLabel As System.Windows.Forms.Label
-    Friend WithEvents BuscarBitacoraButton As System.Windows.Forms.Button
     Friend WithEvents UsuarioComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents TipoBitacoraComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TipoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BitacorasDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents BuscarBitacoraButton As TicketYa.MyButton
 
 End Class

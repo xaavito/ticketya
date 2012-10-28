@@ -19,12 +19,13 @@ Partial Class BuscarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.EliminarUsuarioButton = New MyButton()
-        Me.ModificarUsuarioButton = New MyButton()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuscarUsuarioForm))
+        Me.EliminarUsuarioButton = New TicketYa.MyButton()
+        Me.ModificarUsuarioButton = New TicketYa.MyButton()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
-        Me.UsuarioTextBox = New MyTextBox()
-        Me.BuscarUsuariosButton = New MyButton()
-        Me.UsuariosDataGrid = New MyDataGrid()
+        Me.UsuarioTextBox = New TicketYa.MyTextBox()
+        Me.BuscarUsuariosButton = New TicketYa.MyButton()
+        Me.UsuariosDataGrid = New TicketYa.MyDataGrid()
         Me.identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ActivoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -37,20 +38,26 @@ Partial Class BuscarUsuarioForm
         '
         'EliminarUsuarioButton
         '
+        Me.EliminarUsuarioButton.Image = CType(resources.GetObject("EliminarUsuarioButton.Image"), System.Drawing.Image)
+        Me.EliminarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.EliminarUsuarioButton.Location = New System.Drawing.Point(728, 271)
         Me.EliminarUsuarioButton.Name = "EliminarUsuarioButton"
         Me.EliminarUsuarioButton.Size = New System.Drawing.Size(75, 23)
         Me.EliminarUsuarioButton.TabIndex = 9
         Me.EliminarUsuarioButton.Text = "Eliminar"
+        Me.EliminarUsuarioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.EliminarUsuarioButton.UseVisualStyleBackColor = True
         '
         'ModificarUsuarioButton
         '
+        Me.ModificarUsuarioButton.Image = CType(resources.GetObject("ModificarUsuarioButton.Image"), System.Drawing.Image)
+        Me.ModificarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.ModificarUsuarioButton.Location = New System.Drawing.Point(728, 186)
         Me.ModificarUsuarioButton.Name = "ModificarUsuarioButton"
         Me.ModificarUsuarioButton.Size = New System.Drawing.Size(75, 23)
         Me.ModificarUsuarioButton.TabIndex = 8
         Me.ModificarUsuarioButton.Text = "Modificar"
+        Me.ModificarUsuarioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ModificarUsuarioButton.UseVisualStyleBackColor = True
         '
         'UsuarioLabel
@@ -64,28 +71,38 @@ Partial Class BuscarUsuarioForm
         '
         'UsuarioTextBox
         '
+        Me.UsuarioTextBox.alfanumerico = False
+        Me.UsuarioTextBox.boton = Nothing
         Me.UsuarioTextBox.Location = New System.Drawing.Point(109, 40)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
+        Me.UsuarioTextBox.sinEspacio = False
         Me.UsuarioTextBox.Size = New System.Drawing.Size(140, 20)
         Me.UsuarioTextBox.TabIndex = 6
         '
         'BuscarUsuariosButton
         '
+        Me.BuscarUsuariosButton.Image = CType(resources.GetObject("BuscarUsuariosButton.Image"), System.Drawing.Image)
+        Me.BuscarUsuariosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BuscarUsuariosButton.Location = New System.Drawing.Point(728, 43)
         Me.BuscarUsuariosButton.Name = "BuscarUsuariosButton"
         Me.BuscarUsuariosButton.Size = New System.Drawing.Size(75, 23)
         Me.BuscarUsuariosButton.TabIndex = 5
         Me.BuscarUsuariosButton.Text = "Buscar"
+        Me.BuscarUsuariosButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarUsuariosButton.UseVisualStyleBackColor = True
         '
         'UsuariosDataGrid
         '
         Me.UsuariosDataGrid.AllowUserToAddRows = False
         Me.UsuariosDataGrid.AllowUserToDeleteRows = False
+        Me.UsuariosDataGrid.AllowUserToResizeRows = False
+        Me.UsuariosDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.UsuariosDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UsuariosDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.identificador, Me.ActivoColumn, Me.NombreColumn, Me.ApellidoColumn, Me.UsuarioColumn, Me.FechaAltaColumn, Me.FechaBajaColumn})
         Me.UsuariosDataGrid.Location = New System.Drawing.Point(28, 124)
         Me.UsuariosDataGrid.Name = "UsuariosDataGrid"
+        Me.UsuariosDataGrid.ReadOnly = True
+        Me.UsuariosDataGrid.RowHeadersVisible = False
         Me.UsuariosDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.UsuariosDataGrid.Size = New System.Drawing.Size(644, 228)
         Me.UsuariosDataGrid.TabIndex = 4
@@ -95,6 +112,7 @@ Partial Class BuscarUsuarioForm
         Me.identificador.DataPropertyName = "identificador"
         Me.identificador.HeaderText = "identificador"
         Me.identificador.Name = "identificador"
+        Me.identificador.ReadOnly = True
         Me.identificador.Visible = False
         '
         'ActivoColumn
@@ -102,6 +120,7 @@ Partial Class BuscarUsuarioForm
         Me.ActivoColumn.DataPropertyName = "activo"
         Me.ActivoColumn.HeaderText = "Activo"
         Me.ActivoColumn.Name = "ActivoColumn"
+        Me.ActivoColumn.ReadOnly = True
         '
         'NombreColumn
         '
@@ -136,6 +155,7 @@ Partial Class BuscarUsuarioForm
         Me.FechaBajaColumn.DataPropertyName = "fechaBaja"
         Me.FechaBajaColumn.HeaderText = "Fecha Baja"
         Me.FechaBajaColumn.Name = "FechaBajaColumn"
+        Me.FechaBajaColumn.ReadOnly = True
         '
         'BuscarUsuarioForm
         '
@@ -157,10 +177,6 @@ Partial Class BuscarUsuarioForm
     End Sub
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents UsuarioTextBox As MyTextBox
-    Friend WithEvents BuscarUsuariosButton As System.Windows.Forms.Button
-    Friend WithEvents UsuariosDataGrid As System.Windows.Forms.DataGridView
-    Friend WithEvents ModificarUsuarioButton As System.Windows.Forms.Button
-    Friend WithEvents EliminarUsuarioButton As System.Windows.Forms.Button
     Friend WithEvents identificador As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ActivoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NombreColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -168,5 +184,9 @@ Partial Class BuscarUsuarioForm
     Friend WithEvents UsuarioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaAltaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaBajaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BuscarUsuariosButton As TicketYa.MyButton
+    Friend WithEvents UsuariosDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents ModificarUsuarioButton As TicketYa.MyButton
+    Friend WithEvents EliminarUsuarioButton As TicketYa.MyButton
 
 End Class

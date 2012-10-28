@@ -117,10 +117,56 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="GenerarUsuarioButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAkxJREFUOE+lk09o
+        03AUx39dN9rJ1jbNulLD1LbOCZsTUXqRMd06J4wWO0WtWCZ4EaQ3z4oglIknDzsIOivUbi1rh3+GoluK
+        s9IxWm2lY1TXQwO9ewg5hef7hS1ZKHgx8Mnvl/d7n++DkBgAwED+56IB+yEpliNpR5QsOpJIfpekUsOz
+        ln6dvNgTMC9x/MnCmBD8NSPeEO7KYYTuh7+dE0x4RrBH5+w9kERPwJL1FIO1W9J07TYEt2Z00NrUdkTq
+        yhwp0l7VU95BnOVMSRc/tXVTuvgjDBdK11rAPpj8fh0myleljoSLp47iKrd5NjqUGxHGN6/ASD7YQunP
+        T+or1/mNaej/4BOoowU8Y5KjmyHRtzYJe5z6OAb9WR8kiimo1+vQaDQg8v4O9M4PgHf5jEjQ0QLmbHmc
+        Lp/+5Fem9KWHwf7KC/7lkCo/+BIDJu5R4FJDMkFHC3hqy48WLslzv19ApVKBarUK/pUQ7NR3lMkvS6+B
+        XTgKTAoDEGfmuEzQ0QKeWJKDq2dFe8aryLVaTZ28up0DJoPiu31k3SJBRwt4bImyCx7BkTsGzJJHlZvN
+        JjBvUVzT0xnvFQg6WsCjTs44a+WduQHJXvAC88YDiowrU9Bj/XxYMsx28wQdNUDZ3D8QaI9Ziravbsle
+        xpAVFMt6rOuHpLZYV5H26j4k9eGyKWC4Z+bNz1nBst4nMlW3TKF7WqNnBHtaPmX8GTsQJzJIDrZPkPG2
+        hyRsSJOIMa9A97RGzwg5gbioo70DQoxY6N4N4XD9F3QQ7TXSgL+FJfLbGC5kpAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="Identificador.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="FamiliaColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="AgregarFamiliaButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAvhJREFUOE99k99L
+        k1EYx9dFFHSxuoj6C9LeeaOFgkpbKJnpMifo5ubmnDqFbXmhUWp5EeQvlDR/7Ydzv3xRl79Ss6ycZFpZ
+        rkgNNAUrqwmCiJCF8H4755UovfCFDzzn+X6f5znn5ZwDgj3f1fZ8ybEjwtyTR4+fP3zw0Akq/9r+vbq6
+        sebb+LlpqVU0jO2t4dcFbL6wqNPgHZyxY/p7N15+deDFZwvGCZNfHJj+1o0Bol3rMnoLOwzCXU2Mnhxh
+        YWee37dkw/BCNR59qsLIYiWeLFVihEDXwwtVeDhfjdFFG4qIt4DN/dfE4NF6++Yq4J0pRfdsKXo/lqBu
+        zITxeR8PjXvmSnCfaF0fiD5bAWO71svvQmuTS2pHDZzjrQlOvwnud0Z43htRO5qP7e1tnhoSe0je5TfC
+        MW1C2xsTap4ZOJ1dIRbkONLYhoksNE5movmVBubXGlim1CgfycTW1hbPnRGSn9LwetOkBg0Tmah/rgOt
+        FeS6pIHypzJU+WQo7k9B2aAcZUNyFPdqsLm5yVPco+Hztwg3iKdiVIbbj2XIdkoDAoU1krs+EIubwzEY
+        mu7H+vr6vlBP8WAMivpikWaO5AQpLaGcviMM+s4QPJjqxtra2r5QTzYbAl37GSQ3hXKCNEtEIL2NgcbN
+        QGUPh84VjRxPNPLcUgQCAR69S4psdzSynNFQtoZD5WSQZmOQao4ICJQ2CStvZaCwM8ggQqaHQVY7Ay0x
+        r6ys8GgdUdCSvNrFgA5Lte6gtIlZgbwlXqJyBnOyFhGfVJBmSmJS2aKwvLzMoyQxHUCnppgZXGkSQekI
+        5uQtF8T8XUi3ir0adzAuN4qQ3CziTbLGcLA+N08yiemAJFKY2CBChisY6dZzOxeJfhnWBGGqJcyvY4OQ
+        UM8g4Z4IUmL8SyJZX6oXIb6OHi8I1Kuyxu1+D7QJ3Ym+6xT5D0Fkm6cRd5fhSSIxzVGNnNurtl3cXfz/
+        y1KY4yVqu4TNYc/+yGKDOAqN1XYxm26Ok+x9yn8Asv04cmhSFDsAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="QuitarFamiliaButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAANRJREFUOE9jYBgF
+        gygEskVEbCfZ2JydYWt7do619dn5lpZnF5qbn51vYnJ2tpHR2Wn6+mf7dXXPdgJxLlAthtNzRUX9dkdE
+        /D/o4/P/pJvb/0uOjv9vWFv/v2Rk9P+opub/7YqK/1fIyPxfpKPzvwCoFsOAHBERv53Bwf/32tv/P6ih
+        8f+khMT/i3x8/09zcf3fx8n5fwMQL+Tg+D9XXv5/PlAthgFZQkI2fYaGZ/uVlc9OUVI6OxOI5wDxLCCe
+        BsQTgbgbiNvU1M7mANUOotAfdQoDADG8UsJ6Brb0AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -40,7 +40,7 @@ Partial Class ModificarUsuarioForm
         Me.PassTextBox = New TicketYa.MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.UsuarioTextBox = New TicketYa.MyTextBox()
-        Me.ModificarUsuariosButton = New TicketYa.MyButton()
+        Me.ModificarUsuarioButton = New TicketYa.MyButton()
         CType(Me.FamiliasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -242,17 +242,17 @@ Partial Class ModificarUsuarioForm
         Me.UsuarioTextBox.Size = New System.Drawing.Size(140, 20)
         Me.UsuarioTextBox.TabIndex = 18
         '
-        'ModificarUsuariosButton
+        'ModificarUsuarioButton
         '
-        Me.ModificarUsuariosButton.Image = CType(resources.GetObject("ModificarUsuariosButton.Image"), System.Drawing.Image)
-        Me.ModificarUsuariosButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ModificarUsuariosButton.Location = New System.Drawing.Point(554, 12)
-        Me.ModificarUsuariosButton.Name = "ModificarUsuariosButton"
-        Me.ModificarUsuariosButton.Size = New System.Drawing.Size(75, 23)
-        Me.ModificarUsuariosButton.TabIndex = 17
-        Me.ModificarUsuariosButton.Text = "Guardar"
-        Me.ModificarUsuariosButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ModificarUsuariosButton.UseVisualStyleBackColor = True
+        Me.ModificarUsuarioButton.Image = CType(resources.GetObject("ModificarUsuarioButton.Image"), System.Drawing.Image)
+        Me.ModificarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ModificarUsuarioButton.Location = New System.Drawing.Point(554, 12)
+        Me.ModificarUsuarioButton.Name = "ModificarUsuarioButton"
+        Me.ModificarUsuarioButton.Size = New System.Drawing.Size(75, 23)
+        Me.ModificarUsuarioButton.TabIndex = 17
+        Me.ModificarUsuarioButton.Text = "Guardar"
+        Me.ModificarUsuarioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ModificarUsuarioButton.UseVisualStyleBackColor = True
         '
         'ModificarUsuarioForm
         '
@@ -274,7 +274,7 @@ Partial Class ModificarUsuarioForm
         Me.Controls.Add(Me.PassTextBox)
         Me.Controls.Add(Me.UsuarioLabel)
         Me.Controls.Add(Me.UsuarioTextBox)
-        Me.Controls.Add(Me.ModificarUsuariosButton)
+        Me.Controls.Add(Me.ModificarUsuarioButton)
         Me.Name = "ModificarUsuarioForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Modificar Usuario"
@@ -301,7 +301,7 @@ Partial Class ModificarUsuarioForm
     Friend WithEvents FamiliaDataGrid As TicketYa.MyDataGrid
     Friend WithEvents QuitarFamiliaButton As TicketYa.MyButton
     Friend WithEvents AgregarFamiliaButton As TicketYa.MyButton
-    Friend WithEvents ModificarUsuariosButton As TicketYa.MyButton
+    Friend WithEvents ModificarUsuarioButton As TicketYa.MyButton
     Friend WithEvents FamiliasDataGrid As TicketYa.MyDataGrid
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UsuarioColumn As System.Windows.Forms.DataGridViewTextBoxColumn

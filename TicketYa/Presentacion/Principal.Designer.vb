@@ -31,20 +31,20 @@ Partial Class Principal
         Me.BuscarUsuarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarUsuarios = New System.Windows.Forms.ToolStripMenuItem()
         Me.Familias = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarFamilia = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarFamilia = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarFamilias = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarFamilias = New System.Windows.Forms.ToolStripMenuItem()
         Me.Permisos = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PermisosUsuario = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PermisoFamilia = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.IdiomaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarIdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarIdiomaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarBackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RealizarRestoreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MiUsuarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PermisosUsuarios = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PermisosFamilias = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Configuracion = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Idiomas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarIdiomas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarIdiomas = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Backups = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarBackups = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RealizarRestores = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Bitacoras = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MiUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
@@ -55,7 +55,7 @@ Partial Class Principal
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Administracion, Me.ConfiguracionToolStripMenuItem, Me.MiUsuarioToolStripMenuItem, Me.Logout})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Administracion, Me.Configuracion, Me.MiUsuario, Me.Logout})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.Name = "MenuStrip"
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
@@ -94,113 +94,113 @@ Partial Class Principal
         '
         'Familias
         '
-        Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilia, Me.GenerarFamilia})
+        Me.Familias.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFamilias, Me.GenerarFamilias})
         Me.Familias.Image = CType(resources.GetObject("Familias.Image"), System.Drawing.Image)
         Me.Familias.Name = "Familias"
         Me.Familias.Size = New System.Drawing.Size(152, 22)
         Me.Familias.Text = "Familia"
         '
-        'BuscarFamilia
+        'BuscarFamilias
         '
-        Me.BuscarFamilia.Image = CType(resources.GetObject("BuscarFamilia.Image"), System.Drawing.Image)
-        Me.BuscarFamilia.Name = "BuscarFamilia"
-        Me.BuscarFamilia.Size = New System.Drawing.Size(164, 22)
-        Me.BuscarFamilia.Text = "Buscar Familias"
+        Me.BuscarFamilias.Image = CType(resources.GetObject("BuscarFamilias.Image"), System.Drawing.Image)
+        Me.BuscarFamilias.Name = "BuscarFamilias"
+        Me.BuscarFamilias.Size = New System.Drawing.Size(164, 22)
+        Me.BuscarFamilias.Text = "Buscar Familias"
         '
-        'GenerarFamilia
+        'GenerarFamilias
         '
-        Me.GenerarFamilia.Image = CType(resources.GetObject("GenerarFamilia.Image"), System.Drawing.Image)
-        Me.GenerarFamilia.Name = "GenerarFamilia"
-        Me.GenerarFamilia.Size = New System.Drawing.Size(164, 22)
-        Me.GenerarFamilia.Text = "Generar Familias"
+        Me.GenerarFamilias.Image = CType(resources.GetObject("GenerarFamilias.Image"), System.Drawing.Image)
+        Me.GenerarFamilias.Name = "GenerarFamilias"
+        Me.GenerarFamilias.Size = New System.Drawing.Size(164, 22)
+        Me.GenerarFamilias.Text = "Generar Familias"
         '
         'Permisos
         '
-        Me.Permisos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermisosUsuario, Me.PermisoFamilia})
+        Me.Permisos.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PermisosUsuarios, Me.PermisosFamilias})
         Me.Permisos.Image = CType(resources.GetObject("Permisos.Image"), System.Drawing.Image)
         Me.Permisos.Name = "Permisos"
         Me.Permisos.Size = New System.Drawing.Size(152, 22)
         Me.Permisos.Text = "Permisos"
         '
-        'PermisosUsuario
+        'PermisosUsuarios
         '
-        Me.PermisosUsuario.Image = CType(resources.GetObject("PermisosUsuario.Image"), System.Drawing.Image)
-        Me.PermisosUsuario.Name = "PermisosUsuario"
-        Me.PermisosUsuario.Size = New System.Drawing.Size(166, 22)
-        Me.PermisosUsuario.Text = "Permisos Usuario"
+        Me.PermisosUsuarios.Image = CType(resources.GetObject("PermisosUsuarios.Image"), System.Drawing.Image)
+        Me.PermisosUsuarios.Name = "PermisosUsuarios"
+        Me.PermisosUsuarios.Size = New System.Drawing.Size(166, 22)
+        Me.PermisosUsuarios.Text = "Permisos Usuario"
         '
-        'PermisoFamilia
+        'PermisosFamilias
         '
-        Me.PermisoFamilia.Image = CType(resources.GetObject("PermisoFamilia.Image"), System.Drawing.Image)
-        Me.PermisoFamilia.Name = "PermisoFamilia"
-        Me.PermisoFamilia.Size = New System.Drawing.Size(166, 22)
-        Me.PermisoFamilia.Text = "Permiso Familia"
+        Me.PermisosFamilias.Image = CType(resources.GetObject("PermisosFamilias.Image"), System.Drawing.Image)
+        Me.PermisosFamilias.Name = "PermisosFamilias"
+        Me.PermisosFamilias.Size = New System.Drawing.Size(166, 22)
+        Me.PermisosFamilias.Text = "Permiso Familia"
         '
-        'ConfiguracionToolStripMenuItem
+        'Configuracion
         '
-        Me.ConfiguracionToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IdiomaToolStripMenuItem1, Me.BackupToolStripMenuItem, Me.BitacoraToolStripMenuItem})
-        Me.ConfiguracionToolStripMenuItem.Image = CType(resources.GetObject("ConfiguracionToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ConfiguracionToolStripMenuItem.Name = "ConfiguracionToolStripMenuItem"
-        Me.ConfiguracionToolStripMenuItem.Size = New System.Drawing.Size(101, 20)
-        Me.ConfiguracionToolStripMenuItem.Text = "Configuracion"
+        Me.Configuracion.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Idiomas, Me.Backups, Me.Bitacoras})
+        Me.Configuracion.Image = CType(resources.GetObject("Configuracion.Image"), System.Drawing.Image)
+        Me.Configuracion.Name = "Configuracion"
+        Me.Configuracion.Size = New System.Drawing.Size(101, 20)
+        Me.Configuracion.Text = "Configuracion"
         '
-        'IdiomaToolStripMenuItem1
+        'Idiomas
         '
-        Me.IdiomaToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarIdiomaToolStripMenuItem, Me.GenerarIdiomaToolStripMenuItem})
-        Me.IdiomaToolStripMenuItem1.Image = CType(resources.GetObject("IdiomaToolStripMenuItem1.Image"), System.Drawing.Image)
-        Me.IdiomaToolStripMenuItem1.Name = "IdiomaToolStripMenuItem1"
-        Me.IdiomaToolStripMenuItem1.Size = New System.Drawing.Size(124, 22)
-        Me.IdiomaToolStripMenuItem1.Text = "Idioma"
+        Me.Idiomas.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarIdiomas, Me.GenerarIdiomas})
+        Me.Idiomas.Image = CType(resources.GetObject("Idiomas.Image"), System.Drawing.Image)
+        Me.Idiomas.Name = "Idiomas"
+        Me.Idiomas.Size = New System.Drawing.Size(152, 22)
+        Me.Idiomas.Text = "Idioma"
         '
-        'BuscarIdiomaToolStripMenuItem
+        'BuscarIdiomas
         '
-        Me.BuscarIdiomaToolStripMenuItem.Image = CType(resources.GetObject("BuscarIdiomaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.BuscarIdiomaToolStripMenuItem.Name = "BuscarIdiomaToolStripMenuItem"
-        Me.BuscarIdiomaToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
-        Me.BuscarIdiomaToolStripMenuItem.Text = "Buscar Idioma"
+        Me.BuscarIdiomas.Image = CType(resources.GetObject("BuscarIdiomas.Image"), System.Drawing.Image)
+        Me.BuscarIdiomas.Name = "BuscarIdiomas"
+        Me.BuscarIdiomas.Size = New System.Drawing.Size(159, 22)
+        Me.BuscarIdiomas.Text = "Buscar Idioma"
         '
-        'GenerarIdiomaToolStripMenuItem
+        'GenerarIdiomas
         '
-        Me.GenerarIdiomaToolStripMenuItem.Image = CType(resources.GetObject("GenerarIdiomaToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.GenerarIdiomaToolStripMenuItem.Name = "GenerarIdiomaToolStripMenuItem"
-        Me.GenerarIdiomaToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
-        Me.GenerarIdiomaToolStripMenuItem.Text = "Generar Idioma"
+        Me.GenerarIdiomas.Image = CType(resources.GetObject("GenerarIdiomas.Image"), System.Drawing.Image)
+        Me.GenerarIdiomas.Name = "GenerarIdiomas"
+        Me.GenerarIdiomas.Size = New System.Drawing.Size(159, 22)
+        Me.GenerarIdiomas.Text = "Generar Idioma"
         '
-        'BackupToolStripMenuItem
+        'Backups
         '
-        Me.BackupToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarBackupToolStripMenuItem, Me.RealizarRestoreToolStripMenuItem})
-        Me.BackupToolStripMenuItem.Image = CType(resources.GetObject("BackupToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.BackupToolStripMenuItem.Name = "BackupToolStripMenuItem"
-        Me.BackupToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
-        Me.BackupToolStripMenuItem.Text = "Backup"
+        Me.Backups.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarBackups, Me.RealizarRestores})
+        Me.Backups.Image = CType(resources.GetObject("Backups.Image"), System.Drawing.Image)
+        Me.Backups.Name = "Backups"
+        Me.Backups.Size = New System.Drawing.Size(152, 22)
+        Me.Backups.Text = "Backup"
         '
-        'BuscarBackupToolStripMenuItem
+        'BuscarBackups
         '
-        Me.BuscarBackupToolStripMenuItem.Image = CType(resources.GetObject("BuscarBackupToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.BuscarBackupToolStripMenuItem.Name = "BuscarBackupToolStripMenuItem"
-        Me.BuscarBackupToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.BuscarBackupToolStripMenuItem.Text = "Buscar Backup"
+        Me.BuscarBackups.Image = CType(resources.GetObject("BuscarBackups.Image"), System.Drawing.Image)
+        Me.BuscarBackups.Name = "BuscarBackups"
+        Me.BuscarBackups.Size = New System.Drawing.Size(164, 22)
+        Me.BuscarBackups.Text = "Buscar Backup"
         '
-        'RealizarRestoreToolStripMenuItem
+        'RealizarRestores
         '
-        Me.RealizarRestoreToolStripMenuItem.Image = CType(resources.GetObject("RealizarRestoreToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.RealizarRestoreToolStripMenuItem.Name = "RealizarRestoreToolStripMenuItem"
-        Me.RealizarRestoreToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.RealizarRestoreToolStripMenuItem.Text = "Realizar Restore"
+        Me.RealizarRestores.Image = CType(resources.GetObject("RealizarRestores.Image"), System.Drawing.Image)
+        Me.RealizarRestores.Name = "RealizarRestores"
+        Me.RealizarRestores.Size = New System.Drawing.Size(164, 22)
+        Me.RealizarRestores.Text = "Realizar Restore"
         '
-        'BitacoraToolStripMenuItem
+        'Bitacoras
         '
-        Me.BitacoraToolStripMenuItem.Image = CType(resources.GetObject("BitacoraToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
-        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
-        Me.BitacoraToolStripMenuItem.Text = "Bitacora"
+        Me.Bitacoras.Image = CType(resources.GetObject("Bitacoras.Image"), System.Drawing.Image)
+        Me.Bitacoras.Name = "Bitacoras"
+        Me.Bitacoras.Size = New System.Drawing.Size(152, 22)
+        Me.Bitacoras.Text = "Bitacora"
         '
-        'MiUsuarioToolStripMenuItem
+        'MiUsuario
         '
-        Me.MiUsuarioToolStripMenuItem.Image = CType(resources.GetObject("MiUsuarioToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.MiUsuarioToolStripMenuItem.Name = "MiUsuarioToolStripMenuItem"
-        Me.MiUsuarioToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
-        Me.MiUsuarioToolStripMenuItem.Text = "Mi Usuario"
+        Me.MiUsuario.Image = CType(resources.GetObject("MiUsuario.Image"), System.Drawing.Image)
+        Me.MiUsuario.Name = "MiUsuario"
+        Me.MiUsuario.Size = New System.Drawing.Size(84, 20)
+        Me.MiUsuario.Text = "Mi Usuario"
         '
         'Logout
         '
@@ -254,19 +254,19 @@ Partial Class Principal
     Friend WithEvents BuscarUsuarios As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarUsuarios As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Familias As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarFamilia As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GenerarFamilia As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BuscarFamilias As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GenerarFamilias As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Permisos As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PermisosUsuario As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PermisoFamilia As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ConfiguracionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents IdiomaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarIdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GenerarIdiomaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BackupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarBackupToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RealizarRestoreToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BitacoraToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents MiUsuarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PermisosUsuarios As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PermisosFamilias As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Configuracion As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Idiomas As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BuscarIdiomas As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GenerarIdiomas As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Backups As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BuscarBackups As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RealizarRestores As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Bitacoras As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MiUsuario As System.Windows.Forms.ToolStripMenuItem
 
 End Class

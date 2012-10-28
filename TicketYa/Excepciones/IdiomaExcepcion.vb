@@ -69,7 +69,7 @@ Public Class ModificacionDeIdiomaExcepcion
 
     Public Sub New()
         MyBase.new("Idioma No encontrado")
-        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ModificacionDeIdioma
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ModificacionDeIdiomaExcepcion
         Me.tipo = MsgBoxStyle.Exclamation
         Me.mensaje = "Idioma No encontrado"
     End Sub
@@ -80,7 +80,7 @@ Public Class EliminarIdiomaExcepcion
 
     Public Sub New()
         MyBase.new("Idioma No encontrado")
-        Me.codigo = Utilitarios.Enumeradores.Excepeciones.EliminarIdioma
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.EliminarIdiomaExcepcion
         Me.tipo = MsgBoxStyle.Exclamation
         Me.mensaje = "Idioma No encontrado"
     End Sub

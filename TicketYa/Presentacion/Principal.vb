@@ -24,61 +24,61 @@ Public Class Principal
         form.Show()
     End Sub
 
-    Private Sub BuscarFamiliasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarFamilia.Click
+    Private Sub BuscarFamiliasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarFamilias.Click
         Dim form As New BuscarFamiliaForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub GenerarFamiliasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarFamilia.Click
+    Private Sub GenerarFamiliasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarFamilias.Click
         Dim form As New GenerarFamiliaForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub PermisosUsuarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosUsuario.Click
+    Private Sub PermisosUsuarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosUsuarios.Click
         Dim form As New GenerarPermisoUsuarioForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub PermisoFamiliaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisoFamilia.Click
+    Private Sub PermisoFamiliaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PermisosFamilias.Click
         Dim form As New GenerarPermisoFamiliaForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub BuscarIdiomaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarIdiomaToolStripMenuItem.Click
+    Private Sub BuscarIdiomaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarIdiomas.Click
         Dim form As New BuscarIdiomaForm
         form.MdiParent = Me
         form.show()
     End Sub
 
-    Private Sub GenerarIdiomaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarIdiomaToolStripMenuItem.Click
+    Private Sub GenerarIdiomaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarIdiomas.Click
         Dim form As New GenerarIdiomaForm
         form.MdiParent = Me
         form.show()
     End Sub
 
-    Private Sub BuscarBackupToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarBackupToolStripMenuItem.Click
+    Private Sub BuscarBackupToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarBackups.Click
         Dim form As New BuscarBackupForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub RealizarRestoreToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RealizarRestoreToolStripMenuItem.Click
+    Private Sub RealizarRestoreToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RealizarRestores.Click
         Dim form As New RealizarRestoreForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub BitacoraToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BitacoraToolStripMenuItem.Click
+    Private Sub BitacoraToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Bitacoras.Click
         Dim form As New BuscarBitacoraForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub MiUsuarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MiUsuarioToolStripMenuItem.Click
+    Private Sub MiUsuarioToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MiUsuario.Click
         Dim form = New ModificarUsuarioForm
         form.addUsuario(BLL.Actual.usuario)
         Form.Show()

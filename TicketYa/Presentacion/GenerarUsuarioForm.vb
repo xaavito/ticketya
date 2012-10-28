@@ -27,7 +27,7 @@
         FamiliaDataGrid.Rows.Add(row)
     End Sub
 
-    Private Sub AltaUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaUsuariosButton.Click
+    Private Sub AltaUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarUsuarioButton.Click
         Try
             If (BLL.GestorUsuarioBLL.altaUsuario(UsuarioTextBox.Text,
                                                 PassTextBox.Text,

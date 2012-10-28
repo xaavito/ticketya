@@ -19,25 +19,36 @@ Partial Class RealizarRestoreForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RealizarRestoreButton = New MyButton()
-        Me.DataGridView1 = New MyDataGrid()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RealizarRestoreForm))
+        Me.RealizarRestoreButton = New TicketYa.MyButton()
+        Me.DataGridView1 = New TicketYa.MyDataGrid()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RealizarRestoreButton
         '
-        Me.RealizarRestoreButton.Location = New System.Drawing.Point(571, 34)
+        Me.RealizarRestoreButton.Image = CType(resources.GetObject("RealizarRestoreButton.Image"), System.Drawing.Image)
+        Me.RealizarRestoreButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.RealizarRestoreButton.Location = New System.Drawing.Point(568, 21)
         Me.RealizarRestoreButton.Name = "RealizarRestoreButton"
         Me.RealizarRestoreButton.Size = New System.Drawing.Size(75, 23)
         Me.RealizarRestoreButton.TabIndex = 4
         Me.RealizarRestoreButton.Text = "Restore"
+        Me.RealizarRestoreButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.RealizarRestoreButton.UseVisualStyleBackColor = True
         '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        Me.DataGridView1.AllowUserToResizeRows = False
+        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 21)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(508, 150)
         Me.DataGridView1.TabIndex = 3
         '
@@ -54,7 +65,7 @@ Partial Class RealizarRestoreForm
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents RealizarRestoreButton As System.Windows.Forms.Button
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents RealizarRestoreButton As TicketYa.MyButton
+    Friend WithEvents DataGridView1 As TicketYa.MyDataGrid
 
 End Class
