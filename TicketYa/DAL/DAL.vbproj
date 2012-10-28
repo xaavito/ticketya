@@ -80,7 +80,6 @@
   <ItemGroup>
     <Compile Include="BackupDAL.vb" />
     <Compile Include="BitacoraDAL.vb" />
-    <Compile Include="Class1.vb" />
     <Compile Include="ExcepcionDAL.vb" />
     <Compile Include="FamiliaDAL.vb" />
     <Compile Include="IdiomaDAL.vb" />
