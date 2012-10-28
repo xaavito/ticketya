@@ -35,7 +35,7 @@
         End Try
     End Sub
 
-    Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click
+    Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click, AgregarPermisoFamiliaButton.Click
         Dim permisoExistente As Boolean = False
         perm = DirectCast(PermisoDataGrid.CurrentRow.DataBoundItem, BE.PermisoBE)
         If Not (perm Is Nothing And fam Is Nothing) Then
@@ -51,29 +51,33 @@
                 PermisosFamiliaDataGrid.Rows.Add(row)
             End If
         End If
-        
+
     End Sub
 
-    Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click
+    Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click, QuitarPermisoFamiliaButton.Click
         If (PermisosFamiliaDataGrid.SelectedRows.Count > 0) Then
             PermisosFamiliaDataGrid.Rows.Remove(PermisosFamiliaDataGrid.SelectedRows(0))
         End If
     End Sub
 
-    Private Sub GuardarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GuardarPermisoButton.Click
+    Private Sub GuardarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GuardarPermisoButton.Click, GuardarPermisoFamiliaButton.Click
         Try
             If (BLL.GestorPermisoBLL.altaPermisoFamilia(fam, getPermisosFamilia) <= 0) Then
                 Throw New Excepciones.AsociacionDePermisosExcepcion
+            Else
+                Throw New Excepciones.AsociacionDePermisosExitosa
             End If
 
         Catch ex As Excepciones.InsertExcepcion
             My.Application.HandlerException(ex)
         Catch ex As Excepciones.AsociacionDePermisosExcepcion
             My.Application.HandlerException(ex)
+        Catch ex As Excepciones.AsociacionDePermisosExitosa
+            My.Application.HandlerException(ex)
         End Try
     End Sub
 
-    Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarButton.Click
+    Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarPermisoFamiliaButton.Click
         Me.Close()
     End Sub
 

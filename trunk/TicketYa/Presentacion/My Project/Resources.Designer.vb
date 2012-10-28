@@ -172,6 +172,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property _1351440699_trash() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("_1351440699_trash", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property Actions_remove_icon() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Actions_remove_icon", resourceCulture)

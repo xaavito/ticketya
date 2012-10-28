@@ -21,7 +21,7 @@
         UsuariosDataGrid.DataSource = usuarios
     End Sub
 
-    Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click
+    Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click, AgregarPermisoUsuarioButton.Click
         Dim permisoExistente As Boolean = False
         perm = DirectCast(PermisoDataGrid.CurrentRow.DataBoundItem, BE.PermisoBE)
         If Not (perm Is Nothing And usr Is Nothing) Then
@@ -39,22 +39,26 @@
         End If
     End Sub
 
-    Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click
+    Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click, QuitarPermisoUsuarioButton.Click
         If (PermisosUsuarioDataGrid.SelectedRows.Count > 0) Then
             PermisosUsuarioDataGrid.Rows.Remove(PermisosUsuarioDataGrid.SelectedRows(0))
         End If
     End Sub
 
-    Private Sub GuardarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GuardarPermisoButton.Click
+    Private Sub GuardarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GuardarPermisoButton.Click, GuardarPermisoUsuarioButton.Click
         Try
 
             If (BLL.GestorPermisoBLL.altaPermisoUsuario(usr, getPermisosUsuario) <= 0) Then
                 Throw New Excepciones.AsociacionDePermisosExcepcion
+            Else
+                Throw New Excepciones.AsociacionDePermisosExitosa
             End If
 
         Catch ex As Excepciones.InsertExcepcion
             My.Application.HandlerException(ex)
         Catch ex As Excepciones.AsociacionDePermisosExcepcion
+            My.Application.HandlerException(ex)
+        Catch ex As Excepciones.AsociacionDePermisosExitosa
             My.Application.HandlerException(ex)
         End Try
     End Sub

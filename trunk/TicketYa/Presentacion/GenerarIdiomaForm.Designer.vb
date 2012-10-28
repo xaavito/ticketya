@@ -19,11 +19,12 @@ Partial Class GenerarIdiomaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarIdiomaForm))
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
         Me.IdiomaBaseLabel = New System.Windows.Forms.Label()
-        Me.GenerarIdiomaButton = New MyButton()
+        Me.GenerarIdiomaButton = New TicketYa.MyButton()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.IdiomaTextBox = New MyTextBox()
+        Me.IdiomaTextBox = New TicketYa.MyTextBox()
         Me.SuspendLayout()
         '
         'IdiomaComboBox
@@ -45,11 +46,14 @@ Partial Class GenerarIdiomaForm
         '
         'GenerarIdiomaButton
         '
+        Me.GenerarIdiomaButton.Image = CType(resources.GetObject("GenerarIdiomaButton.Image"), System.Drawing.Image)
+        Me.GenerarIdiomaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.GenerarIdiomaButton.Location = New System.Drawing.Point(244, 12)
         Me.GenerarIdiomaButton.Name = "GenerarIdiomaButton"
         Me.GenerarIdiomaButton.Size = New System.Drawing.Size(75, 23)
         Me.GenerarIdiomaButton.TabIndex = 8
         Me.GenerarIdiomaButton.Text = "Generar"
+        Me.GenerarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GenerarIdiomaButton.UseVisualStyleBackColor = True
         '
         'Label1
@@ -63,8 +67,11 @@ Partial Class GenerarIdiomaForm
         '
         'IdiomaTextBox
         '
+        Me.IdiomaTextBox.alfanumerico = False
+        Me.IdiomaTextBox.boton = Nothing
         Me.IdiomaTextBox.Location = New System.Drawing.Point(97, 12)
         Me.IdiomaTextBox.Name = "IdiomaTextBox"
+        Me.IdiomaTextBox.sinEspacio = False
         Me.IdiomaTextBox.Size = New System.Drawing.Size(130, 20)
         Me.IdiomaTextBox.TabIndex = 10
         '
@@ -85,8 +92,8 @@ Partial Class GenerarIdiomaForm
     End Sub
     Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents IdiomaBaseLabel As System.Windows.Forms.Label
-    Friend WithEvents GenerarIdiomaButton As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents IdiomaTextBox As MyTextBox
+    Friend WithEvents GenerarIdiomaButton As TicketYa.MyButton
 
 End Class

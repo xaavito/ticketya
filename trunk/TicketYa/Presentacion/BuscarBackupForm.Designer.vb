@@ -19,12 +19,13 @@ Partial Class BuscarBackupForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BackupDataGrid = New MyDataGrid()
-        Me.RealizarBackupButton = New MyButton()
-        Me.EliminarBackupButton = New MyButton()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuscarBackupForm))
+        Me.BackupDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.RealizarBackupButton = New TicketYa.MyButton()
+        Me.EliminarBackupButton = New TicketYa.MyButton()
         CType(Me.BackupDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -32,38 +33,25 @@ Partial Class BuscarBackupForm
         '
         Me.BackupDataGrid.AllowUserToAddRows = False
         Me.BackupDataGrid.AllowUserToDeleteRows = False
+        Me.BackupDataGrid.AllowUserToResizeRows = False
+        Me.BackupDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BackupDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BackupDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn})
         Me.BackupDataGrid.Location = New System.Drawing.Point(12, 12)
         Me.BackupDataGrid.MultiSelect = False
         Me.BackupDataGrid.Name = "BackupDataGrid"
+        Me.BackupDataGrid.ReadOnly = True
+        Me.BackupDataGrid.RowHeadersVisible = False
         Me.BackupDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.BackupDataGrid.Size = New System.Drawing.Size(508, 150)
         Me.BackupDataGrid.TabIndex = 0
-        '
-        'RealizarBackupButton
-        '
-        Me.RealizarBackupButton.Location = New System.Drawing.Point(571, 25)
-        Me.RealizarBackupButton.Name = "RealizarBackupButton"
-        Me.RealizarBackupButton.Size = New System.Drawing.Size(75, 23)
-        Me.RealizarBackupButton.TabIndex = 1
-        Me.RealizarBackupButton.Text = "Backup"
-        Me.RealizarBackupButton.UseVisualStyleBackColor = True
-        '
-        'EliminarBackupButton
-        '
-        Me.EliminarBackupButton.Location = New System.Drawing.Point(571, 98)
-        Me.EliminarBackupButton.Name = "EliminarBackupButton"
-        Me.EliminarBackupButton.Size = New System.Drawing.Size(75, 23)
-        Me.EliminarBackupButton.TabIndex = 2
-        Me.EliminarBackupButton.Text = "Eliminar"
-        Me.EliminarBackupButton.UseVisualStyleBackColor = True
         '
         'IdentificadorColumn
         '
         Me.IdentificadorColumn.DataPropertyName = "identificador"
         Me.IdentificadorColumn.HeaderText = "Identificador"
         Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
         Me.IdentificadorColumn.Visible = False
         '
         'DescripcionColumn
@@ -71,12 +59,38 @@ Partial Class BuscarBackupForm
         Me.DescripcionColumn.DataPropertyName = "descripcion"
         Me.DescripcionColumn.HeaderText = "Descripcion"
         Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
         '
         'FechaColumn
         '
         Me.FechaColumn.DataPropertyName = "fecha"
         Me.FechaColumn.HeaderText = "Fecha"
         Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
+        '
+        'RealizarBackupButton
+        '
+        Me.RealizarBackupButton.Image = CType(resources.GetObject("RealizarBackupButton.Image"), System.Drawing.Image)
+        Me.RealizarBackupButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.RealizarBackupButton.Location = New System.Drawing.Point(571, 25)
+        Me.RealizarBackupButton.Name = "RealizarBackupButton"
+        Me.RealizarBackupButton.Size = New System.Drawing.Size(75, 23)
+        Me.RealizarBackupButton.TabIndex = 1
+        Me.RealizarBackupButton.Text = "Backup"
+        Me.RealizarBackupButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.RealizarBackupButton.UseVisualStyleBackColor = True
+        '
+        'EliminarBackupButton
+        '
+        Me.EliminarBackupButton.Image = CType(resources.GetObject("EliminarBackupButton.Image"), System.Drawing.Image)
+        Me.EliminarBackupButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.EliminarBackupButton.Location = New System.Drawing.Point(571, 98)
+        Me.EliminarBackupButton.Name = "EliminarBackupButton"
+        Me.EliminarBackupButton.Size = New System.Drawing.Size(75, 23)
+        Me.EliminarBackupButton.TabIndex = 2
+        Me.EliminarBackupButton.Text = "Eliminar"
+        Me.EliminarBackupButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.EliminarBackupButton.UseVisualStyleBackColor = True
         '
         'BuscarBackupForm
         '
@@ -92,11 +106,11 @@ Partial Class BuscarBackupForm
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents BackupDataGrid As System.Windows.Forms.DataGridView
-    Friend WithEvents RealizarBackupButton As System.Windows.Forms.Button
-    Friend WithEvents EliminarBackupButton As System.Windows.Forms.Button
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents BackupDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents RealizarBackupButton As TicketYa.MyButton
+    Friend WithEvents EliminarBackupButton As TicketYa.MyButton
 
 End Class

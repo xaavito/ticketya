@@ -19,40 +19,47 @@ Partial Class GenerarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.AltaUsuariosButton = New MyButton()
-        Me.UsuarioTextBox = New MyTextBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarUsuarioForm))
+        Me.GenerarUsuarioButton = New TicketYa.MyButton()
+        Me.UsuarioTextBox = New TicketYa.MyTextBox()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
         Me.PassLabel = New System.Windows.Forms.Label()
-        Me.PassTextBox = New MyTextBox()
+        Me.PassTextBox = New TicketYa.MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.NombreTextBox = New MyTextBox()
+        Me.NombreTextBox = New TicketYa.MyTextBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
-        Me.ApellidoTextBox = New MyTextBox()
+        Me.ApellidoTextBox = New TicketYa.MyTextBox()
         Me.FamiliaComboBox = New System.Windows.Forms.ComboBox()
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaDataGrid = New MyDataGrid()
+        Me.FamiliaDataGrid = New TicketYa.MyDataGrid()
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
-        Me.AgregarFamiliaButton = New MyButton()
-        Me.QuitarFamiliaButton = New MyButton()
+        Me.AgregarFamiliaButton = New TicketYa.MyButton()
+        Me.QuitarFamiliaButton = New TicketYa.MyButton()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'AltaUsuariosButton
+        'GenerarUsuarioButton
         '
-        Me.AltaUsuariosButton.Location = New System.Drawing.Point(551, 12)
-        Me.AltaUsuariosButton.Name = "AltaUsuariosButton"
-        Me.AltaUsuariosButton.Size = New System.Drawing.Size(75, 23)
-        Me.AltaUsuariosButton.TabIndex = 1
-        Me.AltaUsuariosButton.Text = "Alta"
-        Me.AltaUsuariosButton.UseVisualStyleBackColor = True
+        Me.GenerarUsuarioButton.Image = CType(resources.GetObject("GenerarUsuarioButton.Image"), System.Drawing.Image)
+        Me.GenerarUsuarioButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.GenerarUsuarioButton.Location = New System.Drawing.Point(551, 12)
+        Me.GenerarUsuarioButton.Name = "GenerarUsuarioButton"
+        Me.GenerarUsuarioButton.Size = New System.Drawing.Size(75, 23)
+        Me.GenerarUsuarioButton.TabIndex = 1
+        Me.GenerarUsuarioButton.Text = "Generar"
+        Me.GenerarUsuarioButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.GenerarUsuarioButton.UseVisualStyleBackColor = True
         '
         'UsuarioTextBox
         '
+        Me.UsuarioTextBox.alfanumerico = False
+        Me.UsuarioTextBox.boton = Nothing
         Me.UsuarioTextBox.Location = New System.Drawing.Point(93, 12)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
+        Me.UsuarioTextBox.sinEspacio = False
         Me.UsuarioTextBox.Size = New System.Drawing.Size(140, 20)
         Me.UsuarioTextBox.TabIndex = 2
         '
@@ -76,9 +83,12 @@ Partial Class GenerarUsuarioForm
         '
         'PassTextBox
         '
+        Me.PassTextBox.alfanumerico = False
+        Me.PassTextBox.boton = Nothing
         Me.PassTextBox.Location = New System.Drawing.Point(93, 38)
         Me.PassTextBox.Name = "PassTextBox"
         Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.PassTextBox.sinEspacio = False
         Me.PassTextBox.Size = New System.Drawing.Size(140, 20)
         Me.PassTextBox.TabIndex = 4
         '
@@ -93,8 +103,11 @@ Partial Class GenerarUsuarioForm
         '
         'NombreTextBox
         '
+        Me.NombreTextBox.alfanumerico = False
+        Me.NombreTextBox.boton = Nothing
         Me.NombreTextBox.Location = New System.Drawing.Point(93, 64)
         Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.sinEspacio = False
         Me.NombreTextBox.Size = New System.Drawing.Size(140, 20)
         Me.NombreTextBox.TabIndex = 6
         '
@@ -109,8 +122,11 @@ Partial Class GenerarUsuarioForm
         '
         'ApellidoTextBox
         '
+        Me.ApellidoTextBox.alfanumerico = False
+        Me.ApellidoTextBox.boton = Nothing
         Me.ApellidoTextBox.Location = New System.Drawing.Point(93, 90)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
+        Me.ApellidoTextBox.sinEspacio = False
         Me.ApellidoTextBox.Size = New System.Drawing.Size(140, 20)
         Me.ApellidoTextBox.TabIndex = 8
         '
@@ -135,11 +151,15 @@ Partial Class GenerarUsuarioForm
         '
         Me.FamiliaDataGrid.AllowUserToAddRows = False
         Me.FamiliaDataGrid.AllowUserToDeleteRows = False
+        Me.FamiliaDataGrid.AllowUserToResizeRows = False
+        Me.FamiliaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.FamiliaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.FamiliaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.FamiliaColumn})
         Me.FamiliaDataGrid.Location = New System.Drawing.Point(327, 12)
         Me.FamiliaDataGrid.MultiSelect = False
         Me.FamiliaDataGrid.Name = "FamiliaDataGrid"
+        Me.FamiliaDataGrid.ReadOnly = True
+        Me.FamiliaDataGrid.RowHeadersVisible = False
         Me.FamiliaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FamiliaDataGrid.Size = New System.Drawing.Size(218, 152)
         Me.FamiliaDataGrid.TabIndex = 12
@@ -148,6 +168,7 @@ Partial Class GenerarUsuarioForm
         '
         Me.Identificador.HeaderText = "Identificador"
         Me.Identificador.Name = "Identificador"
+        Me.Identificador.ReadOnly = True
         Me.Identificador.Visible = False
         '
         'FamiliaColumn
@@ -155,6 +176,7 @@ Partial Class GenerarUsuarioForm
         Me.FamiliaColumn.DataPropertyName = "descripcion"
         Me.FamiliaColumn.HeaderText = "Familia"
         Me.FamiliaColumn.Name = "FamiliaColumn"
+        Me.FamiliaColumn.ReadOnly = True
         '
         'IdiomaLabel
         '
@@ -175,20 +197,26 @@ Partial Class GenerarUsuarioForm
         '
         'AgregarFamiliaButton
         '
+        Me.AgregarFamiliaButton.Image = CType(resources.GetObject("AgregarFamiliaButton.Image"), System.Drawing.Image)
+        Me.AgregarFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.AgregarFamiliaButton.Location = New System.Drawing.Point(246, 116)
         Me.AgregarFamiliaButton.Name = "AgregarFamiliaButton"
         Me.AgregarFamiliaButton.Size = New System.Drawing.Size(75, 23)
         Me.AgregarFamiliaButton.TabIndex = 15
         Me.AgregarFamiliaButton.Text = "Agregar"
+        Me.AgregarFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AgregarFamiliaButton.UseVisualStyleBackColor = True
         '
         'QuitarFamiliaButton
         '
+        Me.QuitarFamiliaButton.Image = CType(resources.GetObject("QuitarFamiliaButton.Image"), System.Drawing.Image)
+        Me.QuitarFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.QuitarFamiliaButton.Location = New System.Drawing.Point(246, 146)
         Me.QuitarFamiliaButton.Name = "QuitarFamiliaButton"
         Me.QuitarFamiliaButton.Size = New System.Drawing.Size(75, 23)
         Me.QuitarFamiliaButton.TabIndex = 16
         Me.QuitarFamiliaButton.Text = "Quitar"
+        Me.QuitarFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.QuitarFamiliaButton.UseVisualStyleBackColor = True
         '
         'GenerarUsuarioForm
@@ -210,7 +238,7 @@ Partial Class GenerarUsuarioForm
         Me.Controls.Add(Me.PassTextBox)
         Me.Controls.Add(Me.UsuarioLabel)
         Me.Controls.Add(Me.UsuarioTextBox)
-        Me.Controls.Add(Me.AltaUsuariosButton)
+        Me.Controls.Add(Me.GenerarUsuarioButton)
         Me.Name = "GenerarUsuarioForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Usuarios"
@@ -219,7 +247,6 @@ Partial Class GenerarUsuarioForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents AltaUsuariosButton As System.Windows.Forms.Button
     Friend WithEvents UsuarioTextBox As MyTextBox
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents PassLabel As System.Windows.Forms.Label
@@ -230,12 +257,13 @@ Partial Class GenerarUsuarioForm
     Friend WithEvents ApellidoTextBox As MyTextBox
     Friend WithEvents FamiliaComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
-    Friend WithEvents FamiliaDataGrid As System.Windows.Forms.DataGridView
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
     Friend WithEvents IdiomaComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents AgregarFamiliaButton As System.Windows.Forms.Button
     Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FamiliaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents QuitarFamiliaButton As System.Windows.Forms.Button
+    Friend WithEvents GenerarUsuarioButton As TicketYa.MyButton
+    Friend WithEvents FamiliaDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents AgregarFamiliaButton As TicketYa.MyButton
+    Friend WithEvents QuitarFamiliaButton As TicketYa.MyButton
 
 End Class

@@ -63,7 +63,7 @@
         End If
     End Sub
 
-    Private Sub ModificarUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarUsuariosButton.Click
+    Private Sub ModificarUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarUsuarioButton.Click
         Try
             If (BLL.GestorUsuarioBLL.modificarUsuario(usuario.identificador,
                                                       UsuarioTextBox.Text,

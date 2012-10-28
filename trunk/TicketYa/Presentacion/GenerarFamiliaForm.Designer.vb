@@ -19,9 +19,10 @@ Partial Class GenerarFamiliaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarFamiliaForm))
         Me.FamiliaLabel = New System.Windows.Forms.Label()
-        Me.FamiliaTextBox = New MyTextBox()
-        Me.AltaFamiliaButton = New MyButton()
+        Me.FamiliaTextBox = New TicketYa.MyTextBox()
+        Me.AltaFamiliaButton = New TicketYa.MyButton()
         Me.SuspendLayout()
         '
         'FamiliaLabel
@@ -35,24 +36,30 @@ Partial Class GenerarFamiliaForm
         '
         'FamiliaTextBox
         '
+        Me.FamiliaTextBox.alfanumerico = False
+        Me.FamiliaTextBox.boton = Nothing
         Me.FamiliaTextBox.Location = New System.Drawing.Point(136, 26)
         Me.FamiliaTextBox.Name = "FamiliaTextBox"
+        Me.FamiliaTextBox.sinEspacio = False
         Me.FamiliaTextBox.Size = New System.Drawing.Size(140, 20)
         Me.FamiliaTextBox.TabIndex = 11
         '
         'AltaFamiliaButton
         '
-        Me.AltaFamiliaButton.Location = New System.Drawing.Point(362, 29)
+        Me.AltaFamiliaButton.Image = CType(resources.GetObject("AltaFamiliaButton.Image"), System.Drawing.Image)
+        Me.AltaFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AltaFamiliaButton.Location = New System.Drawing.Point(360, 24)
         Me.AltaFamiliaButton.Name = "AltaFamiliaButton"
         Me.AltaFamiliaButton.Size = New System.Drawing.Size(75, 23)
         Me.AltaFamiliaButton.TabIndex = 10
-        Me.AltaFamiliaButton.Text = "Alta"
+        Me.AltaFamiliaButton.Text = "Generar"
+        Me.AltaFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AltaFamiliaButton.UseVisualStyleBackColor = True
         '
         'GenerarFamiliaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(731, 372)
+        Me.ClientSize = New System.Drawing.Size(632, 156)
         Me.Controls.Add(Me.FamiliaLabel)
         Me.Controls.Add(Me.FamiliaTextBox)
         Me.Controls.Add(Me.AltaFamiliaButton)
@@ -65,6 +72,6 @@ Partial Class GenerarFamiliaForm
     End Sub
     Friend WithEvents FamiliaLabel As System.Windows.Forms.Label
     Friend WithEvents FamiliaTextBox As MyTextBox
-    Friend WithEvents AltaFamiliaButton As System.Windows.Forms.Button
+    Friend WithEvents AltaFamiliaButton As TicketYa.MyButton
 
 End Class

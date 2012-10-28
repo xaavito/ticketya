@@ -22,12 +22,12 @@ Partial Class BuscarIdiomaForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuscarIdiomaForm))
         Me.IdiomaTextBox = New TicketYa.MyTextBox()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
-        Me.BuscarIdiomaButton = New TicketYa.MyButton()
         Me.IdiomasDataGrid = New TicketYa.MyDataGrid()
         Me.Identifcador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EliminarIdiomaButton = New TicketYa.MyButton()
         Me.ModificarIdiomaButton = New TicketYa.MyButton()
+        Me.EliminarIdiomaButton = New TicketYa.MyButton()
+        Me.BuscarIdiomaButton = New TicketYa.MyButton()
         CType(Me.IdiomasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -49,18 +49,6 @@ Partial Class BuscarIdiomaForm
         Me.IdiomaLabel.Size = New System.Drawing.Size(44, 13)
         Me.IdiomaLabel.TabIndex = 1
         Me.IdiomaLabel.Text = "Nombre"
-        '
-        'BuscarIdiomaButton
-        '
-        Me.BuscarIdiomaButton.Image = CType(resources.GetObject("BuscarIdiomaButton.Image"), System.Drawing.Image)
-        Me.BuscarIdiomaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BuscarIdiomaButton.Location = New System.Drawing.Point(238, 8)
-        Me.BuscarIdiomaButton.Name = "BuscarIdiomaButton"
-        Me.BuscarIdiomaButton.Size = New System.Drawing.Size(75, 23)
-        Me.BuscarIdiomaButton.TabIndex = 2
-        Me.BuscarIdiomaButton.Text = "Buscar"
-        Me.BuscarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BuscarIdiomaButton.UseVisualStyleBackColor = True
         '
         'IdiomasDataGrid
         '
@@ -93,6 +81,18 @@ Partial Class BuscarIdiomaForm
         Me.Descripcion.Name = "Descripcion"
         Me.Descripcion.ReadOnly = True
         '
+        'ModificarIdiomaButton
+        '
+        Me.ModificarIdiomaButton.Image = CType(resources.GetObject("ModificarIdiomaButton.Image"), System.Drawing.Image)
+        Me.ModificarIdiomaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ModificarIdiomaButton.Location = New System.Drawing.Point(336, 74)
+        Me.ModificarIdiomaButton.Name = "ModificarIdiomaButton"
+        Me.ModificarIdiomaButton.Size = New System.Drawing.Size(75, 23)
+        Me.ModificarIdiomaButton.TabIndex = 5
+        Me.ModificarIdiomaButton.Text = "Modificar"
+        Me.ModificarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ModificarIdiomaButton.UseVisualStyleBackColor = True
+        '
         'EliminarIdiomaButton
         '
         Me.EliminarIdiomaButton.Image = CType(resources.GetObject("EliminarIdiomaButton.Image"), System.Drawing.Image)
@@ -105,17 +105,17 @@ Partial Class BuscarIdiomaForm
         Me.EliminarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.EliminarIdiomaButton.UseVisualStyleBackColor = True
         '
-        'ModificarIdiomaButton
+        'BuscarIdiomaButton
         '
-        Me.ModificarIdiomaButton.Image = CType(resources.GetObject("ModificarIdiomaButton.Image"), System.Drawing.Image)
-        Me.ModificarIdiomaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ModificarIdiomaButton.Location = New System.Drawing.Point(336, 74)
-        Me.ModificarIdiomaButton.Name = "ModificarIdiomaButton"
-        Me.ModificarIdiomaButton.Size = New System.Drawing.Size(75, 23)
-        Me.ModificarIdiomaButton.TabIndex = 5
-        Me.ModificarIdiomaButton.Text = "Modificar"
-        Me.ModificarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ModificarIdiomaButton.UseVisualStyleBackColor = True
+        Me.BuscarIdiomaButton.Image = CType(resources.GetObject("BuscarIdiomaButton.Image"), System.Drawing.Image)
+        Me.BuscarIdiomaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BuscarIdiomaButton.Location = New System.Drawing.Point(336, 9)
+        Me.BuscarIdiomaButton.Name = "BuscarIdiomaButton"
+        Me.BuscarIdiomaButton.Size = New System.Drawing.Size(75, 23)
+        Me.BuscarIdiomaButton.TabIndex = 2
+        Me.BuscarIdiomaButton.Text = "Buscar"
+        Me.BuscarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BuscarIdiomaButton.UseVisualStyleBackColor = True
         '
         'BuscarIdiomaForm
         '

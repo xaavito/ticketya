@@ -25,15 +25,18 @@
         IdiomaTieneUsuariosAsociados = 23
         UsuarioEliminadoExitosamente = 24
         UsuarioModificadoExitosamente = 25
-        ModificacionDeIdioma = 26
+        ModificacionDeIdiomaExcepcion = 26
         EliminarMensajeControl = 27
         ModificacionDeMensajeControl = 28
         EliminarBitacora = 29
         ModificacionDeBitacora = 30
         EliminarExcepcion = 31
         ModificacionDeExcepcion = 32
-        EliminarIdioma = 33
+        EliminarIdiomaExcepcion = 33
         IdiomaModificadoExistosamente = 34
+        ' TODO: faltan agregarlos a la BD   
+        PermisoAsociadoExitosamente = 35
+
     End Enum
 
     Enum Bitacora
