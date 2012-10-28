@@ -28,7 +28,6 @@
                     ret = True
                     Try
                         BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, frm.UserTextBox.Text, Utilitarios.Enumeradores.Bitacora.LogueoExitoso)
-                        'BLL.BitacoraBLL.getBitacora(BLL.Actual.usuario, "pepe", 1, New DateTime(2012, 9, 21))
                     Catch excep As Excepciones.InsertExcepcion
                         Application.HandlerException(excep)
                     End Try
