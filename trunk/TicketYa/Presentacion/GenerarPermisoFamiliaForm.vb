@@ -77,7 +77,7 @@
         End Try
     End Sub
 
-    Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarPermisoFamiliaButton.Click
+    Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarButton.Click
         Me.Close()
     End Sub
 

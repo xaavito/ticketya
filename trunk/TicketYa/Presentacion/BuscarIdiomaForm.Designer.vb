@@ -23,11 +23,11 @@ Partial Class BuscarIdiomaForm
         Me.IdiomaTextBox = New TicketYa.MyTextBox()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
         Me.IdiomasDataGrid = New TicketYa.MyDataGrid()
-        Me.Identifcador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ModificarIdiomaButton = New TicketYa.MyButton()
         Me.EliminarIdiomaButton = New TicketYa.MyButton()
         Me.BuscarIdiomaButton = New TicketYa.MyButton()
+        Me.Identifcador = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.IdiomasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -57,7 +57,7 @@ Partial Class BuscarIdiomaForm
         Me.IdiomasDataGrid.AllowUserToResizeRows = False
         Me.IdiomasDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.IdiomasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.IdiomasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identifcador, Me.Descripcion})
+        Me.IdiomasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identifcador, Me.DescripcionColumn})
         Me.IdiomasDataGrid.Location = New System.Drawing.Point(16, 56)
         Me.IdiomasDataGrid.Name = "IdiomasDataGrid"
         Me.IdiomasDataGrid.ReadOnly = True
@@ -65,21 +65,6 @@ Partial Class BuscarIdiomaForm
         Me.IdiomasDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.IdiomasDataGrid.Size = New System.Drawing.Size(297, 150)
         Me.IdiomasDataGrid.TabIndex = 3
-        '
-        'Identifcador
-        '
-        Me.Identifcador.DataPropertyName = "identificador"
-        Me.Identifcador.HeaderText = "Identificador"
-        Me.Identifcador.Name = "Identifcador"
-        Me.Identifcador.ReadOnly = True
-        Me.Identifcador.Visible = False
-        '
-        'Descripcion
-        '
-        Me.Descripcion.DataPropertyName = "descripcion"
-        Me.Descripcion.HeaderText = "Descripcion"
-        Me.Descripcion.Name = "Descripcion"
-        Me.Descripcion.ReadOnly = True
         '
         'ModificarIdiomaButton
         '
@@ -117,6 +102,21 @@ Partial Class BuscarIdiomaForm
         Me.BuscarIdiomaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarIdiomaButton.UseVisualStyleBackColor = True
         '
+        'Identifcador
+        '
+        Me.Identifcador.DataPropertyName = "identificador"
+        Me.Identifcador.HeaderText = "Identificador"
+        Me.Identifcador.Name = "Identifcador"
+        Me.Identifcador.ReadOnly = True
+        Me.Identifcador.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
+        '
         'BuscarIdiomaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -136,11 +136,11 @@ Partial Class BuscarIdiomaForm
     End Sub
     Friend WithEvents IdiomaTextBox As MyTextBox
     Friend WithEvents IdiomaLabel As System.Windows.Forms.Label
-    Friend WithEvents Identifcador As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BuscarIdiomaButton As TicketYa.MyButton
     Friend WithEvents IdiomasDataGrid As TicketYa.MyDataGrid
     Friend WithEvents EliminarIdiomaButton As TicketYa.MyButton
     Friend WithEvents ModificarIdiomaButton As TicketYa.MyButton
+    Friend WithEvents Identifcador As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

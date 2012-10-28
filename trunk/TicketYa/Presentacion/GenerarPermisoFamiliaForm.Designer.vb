@@ -28,11 +28,11 @@ Partial Class GenerarPermisoFamiliaForm
         Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PermisosFamiliaDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PermisoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AgregarPermisoFamiliaButton = New TicketYa.MyButton()
         Me.QuitarPermisoFamiliaButton = New TicketYa.MyButton()
         Me.GuardarPermisoFamiliaButton = New TicketYa.MyButton()
-        Me.CancelarPermisoFamiliaButton = New TicketYa.MyButton()
+        Me.CancelarButton = New TicketYa.MyButton()
         CType(Me.PermisoDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PermisosFamiliaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,7 +82,7 @@ Partial Class GenerarPermisoFamiliaForm
         Me.FamiliaDataGrid.ReadOnly = True
         Me.FamiliaDataGrid.RowHeadersVisible = False
         Me.FamiliaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.FamiliaDataGrid.Size = New System.Drawing.Size(184, 181)
+        Me.FamiliaDataGrid.Size = New System.Drawing.Size(184, 315)
         Me.FamiliaDataGrid.TabIndex = 1
         '
         'IdentificadorColumn
@@ -107,7 +107,7 @@ Partial Class GenerarPermisoFamiliaForm
         Me.PermisosFamiliaDataGrid.AllowUserToResizeRows = False
         Me.PermisosFamiliaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PermisosFamiliaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PermisosFamiliaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn2, Me.PermisoColumn})
+        Me.PermisosFamiliaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn2, Me.DescripcionColumn1})
         Me.PermisosFamiliaDataGrid.Location = New System.Drawing.Point(566, 54)
         Me.PermisosFamiliaDataGrid.Name = "PermisosFamiliaDataGrid"
         Me.PermisosFamiliaDataGrid.ReadOnly = True
@@ -124,12 +124,12 @@ Partial Class GenerarPermisoFamiliaForm
         Me.IdentificadorColumn2.ReadOnly = True
         Me.IdentificadorColumn2.Visible = False
         '
-        'PermisoColumn
+        'DescripcionColumn1
         '
-        Me.PermisoColumn.DataPropertyName = "descripcion"
-        Me.PermisoColumn.HeaderText = "Descripcion"
-        Me.PermisoColumn.Name = "PermisoColumn"
-        Me.PermisoColumn.ReadOnly = True
+        Me.DescripcionColumn1.DataPropertyName = "descripcion"
+        Me.DescripcionColumn1.HeaderText = "Descripcion"
+        Me.DescripcionColumn1.Name = "DescripcionColumn1"
+        Me.DescripcionColumn1.ReadOnly = True
         '
         'AgregarPermisoFamiliaButton
         '
@@ -167,23 +167,23 @@ Partial Class GenerarPermisoFamiliaForm
         Me.GuardarPermisoFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.GuardarPermisoFamiliaButton.UseVisualStyleBackColor = True
         '
-        'CancelarPermisoFamiliaButton
+        'CancelarButton
         '
-        Me.CancelarPermisoFamiliaButton.Image = CType(resources.GetObject("CancelarPermisoFamiliaButton.Image"), System.Drawing.Image)
-        Me.CancelarPermisoFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CancelarPermisoFamiliaButton.Location = New System.Drawing.Point(675, 264)
-        Me.CancelarPermisoFamiliaButton.Name = "CancelarPermisoFamiliaButton"
-        Me.CancelarPermisoFamiliaButton.Size = New System.Drawing.Size(75, 23)
-        Me.CancelarPermisoFamiliaButton.TabIndex = 6
-        Me.CancelarPermisoFamiliaButton.Text = "Cancelar"
-        Me.CancelarPermisoFamiliaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CancelarPermisoFamiliaButton.UseVisualStyleBackColor = True
+        Me.CancelarButton.Image = CType(resources.GetObject("CancelarButton.Image"), System.Drawing.Image)
+        Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CancelarButton.Location = New System.Drawing.Point(675, 264)
+        Me.CancelarButton.Name = "CancelarButton"
+        Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CancelarButton.TabIndex = 6
+        Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CancelarButton.UseVisualStyleBackColor = True
         '
         'GenerarPermisoFamiliaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(769, 381)
-        Me.Controls.Add(Me.CancelarPermisoFamiliaButton)
+        Me.Controls.Add(Me.CancelarButton)
         Me.Controls.Add(Me.GuardarPermisoFamiliaButton)
         Me.Controls.Add(Me.QuitarPermisoFamiliaButton)
         Me.Controls.Add(Me.AgregarPermisoFamiliaButton)
@@ -204,8 +204,6 @@ Partial Class GenerarPermisoFamiliaForm
     Friend WithEvents GuardarPermisoButton As System.Windows.Forms.Button
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IndentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents IdentificadorColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PermisoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UsuarioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AgregarPermisoFamiliaButton As TicketYa.MyButton
@@ -214,6 +212,8 @@ Partial Class GenerarPermisoFamiliaForm
     Friend WithEvents PermisoDataGrid As TicketYa.MyDataGrid
     Friend WithEvents FamiliaDataGrid As TicketYa.MyDataGrid
     Friend WithEvents PermisosFamiliaDataGrid As TicketYa.MyDataGrid
-    Friend WithEvents CancelarPermisoFamiliaButton As TicketYa.MyButton
+    Friend WithEvents CancelarButton As TicketYa.MyButton
+    Friend WithEvents IdentificadorColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

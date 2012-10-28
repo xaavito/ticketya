@@ -26,7 +26,7 @@ Partial Class GenerarPermisoUsuarioForm
         Me.AgregarPermisoUsuarioButton = New TicketYa.MyButton()
         Me.PermisosUsuarioDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PermisoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsuariosDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -93,7 +93,7 @@ Partial Class GenerarPermisoUsuarioForm
         Me.PermisosUsuarioDataGrid.AllowUserToResizeRows = False
         Me.PermisosUsuarioDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PermisosUsuarioDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PermisosUsuarioDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn2, Me.PermisoColumn})
+        Me.PermisosUsuarioDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn2, Me.DescripcionColumn1})
         Me.PermisosUsuarioDataGrid.Location = New System.Drawing.Point(583, 19)
         Me.PermisosUsuarioDataGrid.Name = "PermisosUsuarioDataGrid"
         Me.PermisosUsuarioDataGrid.ReadOnly = True
@@ -110,12 +110,12 @@ Partial Class GenerarPermisoUsuarioForm
         Me.IdentificadorColumn2.ReadOnly = True
         Me.IdentificadorColumn2.Visible = False
         '
-        'PermisoColumn
+        'DescripcionColumn1
         '
-        Me.PermisoColumn.DataPropertyName = "descripcion"
-        Me.PermisoColumn.HeaderText = "Descripcion"
-        Me.PermisoColumn.Name = "PermisoColumn"
-        Me.PermisoColumn.ReadOnly = True
+        Me.DescripcionColumn1.DataPropertyName = "descripcion"
+        Me.DescripcionColumn1.HeaderText = "Descripcion"
+        Me.DescripcionColumn1.Name = "DescripcionColumn1"
+        Me.DescripcionColumn1.ReadOnly = True
         '
         'UsuariosDataGrid
         '
@@ -130,7 +130,7 @@ Partial Class GenerarPermisoUsuarioForm
         Me.UsuariosDataGrid.ReadOnly = True
         Me.UsuariosDataGrid.RowHeadersVisible = False
         Me.UsuariosDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.UsuariosDataGrid.Size = New System.Drawing.Size(184, 181)
+        Me.UsuariosDataGrid.Size = New System.Drawing.Size(184, 315)
         Me.UsuariosDataGrid.TabIndex = 8
         '
         'IdentificadorColumn
@@ -202,8 +202,6 @@ Partial Class GenerarPermisoUsuarioForm
     Friend WithEvents GuardarPermisoButton As System.Windows.Forms.Button
     Friend WithEvents QuitarPermisoButton As System.Windows.Forms.Button
     Friend WithEvents AgregarPermisoButton As System.Windows.Forms.Button
-    Friend WithEvents IdentificadorColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PermisoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IndentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -215,5 +213,7 @@ Partial Class GenerarPermisoUsuarioForm
     Friend WithEvents PermisosUsuarioDataGrid As TicketYa.MyDataGrid
     Friend WithEvents UsuariosDataGrid As TicketYa.MyDataGrid
     Friend WithEvents PermisoDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents IdentificadorColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
