@@ -13,7 +13,14 @@
         If Not BackupDataGrid.CurrentRow Is Nothing Then
             Dim backup As BE.BackupBE
             backup = DirectCast(BackupDataGrid.CurrentRow.DataBoundItem, BE.BackupBE)
-            BLL.SeguridadBLL.restore(backup.path)
+            Try
+                BLL.SeguridadBLL.restore(backup.path)
+            Catch ex As Excepciones.RestoreRealizadoExitosamente
+                My.Application.HandlerException(ex)
+            Catch ex As Exception
+                My.Application.HandlerException(ex)
+            End Try
+
             buscarBackups()
         End If
     End Sub

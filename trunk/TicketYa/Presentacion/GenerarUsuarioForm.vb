@@ -18,6 +18,15 @@
         FamiliaComboBox.DataSource = familias
         FamiliaComboBox.DisplayMember = "descripcion"
         FamiliaComboBox.ValueMember = "identificador"
+
+        UsuarioTextBox.sinEspacio = True
+        UsuarioTextBox.boton = GenerarUsuarioButton
+        PassTextBox.sinEspacio = True
+        PassTextBox.boton = GenerarUsuarioButton
+        NombreTextBox.texto = True
+        NombreTextBox.boton = GenerarUsuarioButton
+        ApellidoTextBox.texto = True
+        ApellidoTextBox.boton = GenerarUsuarioButton
     End Sub
 
     Private Sub AgregarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarFamiliaButton.Click
@@ -28,6 +37,10 @@
     End Sub
 
     Private Sub AltaUsuariosButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarUsuarioButton.Click
+        If (Not String.IsNullOrEmpty(UsuarioTextBox.Text) And Not String.IsNullOrEmpty(PassTextBox.Text) And
+            Not String.IsNullOrEmpty(NombreTextBox.Text) And Not String.IsNullOrEmpty(ApellidoTextBox.Text)) Then
+
+        End If
         Try
             If (BLL.GestorUsuarioBLL.altaUsuario(UsuarioTextBox.Text,
                                                 PassTextBox.Text,

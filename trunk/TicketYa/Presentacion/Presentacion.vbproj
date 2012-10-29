@@ -99,6 +99,9 @@
     <Compile Include="Controles\MyButton.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\MyComboBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\MyDataGrid.vb">
       <SubType>Component</SubType>
     </Compile>

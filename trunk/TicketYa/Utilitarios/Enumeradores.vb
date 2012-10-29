@@ -34,12 +34,11 @@
         ModificacionDeExcepcion = 32
         EliminarIdiomaExcepcion = 33
         IdiomaModificadoExistosamente = 34
-        ' TODO: faltan agregarlos a la BD   
         PermisoAsociadoExitosamente = 35
+        FalloAlEliminarBackup = 36
+        BackupsNoEncontrados = 37
 
-        FalloAlEliminarBackup
-
-        BackupsNoEncontrados
+        RestoreRealizadoExitosamente
 
     End Enum
 
