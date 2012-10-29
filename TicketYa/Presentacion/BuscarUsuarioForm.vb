@@ -30,9 +30,9 @@
         If (Not usr Is Nothing) Then
             Try
                 If (BLL.GestorUsuarioBLL.eliminarUsuario(usr) = 1) Then
-                    Throw New Excepciones.UsuarioEliminadoExistosamenteExcepcion
-
+                    BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, usr.usuario, Utilitarios.Enumeradores.Bitacora.UsuarioEliminado)
                     buscarUsuario(UsuarioTextBox.Text)
+                    Throw New Excepciones.UsuarioEliminadoExistosamenteExcepcion
                 End If
             Catch ex As Excepciones.UsuarioEliminadoExistosamenteExcepcion
                 My.Application.HandlerException(ex)

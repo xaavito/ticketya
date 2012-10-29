@@ -2,10 +2,10 @@
     Inherits ExceptionManager
 
     Public Sub New()
-        MyBase.new("Conexion a la BD de datos no lograda!")
+        MyBase.new("")
         Me.codigo = Utilitarios.Enumeradores.Excepeciones.BitacoraNoEncontrada
-        Me.tipo = MsgBoxStyle.Exclamation
-        Me.mensaje = "Conexion a la BD de datos no lograda!"
+        Me.tipo = MsgBoxStyle.Information
+        Me.mensaje = ""
     End Sub
 End Class
 

@@ -6,11 +6,13 @@
         Try
             If (BLL.GestorFamiliaBLL.modificarFamilia(familia.identificador,
                                                       FamiliaTextBox.Text)) Then
-                MsgBox(New Excepciones.FamiliaModificadaExitosamenteExcepcion)
-                'limpiarParametros()
+                Throw New Excepciones.FamiliaModificadaExitosamenteExcepcion
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, FamiliaTextBox.Text, Utilitarios.Enumeradores.Bitacora.ModificacionDeFamilia)
                 Me.Close()
             End If
 
+        Catch ex As Excepciones.FamiliaModificadaExitosamenteExcepcion
+            My.Application.HandlerException(ex)
         Catch ex As Excepciones.InsertExcepcion
             My.Application.HandlerException(ex)
         End Try

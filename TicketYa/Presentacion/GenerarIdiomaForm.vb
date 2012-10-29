@@ -28,6 +28,7 @@
                 Throw New Excepciones.GeneracionDeIdiomaExcepcion
             Else
                 Throw New Excepciones.GeneracionDeIdiomaExitosa
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, IdiomaTextBox.Text, Utilitarios.Enumeradores.Bitacora.IdiomaCreado)
             End If
 
         Catch ex As Excepciones.GeneracionDeIdiomaExitosa

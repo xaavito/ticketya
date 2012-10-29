@@ -10,6 +10,7 @@
         Try
             If (BLL.GestorIdiomaBLL.modificarIdioma(idioma)) Then
                 Throw New Excepciones.IdiomaModificadoExistosamente
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, IdiomaTextBox.Text, Utilitarios.Enumeradores.Bitacora.ModificacionDeIdioma)
                 Me.Close()
             End If
 

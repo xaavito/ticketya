@@ -9,8 +9,17 @@
 
     End Sub
     Private Sub RealizarBackupButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RealizarBackupButton.Click
-        BLL.SeguridadBLL.backup("D:\\Prueba")
-        buscarBackups()
+        If Not String.IsNullOrWhiteSpace(DescripcionBackupTextBox.Text) Then
+            Try
+                BLL.SeguridadBLL.backup(DescripcionBackupTextBox.Text)
+            Catch ex As Excepciones.BackupRealizadoExitosamente
+                My.Application.HandlerException(ex)
+            End Try
+
+            BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, DescripcionBackupTextBox.Text, Utilitarios.Enumeradores.Bitacora.BackupGenerado)
+            buscarBackups()
+        End If
+        
     End Sub
 
     Private Sub EliminarBackupButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarBackupButton.Click
@@ -18,11 +27,9 @@
             Dim backup As BE.BackupBE
             backup = DirectCast(BackupDataGrid.CurrentRow.DataBoundItem, BE.BackupBE)
             If (BLL.GestorBackupBLL.eliminarBackup(backup) > 0) Then
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, backup.path, Utilitarios.Enumeradores.Bitacora.BackupEliminado)
                 buscarBackups()
-            Else
-
             End If
-
         End If
     End Sub
 

@@ -26,6 +26,7 @@ Partial Class BuscarBackupForm
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RealizarBackupButton = New TicketYa.MyButton()
         Me.EliminarBackupButton = New TicketYa.MyButton()
+        Me.DescripcionBackupTextBox = New TicketYa.MyTextBox()
         CType(Me.BackupDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -37,7 +38,7 @@ Partial Class BuscarBackupForm
         Me.BackupDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BackupDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BackupDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn})
-        Me.BackupDataGrid.Location = New System.Drawing.Point(12, 12)
+        Me.BackupDataGrid.Location = New System.Drawing.Point(12, 25)
         Me.BackupDataGrid.MultiSelect = False
         Me.BackupDataGrid.Name = "BackupDataGrid"
         Me.BackupDataGrid.ReadOnly = True
@@ -72,7 +73,7 @@ Partial Class BuscarBackupForm
         '
         Me.RealizarBackupButton.Image = CType(resources.GetObject("RealizarBackupButton.Image"), System.Drawing.Image)
         Me.RealizarBackupButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.RealizarBackupButton.Location = New System.Drawing.Point(571, 25)
+        Me.RealizarBackupButton.Location = New System.Drawing.Point(526, 26)
         Me.RealizarBackupButton.Name = "RealizarBackupButton"
         Me.RealizarBackupButton.Size = New System.Drawing.Size(75, 23)
         Me.RealizarBackupButton.TabIndex = 1
@@ -84,7 +85,7 @@ Partial Class BuscarBackupForm
         '
         Me.EliminarBackupButton.Image = CType(resources.GetObject("EliminarBackupButton.Image"), System.Drawing.Image)
         Me.EliminarBackupButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EliminarBackupButton.Location = New System.Drawing.Point(571, 98)
+        Me.EliminarBackupButton.Location = New System.Drawing.Point(526, 152)
         Me.EliminarBackupButton.Name = "EliminarBackupButton"
         Me.EliminarBackupButton.Size = New System.Drawing.Size(75, 23)
         Me.EliminarBackupButton.TabIndex = 2
@@ -92,10 +93,23 @@ Partial Class BuscarBackupForm
         Me.EliminarBackupButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.EliminarBackupButton.UseVisualStyleBackColor = True
         '
+        'DescripcionBackupTextBox
+        '
+        Me.DescripcionBackupTextBox.alfanumerico = False
+        Me.DescripcionBackupTextBox.boton = Nothing
+        Me.DescripcionBackupTextBox.Location = New System.Drawing.Point(607, 28)
+        Me.DescripcionBackupTextBox.Name = "DescripcionBackupTextBox"
+        Me.DescripcionBackupTextBox.numerico = False
+        Me.DescripcionBackupTextBox.sinEspacio = False
+        Me.DescripcionBackupTextBox.Size = New System.Drawing.Size(137, 20)
+        Me.DescripcionBackupTextBox.TabIndex = 3
+        Me.DescripcionBackupTextBox.texto = False
+        '
         'BuscarBackupForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(756, 277)
+        Me.Controls.Add(Me.DescripcionBackupTextBox)
         Me.Controls.Add(Me.EliminarBackupButton)
         Me.Controls.Add(Me.RealizarBackupButton)
         Me.Controls.Add(Me.BackupDataGrid)
@@ -104,6 +118,7 @@ Partial Class BuscarBackupForm
         Me.Text = "Backup"
         CType(Me.BackupDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -112,5 +127,6 @@ Partial Class BuscarBackupForm
     Friend WithEvents BackupDataGrid As TicketYa.MyDataGrid
     Friend WithEvents RealizarBackupButton As TicketYa.MyButton
     Friend WithEvents EliminarBackupButton As TicketYa.MyButton
+    Friend WithEvents DescripcionBackupTextBox As TicketYa.MyTextBox
 
 End Class

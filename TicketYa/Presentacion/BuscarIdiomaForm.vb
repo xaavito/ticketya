@@ -11,6 +11,7 @@
             If (Not idioma Is Nothing) Then
                 If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 1) Then
                     buscarIdiomas()
+                    BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, idioma.descripcion, Utilitarios.Enumeradores.Bitacora.IdiomaEliminado)
                     Throw New Excepciones.IdiomaEliminadoExistosamenteExcepcion
                 Else
                     Throw New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
