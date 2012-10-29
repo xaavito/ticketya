@@ -13,6 +13,9 @@
             My.Application.HandlerException(ex)
         Catch ex As Excepciones.ExcepcionNoEncontradaExcepcion
             My.Application.HandlerException(ex)
+        Catch ex As Excepciones.ConexionImposibleExcepcion
+            My.Application.HandlerException(ex)
+            Environment.Exit(1)
         Catch ex As Exception
             My.Application.HandlerException(ex)
         End Try

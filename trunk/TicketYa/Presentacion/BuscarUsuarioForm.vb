@@ -28,12 +28,17 @@
         Dim usr As BE.UsuarioBE
         usr = DirectCast(UsuariosDataGrid.CurrentRow.DataBoundItem, BE.UsuarioBE)
         If (Not usr Is Nothing) Then
-            If (BLL.GestorUsuarioBLL.eliminarUsuario(usr) = 1) Then
-                MsgBox(New Excepciones.UsuarioEliminadoExistosamenteExcepcion)
-                'UsuariosDataGrid.Refresh() no funca esto???
+            Try
+                If (BLL.GestorUsuarioBLL.eliminarUsuario(usr) = 1) Then
+                    Throw New Excepciones.UsuarioEliminadoExistosamenteExcepcion
 
-                buscarUsuario(UsuarioTextBox.Text)
-            End If
+                    buscarUsuario(UsuarioTextBox.Text)
+                End If
+            Catch ex As Excepciones.UsuarioEliminadoExistosamenteExcepcion
+                My.Application.HandlerException(ex)
+            Catch ex As Exception
+                My.Application.HandlerException(ex)
+            End Try
         End If
     End Sub
 

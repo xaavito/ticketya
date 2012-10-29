@@ -37,6 +37,10 @@
         ' TODO: faltan agregarlos a la BD   
         PermisoAsociadoExitosamente = 35
 
+        FalloAlEliminarBackup
+
+        BackupsNoEncontrados
+
     End Enum
 
     Enum Bitacora

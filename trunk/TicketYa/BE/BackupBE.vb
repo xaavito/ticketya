@@ -24,5 +24,27 @@
     End Property
 
 
+    Private _path As String
+    Public Property path() As String
+        Get
+            Return _path
+        End Get
+        Set(ByVal value As String)
+            _path = value
+        End Set
+    End Property
+
+
+    Private _activo As Boolean
+    Public Property activo() As Boolean
+        Get
+            Return _activo
+        End Get
+        Set(ByVal value As Boolean)
+            _activo = value
+        End Set
+    End Property
+
+
 
 End Class

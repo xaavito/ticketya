@@ -21,8 +21,11 @@ Partial Class RealizarRestoreForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RealizarRestoreForm))
         Me.RealizarRestoreButton = New TicketYa.MyButton()
-        Me.DataGridView1 = New TicketYa.MyDataGrid()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.BackupDataGrid = New TicketYa.MyDataGrid()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        CType(Me.BackupDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RealizarRestoreButton
@@ -37,35 +40,62 @@ Partial Class RealizarRestoreForm
         Me.RealizarRestoreButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.RealizarRestoreButton.UseVisualStyleBackColor = True
         '
-        'DataGridView1
+        'BackupDataGrid
         '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToResizeRows = False
-        Me.DataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(12, 21)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(508, 150)
-        Me.DataGridView1.TabIndex = 3
+        Me.BackupDataGrid.AllowUserToAddRows = False
+        Me.BackupDataGrid.AllowUserToDeleteRows = False
+        Me.BackupDataGrid.AllowUserToResizeRows = False
+        Me.BackupDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.BackupDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.BackupDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn})
+        Me.BackupDataGrid.Location = New System.Drawing.Point(12, 21)
+        Me.BackupDataGrid.MultiSelect = False
+        Me.BackupDataGrid.Name = "BackupDataGrid"
+        Me.BackupDataGrid.ReadOnly = True
+        Me.BackupDataGrid.RowHeadersVisible = False
+        Me.BackupDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.BackupDataGrid.Size = New System.Drawing.Size(508, 150)
+        Me.BackupDataGrid.TabIndex = 5
+        '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
+        Me.IdentificadorColumn.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
+        '
+        'FechaColumn
+        '
+        Me.FechaColumn.DataPropertyName = "fecha"
+        Me.FechaColumn.HeaderText = "Fecha"
+        Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
         '
         'RealizarRestoreForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(688, 267)
+        Me.Controls.Add(Me.BackupDataGrid)
         Me.Controls.Add(Me.RealizarRestoreButton)
-        Me.Controls.Add(Me.DataGridView1)
         Me.Name = "RealizarRestoreForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Restore"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BackupDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents RealizarRestoreButton As TicketYa.MyButton
-    Friend WithEvents DataGridView1 As TicketYa.MyDataGrid
+    Friend WithEvents BackupDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

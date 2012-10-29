@@ -64,6 +64,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackupExcepcion.vb" />
     <Compile Include="BitacoraExcepcion.vb" />
     <Compile Include="ConexionExcepcion.vb" />
     <Compile Include="DatosExcepcion.vb" />

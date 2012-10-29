@@ -15,7 +15,7 @@
                 End If
             Next
         Else
-            Return "Error Trayendo error!"
+            Return "Error Garrafal, posiblemente la BD no este disponible"
         End If
 
         Throw New Excepciones.ExcepcionNoEncontradaExcepcion
