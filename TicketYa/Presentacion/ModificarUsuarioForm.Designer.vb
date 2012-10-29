@@ -28,7 +28,7 @@ Partial Class ModificarUsuarioForm
         Me.QuitarFamiliaButton = New TicketYa.MyButton()
         Me.AgregarFamiliaButton = New TicketYa.MyButton()
         Me.IdiomaLabel = New System.Windows.Forms.Label()
-        Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
+        Me.IdiomaComboBox = New MyComboBox()
         Me.FamiliaDataGrid = New TicketYa.MyDataGrid()
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

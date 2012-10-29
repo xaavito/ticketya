@@ -20,7 +20,7 @@ Partial Class GenerarIdiomaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarIdiomaForm))
-        Me.IdiomaComboBox = New System.Windows.Forms.ComboBox()
+        Me.IdiomaComboBox = New MyComboBox()
         Me.IdiomaBaseLabel = New System.Windows.Forms.Label()
         Me.GenerarIdiomaButton = New TicketYa.MyButton()
         Me.NombreIdiomaLabel = New System.Windows.Forms.Label()

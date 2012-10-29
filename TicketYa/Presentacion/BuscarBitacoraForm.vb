@@ -8,13 +8,31 @@
 
         Dim usuarios As List(Of BE.UsuarioBE)
         usuarios = BLL.GestorUsuarioBLL.listarUsuarios()
-        UsuarioComboBox.DataSource = usuarios
+        'UsuarioComboBox.DataSource = usuarios
+
+        Dim usrTodos As New BE.UsuarioBE
+        usrTodos.identificador = 0
+        usrTodos.nombre = ""
+        UsuarioComboBox.Items.Add(usrTodos)
+
+        UsuarioComboBox.Items.AddRange(usuarios.ToArray)
+        UsuarioComboBox.SelectedIndex = 0
         UsuarioComboBox.DisplayMember = "nombre"
         UsuarioComboBox.ValueMember = "identificador"
 
         Dim bitacoras As List(Of BE.BitacoraBE)
         bitacoras = BLL.GestorBitacoraBLL.listarTipoBitacoras()
-        TipoBitacoraComboBox.DataSource = bitacoras
+
+        Dim bitTodos As New BE.BitacoraBE
+        bitTodos.identificador = 0
+        bitTodos.mensaje = ""
+        'TipoBitacoraComboBox.emptyItem = bitTodos
+        'TipoBitacoraComboBox.lista = bitacoras
+        TipoBitacoraComboBox.Items.Add(bitTodos)
+
+        TipoBitacoraComboBox.Items.AddRange(bitacoras.ToArray)
+        TipoBitacoraComboBox.SelectedIndex = 0
+        'TipoBitacoraComboBox.DataSource = bitacoras
         TipoBitacoraComboBox.DisplayMember = "mensaje"
         TipoBitacoraComboBox.ValueMember = "identificador"
 

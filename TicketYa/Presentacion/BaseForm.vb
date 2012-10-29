@@ -72,13 +72,20 @@ Public Class BaseForm
                         Dim dataGrid As DataGridView
                         dataGrid = DirectCast(ctrl, DataGridView)
                         For Each col As DataGridViewColumn In dataGrid.Columns
-                            Debug.Print(col.Name)
+                            'Debug.Print(col.Name)
                             If col.Name.Equals(mens.control) Then
                                 col.HeaderText = mens.mensaje
                             End If
                         Next
                     End If
                 Next ctrl
+                If (TypeOf Me Is Form) Then
+                    Dim form As Form
+                    form = DirectCast(Me, Form)
+                    If form.Name.Equals(mens.control) Then
+                        form.Text = mens.mensaje
+                    End If
+                End If
             Next mens
         End If
     End Sub

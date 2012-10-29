@@ -20,8 +20,8 @@ Partial Class BuscarBitacoraForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BuscarBitacoraForm))
-        Me.TipoBitacoraComboBox = New System.Windows.Forms.ComboBox()
-        Me.UsuarioComboBox = New System.Windows.Forms.ComboBox()
+        Me.TipoBitacoraComboBox = New TicketYa.MyComboBox()
+        Me.UsuarioComboBox = New TicketYa.MyComboBox()
         Me.BuscarBitacoraButton = New TicketYa.MyButton()
         Me.TipoLabel = New System.Windows.Forms.Label()
         Me.UsuarioLabel = New System.Windows.Forms.Label()
@@ -35,6 +35,7 @@ Partial Class BuscarBitacoraForm
         '
         'TipoBitacoraComboBox
         '
+        Me.TipoBitacoraComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.TipoBitacoraComboBox.FormattingEnabled = True
         Me.TipoBitacoraComboBox.Location = New System.Drawing.Point(91, 32)
         Me.TipoBitacoraComboBox.Name = "TipoBitacoraComboBox"
@@ -43,6 +44,7 @@ Partial Class BuscarBitacoraForm
         '
         'UsuarioComboBox
         '
+        Me.UsuarioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.UsuarioComboBox.FormattingEnabled = True
         Me.UsuarioComboBox.Location = New System.Drawing.Point(91, 10)
         Me.UsuarioComboBox.Name = "UsuarioComboBox"
@@ -87,7 +89,6 @@ Partial Class BuscarBitacoraForm
         Me.BitacorasDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.BitacorasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.BitacorasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn, Me.TipoColumn})
-        Me.BitacorasDataGrid.Enabled = False
         Me.BitacorasDataGrid.Location = New System.Drawing.Point(12, 108)
         Me.BitacorasDataGrid.Name = "BitacorasDataGrid"
         Me.BitacorasDataGrid.ReadOnly = True
@@ -145,13 +146,13 @@ Partial Class BuscarBitacoraForm
     End Sub
     Friend WithEvents UsuarioLabel As System.Windows.Forms.Label
     Friend WithEvents TipoLabel As System.Windows.Forms.Label
-    Friend WithEvents UsuarioComboBox As System.Windows.Forms.ComboBox
-    Friend WithEvents TipoBitacoraComboBox As System.Windows.Forms.ComboBox
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TipoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BitacorasDataGrid As TicketYa.MyDataGrid
     Friend WithEvents BuscarBitacoraButton As TicketYa.MyButton
+    Friend WithEvents UsuarioComboBox As TicketYa.MyComboBox
+    Friend WithEvents TipoBitacoraComboBox As TicketYa.MyComboBox
 
 End Class
