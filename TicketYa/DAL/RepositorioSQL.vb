@@ -12,6 +12,18 @@ Public Class RepositorioSQL
     Dim r As String
     Private _conString As String = System.Configuration.ConfigurationManager.ConnectionStrings.Item(1).ToString
 
+    Public Sub New()
+        Try
+            Dim objConn As SqlConnection = New SqlConnection(_conString)
+            objConn.Open()
+            objConn.Close()
+            'MsgBox("Conexión satisfactoria!!!")
+        Catch ex As Exception
+            Throw New Excepciones.ConexionImposibleExcepcion
+        End Try
+
+    End Sub
+
     Public ReadOnly Property conString() As String
         Get
             Return _conString
