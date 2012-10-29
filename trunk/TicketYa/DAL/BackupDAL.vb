@@ -4,8 +4,10 @@ Imports Microsoft.SqlServer.Management.Smo
 
 Public Class BackupDAL
 
+
     'TODO buscar path relativo
-    Public Shared Sub BackUp(ByVal path As String)
+    Public Shared Sub BackUp(ByVal description As String)
+        Dim path As String = "D:\\Prueba"
         Dim fecha As String = DateTime.Now.Day.ToString + "-" + DateTime.Now.Month.ToString + "-" + DateTime.Now.Year.ToString + "-" +
                 DateTime.Now.Hour.ToString + "-" + DateTime.Now.Minute.ToString + "-" + DateTime.Now.Second.ToString
 
@@ -35,7 +37,6 @@ Public Class BackupDAL
             MsgBox(ex.Message)
         End Try
 
-
         Dim result As Integer
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
@@ -43,7 +44,7 @@ Public Class BackupDAL
             repository.crearComando("INSERTAR_BACKUP_SP")
 
             repository.addParam("@path", path + "\\" + bk.Database + fecha + ".sql")
-            repository.addParam("@descripcion", "lolo")
+            repository.addParam("@descripcion", description)
             result = repository.executeSearchWithStatus()
             If (result <= 0) Then
                 Throw New Excepciones.InsertExcepcion
@@ -56,6 +57,7 @@ Public Class BackupDAL
     End Sub
 
     Public Shared Sub Restore(ByVal path As String)
+        'Dim path As String = "D:\\Prueba"
         Dim repo As New RepositorioSQL
 
         Dim builder As New SqlConnectionStringBuilder(repo.conString)

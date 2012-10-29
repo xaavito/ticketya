@@ -5,7 +5,7 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
-        FamiliaDataGrid.AutoGenerateColumns = False
+        'FamiliaDataGrid.AutoGenerateColumns = False
         
         Dim idiomas As List(Of BE.IdiomaBE)
         idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
@@ -31,7 +31,7 @@
 
     Private Sub AgregarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarFamiliaButton.Click
         Dim familia As BE.FamiliaBE = DirectCast(FamiliaComboBox.SelectedItem, BE.FamiliaBE)
-        'listaFamilias.Add(familia)
+
         Dim row As String() = New String() {familia.identificador, familia.descripcion}
         FamiliaDataGrid.Rows.Add(row)
     End Sub
@@ -49,6 +49,7 @@
                                                 DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
                                                 getFamilias())) Then
                 Throw New Excepciones.UsuarioCreadoExistosamente
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, UsuarioTextBox.Text, Utilitarios.Enumeradores.Bitacora.CreacionDeUsuario)
                 limpiarParametros()
             End If
 
@@ -58,12 +59,6 @@
             My.Application.HandlerException(ex)
         End Try
 
-    End Sub
-
-    Private Sub initializeFamiliaDataGrid()
-        FamiliaDataGrid.ColumnCount = 2
-        FamiliaDataGrid.Columns(0).Name = "Identificador"
-        FamiliaDataGrid.Columns(1).Name = "Nombre"
     End Sub
 
     Private Function getFamilias() As List(Of BE.FamiliaBE)

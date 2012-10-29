@@ -74,6 +74,7 @@
                                                       DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE),
                                                       getFamilias())) Then
                 Throw New Excepciones.UsuarioModificadoExitosamenteExcepcion
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, UsuarioTextBox.Text, Utilitarios.Enumeradores.Bitacora.ModificacionDeUsuario)
                 BLL.Actual.idioma = DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE)
                 My.Application.cambiarIdioma()
                 limpiarParametros()

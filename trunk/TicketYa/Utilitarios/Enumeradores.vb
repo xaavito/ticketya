@@ -40,12 +40,37 @@
 
         RestoreRealizadoExitosamente
 
+        BackupRealizadoExitosamente
+
     End Enum
 
     Enum Bitacora
         LogueoFallido = 1
         LogueoExitoso = 2
         LogoutExitoso = 3
+
+        BackupEliminado
+
+        BackupGenerado
+
+        CreacionDeUsuario
+
+        FamiliaCreada
+
+        FamiliaEliminada
+
+        IdiomaCreado
+
+        IdiomaEliminado
+
+        ModificacionDeFamilia
+
+        UsuarioEliminado
+
+        ModificacionDeIdioma
+
+        ModificacionDeUsuario
+
     End Enum
 
     Enum Excepcion

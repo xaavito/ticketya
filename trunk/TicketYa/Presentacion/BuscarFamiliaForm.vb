@@ -13,7 +13,6 @@
     End Sub
 
     Private Sub ModificarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarFamiliaButton.Click
-        'Dim pepe As String = FamiliasDataGrid.SelectedRows.Item(0).Cells.Item(0).Value
         Dim fam As BE.FamiliaBE = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
         Dim form As ModificarFamiliaForm
 
@@ -29,11 +28,11 @@
         fam = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
         If (Not fam Is Nothing) Then
             If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
-                MsgBox(New Excepciones.FamiliaEliminadaExitosamenteExcepcion)
-                
                 buscarFamilia(FamiliaTextBox.Text)
+                Throw New Excepciones.FamiliaEliminadaExitosamenteExcepcion
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, FamiliaTextBox.Text, Utilitarios.Enumeradores.Bitacora.FamiliaEliminada)
             Else
-                MsgBox(New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion)
+                Throw New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion
             End If
         End If
     End Sub
