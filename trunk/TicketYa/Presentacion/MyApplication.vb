@@ -33,7 +33,7 @@
                     End Try
                 Catch ex As Excepciones.UsuarioNoEncontradoExcepcion
                     Try
-                        BLL.BitacoraBLL.setBitacora(Nothing, frm.UserTextBox.Text + "," + frm.UserTextBox.Text, Utilitarios.Enumeradores.Bitacora.LogueoFallido)
+                        BLL.BitacoraBLL.setBitacora(Nothing, frm.UserTextBox.Text + "," + frm.PassTextBox.Text, Utilitarios.Enumeradores.Bitacora.LogueoFallido)
                     Catch excep As Excepciones.InsertExcepcion
                         Application.HandlerException(excep)
                     End Try

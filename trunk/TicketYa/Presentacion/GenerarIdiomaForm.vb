@@ -27,8 +27,8 @@
             If (idioma.identificador <= 0) Then
                 Throw New Excepciones.GeneracionDeIdiomaExcepcion
             Else
-                Throw New Excepciones.GeneracionDeIdiomaExitosa
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, IdiomaTextBox.Text, Utilitarios.Enumeradores.Bitacora.IdiomaCreado)
+                Throw New Excepciones.GeneracionDeIdiomaExitosa
             End If
 
         Catch ex As Excepciones.GeneracionDeIdiomaExitosa
