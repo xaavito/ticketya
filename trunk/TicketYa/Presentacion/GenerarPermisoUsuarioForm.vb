@@ -7,9 +7,9 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
-        PermisoDataGrid.AutoGenerateColumns = False
-        UsuariosDataGrid.AutoGenerateColumns = False
-        PermisosUsuarioDataGrid.AutoGenerateColumns = False
+        'PermisoDataGrid.AutoGenerateColumns = False
+        'UsuariosDataGrid.AutoGenerateColumns = False
+        'PermisosUsuarioDataGrid.AutoGenerateColumns = False
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
         Dim permisos As List(Of BE.PermisoBE)
@@ -23,25 +23,27 @@
 
     Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click, AgregarPermisoUsuarioButton.Click
         Dim permisoExistente As Boolean = False
-        perm = DirectCast(PermisoDataGrid.CurrentRow.DataBoundItem, BE.PermisoBE)
-        If Not (perm Is Nothing And usr Is Nothing) Then
-            Dim row As String() = New String() {perm.identificador, perm.descripcion}
+        If PermisoDataGrid.hasSelectedObject = True Then
+            perm = DirectCast(PermisoDataGrid.myObject, BE.PermisoBE)
+            If Not (perm Is Nothing And usr Is Nothing) Then
+                Dim row As String() = New String() {perm.identificador, perm.descripcion}
 
-            For Each elem As DataGridViewRow In PermisosUsuarioDataGrid.Rows
-                If (elem.Cells.Item(0).Value = perm.identificador) Then
-                    permisoExistente = True
-                    Exit For
+                For Each elem As DataGridViewRow In PermisosUsuarioDataGrid.Rows
+                    If (elem.Cells.Item(0).Value = perm.identificador) Then
+                        permisoExistente = True
+                        Exit For
+                    End If
+                Next
+                If (permisoExistente = False) Then
+                    PermisosUsuarioDataGrid.Rows.Add(row)
                 End If
-            Next
-            If (permisoExistente = False) Then
-                PermisosUsuarioDataGrid.Rows.Add(row)
             End If
         End If
     End Sub
 
     Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click, QuitarPermisoUsuarioButton.Click
         If (PermisosUsuarioDataGrid.SelectedRows.Count > 0) Then
-            PermisosUsuarioDataGrid.Rows.Remove(PermisosUsuarioDataGrid.SelectedRows(0))
+            PermisosUsuarioDataGrid.Rows.Remove(PermisosUsuarioDataGrid.myObject)
         End If
     End Sub
 

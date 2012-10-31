@@ -26,10 +26,12 @@
 
         UserTextBox.sinEspacio = True
         UserTextBox.alfanumerico = True
+        UserTextBox.nada = False
         UserTextBox.boton = AceptarButton
 
         PassTextBox.sinEspacio = True
         PassTextBox.alfanumerico = True
+        PassTextBox.nada = false
         PassTextBox.boton = AceptarButton
     End Sub
 

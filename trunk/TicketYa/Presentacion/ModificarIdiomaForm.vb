@@ -38,17 +38,17 @@
     End Sub
 
     Private Sub ExcepcionesDataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ExcepcionesDataGrid.CellContentClick
-        exc = DirectCast(ExcepcionesDataGrid.CurrentRow.DataBoundItem, BE.ExcepcionBE)
+        exc = DirectCast(ExcepcionesDataGrid.myObject, BE.ExcepcionBE)
         ExcepcionTextBox.Text = exc.mensaje
     End Sub
 
     Private Sub MensajesDataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles MensajesDataGrid.CellContentClick
-        men = DirectCast(MensajesDataGrid.CurrentRow.DataBoundItem, BE.MensajeBitacoraBE)
+        men = DirectCast(MensajesDataGrid.myObject, BE.MensajeBitacoraBE)
         BitacoraTextBox.Text = men.mensaje
     End Sub
 
     Private Sub ControlesDataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles ControlesDataGrid.CellContentClick
-        control = DirectCast(ControlesDataGrid.CurrentRow.DataBoundItem, BE.MensajeControlBE)
+        control = DirectCast(ControlesDataGrid.myObject, BE.MensajeControlBE)
         ControlTextBox.Text = control.mensaje
     End Sub
 

@@ -4,7 +4,7 @@
 
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
-        FamiliasDataGrid.AutoGenerateColumns = False
+        'FamiliasDataGrid.AutoGenerateColumns = False
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -13,26 +13,31 @@
     End Sub
 
     Private Sub ModificarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarFamiliaButton.Click
-        Dim fam As BE.FamiliaBE = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
-        Dim form As ModificarFamiliaForm
+        If Not FamiliasDataGrid.CurrentRow.DataBoundItem Is Nothing Then
+            Dim fam As BE.FamiliaBE = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
+            Dim form As ModificarFamiliaForm
 
-        If (Not fam Is Nothing) Then
-            form = New ModificarFamiliaForm
-            form.addFamilia(fam)
-            form.ShowDialog()
+            If (Not fam Is Nothing) Then
+                form = New ModificarFamiliaForm
+                form.addFamilia(fam)
+                form.ShowDialog()
+            End If
         End If
+        
     End Sub
 
     Private Sub EliminarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarFamiliaButton.Click
         Dim fam As BE.FamiliaBE
-        fam = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
-        If (Not fam Is Nothing) Then
-            If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
-                buscarFamilia(FamiliaTextBox.Text)
-                Throw New Excepciones.FamiliaEliminadaExitosamenteExcepcion
-                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, FamiliaTextBox.Text, Utilitarios.Enumeradores.Bitacora.FamiliaEliminada)
-            Else
-                Throw New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion
+        If Not FamiliasDataGrid.CurrentRow.DataBoundItem Is Nothing Then
+            fam = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
+            If (Not fam Is Nothing) Then
+                If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
+                    buscarFamilia(FamiliaTextBox.Text)
+                    Throw New Excepciones.FamiliaEliminadaExitosamenteExcepcion
+                    BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, FamiliaTextBox.Text, Utilitarios.Enumeradores.Bitacora.FamiliaEliminada)
+                Else
+                    Throw New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion
+                End If
             End If
         End If
     End Sub

@@ -8,6 +8,7 @@ Public Class MyTextBox
     Dim hasExistingErrorOnAlfanumerico As Boolean = False
     Dim hasExistingErrorOnText As Boolean = False
     Dim hasExistingErrorOnNumber As Boolean = False
+    Dim hasExistingErrorOnNothing As Boolean = False
 
     Private _boton As Button
     Public Property boton() As Button
@@ -57,6 +58,17 @@ Public Class MyTextBox
         End Get
         Set(ByVal value As Boolean)
             _texto = value
+        End Set
+    End Property
+
+
+    Private _nada As Boolean
+    Public Property nada() As Boolean
+        Get
+            Return _nada
+        End Get
+        Set(ByVal value As Boolean)
+            _nada = value
         End Set
     End Property
 
@@ -110,9 +122,44 @@ Public Class MyTextBox
         hasExistingErrorOnAlfanumerico = False
     End Sub
 
+
+    Private Sub tieneAlgo()
+        'If String.IsNullOrEmpty(Me.Text) Then
+        '    hasExistingErrorOnNothing = True
+        '    Return
+        'Else
+        '    hasExistingErrorOnNothing = False
+        'End If
+        'hasExistingErrorOnNothing = False
+    End Sub
+
     Protected Overrides Sub OnKeyUp(ByVal e As KeyEventArgs)
+        logica()
+    End Sub
+
+    Private Sub checkFixedError()
+        If (hasExistingErrorOnAlfanumerico = False And hasExistingErrorOnSpace = False And
+            hasExistingErrorOnText = False And hasExistingErrorOnNumber = False And hasExistingErrorOnNothing = False) Then
+            errorProvider.Clear()
+
+            If Not boton Is Nothing Then
+                boton.Enabled = True
+            End If
+        Else
+            If Not boton Is Nothing Then
+                boton.Enabled = False
+            End If
+        End If
+    End Sub
+
+
+    Protected Overrides Sub OnGotFocus(ByVal e As System.EventArgs)
+        logica()
+    End Sub
+
+    Private Sub logica()
         If sinEspacio = True Then
-            SinEspacios()
+            sinEspacios()
         End If
 
         If alfanumerico = True Then
@@ -127,22 +174,10 @@ Public Class MyTextBox
             soloNumeros()
         End If
 
+        If nada = False Then
+            tieneAlgo()
+        End If
+
         checkFixedError()
     End Sub
-
-    Private Sub checkFixedError()
-        If (hasExistingErrorOnAlfanumerico = False And hasExistingErrorOnSpace = False And
-            hasExistingErrorOnText = False And hasExistingErrorOnNumber = False) Then
-            errorProvider.Clear()
-
-            If Not boton Is Nothing Then
-                boton.Enabled = True
-            End If
-        Else
-            If Not boton Is Nothing Then
-                boton.Enabled = False
-            End If
-        End If
-    End Sub
-
 End Class
