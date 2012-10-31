@@ -43,7 +43,7 @@
             BitacorasDataGrid.DataSource = BLL.GestorBitacoraBLL.buscarBitacora(DirectCast(UsuarioComboBox.SelectedItem, BE.UsuarioBE),
                                                                                 DirectCast(TipoBitacoraComboBox.SelectedItem, BE.BitacoraBE).identificador)
         Catch ex As Excepciones.BitacoraNoEncontradaExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
     

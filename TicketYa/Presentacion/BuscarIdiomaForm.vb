@@ -19,9 +19,9 @@
                     End If
                 End If
             Catch ex As Excepciones.IdiomaEliminadoExistosamenteExcepcion
-                My.Application.HandlerException(ex)
+                My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
-                My.Application.HandlerException(ex)
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
         

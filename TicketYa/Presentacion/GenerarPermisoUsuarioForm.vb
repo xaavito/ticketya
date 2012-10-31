@@ -57,11 +57,11 @@
             End If
 
         Catch ex As Excepciones.InsertExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.AsociacionDePermisosExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.AsociacionDePermisosExitosa
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 
@@ -94,7 +94,7 @@
                 PermisosUsuarioDataGrid.Rows.Add(row)
             Next
         Catch ex As Excepciones.PermisoNoEncontradoExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 End Class

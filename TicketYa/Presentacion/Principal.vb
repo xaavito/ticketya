@@ -7,7 +7,7 @@ Public Class Principal
         Try
             BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, BLL.Actual.usuario.usuario, Utilitarios.Enumeradores.Bitacora.LogoutExitoso)
         Catch excep As Excepciones.InsertExcepcion
-            My.Application.HandlerException(excep)
+            My.Application.manejarExcepcion(excep)
         End Try
         Me.Close()
     End Sub

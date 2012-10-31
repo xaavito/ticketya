@@ -13,7 +13,7 @@
             Try
                 BLL.SeguridadBLL.backup(DescripcionBackupTextBox.Text)
             Catch ex As Excepciones.BackupRealizadoExitosamente
-                My.Application.HandlerException(ex)
+                My.Application.manejarExcepcion(ex)
             End Try
 
             BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, DescripcionBackupTextBox.Text, Utilitarios.Enumeradores.Bitacora.BackupGenerado)

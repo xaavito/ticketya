@@ -8,16 +8,16 @@
         Try
             idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
         Catch ex As Excepciones.BitacoraNoEncontradaExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.NoHayMensajesExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.ExcepcionNoEncontradaExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.ConexionImposibleExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
             Environment.Exit(1)
         Catch ex As Exception
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
 
         IdiomaComboBox.DataSource = idiomas

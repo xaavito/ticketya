@@ -32,11 +32,11 @@
             End If
 
         Catch ex As Excepciones.GeneracionDeIdiomaExitosa
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.InsertExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.GeneracionDeIdiomaExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 End Class
