@@ -12,9 +12,9 @@
             End If
 
         Catch ex As Excepciones.FamiliaModificadaExitosamenteExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.InsertExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 

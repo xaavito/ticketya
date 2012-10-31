@@ -29,28 +29,28 @@
                     Try
                         BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, frm.UserTextBox.Text, Utilitarios.Enumeradores.Bitacora.LogueoExitoso)
                     Catch excep As Excepciones.InsertExcepcion
-                        Application.HandlerException(excep)
+                        Application.manejarExcepcion(excep)
                     End Try
                 Catch ex As Excepciones.UsuarioNoEncontradoExcepcion
                     Try
                         BLL.BitacoraBLL.setBitacora(Nothing, frm.UserTextBox.Text + "," + frm.PassTextBox.Text, Utilitarios.Enumeradores.Bitacora.LogueoFallido)
                     Catch excep As Excepciones.InsertExcepcion
-                        Application.HandlerException(excep)
+                        Application.manejarExcepcion(excep)
                     End Try
-                    Application.HandlerException(ex)
+                    Application.manejarExcepcion(ex)
                 Catch ex As Excepciones.IdiomaNoEncontradoExcepcion
-                    Application.HandlerException(ex)
+                    Application.manejarExcepcion(ex)
                     ret = True
                 Catch ex As Excepciones.PermisoNoEncontradoExcepcion
-                    Application.HandlerException(ex)
+                    Application.manejarExcepcion(ex)
                     ret = True
                 Catch ex As Excepciones.FamiliaNoEncontradaExcepcion
-                    Application.HandlerException(ex)
+                    Application.manejarExcepcion(ex)
                     ret = True
                 Catch ex As Excepciones.ConexionImposibleExcepcion
-                    Application.HandlerException(ex)
+                    Application.manejarExcepcion(ex)
                 Catch ex As Exception
-                    Application.HandlerException(ex)
+                    Application.manejarExcepcion(ex)
                 End Try
             Else
                 Environment.Exit(1)
@@ -59,13 +59,13 @@
         End Function
 
 
-        Public Sub HandlerException(ByVal ex As Exception)
+        Public Sub manejarExcepcion(ByVal ex As Exception)
             If (TypeOf ex Is Excepciones.ExceptionManager) Then
                 Dim excep = DirectCast(ex, Excepciones.ExceptionManager)
                 Try
                     MsgBox(BLL.ExcepcionBLL.buscarExcepcion(excep.codigo), excep.tipo)
                 Catch e As Excepciones.ExcepcionNoEncontradaExcepcion
-                    Application.HandlerException(e)
+                    Application.manejarExcepcion(e)
                 End Try
             End If
         End Sub

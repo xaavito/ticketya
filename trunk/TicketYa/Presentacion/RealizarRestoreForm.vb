@@ -16,9 +16,9 @@
             Try
                 BLL.SeguridadBLL.restore(backup.path)
             Catch ex As Excepciones.RestoreRealizadoExitosamente
-                My.Application.HandlerException(ex)
+                My.Application.manejarExcepcion(ex)
             Catch ex As Exception
-                My.Application.HandlerException(ex)
+                My.Application.manejarExcepcion(ex)
             End Try
 
             buscarBackups()

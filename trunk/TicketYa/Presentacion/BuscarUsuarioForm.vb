@@ -39,9 +39,9 @@
                         Throw New Excepciones.UsuarioEliminadoExistosamenteExcepcion
                     End If
                 Catch ex As Excepciones.UsuarioEliminadoExistosamenteExcepcion
-                    My.Application.HandlerException(ex)
+                    My.Application.manejarExcepcion(ex)
                 Catch ex As Exception
-                    My.Application.HandlerException(ex)
+                    My.Application.manejarExcepcion(ex)
                 End Try
             End If
         End If

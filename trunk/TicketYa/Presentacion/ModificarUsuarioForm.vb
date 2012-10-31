@@ -46,7 +46,7 @@
                 FamiliaDataGrid.Rows.Add(row)
             Next
         Catch ex As Excepciones.FamiliaNoEncontradaExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
 
 
@@ -81,11 +81,11 @@
                 Me.Close()
             End If
         Catch ex As Excepciones.UsuarioModificadoExitosamenteExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.InsertExcepcion
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         Catch ex As Exception
-            My.Application.HandlerException(ex)
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 
