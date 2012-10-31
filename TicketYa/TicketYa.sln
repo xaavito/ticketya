@@ -19,6 +19,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Utilitarios", "Utilitarios\
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Excepciones", "Excepciones\Excepciones.vbproj", "{3933B96F-EB72-489E-9D03-041867B6DEDC}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Instalador", "Instalador\Instalador.vdproj", "{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}"
+EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -110,6 +112,12 @@ Global
 		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{3933B96F-EB72-489E-9D03-041867B6DEDC}.Release|x86.ActiveCfg = Release|Any CPU
+		{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}.Debug|Any CPU.ActiveCfg = Debug
+		{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}.Debug|x86.ActiveCfg = Debug
+		{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}.Release|Any CPU.ActiveCfg = Release
+		{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}.Release|Mixed Platforms.ActiveCfg = Release
+		{5ED87F25-7535-4C91-A62C-2BE1627DB1B3}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

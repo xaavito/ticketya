@@ -23,9 +23,9 @@
     End Sub
 
     Private Sub EliminarBackupButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarBackupButton.Click
-        If Not BackupDataGrid.CurrentRow Is Nothing Then
+        If Not BackupDataGrid.hasSelectedObject = True Then
             Dim backup As BE.BackupBE
-            backup = DirectCast(BackupDataGrid.CurrentRow.DataBoundItem, BE.BackupBE)
+            backup = DirectCast(BackupDataGrid.myObject, BE.BackupBE)
             If (BLL.GestorBackupBLL.eliminarBackup(backup) > 0) Then
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, backup.path, Utilitarios.Enumeradores.Bitacora.BackupEliminado)
                 buscarBackups()

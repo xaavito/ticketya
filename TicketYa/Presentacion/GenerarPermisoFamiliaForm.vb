@@ -20,43 +20,47 @@
 
     Private Sub FamiliaDataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles FamiliaDataGrid.CellMouseClick
         PermisosFamiliaDataGrid.Rows.Clear()
-        fam = DirectCast(FamiliaDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
-        Dim listaPermisos As List(Of BE.PermisoBE)
-        Try
-            listaPermisos = BLL.GestorPermisoBLL.buscarPermisoFamilia(fam.identificador)
-            fam.permisos = listaPermisos
-            'PermisosFamiliaDataGrid.Rows.Clear()
-            For Each perm As BE.PermisoBE In listaPermisos
-                Dim row As String() = New String() {perm.identificador, perm.descripcion}
-                PermisosFamiliaDataGrid.Rows.Add(row)
-            Next
-        Catch ex As Excepciones.PermisoNoEncontradoExcepcion
-            My.Application.HandlerException(ex)
-        End Try
+
+        If FamiliaDataGrid.hasSelectedObject = True Then
+            fam = DirectCast(FamiliaDataGrid.myObject, BE.FamiliaBE)
+            Dim listaPermisos As List(Of BE.PermisoBE)
+            Try
+                listaPermisos = BLL.GestorPermisoBLL.buscarPermisoFamilia(fam.identificador)
+                fam.permisos = listaPermisos
+                'PermisosFamiliaDataGrid.Rows.Clear()
+                For Each perm As BE.PermisoBE In listaPermisos
+                    Dim row As String() = New String() {perm.identificador, perm.descripcion}
+                    PermisosFamiliaDataGrid.Rows.Add(row)
+                Next
+            Catch ex As Excepciones.PermisoNoEncontradoExcepcion
+                My.Application.HandlerException(ex)
+            End Try
+        End If
     End Sub
 
     Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click, AgregarPermisoFamiliaButton.Click
         Dim permisoExistente As Boolean = False
-        perm = DirectCast(PermisoDataGrid.CurrentRow.DataBoundItem, BE.PermisoBE)
-        If Not (perm Is Nothing And fam Is Nothing) Then
-            Dim row As String() = New String() {perm.identificador, perm.descripcion}
+        If PermisoDataGrid.hasSelectedObject = True Then
+            perm = DirectCast(PermisoDataGrid.myObject, BE.PermisoBE)
+            If Not (perm Is Nothing And fam Is Nothing) Then
+                Dim row As String() = New String() {perm.identificador, perm.descripcion}
 
-            For Each elem As DataGridViewRow In PermisosFamiliaDataGrid.Rows
-                If (elem.Cells.Item(0).Value = perm.identificador) Then
-                    permisoExistente = True
-                    Exit For
+                For Each elem As DataGridViewRow In PermisosFamiliaDataGrid.Rows
+                    If (elem.Cells.Item(0).Value = perm.identificador) Then
+                        permisoExistente = True
+                        Exit For
+                    End If
+                Next
+                If (permisoExistente = False) Then
+                    PermisosFamiliaDataGrid.Rows.Add(row)
                 End If
-            Next
-            If (permisoExistente = False) Then
-                PermisosFamiliaDataGrid.Rows.Add(row)
             End If
         End If
-
     End Sub
 
     Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click, QuitarPermisoFamiliaButton.Click
         If (PermisosFamiliaDataGrid.SelectedRows.Count > 0) Then
-            PermisosFamiliaDataGrid.Rows.Remove(PermisosFamiliaDataGrid.SelectedRows(0))
+            PermisosFamiliaDataGrid.Rows.Remove(PermisosFamiliaDataGrid.myObject)
         End If
     End Sub
 

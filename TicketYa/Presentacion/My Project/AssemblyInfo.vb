@@ -8,11 +8,11 @@ Imports System.Runtime.InteropServices
 
 ' Revisar los valores de los atributos del ensamblado
 
-<Assembly: AssemblyTitle("Presentacion")> 
+<Assembly: AssemblyTitle("TicketYa")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("Windows uE")> 
-<Assembly: AssemblyProduct("Presentacion")> 
-<Assembly: AssemblyCopyright("Copyright © Windows uE 2012")> 
+<Assembly: AssemblyCompany("Windows Ruso")> 
+<Assembly: AssemblyProduct("TicketYa")> 
+<Assembly: AssemblyCopyright("Copyright © Solucion Ya")> 
 <Assembly: AssemblyTrademark("")> 
 
 <Assembly: ComVisible(False)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' mediante el asterisco ('*'), como se muestra a continuación:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("1.0.0.0")> 
-<Assembly: AssemblyFileVersion("1.0.0.0")> 
+<Assembly: AssemblyVersion("1.2.3.4")> 
+<Assembly: AssemblyFileVersion("1.2.3.4")> 

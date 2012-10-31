@@ -37,40 +37,25 @@
         PermisoAsociadoExitosamente = 35
         FalloAlEliminarBackup = 36
         BackupsNoEncontrados = 37
-
-        RestoreRealizadoExitosamente
-
-        BackupRealizadoExitosamente
-
+        RestoreRealizadoExitosamente = 38
+        BackupRealizadoExitosamente = 39
     End Enum
 
     Enum Bitacora
         LogueoFallido = 1
         LogueoExitoso = 2
         LogoutExitoso = 3
-
-        BackupEliminado
-
-        BackupGenerado
-
-        CreacionDeUsuario
-
-        FamiliaCreada
-
-        FamiliaEliminada
-
-        IdiomaCreado
-
-        IdiomaEliminado
-
-        ModificacionDeFamilia
-
-        UsuarioEliminado
-
-        ModificacionDeIdioma
-
-        ModificacionDeUsuario
-
+        BackupEliminado = 4
+        BackupGenerado = 5
+        CreacionDeUsuario = 6
+        FamiliaCreada = 7
+        FamiliaEliminada = 8
+        IdiomaCreado = 9
+        IdiomaEliminado = 10
+        ModificacionDeFamilia = 11
+        UsuarioEliminado = 12
+        ModificacionDeIdioma = 13
+        ModificacionDeUsuario = 14
     End Enum
 
     Enum Excepcion

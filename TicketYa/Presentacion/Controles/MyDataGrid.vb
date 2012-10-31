@@ -12,4 +12,16 @@
         Me.ReadOnly = True
     End Sub
 
+    Function myObject() As Object
+        Return Me.CurrentRow.DataBoundItem
+    End Function
+
+    Function hasSelectedObject() As Boolean
+        If Me.CurrentRow Is Nothing Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
 End Class
