@@ -9,4 +9,6 @@
     Function executeSearch() As Integer
     Function executeSearchWithStatus() As Integer
     Function executeSearchWithReturnValue() As Integer
+    Sub conectar()
+    Sub desconectar()
 End Interface

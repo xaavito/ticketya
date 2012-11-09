@@ -6,7 +6,7 @@
         Return repo
     End Function
 
-   Public Shared Property ConnectionString() As String
+    Public Shared Property ConnectionString() As String
         Get
             Return _connectionstring
         End Get

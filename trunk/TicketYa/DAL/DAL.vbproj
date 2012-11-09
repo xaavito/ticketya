@@ -84,6 +84,7 @@
     <Compile Include="FamiliaDAL.vb" />
     <Compile Include="IdiomaDAL.vb" />
     <Compile Include="IRepositorio.vb" />
+    <Compile Include="IRepositorioDecorator.vb" />
     <Compile Include="MensajeControlDAL.vb" />
     <Compile Include="MensajeDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -104,6 +105,7 @@
     <Compile Include="PermisoDAL.vb" />
     <Compile Include="RepositorioFactory.vb" />
     <Compile Include="RepositorioSQL.vb" />
+    <Compile Include="RepositorioTransaccional.vb" />
     <Compile Include="UsuarioDAL.vb" />
   </ItemGroup>
   <ItemGroup>

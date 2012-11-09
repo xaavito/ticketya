@@ -3,6 +3,7 @@
 Public Class RepositorioSQL
     Implements IRepositorio
 
+
     Dim con As SqlConnection
     Dim cmd As SqlCommand
     Dim adapter As SqlDataAdapter
@@ -17,7 +18,6 @@ Public Class RepositorioSQL
             Dim objConn As SqlConnection = New SqlConnection(_conString)
             objConn.Open()
             objConn.Close()
-            'MsgBox("Conexión satisfactoria!!!")
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
@@ -32,26 +32,38 @@ Public Class RepositorioSQL
 
     Public Sub crearComando(ByVal nombre As String) Implements IRepositorio.crearComando
         If con Is Nothing Then
-            'con = New SqlConnection("Data Source=localhost;Initial Catalog=TicketYa;Integrated Security=SSPI;")
-            con = New SqlConnection(ConString)
+            con = New SqlConnection(conString)
         End If
         cmd = New SqlCommand
         cmd.CommandType = CommandType.StoredProcedure
         cmd.Connection = con
         cmd.CommandText = nombre
+        If tx IsNot Nothing Then
+            cmd.Transaction = tx
+        End If
     End Sub
 
     Public Sub transactionON() Implements IRepositorio.transactionON
-        tx = con.BeginTransaction
-        cmd.Transaction = tx
+        If tx Is Nothing Then
+            con.Open()
+            tx = con.BeginTransaction
+            cmd.Transaction = tx
+        End If
+
     End Sub
 
     Public Sub transactionCancel() Implements IRepositorio.transactionCancel
-        tx.Rollback()
+        If tx IsNot Nothing Then
+            tx.Rollback()
+            tx = Nothing
+        End If
     End Sub
 
     Public Sub transactionOK() Implements IRepositorio.transactionOK
-        tx.Commit()
+        If tx IsNot Nothing Then
+            tx.Commit()
+            tx = Nothing
+        End If
     End Sub
 
     Public Sub clearParams() Implements IRepositorio.clearParams
@@ -72,32 +84,46 @@ Public Class RepositorioSQL
     End Function
 
     Public Function executeSearch() As Integer Implements IRepositorio.executeSearch
-        con.Open()
+        If tx Is Nothing Then
+            conectar()
+        End If
+        'conectar()
         Try
             result = cmd.ExecuteScalar()
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
         clearParams()
-        con.Close()
+        If tx Is Nothing Then
+            desconectar()
+        End If
+        'desconectar()
+
         Return result
     End Function
 
     Public Function executeSearchWithStatus() As Integer Implements IRepositorio.executeSearchWithStatus
         Dim status As Integer = 0
-        con.Open()
+        If tx Is Nothing Then
+            conectar()
+        End If
+        'conectar()
         Try
             status = cmd.ExecuteNonQuery()
         Catch ex As Exception
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
         clearParams()
-        con.Close()
+
+        If tx Is Nothing Then
+            desconectar()
+        End If
+
         Return status
     End Function
 
     Public Sub crearComandoDirecto(ByVal nombre As String)
-        con = New SqlConnection(ConString)
+        con = New SqlConnection(conString)
         cmd = New SqlCommand
         cmd.CommandType = CommandType.Text
         cmd.Connection = con
@@ -109,7 +135,10 @@ Public Class RepositorioSQL
     End Sub
 
     Public Function executeWithReturnValue() As Integer Implements IRepositorio.executeSearchWithReturnValue
-        con.Open()
+        If tx Is Nothing Then
+            conectar()
+        End If
+        'conectar()
         Try
             Dim returnValue As SqlParameter = New SqlParameter
             returnValue.ParameterName = "@Return_Value"
@@ -121,7 +150,23 @@ Public Class RepositorioSQL
             Throw New Excepciones.ConexionImposibleExcepcion
         End Try
         clearParams()
-        con.Close()
+        If tx Is Nothing Then
+            desconectar()
+        End If
+        'desconectar()
         Return r
     End Function
+
+    Public Sub conectar() Implements IRepositorio.conectar
+        If con.State = ConnectionState.Closed Then
+            con.Open()
+        End If
+    End Sub
+
+    Public Sub desconectar() Implements IRepositorio.desconectar
+        If con.State = ConnectionState.Open Then
+            con.Close()
+        End If
+    End Sub
+
 End Class

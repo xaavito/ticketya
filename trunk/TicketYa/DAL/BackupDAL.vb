@@ -31,8 +31,6 @@ Public Class BackupDAL
         bk.LogTruncation = BackupTruncateLogType.Truncate
         Try
             bk.SqlBackup(sqlServer)
-        Catch ex As FailedOperationException
-            MsgBox(ex.Message)
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -47,11 +45,15 @@ Public Class BackupDAL
             repository.addParam("@descripcion", description)
             result = repository.executeSearchWithStatus()
             If (result <= 0) Then
-                Throw New Excepciones.InsertExcepcion
+                Throw New Excepciones.FalloAlCrearBackup
+            Else
+                Throw New Excepciones.BackupRealizadoExitosamente
             End If
 
-        Catch ex As Exception
+        Catch ex As Excepciones.InsertExcepcion
             Throw New Excepciones.InsertExcepcion
+        Catch ex As Excepciones.ConexionImposibleExcepcion
+            Throw New Excepciones.ConexionImposibleExcepcion
         End Try
 
     End Sub
@@ -72,8 +74,13 @@ Public Class BackupDAL
         rs.Devices.AddDevice(path, DeviceType.File)
         sqlServer.KillAllProcesses(builder.InitialCatalog)
         rs.Wait()
-        rs.SqlRestore(sqlServer)
+        Try
+            rs.SqlRestore(sqlServer)
+        Catch ex As Exception
+            Throw New Excepciones.FalloAlRealizarRestore
+        End Try
 
+        Throw New Excepciones.RestoreRealizadoExitosamente
     End Sub
 
     Shared Function listarBackups() As List(Of BE.BackupBE)
@@ -98,8 +105,10 @@ Public Class BackupDAL
                 backups.Add(bu)
             Next
 
-        Catch ex As Exception
-            'Throw New Excepciones.BackupsNoEncontrados
+        Catch ex As Excepciones.DeleteExcepcion
+            Throw New Excepciones.DeleteExcepcion
+        Catch ex As Excepciones.ConexionImposibleExcepcion
+            Throw New Excepciones.ConexionImposibleExcepcion
         End Try
 
         Return backups
@@ -116,12 +125,14 @@ Public Class BackupDAL
             resultado = repository.executeSearchWithStatus
             If (resultado <= 0) Then
                 Throw New Excepciones.FalloAlEliminarBackup
+            Else
+                Throw New Excepciones.BackupEliminadoExitosamente
             End If
 
-        Catch ex As Excepciones.FalloAlEliminarBackup
-            Throw New Excepciones.BackupsNoEncontrados
-        Catch ex As Exception
-            'Throw New Excepciones.BackupsNoEncontrados
+        Catch ex As Excepciones.DeleteExcepcion
+            Throw New Excepciones.DeleteExcepcion
+        Catch ex As Excepciones.ConexionImposibleExcepcion
+            Throw New Excepciones.ConexionImposibleExcepcion
         End Try
 
         Return resultado

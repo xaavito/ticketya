@@ -58,17 +58,17 @@
     Shared Function guardarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
         Dim newIdiomaId As Integer = DAL.IdiomaDAL.guardarIdioma(idioma)
 
-        If newIdiomaId > 0 Then
-            For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
-                DAL.BitacoraDAL.guardarBitacora(bit, newIdiomaId)
-            Next
-            For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
-                DAL.ExcepcionDAL.guardarExcepecion(exc, newIdiomaId)
-            Next
-            For Each men As BE.MensajeControlBE In idioma.mensaje
-                DAL.MensajeControlDAL.guardarMensaje(men, newIdiomaId)
-            Next
-        End If
+        'If newIdiomaId > 0 Then
+        '    For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+        '        DAL.BitacoraDAL.guardarBitacora(bit, newIdiomaId)
+        '    Next
+        '    For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+        '        DAL.ExcepcionDAL.guardarExcepecion(exc, newIdiomaId)
+        '    Next
+        '    For Each men As BE.MensajeControlBE In idioma.mensaje
+        '        DAL.MensajeControlDAL.guardarMensaje(men, newIdiomaId)
+        '    Next
+        'End If
 
         Return newIdiomaId
     End Function

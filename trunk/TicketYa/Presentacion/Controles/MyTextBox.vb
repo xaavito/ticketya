@@ -180,4 +180,11 @@ Public Class MyTextBox
 
         checkFixedError()
     End Sub
+
+    Public Function esVacio() As Boolean
+        If String.IsNullOrWhiteSpace(Me.Text) Or String.IsNullOrEmpty(Me.Text) Then
+            Return True
+        End If
+        Return False
+    End Function
 End Class
