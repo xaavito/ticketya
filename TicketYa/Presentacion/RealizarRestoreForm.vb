@@ -16,12 +16,11 @@
             Try
                 BLL.SeguridadBLL.restore(backup.path)
             Catch ex As Excepciones.RestoreRealizadoExitosamente
+                buscarBackups()
                 My.Application.manejarExcepcion(ex)
-            Catch ex As Exception
+            Catch ex As Excepciones.FalloAlRealizarRestore
                 My.Application.manejarExcepcion(ex)
             End Try
-
-            buscarBackups()
         End If
     End Sub
 

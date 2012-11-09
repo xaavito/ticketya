@@ -39,6 +39,17 @@
         BackupsNoEncontrados = 37
         RestoreRealizadoExitosamente = 38
         BackupRealizadoExitosamente = 39
+
+        BackupEliminadoExitosamente
+
+        FalloAlCrearBackup
+
+        FalloAlRealizarRestore
+
+        FalloBuscar
+
+        FalloUpdate
+
     End Enum
 
     Enum Bitacora

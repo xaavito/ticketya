@@ -165,15 +165,17 @@ Public Class BitacoraDAL
         Dim result As Integer
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim tranRepo As New RepositorioTransaccional(repository)
+
         Dim bitacoras As New List(Of BE.BitacoraBE)
         Try
-            repository.crearComando("GUARDAR_BITACORAS_BASE_SP")
-            repository.addParam("@idIdioma", newIdiomaId)
-            repository.addParam("@bitBase", bit.idBase)
-            repository.addParam("@bitMensaje", bit.mensaje)
-            result = repository.executeSearchWithStatus()
+            tranRepo.crearComando("GUARDAR_BITACORAS_BASE_SP")
+            tranRepo.addParam("@idIdioma", newIdiomaId)
+            tranRepo.addParam("@bitBase", bit.idBase)
+            tranRepo.addParam("@bitMensaje", bit.mensaje)
+            result = tranRepo.executeSearchWithStatus()
             If (result <= 0) Then
-                Throw New Excepciones.InsertExcepcion
+                Throw New Excepciones.ModificacionDeBitacoraExcepcion
             End If
 
         Catch ex As Exception

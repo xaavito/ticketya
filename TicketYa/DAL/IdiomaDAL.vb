@@ -55,18 +55,66 @@
         Dim result As Integer
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim tranRepo As New RepositorioTransaccional(repository)
         Try
-            repository.crearComando("GENERAR_IDIOMA_SP")
-            repository.addParam("@nom", idioma.descripcion)
-            result = repository.executeSearch
+            tranRepo.crearComando("GENERAR_IDIOMA_SP")
+            tranRepo.addParam("@nom", idioma.descripcion)
+            result = tranRepo.executeSearch
             If (result <= 0) Then
                 Throw New Excepciones.GeneracionDeIdiomaExcepcion
             End If
-        Catch ex As Exception
-            Throw New Excepciones.GeneracionDeIdiomaExcepcion
+        Catch ex As Excepciones.ConexionImposibleExcepcion
+            Throw New Excepciones.ConexionImposibleExcepcion
+        Catch ex As Excepciones.InsertExcepcion
+            Throw New Excepciones.InsertExcepcion
         End Try
 
-        Return result
+        Dim newIdiomaId As Integer = result
+
+        If newIdiomaId > 0 Then
+            'tranRepo.clearParams()
+            tranRepo.crearComando("GUARDAR_BITACORAS_BASE_SP")
+            For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+                tranRepo.addParam("@idIdioma", newIdiomaId)
+                tranRepo.addParam("@bitBase", bit.idBase)
+                tranRepo.addParam("@bitMensaje", bit.mensaje)
+                result = tranRepo.executeSearchWithStatus()
+                If (result <= 0) Then
+                    Throw New Excepciones.ModificacionDeBitacoraExcepcion
+                End If
+                'tranRepo.clearParams()
+            Next
+
+            tranRepo.crearComando("GUARDAR_EXCEPCIONES_SP")
+            For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+                tranRepo.addParam("@idIdioma", newIdiomaId)
+                tranRepo.addParam("@excBase", exc.codigo)
+                tranRepo.addParam("@excMensaje", exc.mensaje)
+                result = tranRepo.executeSearchWithStatus()
+                If (result <= 0) Then
+                    Throw New Excepciones.ModificacionDeExcepcionExcepcion
+                End If
+                'DAL.ExcepcionDAL.guardarExcepecion(exc, result)
+                'tranRepo.clearParams()
+            Next
+
+            tranRepo.crearComando("GUARDAR_TRADUCCIONES_SP")
+            For Each men As BE.MensajeControlBE In idioma.mensaje
+
+                tranRepo.addParam("@idIdioma", newIdiomaId)
+                tranRepo.addParam("@idControl", men.idControl)
+                tranRepo.addParam("@mensaje", men.mensaje)
+                result = tranRepo.executeSearchWithStatus()
+                If (result <= 0) Then
+                    Throw New Excepciones.ModificacionDeMensajeControlExcepcion
+                End If
+                'tranRepo.clearParams()
+                'DAL.MensajeControlDAL.guardarMensaje(men, result)
+            Next
+            tranRepo.transactionOK()
+        End If
+
+        Return newIdiomaId
     End Function
 
     Shared Function eliminarIdioma(ByVal p1 As Integer) As Integer

@@ -57,13 +57,14 @@
         Dim result As Integer
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim tranRepo As New RepositorioTransaccional(repository)
         Dim bitacoras As New List(Of BE.BitacoraBE)
         Try
-            repository.crearComando("GUARDAR_EXCEPCIONES_SP")
-            repository.addParam("@idIdioma", newIdiomaId)
-            repository.addParam("@excBase", exc.codigo)
-            repository.addParam("@excMensaje", exc.mensaje)
-            result = repository.executeSearchWithStatus()
+            tranRepo.crearComando("GUARDAR_EXCEPCIONES_SP")
+            tranRepo.addParam("@idIdioma", newIdiomaId)
+            tranRepo.addParam("@excBase", exc.codigo)
+            tranRepo.addParam("@excMensaje", exc.mensaje)
+            result = tranRepo.executeSearchWithStatus()
             If (result <= 0) Then
                 Throw New Excepciones.InsertExcepcion
             End If
