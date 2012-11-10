@@ -83,4 +83,64 @@ Public Class Principal
         form.addUsuario(BLL.Actual.usuario)
         Form.Show()
     End Sub
+
+    Private Sub BuscarSedeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarSedeToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarSedeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarSedeToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub SectorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SectorToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BuscarVentaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarVentaToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarVentaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarVentaToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BuscarShowToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarShowToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarShowToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarShowToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BuscarSectorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarSectorToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarSectorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarSectorToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BuscarSillaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarSillaToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarSillaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarSillaToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BuscarPromocionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarPromocionToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarPromocionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarPromocionToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub BuscarCompradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarCompradorToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarCompradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarCompradorToolStripMenuItem.Click
+
+    End Sub
 End Class
