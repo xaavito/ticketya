@@ -71,6 +71,8 @@ Partial Class Principal
         Me.Bitacoras = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -171,6 +173,7 @@ Partial Class Principal
         '
         'FechaToolStripMenuItem
         '
+        Me.FechaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarFechaToolStripMenuItem, Me.GenerarFechaToolStripMenuItem})
         Me.FechaToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.fecha
         Me.FechaToolStripMenuItem.Name = "FechaToolStripMenuItem"
         Me.FechaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
@@ -403,6 +406,18 @@ Partial Class Principal
         Me.Logout.Size = New System.Drawing.Size(68, 20)
         Me.Logout.Text = "Logout"
         '
+        'BuscarFechaToolStripMenuItem
+        '
+        Me.BuscarFechaToolStripMenuItem.Name = "BuscarFechaToolStripMenuItem"
+        Me.BuscarFechaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.BuscarFechaToolStripMenuItem.Text = "Buscar Fecha"
+        '
+        'GenerarFechaToolStripMenuItem
+        '
+        Me.GenerarFechaToolStripMenuItem.Name = "GenerarFechaToolStripMenuItem"
+        Me.GenerarFechaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.GenerarFechaToolStripMenuItem.Text = "Generar Fecha"
+        '
         'Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -470,5 +485,7 @@ Partial Class Principal
     Friend WithEvents BuscarCompradorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarCompradorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents FechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents BuscarFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents GenerarFechaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

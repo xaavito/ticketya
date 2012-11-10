@@ -85,6 +85,12 @@
     <Compile Include="BuscarBitacoraForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarCompradorForm.Designer.vb">
+      <DependentUpon>BuscarCompradorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarCompradorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BuscarFamiliaForm.Designer.vb">
       <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
     </Compile>
@@ -103,6 +109,12 @@
     <Compile Include="BuscarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarPromocionForm.Designer.vb">
+      <DependentUpon>BuscarPromocionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarPromocionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BuscarSedeForm.Designer.vb">
       <DependentUpon>BuscarSedeForm.vb</DependentUpon>
     </Compile>
@@ -113,6 +125,12 @@
       <DependentUpon>BuscarSillaForm.vb</DependentUpon>
     </Compile>
     <Compile Include="BuscarSillaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarVentaForm.Designer.vb">
+      <DependentUpon>BuscarVentaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarVentaForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controles\MyButton.vb">
@@ -133,10 +151,22 @@
     <Compile Include="BuscarSectorForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="GenerarCompradorForm.Designer.vb">
+      <DependentUpon>GenerarCompradorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarCompradorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GenerarFechaForm.Designer.vb">
       <DependentUpon>GenerarFechaForm.vb</DependentUpon>
     </Compile>
     <Compile Include="GenerarFechaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarPromocionForm.Designer.vb">
+      <DependentUpon>GenerarPromocionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarPromocionForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerarSedeForm.Designer.vb">
@@ -203,6 +233,12 @@
       <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
     </Compile>
     <Compile Include="GenerarUsuarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarVentaForm.Designer.vb">
+      <DependentUpon>GenerarVentaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarVentaForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Instalador.Designer.vb">
