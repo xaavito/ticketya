@@ -91,10 +91,28 @@
     <Compile Include="BuscarFamiliaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BuscarFechaForm.Designer.vb">
+      <DependentUpon>BuscarFechaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarFechaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="BuscarIdiomaForm.Designer.vb">
       <DependentUpon>BuscarIdiomaForm.vb</DependentUpon>
     </Compile>
     <Compile Include="BuscarIdiomaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarSedeForm.Designer.vb">
+      <DependentUpon>BuscarSedeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarSedeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarSillaForm.Designer.vb">
+      <DependentUpon>BuscarSillaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarSillaForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Controles\MyButton.vb">
@@ -108,6 +126,42 @@
     </Compile>
     <Compile Include="Controles\MyTextBox.vb">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BuscarSectorForm.Designer.vb">
+      <DependentUpon>BuscarSectorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarSectorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarFechaForm.Designer.vb">
+      <DependentUpon>GenerarFechaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarFechaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarSedeForm.Designer.vb">
+      <DependentUpon>GenerarSedeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarSedeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarShowForm.Designer.vb">
+      <DependentUpon>GenerarShowForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarShowForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarShowForm.Designer.vb">
+      <DependentUpon>BuscarShowForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarShowForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarSectorForm.Designer.vb">
+      <DependentUpon>GenerarSectorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarSectorForm.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerarIdiomaForm.Designer.vb">
       <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>
@@ -137,6 +191,12 @@
       <DependentUpon>GenerarPermisoFamiliaForm.vb</DependentUpon>
     </Compile>
     <Compile Include="GenerarPermisoFamiliaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenerarSillaForm.Designer.vb">
+      <DependentUpon>GenerarSillaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenerarSillaForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GenerarUsuarioForm.Designer.vb">
@@ -388,6 +448,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1351440699_trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1352550673_business-contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1352550654_coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\promocion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\section.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stadium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
