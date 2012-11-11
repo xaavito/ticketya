@@ -34,4 +34,40 @@
         Return lista
     End Function
 
+    Shared Function eliminarSede(ByVal p1 As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_SEDE_SP")
+            repository.addParam("@idSede", p1)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.EliminarSedeExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.EliminarSedeExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function checkVentasAsignadas(ByVal p1 As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("CHEKEAR_SEDE_CON_SHOWS_SP")
+            repository.addParam("@idSede", p1)
+            result = repository.executeSearch
+            If (result > 0) Then
+                Throw New Excepciones.SedeTieneShowsAsociadosExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.SedeTieneShowsAsociadosExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

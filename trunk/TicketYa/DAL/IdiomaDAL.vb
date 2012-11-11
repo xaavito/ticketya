@@ -162,11 +162,11 @@
             repository.crearComando("CHEKEAR_IDIOMA_ASIGNADO_SP")
             repository.addParam("@idIdioma", p1)
             result = repository.executeSearch
-            If (result < 0) Then
-                Throw New Excepciones.IdiomaNoEncontradoExcepcion
+            If (result > 0) Then
+                Throw New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
             End If
         Catch ex As Exception
-            Throw New Excepciones.IdiomaNoEncontradoExcepcion
+            Throw New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
         End Try
 
         Return result

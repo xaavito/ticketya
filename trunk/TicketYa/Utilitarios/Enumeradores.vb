@@ -54,6 +54,10 @@
 
         SedeEliminadaExitosamente
 
+        SedesNoEncontradas
+
+        EliminarSedeExcepcion
+
     End Enum
 
     Enum Bitacora

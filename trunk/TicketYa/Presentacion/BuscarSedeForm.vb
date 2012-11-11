@@ -23,13 +23,10 @@
         If SedesDataGrid.hasSelectedObject = True Then
             sede = DirectCast(SedesDataGrid.myObject, BE.SedeBE)
             Try
-                If (BLL.SedeBLL.eliminarSede(sede) = 1) Then
-                    buscarSede()
-                    BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, sede.descripcion, Utilitarios.Enumeradores.Bitacora.SedeEliminada)
-                    Throw New Excepciones.SedeEliminadaExistosamenteExcepcion
-                Else
-                    Throw New Excepciones.SedeTieneShowsAsociadosExcepcion
-                End If
+                BLL.GestorSedeBLL.eliminarSede(sede)
+                buscarSede()
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, sede.descripcion, Utilitarios.Enumeradores.Bitacora.SedeEliminada)
+                Throw New Excepciones.SedeEliminadaExistosamenteExcepcion
             Catch ex As Excepciones.SedeEliminadaExistosamenteExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.SedeTieneShowsAsociadosExcepcion
@@ -40,10 +37,9 @@
 
     Public Sub buscarSede()
         Try
-            SedesDataGrid.DataSource = BLL.SedeBLL.buscarSede(SedeTextBox.Text)
+            SedesDataGrid.DataSource = BLL.GestorSedeBLL.buscarSede(SedeTextBox.Text)
         Catch ex As Excepciones.SedesNoEncontradasExcepcion
             My.Application.manejarExcepcion(ex)
         End Try
-
     End Sub
 End Class
