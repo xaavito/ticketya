@@ -39,6 +39,11 @@
     End Sub
 
     Public Sub buscarSede()
-        SedesDataGrid.DataSource = BLL.SedeBLL.buscarSede(SedeTextBox.Text)
+        Try
+            SedesDataGrid.DataSource = BLL.SedeBLL.buscarSede(SedeTextBox.Text)
+        Catch ex As Excepciones.SedesNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        End Try
+
     End Sub
 End Class
