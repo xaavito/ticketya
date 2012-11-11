@@ -16,9 +16,14 @@
             End If
             For Each pepe As DataRow In table.Rows
                 Dim sede As New BE.SedeBE
+                'SELECT s.identificador,s.descripcion,s.capacidad,s.direccion,s.numero,s.telefono 
                 sede.identificador = pepe.Item(0)
                 sede.descripcion = pepe.Item(1)
-
+                sede.capacidad = pepe.Item(2)
+                sede.direccion = pepe.Item(3)
+                sede.numero = pepe.Item(4)
+                sede.telefono = pepe.Item(5)
+                
                 lista.Add(sede)
             Next
 

@@ -25,6 +25,12 @@ Partial Class BuscarSedeForm
         Me.SedesDataGrid = New TicketYa.MyDataGrid()
         Me.ModificarSedeButton = New TicketYa.MyButton()
         Me.EliminarSedeButton = New TicketYa.MyButton()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CapacidadColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DireccionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumeroColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.SedesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -69,6 +75,7 @@ Partial Class BuscarSedeForm
         Me.SedesDataGrid.AllowUserToResizeRows = False
         Me.SedesDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SedesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.SedesDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.CapacidadColumn, Me.DireccionColumn, Me.NumeroColumn, Me.TelefonoColumn})
         Me.SedesDataGrid.Location = New System.Drawing.Point(15, 71)
         Me.SedesDataGrid.Name = "SedesDataGrid"
         Me.SedesDataGrid.ReadOnly = True
@@ -101,6 +108,49 @@ Partial Class BuscarSedeForm
         Me.EliminarSedeButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.EliminarSedeButton.UseVisualStyleBackColor = True
         '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
+        Me.IdentificadorColumn.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
+        '
+        'CapacidadColumn
+        '
+        Me.CapacidadColumn.DataPropertyName = "capacidad"
+        Me.CapacidadColumn.HeaderText = "Capacidad"
+        Me.CapacidadColumn.Name = "CapacidadColumn"
+        Me.CapacidadColumn.ReadOnly = True
+        '
+        'DireccionColumn
+        '
+        Me.DireccionColumn.DataPropertyName = "direccion"
+        Me.DireccionColumn.HeaderText = "Direccion"
+        Me.DireccionColumn.Name = "DireccionColumn"
+        Me.DireccionColumn.ReadOnly = True
+        '
+        'NumeroColumn
+        '
+        Me.NumeroColumn.DataPropertyName = "numero"
+        Me.NumeroColumn.HeaderText = "Numero"
+        Me.NumeroColumn.Name = "NumeroColumn"
+        Me.NumeroColumn.ReadOnly = True
+        '
+        'TelefonoColumn
+        '
+        Me.TelefonoColumn.DataPropertyName = "telefono"
+        Me.TelefonoColumn.HeaderText = "Telefono"
+        Me.TelefonoColumn.Name = "TelefonoColumn"
+        Me.TelefonoColumn.ReadOnly = True
+        '
         'BuscarSedeForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -124,5 +174,11 @@ Partial Class BuscarSedeForm
     Friend WithEvents SedesDataGrid As TicketYa.MyDataGrid
     Friend WithEvents ModificarSedeButton As TicketYa.MyButton
     Friend WithEvents EliminarSedeButton As TicketYa.MyButton
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CapacidadColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DireccionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NumeroColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
