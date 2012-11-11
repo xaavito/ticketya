@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:Instalador"
+"ProjectName" = "8:TicketYa"
 "LanguageId" = "3:3082"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:3082"
@@ -525,6 +525,19 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    {
+                    "Name" = "8:Windows Installer 3.1"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
+                    }
+                }
             }
         }
     }
@@ -1215,7 +1228,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Instalador"
         "ProductCode" = "8:{9CC0A15E-26A1-49FE-8AA9-7822E15B2896}"
-        "PackageCode" = "8:{60459E4E-17E0-4C24-996F-1B30F9904FF8}"
+        "PackageCode" = "8:{07BC5ED2-B03B-469B-B506-7EF5B772F592}"
         "UpgradeCode" = "8:{622B796B-CBAA-41F6-8F96-AD443CFA304A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
