@@ -87,7 +87,7 @@ Public Class RepositorioSQL
         If tx Is Nothing Then
             conectar()
         End If
-        'conectar()
+
         Try
             result = cmd.ExecuteScalar()
         Catch ex As Exception
@@ -97,7 +97,6 @@ Public Class RepositorioSQL
         If tx Is Nothing Then
             desconectar()
         End If
-        'desconectar()
 
         Return result
     End Function
@@ -107,7 +106,7 @@ Public Class RepositorioSQL
         If tx Is Nothing Then
             conectar()
         End If
-        'conectar()
+
         Try
             status = cmd.ExecuteNonQuery()
         Catch ex As Exception
@@ -138,7 +137,6 @@ Public Class RepositorioSQL
         If tx Is Nothing Then
             conectar()
         End If
-        'conectar()
         Try
             Dim returnValue As SqlParameter = New SqlParameter
             returnValue.ParameterName = "@Return_Value"
@@ -153,7 +151,6 @@ Public Class RepositorioSQL
         If tx Is Nothing Then
             desconectar()
         End If
-        'desconectar()
         Return r
     End Function
 

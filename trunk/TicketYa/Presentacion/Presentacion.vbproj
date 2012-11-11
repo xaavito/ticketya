@@ -277,6 +277,12 @@
     <Compile Include="ModificarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModificarSedeForm.Designer.vb">
+      <DependentUpon>ModificarSedeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarSedeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModificarUsuarioForm.Designer.vb">
       <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BuscarIdiomaForm.resx">
       <DependentUpon>BuscarIdiomaForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarSedeForm.resx">
+      <DependentUpon>BuscarSedeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarIdiomaForm.resx">
       <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>
