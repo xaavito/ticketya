@@ -90,7 +90,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="SedeBLL.vb" />
+    <Compile Include="GestorSedeBLL.vb" />
     <Compile Include="SeguridadBLL.vb" />
   </ItemGroup>
   <ItemGroup>

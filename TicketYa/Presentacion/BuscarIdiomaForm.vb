@@ -9,18 +9,23 @@
         If IdiomasDataGrid.hasSelectedObject = True Then
             idioma = DirectCast(IdiomasDataGrid.myObject, BE.IdiomaBE)
             Try
-                If (BLL.GestorIdiomaBLL.eliminarIdioma(idioma) = 1) Then
-                    buscarIdiomas()
-                    BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, idioma.descripcion, Utilitarios.Enumeradores.Bitacora.IdiomaEliminado)
-                    Throw New Excepciones.IdiomaEliminadoExistosamenteExcepcion
-                Else
-                    Throw New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
-                End If
+                BLL.GestorIdiomaBLL.eliminarIdioma(idioma)
+                buscarIdiomas()
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, idioma.descripcion, Utilitarios.Enumeradores.Bitacora.IdiomaEliminado)
+                Throw New Excepciones.IdiomaEliminadoExistosamenteExcepcion
+            Catch ex As Excepciones.EliminarIdiomaExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.EliminarBitacoraExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.EliminarMensajeControlExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.EliminarExcepcionExcepcion
+                My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.IdiomaEliminadoExistosamenteExcepcion
-            My.Application.manejarExcepcion(ex)
-        Catch ex As Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
-            My.Application.manejarExcepcion(ex)
-        End Try
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
+                My.Application.manejarExcepcion(ex)
+            End Try
         End If
         
     End Sub

@@ -1,4 +1,6 @@
-﻿Public Class GestorIdiomaBLL
+﻿Imports Excepciones
+
+Public Class GestorIdiomaBLL
 
     Public Shared Function crearIdioma(ByVal desc As String) As Boolean
         Return Nothing
@@ -6,22 +8,23 @@
 
     Public Shared Function eliminarIdioma(ByVal idioma As BE.IdiomaBE) As Integer
 
-        If DAL.IdiomaDAL.checkIdiomasAsignados(idioma.identificador) = 0 Then
-            For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
-                DAL.BitacoraDAL.eliminarBitacora(bit, idioma.identificador)
-            Next
-            For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
-                DAL.ExcepcionDAL.eliminarExcepecion(exc, idioma.identificador)
-            Next
-            For Each men As BE.MensajeControlBE In idioma.mensaje
-                DAL.MensajeControlDAL.eliminarMensaje(men, idioma.identificador)
-            Next
+        Try
+            DAL.IdiomaDAL.checkIdiomasAsignados(idioma.identificador)
+        Catch ex As Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
+            Throw New Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
+        End Try
 
-            Return DAL.IdiomaDAL.eliminarIdioma(idioma.identificador)
-        Else
-            Return 2
-        End If
+        For Each bit As BE.MensajeBitacoraBE In idioma.bitacorasBase
+            DAL.BitacoraDAL.eliminarBitacora(bit, idioma.identificador)
+        Next
+        For Each exc As BE.ExcepcionBE In idioma.listaExcepciones
+            DAL.ExcepcionDAL.eliminarExcepecion(exc, idioma.identificador)
+        Next
+        For Each men As BE.MensajeControlBE In idioma.mensaje
+            DAL.MensajeControlDAL.eliminarMensaje(men, idioma.identificador)
+        Next
 
+        Return DAL.IdiomaDAL.eliminarIdioma(idioma.identificador)
     End Function
 
     Public Shared Function listarIdiomas(ByVal desc As String) As List(Of BE.IdiomaBE)
