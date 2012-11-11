@@ -89,6 +89,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PermisoExcepcion.vb" />
+    <Compile Include="SedeExcepcion.vb" />
     <Compile Include="UsuarioExcepcion.vb" />
   </ItemGroup>
   <ItemGroup>

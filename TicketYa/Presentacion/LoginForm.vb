@@ -3,7 +3,7 @@
 
     Public Sub Start()
         Me.StartPosition = FormStartPosition.CenterScreen
-        Dim idiomas As List(Of BE.IdiomaBE)
+        Dim idiomas As List(Of BE.IdiomaBE) = Nothing
 
         Try
             idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")

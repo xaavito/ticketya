@@ -106,6 +106,7 @@
     <Compile Include="RepositorioFactory.vb" />
     <Compile Include="RepositorioSQL.vb" />
     <Compile Include="RepositorioTransaccional.vb" />
+    <Compile Include="SedeDAL.vb" />
     <Compile Include="UsuarioDAL.vb" />
   </ItemGroup>
   <ItemGroup>

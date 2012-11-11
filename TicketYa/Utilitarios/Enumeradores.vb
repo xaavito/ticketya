@@ -50,6 +50,10 @@
 
         FalloUpdate
 
+        SedeTieneShowsAsociados
+
+        SedeEliminadaExitosamente
+
     End Enum
 
     Enum Bitacora
@@ -67,6 +71,9 @@
         UsuarioEliminado = 12
         ModificacionDeIdioma = 13
         ModificacionDeUsuario = 14
+
+        SedeEliminada
+
     End Enum
 
     Enum Excepcion
