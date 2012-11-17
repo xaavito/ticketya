@@ -67,6 +67,8 @@
     <Compile Include="BackupExcepcion.vb" />
     <Compile Include="BitacoraExcepcion.vb" />
     <Compile Include="ConexionExcepcion.vb" />
+    <Compile Include="SectorExcepcion.vb" />
+    <Compile Include="FechaExcepcion.vb" />
     <Compile Include="DatosExcepcion.vb" />
     <Compile Include="ExExcepcion.vb" />
     <Compile Include="ExceptionManager.vb" />
@@ -90,6 +92,7 @@
     </Compile>
     <Compile Include="PermisoExcepcion.vb" />
     <Compile Include="SedeExcepcion.vb" />
+    <Compile Include="ShowExcepcion.vb" />
     <Compile Include="UsuarioExcepcion.vb" />
   </ItemGroup>
   <ItemGroup>

@@ -132,13 +132,13 @@ Public Class Principal
         form.Show()
     End Sub
 
-    Private Sub BuscarSillaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarSillaToolStripMenuItem.Click
+    Private Sub BuscarSillaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim form As New BuscarSillaForm
         form.MdiParent = Me
         form.Show()
     End Sub
 
-    Private Sub GenerarSillaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarSillaToolStripMenuItem.Click
+    Private Sub GenerarSillaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim form As New GenerarSillaForm
         form.MdiParent = Me
         form.Show()

@@ -25,9 +25,6 @@ Partial Class Principal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
-        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarVentaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -39,12 +36,11 @@ Partial Class Principal
         Me.BuscarShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarShowToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BuscarFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SectorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarSectorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarSectorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SillaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarSillaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarSillaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarPromocionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarPromocionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -71,8 +67,9 @@ Partial Class Principal
         Me.Bitacoras = New System.Windows.Forms.ToolStripMenuItem()
         Me.MiUsuario = New System.Windows.Forms.ToolStripMenuItem()
         Me.Logout = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BuscarFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarFechaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatusStrip = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.MenuStrip.SuspendLayout()
         Me.StatusStrip.SuspendLayout()
         Me.SuspendLayout()
@@ -85,21 +82,6 @@ Partial Class Principal
         Me.MenuStrip.Size = New System.Drawing.Size(632, 24)
         Me.MenuStrip.TabIndex = 5
         Me.MenuStrip.Text = "MenuStrip"
-        '
-        'StatusStrip
-        '
-        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
-        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
-        Me.StatusStrip.Name = "StatusStrip"
-        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
-        Me.StatusStrip.TabIndex = 7
-        Me.StatusStrip.Text = "StatusStrip"
-        '
-        'ToolStripStatusLabel
-        '
-        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
-        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
-        Me.ToolStripStatusLabel.Text = "Estado"
         '
         'VentasToolStripMenuItem
         '
@@ -125,7 +107,7 @@ Partial Class Principal
         '
         'NegocioToolStripMenuItem
         '
-        Me.NegocioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EstadioToolStripMenuItem, Me.ShowToolStripMenuItem, Me.FechaToolStripMenuItem, Me.SectorToolStripMenuItem, Me.SillaToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.CompradoresToolStripMenuItem})
+        Me.NegocioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EstadioToolStripMenuItem, Me.ShowToolStripMenuItem, Me.FechaToolStripMenuItem, Me.SectorToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.CompradoresToolStripMenuItem})
         Me.NegocioToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.negocios
         Me.NegocioToolStripMenuItem.Name = "NegocioToolStripMenuItem"
         Me.NegocioToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
@@ -141,14 +123,16 @@ Partial Class Principal
         '
         'BuscarSedeToolStripMenuItem
         '
+        Me.BuscarSedeToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.buscar
         Me.BuscarSedeToolStripMenuItem.Name = "BuscarSedeToolStripMenuItem"
-        Me.BuscarSedeToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.BuscarSedeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.BuscarSedeToolStripMenuItem.Text = "Buscar Sede"
         '
         'GenerarSedeToolStripMenuItem
         '
+        Me.GenerarSedeToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.nuevo
         Me.GenerarSedeToolStripMenuItem.Name = "GenerarSedeToolStripMenuItem"
-        Me.GenerarSedeToolStripMenuItem.Size = New System.Drawing.Size(151, 22)
+        Me.GenerarSedeToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GenerarSedeToolStripMenuItem.Text = "Generar Sede"
         '
         'ShowToolStripMenuItem
@@ -161,12 +145,14 @@ Partial Class Principal
         '
         'BuscarShowToolStripMenuItem
         '
+        Me.BuscarShowToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.buscar
         Me.BuscarShowToolStripMenuItem.Name = "BuscarShowToolStripMenuItem"
         Me.BuscarShowToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.BuscarShowToolStripMenuItem.Text = "Buscar Show"
         '
         'GenerarShowToolStripMenuItem
         '
+        Me.GenerarShowToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.nuevo
         Me.GenerarShowToolStripMenuItem.Name = "GenerarShowToolStripMenuItem"
         Me.GenerarShowToolStripMenuItem.Size = New System.Drawing.Size(153, 22)
         Me.GenerarShowToolStripMenuItem.Text = "Generar Show"
@@ -179,6 +165,20 @@ Partial Class Principal
         Me.FechaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.FechaToolStripMenuItem.Text = "Fecha"
         '
+        'BuscarFechaToolStripMenuItem
+        '
+        Me.BuscarFechaToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.buscar
+        Me.BuscarFechaToolStripMenuItem.Name = "BuscarFechaToolStripMenuItem"
+        Me.BuscarFechaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.BuscarFechaToolStripMenuItem.Text = "Buscar Fecha"
+        '
+        'GenerarFechaToolStripMenuItem
+        '
+        Me.GenerarFechaToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.nuevo
+        Me.GenerarFechaToolStripMenuItem.Name = "GenerarFechaToolStripMenuItem"
+        Me.GenerarFechaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.GenerarFechaToolStripMenuItem.Text = "Generar Fecha"
+        '
         'SectorToolStripMenuItem
         '
         Me.SectorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarSectorToolStripMenuItem, Me.GenerarSectorToolStripMenuItem})
@@ -189,35 +189,17 @@ Partial Class Principal
         '
         'BuscarSectorToolStripMenuItem
         '
+        Me.BuscarSectorToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.buscar
         Me.BuscarSectorToolStripMenuItem.Name = "BuscarSectorToolStripMenuItem"
         Me.BuscarSectorToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.BuscarSectorToolStripMenuItem.Text = "Buscar Sector"
         '
         'GenerarSectorToolStripMenuItem
         '
+        Me.GenerarSectorToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.nuevo
         Me.GenerarSectorToolStripMenuItem.Name = "GenerarSectorToolStripMenuItem"
         Me.GenerarSectorToolStripMenuItem.Size = New System.Drawing.Size(158, 22)
         Me.GenerarSectorToolStripMenuItem.Text = "Generar Sector"
-        '
-        'SillaToolStripMenuItem
-        '
-        Me.SillaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarSillaToolStripMenuItem, Me.GenerarSillaToolStripMenuItem})
-        Me.SillaToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.silla
-        Me.SillaToolStripMenuItem.Name = "SillaToolStripMenuItem"
-        Me.SillaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SillaToolStripMenuItem.Text = "Sillas"
-        '
-        'BuscarSillaToolStripMenuItem
-        '
-        Me.BuscarSillaToolStripMenuItem.Name = "BuscarSillaToolStripMenuItem"
-        Me.BuscarSillaToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.BuscarSillaToolStripMenuItem.Text = "Buscar Silla"
-        '
-        'GenerarSillaToolStripMenuItem
-        '
-        Me.GenerarSillaToolStripMenuItem.Name = "GenerarSillaToolStripMenuItem"
-        Me.GenerarSillaToolStripMenuItem.Size = New System.Drawing.Size(145, 22)
-        Me.GenerarSillaToolStripMenuItem.Text = "Generar Silla"
         '
         'PromocionesToolStripMenuItem
         '
@@ -229,12 +211,14 @@ Partial Class Principal
         '
         'BuscarPromocionToolStripMenuItem
         '
+        Me.BuscarPromocionToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.buscar
         Me.BuscarPromocionToolStripMenuItem.Name = "BuscarPromocionToolStripMenuItem"
         Me.BuscarPromocionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.BuscarPromocionToolStripMenuItem.Text = "Buscar Promocion"
         '
         'GenerarPromocionToolStripMenuItem
         '
+        Me.GenerarPromocionToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.nuevo
         Me.GenerarPromocionToolStripMenuItem.Name = "GenerarPromocionToolStripMenuItem"
         Me.GenerarPromocionToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.GenerarPromocionToolStripMenuItem.Text = "Generar Promocion"
@@ -249,12 +233,14 @@ Partial Class Principal
         '
         'BuscarCompradorToolStripMenuItem
         '
+        Me.BuscarCompradorToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.buscar
         Me.BuscarCompradorToolStripMenuItem.Name = "BuscarCompradorToolStripMenuItem"
         Me.BuscarCompradorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.BuscarCompradorToolStripMenuItem.Text = "Buscar Comprador"
         '
         'GenerarCompradorToolStripMenuItem
         '
+        Me.GenerarCompradorToolStripMenuItem.Image = Global.TicketYa.My.Resources.Resources.nuevo
         Me.GenerarCompradorToolStripMenuItem.Name = "GenerarCompradorToolStripMenuItem"
         Me.GenerarCompradorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GenerarCompradorToolStripMenuItem.Text = "Generar Comprador"
@@ -406,17 +392,20 @@ Partial Class Principal
         Me.Logout.Size = New System.Drawing.Size(68, 20)
         Me.Logout.Text = "Logout"
         '
-        'BuscarFechaToolStripMenuItem
+        'StatusStrip
         '
-        Me.BuscarFechaToolStripMenuItem.Name = "BuscarFechaToolStripMenuItem"
-        Me.BuscarFechaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.BuscarFechaToolStripMenuItem.Text = "Buscar Fecha"
+        Me.StatusStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel})
+        Me.StatusStrip.Location = New System.Drawing.Point(0, 431)
+        Me.StatusStrip.Name = "StatusStrip"
+        Me.StatusStrip.Size = New System.Drawing.Size(632, 22)
+        Me.StatusStrip.TabIndex = 7
+        Me.StatusStrip.Text = "StatusStrip"
         '
-        'GenerarFechaToolStripMenuItem
+        'ToolStripStatusLabel
         '
-        Me.GenerarFechaToolStripMenuItem.Name = "GenerarFechaToolStripMenuItem"
-        Me.GenerarFechaToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
-        Me.GenerarFechaToolStripMenuItem.Text = "Generar Fecha"
+        Me.ToolStripStatusLabel.Name = "ToolStripStatusLabel"
+        Me.ToolStripStatusLabel.Size = New System.Drawing.Size(40, 17)
+        Me.ToolStripStatusLabel.Text = "Estado"
         '
         'Principal
         '
@@ -469,7 +458,6 @@ Partial Class Principal
     Friend WithEvents EstadioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ShowToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SectorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SillaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents PromocionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarSedeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarSedeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -477,8 +465,6 @@ Partial Class Principal
     Friend WithEvents GenerarShowToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarSectorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarSectorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents BuscarSillaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GenerarSillaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BuscarPromocionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarPromocionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CompradoresToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

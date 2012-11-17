@@ -71,9 +71,12 @@
     <Compile Include="GestorBackupBLL.vb" />
     <Compile Include="GestorBitacoraBLL.vb" />
     <Compile Include="GestorFamiliaBLL.vb" />
+    <Compile Include="GestorFechaBLL.vb" />
     <Compile Include="GestorFormularioBLL.vb" />
     <Compile Include="GestorIdiomaBLL.vb" />
     <Compile Include="GestorPermisoBLL.vb" />
+    <Compile Include="GestorSectorBLL.vb" />
+    <Compile Include="GestorShowBLL.vb" />
     <Compile Include="GestorUsuarioBLL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
