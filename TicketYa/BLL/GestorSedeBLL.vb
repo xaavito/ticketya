@@ -14,5 +14,9 @@
         Return DAL.SedeDAL.eliminarSede(sede.identificador)
     End Function
 
+    Shared Function altaSede(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String) As Boolean
+        Throw New NotImplementedException
+    End Function
+
 End Class
 

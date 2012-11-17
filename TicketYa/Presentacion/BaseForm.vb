@@ -141,4 +141,14 @@ Public Class BaseForm
             End If
         Next f
     End Sub
+
+    Public Sub limpiarForm()
+        For Each ctrl As Control In Me.Controls
+            If (TypeOf ctrl Is MyTextBox) Then
+                Dim c As MyTextBox
+                c = DirectCast(ctrl, MyTextBox)
+                c.Text = ""
+            End If
+        Next
+    End Sub
 End Class

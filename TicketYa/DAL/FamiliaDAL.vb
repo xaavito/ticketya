@@ -86,16 +86,17 @@
         Dim repository As IRepositorio = RepositorioFactory.Create()
         Try
             repository.crearComando("INSERTAR_FAMILIA_SP")
-            'repository.transactionON()
             repository.addParam("@descripcion", p1)
 
             result = repository.executeSearchWithStatus
             If (result <= 0) Then
                 Throw New Excepciones.InsertExcepcion
+            Else
+                Throw New Excepciones.FamiliaCreadaExistosamenteExcepcion
             End If
 
-        Catch ex As Exception
-            Throw New Excepciones.InsertExcepcion
+        Catch ex As Excepciones.ConexionImposibleExcepcion
+            Throw New Excepciones.ConexionImposibleExcepcion
         End Try
 
         Return result

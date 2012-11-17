@@ -385,6 +385,9 @@
     <EmbeddedResource Include="GenerarFamiliaForm.resx">
       <DependentUpon>GenerarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenerarSedeForm.resx">
+      <DependentUpon>GenerarSedeForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarUsuarioForm.resx">
       <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
     </EmbeddedResource>
