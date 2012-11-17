@@ -271,16 +271,34 @@
     <Compile Include="ModificarFamiliaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModificarFechaForm.Designer.vb">
+      <DependentUpon>ModificarFechaForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarFechaForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModificarIdiomaForm.Designer.vb">
       <DependentUpon>ModificarIdiomaForm.vb</DependentUpon>
     </Compile>
     <Compile Include="ModificarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModificarSectorForm.Designer.vb">
+      <DependentUpon>ModificarSectorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarSectorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModificarSedeForm.Designer.vb">
       <DependentUpon>ModificarSedeForm.vb</DependentUpon>
     </Compile>
     <Compile Include="ModificarSedeForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarShowForm.Designer.vb">
+      <DependentUpon>ModificarShowForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarShowForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModificarUsuarioForm.Designer.vb">
@@ -328,11 +346,20 @@
     <EmbeddedResource Include="BuscarFamiliaForm.resx">
       <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarFechaForm.resx">
+      <DependentUpon>BuscarFechaForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarIdiomaForm.resx">
       <DependentUpon>BuscarIdiomaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarSectorForm.resx">
+      <DependentUpon>BuscarSectorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarSedeForm.resx">
       <DependentUpon>BuscarSedeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarShowForm.resx">
+      <DependentUpon>BuscarShowForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarIdiomaForm.resx">
       <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>

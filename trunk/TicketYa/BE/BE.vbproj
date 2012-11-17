@@ -71,8 +71,10 @@
     <Compile Include="BackupBE.vb" />
     <Compile Include="BitacoraBE.vb" />
     <Compile Include="ControlBE.vb" />
+    <Compile Include="SectorBE.vb" />
     <Compile Include="ExcepcionBE.vb" />
     <Compile Include="FamiliaBE.vb" />
+    <Compile Include="FechaBE.vb" />
     <Compile Include="FormularioBE.vb" />
     <Compile Include="IClonable.vb" />
     <Compile Include="IdiomaBE.vb" />
@@ -97,6 +99,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SedeBE.vb" />
+    <Compile Include="ShowBE.vb" />
     <Compile Include="UsuarioBE.vb" />
   </ItemGroup>
   <ItemGroup>

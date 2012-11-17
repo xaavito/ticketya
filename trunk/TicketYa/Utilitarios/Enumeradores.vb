@@ -58,6 +58,30 @@
 
         EliminarSedeExcepcion
 
+        ShowTieneVentasAsignadas
+
+        ShowEliminadoExitosamente
+
+        ShowsNoEncontrados
+
+        EliminarShowExcepcion
+
+        FechaTieneVentasAsignadas
+
+        FechaEliminadaExitosamente
+
+        FechasNoEncontradas
+
+        EliminarFechaExcepcion
+
+        SectorTieneVentasAsignadas
+
+        SectorEliminadoExitosamente
+
+        SectoresNoEncontrados
+
+        EliminarSectorExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -77,6 +101,12 @@
         ModificacionDeUsuario = 14
 
         SedeEliminada
+
+        ShowEliminado
+
+        FechaEliminada
+
+        SectorEliminado
 
     End Enum
 
