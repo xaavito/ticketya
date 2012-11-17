@@ -19,7 +19,6 @@ Partial Class GenerarFamiliaForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarFamiliaForm))
         Me.FamiliaLabel = New System.Windows.Forms.Label()
         Me.FamiliaTextBox = New TicketYa.MyTextBox()
         Me.AltaFamiliaButton = New TicketYa.MyButton()
@@ -39,14 +38,17 @@ Partial Class GenerarFamiliaForm
         Me.FamiliaTextBox.alfanumerico = False
         Me.FamiliaTextBox.boton = Nothing
         Me.FamiliaTextBox.Location = New System.Drawing.Point(136, 26)
+        Me.FamiliaTextBox.nada = False
         Me.FamiliaTextBox.Name = "FamiliaTextBox"
+        Me.FamiliaTextBox.numerico = False
         Me.FamiliaTextBox.sinEspacio = False
         Me.FamiliaTextBox.Size = New System.Drawing.Size(140, 20)
         Me.FamiliaTextBox.TabIndex = 11
+        Me.FamiliaTextBox.texto = False
         '
         'AltaFamiliaButton
         '
-        Me.AltaFamiliaButton.Image = CType(resources.GetObject("AltaFamiliaButton.Image"), System.Drawing.Image)
+        Me.AltaFamiliaButton.Image = Global.TicketYa.My.Resources.Resources.aceptar
         Me.AltaFamiliaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.AltaFamiliaButton.Location = New System.Drawing.Point(360, 24)
         Me.AltaFamiliaButton.Name = "AltaFamiliaButton"

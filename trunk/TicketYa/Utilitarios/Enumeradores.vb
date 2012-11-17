@@ -88,6 +88,8 @@
 
         EliminarPromocionExcepcion
 
+        SedeCreadaExitosamenteExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -115,6 +117,8 @@
         SectorEliminado
 
         PromocionEliminada
+
+        SedeCreada
 
     End Enum
 
