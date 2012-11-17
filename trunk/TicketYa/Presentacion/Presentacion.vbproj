@@ -283,6 +283,12 @@
     <Compile Include="ModificarIdiomaForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModificarPromocionForm.Designer.vb">
+      <DependentUpon>ModificarPromocionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarPromocionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModificarSectorForm.Designer.vb">
       <DependentUpon>ModificarSectorForm.vb</DependentUpon>
     </Compile>
@@ -352,6 +358,9 @@
     <EmbeddedResource Include="BuscarIdiomaForm.resx">
       <DependentUpon>BuscarIdiomaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarPromocionForm.resx">
+      <DependentUpon>BuscarPromocionForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarSectorForm.resx">
       <DependentUpon>BuscarSectorForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -393,6 +402,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarIdiomaForm.resx">
       <DependentUpon>ModificarIdiomaForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarPromocionForm.resx">
+      <DependentUpon>ModificarPromocionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarSedeForm.resx">
+      <DependentUpon>ModificarSedeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioForm.resx">
       <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>

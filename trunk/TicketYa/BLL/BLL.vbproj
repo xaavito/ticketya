@@ -75,6 +75,7 @@
     <Compile Include="GestorFormularioBLL.vb" />
     <Compile Include="GestorIdiomaBLL.vb" />
     <Compile Include="GestorPermisoBLL.vb" />
+    <Compile Include="GestorPromocionBLL.vb" />
     <Compile Include="GestorSectorBLL.vb" />
     <Compile Include="GestorShowBLL.vb" />
     <Compile Include="GestorUsuarioBLL.vb" />

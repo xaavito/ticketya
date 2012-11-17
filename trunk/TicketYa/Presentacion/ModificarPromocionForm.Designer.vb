@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ModificarSedeForm
+Partial Class ModificarPromocionForm
     Inherits TicketYa.BaseForm
 
     'Form invalida a Dispose para limpiar la lista de componentes.
@@ -21,11 +21,11 @@ Partial Class ModificarSedeForm
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'ModificarSedeForm
+        'ModificarPromocionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(556, 277)
-        Me.Name = "ModificarSedeForm"
+        Me.ClientSize = New System.Drawing.Size(788, 277)
+        Me.Name = "ModificarPromocionForm"
         Me.ResumeLayout(False)
 
     End Sub

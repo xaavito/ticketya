@@ -82,6 +82,12 @@
 
         EliminarSectorExcepcion
 
+        PromocionTieneVentasAsignadas
+
+        PromocionEliminadaExitosamente
+
+        EliminarPromocionExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -107,6 +113,8 @@
         FechaEliminada
 
         SectorEliminado
+
+        PromocionEliminada
 
     End Enum
 
