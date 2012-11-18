@@ -32,12 +32,12 @@ Public Class ShowsNoEncontradosExcepcion
     End Sub
 End Class
 
-Public Class EliminarPromocionExcepcion
+Public Class ShowCreadoExistosamenteExcepcion
     Inherits ExceptionManager
 
     Public Sub New()
         MyBase.new("")
-        Me.codigo = Utilitarios.Enumeradores.Excepeciones.EliminarPromocionExcepcion
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ShowCreadoExistosamente
         Me.tipo = MsgBoxStyle.Exclamation
         Me.mensaje = ""
     End Sub

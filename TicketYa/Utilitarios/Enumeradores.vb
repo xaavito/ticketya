@@ -90,6 +90,12 @@
 
         SedeCreadaExitosamenteExcepcion
 
+        ShowCreadoExistosamente
+
+        FechaCreadaExcepcion
+
+        SectorCreadoExitosamenteExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -119,6 +125,12 @@
         PromocionEliminada
 
         SedeCreada
+
+        ShowCreadoExistosamente
+
+        FechaCreada
+
+        SectorCreadoExitosamente
 
     End Enum
 

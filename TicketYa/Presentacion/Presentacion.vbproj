@@ -370,6 +370,9 @@
     <EmbeddedResource Include="BuscarShowForm.resx">
       <DependentUpon>BuscarShowForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenerarFechaForm.resx">
+      <DependentUpon>GenerarFechaForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarIdiomaForm.resx">
       <DependentUpon>GenerarIdiomaForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -385,8 +388,14 @@
     <EmbeddedResource Include="GenerarFamiliaForm.resx">
       <DependentUpon>GenerarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenerarSectorForm.resx">
+      <DependentUpon>GenerarSectorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarSedeForm.resx">
       <DependentUpon>GenerarSedeForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarShowForm.resx">
+      <DependentUpon>GenerarShowForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarUsuarioForm.resx">
       <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
