@@ -370,6 +370,9 @@
     <EmbeddedResource Include="BuscarShowForm.resx">
       <DependentUpon>BuscarShowForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarVentaForm.resx">
+      <DependentUpon>BuscarVentaForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarFechaForm.resx">
       <DependentUpon>GenerarFechaForm.vb</DependentUpon>
     </EmbeddedResource>
