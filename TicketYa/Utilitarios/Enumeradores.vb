@@ -96,6 +96,10 @@
 
         SectorCreadoExitosamenteExcepcion
 
+        VentasNoEncontradas
+
+        VentaCreadaExistosamente
+
     End Enum
 
     Enum Bitacora

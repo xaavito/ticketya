@@ -170,9 +170,9 @@ Partial Class GenerarSectorForm
         Me.ColumnaLabel.AutoSize = True
         Me.ColumnaLabel.Location = New System.Drawing.Point(151, 121)
         Me.ColumnaLabel.Name = "ColumnaLabel"
-        Me.ColumnaLabel.Size = New System.Drawing.Size(44, 13)
+        Me.ColumnaLabel.Size = New System.Drawing.Size(53, 13)
         Me.ColumnaLabel.TabIndex = 43
-        Me.ColumnaLabel.Text = "Nombre"
+        Me.ColumnaLabel.Text = "Columnas"
         '
         'PrecioTextBox
         '
