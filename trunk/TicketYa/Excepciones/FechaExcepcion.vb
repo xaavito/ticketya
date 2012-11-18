@@ -42,3 +42,14 @@ Public Class EliminarFechaExcepcion
         Me.mensaje = ""
     End Sub
 End Class
+
+Public Class FechaCreadaExistosamenteExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.FechaCreadaExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
