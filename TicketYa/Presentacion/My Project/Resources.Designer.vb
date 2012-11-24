@@ -102,6 +102,13 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property Bar_chart_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Bar_chart_icon", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property basura() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("basura", resourceCulture)
@@ -245,6 +252,13 @@ Namespace My.Resources
         Friend ReadOnly Property silla() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("silla", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property Slide_Show_icon() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Slide_Show_icon", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

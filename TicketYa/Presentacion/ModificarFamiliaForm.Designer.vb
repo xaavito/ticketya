@@ -39,10 +39,13 @@ Partial Class ModificarFamiliaForm
         Me.FamiliaTextBox.alfanumerico = False
         Me.FamiliaTextBox.boton = Nothing
         Me.FamiliaTextBox.Location = New System.Drawing.Point(128, 29)
+        Me.FamiliaTextBox.nada = False
         Me.FamiliaTextBox.Name = "FamiliaTextBox"
+        Me.FamiliaTextBox.numerico = False
         Me.FamiliaTextBox.sinEspacio = False
         Me.FamiliaTextBox.Size = New System.Drawing.Size(140, 20)
         Me.FamiliaTextBox.TabIndex = 14
+        Me.FamiliaTextBox.texto = False
         '
         'ModificarFamiliaButton
         '
@@ -59,7 +62,7 @@ Partial Class ModificarFamiliaForm
         'ModificarFamiliaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(493, 90)
+        Me.ClientSize = New System.Drawing.Size(481, 93)
         Me.Controls.Add(Me.FamiliaLabel)
         Me.Controls.Add(Me.FamiliaTextBox)
         Me.Controls.Add(Me.ModificarFamiliaButton)

@@ -179,4 +179,16 @@ Public Class Principal
         form.MdiParent = Me
         form.Show()
     End Sub
+
+    Private Sub BuscarTipoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarTipoToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub GenerarTipoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarTipoToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportesToolStripMenuItem.Click
+
+    End Sub
 End Class
