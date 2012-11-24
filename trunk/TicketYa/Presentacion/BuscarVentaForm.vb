@@ -1,4 +1,5 @@
 ﻿Public Class BuscarVentaForm
+
     Private Sub BuscarSedeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarVentaButton.Click
         buscarVentas()
     End Sub

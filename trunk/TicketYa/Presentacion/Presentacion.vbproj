@@ -373,6 +373,9 @@
     <EmbeddedResource Include="BuscarVentaForm.resx">
       <DependentUpon>BuscarVentaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenerarCompradorForm.resx">
+      <DependentUpon>GenerarCompradorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarFechaForm.resx">
       <DependentUpon>GenerarFechaForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -391,6 +394,9 @@
     <EmbeddedResource Include="GenerarFamiliaForm.resx">
       <DependentUpon>GenerarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GenerarPromocionForm.resx">
+      <DependentUpon>GenerarPromocionForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GenerarSectorForm.resx">
       <DependentUpon>GenerarSectorForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GenerarUsuarioForm.resx">
       <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenerarVentaForm.resx">
+      <DependentUpon>GenerarVentaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Intro.resx">
       <DependentUpon>Intro.vb</DependentUpon>
@@ -577,6 +586,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bar-chart-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Slide-Show-icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

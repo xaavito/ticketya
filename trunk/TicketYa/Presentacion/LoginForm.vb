@@ -39,6 +39,7 @@
         If (Not String.IsNullOrEmpty(UserTextBox.Text) And Not String.IsNullOrEmpty(PassTextBox.Text)) Then
             Me.Close()
             Me.DialogResult = Windows.Forms.DialogResult.OK
+            'Utilitarios.Mailer.sendMail()
         End If
     End Sub
 
