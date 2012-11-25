@@ -153,9 +153,13 @@
                 Throw New Excepciones.DeleteExcepcion
             End If
 
-        Catch ex As Exception
+        Catch ex As Excepciones.DeleteExcepcion
             Throw New Excepciones.DeleteExcepcion
         End Try
+
+        If result > 0 Then
+            Throw New Excepciones.UsuarioEliminadoExistosamenteExcepcion
+        End If
 
         Return result
     End Function
@@ -217,16 +221,18 @@
                 Throw New Excepciones.UsuariosNoEncontradosExcepcion
             End If
             For Each pepe As DataRow In table.Rows
+                'SELECT U.idUsuario,U.nombre,u.apellido,u.mail,u.activo,u.fecha,u.fechaBaja
                 Dim usuario As New BE.UsuarioBE
                 usuario.identificador = pepe.Item(0)
                 usuario.nombre = pepe.Item(1)
                 usuario.apellido = pepe.Item(2)
-                usuario.usuario = pepe.Item(3)
+                usuario.mail = pepe.Item(3)
                 usuario.activo = pepe.Item(4)
                 usuario.fechaAlta = pepe.Item(5)
                 If Not IsDBNull(pepe.Item(6)) Then
                     usuario.fechaBaja = pepe.Item(6)
                 End If
+                listaUsuarios.Add(usuario)
             Next
 
         Catch ex As Excepciones.UsuariosNoEncontradosExcepcion
@@ -236,7 +242,16 @@
         Return listaUsuarios
     End Function
 
-    Shared Function altaComprador(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As List(Of BE.PreferenciaBE)) As Integer
+    Shared Function altaComprador(ByVal p1 As String,
+                                  ByVal p2 As String,
+                                  ByVal p3 As String,
+                                  ByVal p4 As String,
+                                  ByVal p5 As String,
+                                  ByVal p6 As String,
+                                  ByVal p7 As String,
+                                  ByVal p8 As Integer,
+                                  ByVal p9 As String,
+                                  ByVal p10 As List(Of BE.PreferenciaBE)) As Integer
         Dim result As Integer
         Dim retorno As Integer
 
@@ -249,7 +264,9 @@
             repository.addParam("@mail", p3)
             repository.addParam("@dir", p4)
             repository.addParam("@num", p5)
-            repository.addParam("@cp", p6)
+            repository.addParam("@piso", p6)
+            repository.addParam("@dpto", p7)
+            repository.addParam("@cp", p8)
             repository.addParam("@tel", p7)
 
             retorno = repository.executeSearchWithReturnValue
@@ -257,7 +274,21 @@
                 Throw New Excepciones.InsertExcepcion
             End If
 
-        Catch ex As Exception
+            If (p10.Count > 0) Then
+                repository.crearComando("INSERTAR_USUARIO_PREFERENCIA_SP")
+                For Each pref As BE.PreferenciaBE In p10
+                    repository.addParam("@idUsuario", retorno)
+                    repository.addParam("@idPreferencia", pref.identificador)
+                    result = repository.executeSearchWithStatus
+                    If (result <= 0) Then
+                        Throw New Excepciones.InsertExcepcion
+                    End If
+                Next
+            End If
+            If (retorno > 0) Then
+                Throw New Excepciones.UsuarioCreadoExistosamente
+            End If
+        Catch ex As Excepciones.InsertExcepcion
             Throw New Excepciones.InsertExcepcion
         End Try
 

@@ -1,7 +1,12 @@
 ﻿Public Class BuscarCompradorForm
 
     Private Sub BuscarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarCompradorButton.Click
-        buscarComprador(CompradorTextBox.Text)
+        Try
+            buscarComprador(CompradorTextBox.Text)
+        Catch ex As Excepciones.UsuariosNoEncontradosExcepcion
+            My.Application.manejarExcepcion(ex)
+        End Try
+
     End Sub
 
     Private Sub ModificarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarCompradorButton.Click
@@ -24,12 +29,10 @@
             usr = DirectCast(CompradoresDataGrid.CurrentRow.DataBoundItem, BE.UsuarioBE)
             If (Not usr Is Nothing) Then
                 Try
-                    If (BLL.GestorUsuarioBLL.eliminarComprador(usr) = 1) Then
-                        BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, usr.numero, Utilitarios.Enumeradores.Bitacora.CompradorEliminado)
-                        buscarComprador(CompradorTextBox.Text)
-                        Throw New Excepciones.CompradorEliminadoExistosamenteExcepcion
-                    End If
+                    BLL.GestorUsuarioBLL.eliminarComprador(usr)
                 Catch ex As Excepciones.CompradorEliminadoExistosamenteExcepcion
+                    BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, usr.numero, Utilitarios.Enumeradores.Bitacora.CompradorEliminado)
+                    buscarComprador(CompradorTextBox.Text)
                     My.Application.manejarExcepcion(ex)
                 Catch ex As Exception
                     My.Application.manejarExcepcion(ex)

@@ -77,7 +77,7 @@
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, UsuarioTextBox.Text, Utilitarios.Enumeradores.Bitacora.ModificacionDeUsuario)
                 BLL.Actual.idioma = DirectCast(IdiomaComboBox.SelectedItem, BE.IdiomaBE)
                 My.Application.cambiarIdioma()
-                limpiarParametros()
+                Me.limpiarForm()
                 Me.Close()
             End If
         Catch ex As Excepciones.UsuarioModificadoExitosamenteExcepcion
@@ -87,14 +87,6 @@
         Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
-    End Sub
-
-    Private Sub limpiarParametros()
-        UsuarioTextBox.Text = ""
-        PassTextBox.Text = ""
-        NombreTextBox.Text = ""
-        ApellidoTextBox.Text = ""
-        FamiliaDataGrid.Rows.Clear()
     End Sub
 
     Private Function getFamilias() As List(Of BE.FamiliaBE)

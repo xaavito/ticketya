@@ -24,10 +24,9 @@
             sede = DirectCast(SedesDataGrid.myObject, BE.SedeBE)
             Try
                 BLL.GestorSedeBLL.eliminarSede(sede)
+            Catch ex As Excepciones.SedeEliminadaExistosamenteExcepcion
                 buscarSede()
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, sede.descripcion, Utilitarios.Enumeradores.Bitacora.SedeEliminada)
-                Throw New Excepciones.SedeEliminadaExistosamenteExcepcion
-            Catch ex As Excepciones.SedeEliminadaExistosamenteExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.SedeTieneShowsAsociadosExcepcion
                 My.Application.manejarExcepcion(ex)

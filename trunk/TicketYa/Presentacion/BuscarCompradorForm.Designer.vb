@@ -30,8 +30,8 @@ Partial Class BuscarCompradorForm
         Me.ActivoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NombreColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ApellidoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UsuarioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaAltaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MailColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaBajaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.CompradoresDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -101,7 +101,7 @@ Partial Class BuscarCompradorForm
         Me.CompradoresDataGrid.AllowUserToResizeRows = False
         Me.CompradoresDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.CompradoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.CompradoresDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.identificador, Me.ActivoColumn, Me.NombreColumn, Me.ApellidoColumn, Me.UsuarioColumn, Me.FechaAltaColumn, Me.FechaBajaColumn})
+        Me.CompradoresDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.identificador, Me.ActivoColumn, Me.NombreColumn, Me.ApellidoColumn, Me.FechaAltaColumn, Me.MailColumn, Me.FechaBajaColumn})
         Me.CompradoresDataGrid.Location = New System.Drawing.Point(26, 105)
         Me.CompradoresDataGrid.Name = "CompradoresDataGrid"
         Me.CompradoresDataGrid.ReadOnly = True
@@ -139,19 +139,19 @@ Partial Class BuscarCompradorForm
         Me.ApellidoColumn.Name = "ApellidoColumn"
         Me.ApellidoColumn.ReadOnly = True
         '
-        'UsuarioColumn
-        '
-        Me.UsuarioColumn.DataPropertyName = "usuario"
-        Me.UsuarioColumn.HeaderText = "Usuario"
-        Me.UsuarioColumn.Name = "UsuarioColumn"
-        Me.UsuarioColumn.ReadOnly = True
-        '
         'FechaAltaColumn
         '
         Me.FechaAltaColumn.DataPropertyName = "fechaAlta"
         Me.FechaAltaColumn.HeaderText = "Fecha Alta"
         Me.FechaAltaColumn.Name = "FechaAltaColumn"
         Me.FechaAltaColumn.ReadOnly = True
+        '
+        'MailColumn
+        '
+        Me.MailColumn.DataPropertyName = "mail"
+        Me.MailColumn.HeaderText = "Mail"
+        Me.MailColumn.Name = "MailColumn"
+        Me.MailColumn.ReadOnly = True
         '
         'FechaBajaColumn
         '
@@ -187,8 +187,8 @@ Partial Class BuscarCompradorForm
     Friend WithEvents ActivoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NombreColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ApellidoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents UsuarioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaAltaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MailColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaBajaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

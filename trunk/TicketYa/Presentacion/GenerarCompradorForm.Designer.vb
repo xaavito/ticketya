@@ -44,13 +44,15 @@ Partial Class GenerarCompradorForm
         Me.CodPostTextBox = New TicketYa.MyTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TelefonoTextBox = New TicketYa.MyTextBox()
+        Me.DptoLabel = New System.Windows.Forms.Label()
+        Me.DptoTextBox = New TicketYa.MyTextBox()
         CType(Me.PreferenciaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PreferenciasLabel
         '
         Me.PreferenciasLabel.AutoSize = True
-        Me.PreferenciasLabel.Location = New System.Drawing.Point(12, 230)
+        Me.PreferenciasLabel.Location = New System.Drawing.Point(12, 256)
         Me.PreferenciasLabel.Name = "PreferenciasLabel"
         Me.PreferenciasLabel.Size = New System.Drawing.Size(66, 13)
         Me.PreferenciasLabel.TabIndex = 27
@@ -62,7 +64,7 @@ Partial Class GenerarCompradorForm
         Me.PreferenciaComboBox.emptyItem = Nothing
         Me.PreferenciaComboBox.FormattingEnabled = True
         Me.PreferenciaComboBox.lista = Nothing
-        Me.PreferenciaComboBox.Location = New System.Drawing.Point(93, 227)
+        Me.PreferenciaComboBox.Location = New System.Drawing.Point(93, 253)
         Me.PreferenciaComboBox.Name = "PreferenciaComboBox"
         Me.PreferenciaComboBox.Size = New System.Drawing.Size(140, 21)
         Me.PreferenciaComboBox.TabIndex = 26
@@ -128,7 +130,6 @@ Partial Class GenerarCompradorForm
         Me.ApellidoTextBox.nada = False
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
         Me.ApellidoTextBox.numerico = False
-        Me.ApellidoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.ApellidoTextBox.sinEspacio = False
         Me.ApellidoTextBox.Size = New System.Drawing.Size(140, 20)
         Me.ApellidoTextBox.TabIndex = 20
@@ -172,7 +173,7 @@ Partial Class GenerarCompradorForm
         '
         Me.QuitarPreferenciaButton.Image = CType(resources.GetObject("QuitarPreferenciaButton.Image"), System.Drawing.Image)
         Me.QuitarPreferenciaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.QuitarPreferenciaButton.Location = New System.Drawing.Point(246, 151)
+        Me.QuitarPreferenciaButton.Location = New System.Drawing.Point(246, 230)
         Me.QuitarPreferenciaButton.Name = "QuitarPreferenciaButton"
         Me.QuitarPreferenciaButton.Size = New System.Drawing.Size(75, 23)
         Me.QuitarPreferenciaButton.TabIndex = 32
@@ -184,7 +185,7 @@ Partial Class GenerarCompradorForm
         '
         Me.AgregarPreferenciaButton.Image = CType(resources.GetObject("AgregarPreferenciaButton.Image"), System.Drawing.Image)
         Me.AgregarPreferenciaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AgregarPreferenciaButton.Location = New System.Drawing.Point(246, 121)
+        Me.AgregarPreferenciaButton.Location = New System.Drawing.Point(246, 198)
         Me.AgregarPreferenciaButton.Name = "AgregarPreferenciaButton"
         Me.AgregarPreferenciaButton.Size = New System.Drawing.Size(75, 23)
         Me.AgregarPreferenciaButton.TabIndex = 31
@@ -214,7 +215,7 @@ Partial Class GenerarCompradorForm
         Me.PreferenciaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PreferenciaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PreferenciaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.FamiliaColumn})
-        Me.PreferenciaDataGrid.Location = New System.Drawing.Point(327, 17)
+        Me.PreferenciaDataGrid.Location = New System.Drawing.Point(327, 126)
         Me.PreferenciaDataGrid.MultiSelect = False
         Me.PreferenciaDataGrid.Name = "PreferenciaDataGrid"
         Me.PreferenciaDataGrid.ReadOnly = True
@@ -270,7 +271,7 @@ Partial Class GenerarCompradorForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 178)
+        Me.Label2.Location = New System.Drawing.Point(12, 204)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(72, 13)
         Me.Label2.TabIndex = 38
@@ -280,7 +281,7 @@ Partial Class GenerarCompradorForm
         '
         Me.CodPostTextBox.alfanumerico = False
         Me.CodPostTextBox.boton = Nothing
-        Me.CodPostTextBox.Location = New System.Drawing.Point(93, 175)
+        Me.CodPostTextBox.Location = New System.Drawing.Point(93, 201)
         Me.CodPostTextBox.nada = False
         Me.CodPostTextBox.Name = "CodPostTextBox"
         Me.CodPostTextBox.numerico = False
@@ -292,7 +293,7 @@ Partial Class GenerarCompradorForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 204)
+        Me.Label3.Location = New System.Drawing.Point(12, 230)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 40
@@ -302,7 +303,7 @@ Partial Class GenerarCompradorForm
         '
         Me.TelefonoTextBox.alfanumerico = False
         Me.TelefonoTextBox.boton = Nothing
-        Me.TelefonoTextBox.Location = New System.Drawing.Point(93, 201)
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(93, 227)
         Me.TelefonoTextBox.nada = False
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.numerico = False
@@ -311,10 +312,34 @@ Partial Class GenerarCompradorForm
         Me.TelefonoTextBox.TabIndex = 39
         Me.TelefonoTextBox.texto = False
         '
+        'DptoLabel
+        '
+        Me.DptoLabel.AutoSize = True
+        Me.DptoLabel.Location = New System.Drawing.Point(12, 178)
+        Me.DptoLabel.Name = "DptoLabel"
+        Me.DptoLabel.Size = New System.Drawing.Size(30, 13)
+        Me.DptoLabel.TabIndex = 42
+        Me.DptoLabel.Text = "Dpto"
+        '
+        'DptoTextBox
+        '
+        Me.DptoTextBox.alfanumerico = False
+        Me.DptoTextBox.boton = Nothing
+        Me.DptoTextBox.Location = New System.Drawing.Point(93, 175)
+        Me.DptoTextBox.nada = False
+        Me.DptoTextBox.Name = "DptoTextBox"
+        Me.DptoTextBox.numerico = False
+        Me.DptoTextBox.sinEspacio = False
+        Me.DptoTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.DptoTextBox.TabIndex = 41
+        Me.DptoTextBox.texto = False
+        '
         'GenerarCompradorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(667, 264)
+        Me.ClientSize = New System.Drawing.Size(675, 325)
+        Me.Controls.Add(Me.DptoLabel)
+        Me.Controls.Add(Me.DptoTextBox)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.TelefonoTextBox)
         Me.Controls.Add(Me.Label2)
@@ -338,7 +363,7 @@ Partial Class GenerarCompradorForm
         Me.Controls.Add(Me.NombreTextBox)
         Me.Controls.Add(Me.GenerarCompradorButton)
         Me.Name = "GenerarCompradorForm"
-        Me.Text = "Direccion"
+        Me.Text = "Generar Comprador"
         CType(Me.PreferenciaDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -368,5 +393,7 @@ Partial Class GenerarCompradorForm
     Friend WithEvents CodPostTextBox As TicketYa.MyTextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TelefonoTextBox As TicketYa.MyTextBox
+    Friend WithEvents DptoLabel As System.Windows.Forms.Label
+    Friend WithEvents DptoTextBox As TicketYa.MyTextBox
 
 End Class
