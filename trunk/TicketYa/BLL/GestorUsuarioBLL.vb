@@ -79,4 +79,16 @@
         Return DAL.UsuarioDAL.altaUsuario(p1, Utilitarios.Encrypter.EncryptPasswordMD5(p2), p3, p4, idiomaBE, list)
     End Function
 
+    Shared Function eliminarComprador(ByVal usr As BE.UsuarioBE) As Integer
+        Throw New NotImplementedException
+    End Function
+
+    Shared Function buscarComprador(ByVal comprador As String) As List(Of BE.UsuarioBE)
+        Return DAL.UsuarioDAL.buscarComprador(comprador)
+    End Function
+
+    Shared Function altaComprador(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As List(Of BE.PreferenciaBE)) As Integer
+        Return DAL.UsuarioDAL.altaComprador(p1, p2, p3, p4, p5, p6, p7, p8)
+    End Function
+
 End Class

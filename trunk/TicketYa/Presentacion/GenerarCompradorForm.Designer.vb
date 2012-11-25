@@ -21,15 +21,15 @@ Partial Class GenerarCompradorForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GenerarCompradorForm))
         Me.PreferenciasLabel = New System.Windows.Forms.Label()
-        Me.FamiliaComboBox = New TicketYa.MyComboBox()
+        Me.PreferenciaComboBox = New TicketYa.MyComboBox()
         Me.DireccionLabel = New System.Windows.Forms.Label()
-        Me.ApellidoTextBox = New TicketYa.MyTextBox()
+        Me.DireccionTextBox = New TicketYa.MyTextBox()
         Me.MailLabel = New System.Windows.Forms.Label()
-        Me.NombreTextBox = New TicketYa.MyTextBox()
+        Me.MailTextBox = New TicketYa.MyTextBox()
         Me.ApellidoLabel = New System.Windows.Forms.Label()
-        Me.PassTextBox = New TicketYa.MyTextBox()
+        Me.ApellidoTextBox = New TicketYa.MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.UsuarioTextBox = New TicketYa.MyTextBox()
+        Me.NombreTextBox = New TicketYa.MyTextBox()
         Me.GenerarCompradorButton = New TicketYa.MyButton()
         Me.QuitarPreferenciaButton = New TicketYa.MyButton()
         Me.AgregarPreferenciaButton = New TicketYa.MyButton()
@@ -37,13 +37,13 @@ Partial Class GenerarCompradorForm
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PreferenciaDataGrid = New TicketYa.MyDataGrid()
         Me.NumeroLabel = New System.Windows.Forms.Label()
-        Me.MyTextBox1 = New TicketYa.MyTextBox()
+        Me.NumeroTextBox = New TicketYa.MyTextBox()
         Me.PisoLabel = New System.Windows.Forms.Label()
-        Me.MyTextBox2 = New TicketYa.MyTextBox()
+        Me.PisoTextBox = New TicketYa.MyTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.MyTextBox3 = New TicketYa.MyTextBox()
+        Me.CodPostTextBox = New TicketYa.MyTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.MyTextBox4 = New TicketYa.MyTextBox()
+        Me.TelefonoTextBox = New TicketYa.MyTextBox()
         CType(Me.PreferenciaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -56,16 +56,16 @@ Partial Class GenerarCompradorForm
         Me.PreferenciasLabel.TabIndex = 27
         Me.PreferenciasLabel.Text = "Preferencias"
         '
-        'FamiliaComboBox
+        'PreferenciaComboBox
         '
-        Me.FamiliaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FamiliaComboBox.emptyItem = Nothing
-        Me.FamiliaComboBox.FormattingEnabled = True
-        Me.FamiliaComboBox.lista = Nothing
-        Me.FamiliaComboBox.Location = New System.Drawing.Point(93, 227)
-        Me.FamiliaComboBox.Name = "FamiliaComboBox"
-        Me.FamiliaComboBox.Size = New System.Drawing.Size(140, 21)
-        Me.FamiliaComboBox.TabIndex = 26
+        Me.PreferenciaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.PreferenciaComboBox.emptyItem = Nothing
+        Me.PreferenciaComboBox.FormattingEnabled = True
+        Me.PreferenciaComboBox.lista = Nothing
+        Me.PreferenciaComboBox.Location = New System.Drawing.Point(93, 227)
+        Me.PreferenciaComboBox.Name = "PreferenciaComboBox"
+        Me.PreferenciaComboBox.Size = New System.Drawing.Size(140, 21)
+        Me.PreferenciaComboBox.TabIndex = 26
         '
         'DireccionLabel
         '
@@ -76,18 +76,18 @@ Partial Class GenerarCompradorForm
         Me.DireccionLabel.TabIndex = 25
         Me.DireccionLabel.Text = "Direccion"
         '
-        'ApellidoTextBox
+        'DireccionTextBox
         '
-        Me.ApellidoTextBox.alfanumerico = False
-        Me.ApellidoTextBox.boton = Nothing
-        Me.ApellidoTextBox.Location = New System.Drawing.Point(93, 95)
-        Me.ApellidoTextBox.nada = False
-        Me.ApellidoTextBox.Name = "ApellidoTextBox"
-        Me.ApellidoTextBox.numerico = False
-        Me.ApellidoTextBox.sinEspacio = False
-        Me.ApellidoTextBox.Size = New System.Drawing.Size(140, 20)
-        Me.ApellidoTextBox.TabIndex = 24
-        Me.ApellidoTextBox.texto = False
+        Me.DireccionTextBox.alfanumerico = False
+        Me.DireccionTextBox.boton = Nothing
+        Me.DireccionTextBox.Location = New System.Drawing.Point(93, 95)
+        Me.DireccionTextBox.nada = False
+        Me.DireccionTextBox.Name = "DireccionTextBox"
+        Me.DireccionTextBox.numerico = False
+        Me.DireccionTextBox.sinEspacio = False
+        Me.DireccionTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.DireccionTextBox.TabIndex = 24
+        Me.DireccionTextBox.texto = False
         '
         'MailLabel
         '
@@ -98,18 +98,18 @@ Partial Class GenerarCompradorForm
         Me.MailLabel.TabIndex = 23
         Me.MailLabel.Text = "Mail"
         '
-        'NombreTextBox
+        'MailTextBox
         '
-        Me.NombreTextBox.alfanumerico = False
-        Me.NombreTextBox.boton = Nothing
-        Me.NombreTextBox.Location = New System.Drawing.Point(93, 69)
-        Me.NombreTextBox.nada = False
-        Me.NombreTextBox.Name = "NombreTextBox"
-        Me.NombreTextBox.numerico = False
-        Me.NombreTextBox.sinEspacio = False
-        Me.NombreTextBox.Size = New System.Drawing.Size(140, 20)
-        Me.NombreTextBox.TabIndex = 22
-        Me.NombreTextBox.texto = False
+        Me.MailTextBox.alfanumerico = False
+        Me.MailTextBox.boton = Nothing
+        Me.MailTextBox.Location = New System.Drawing.Point(93, 69)
+        Me.MailTextBox.nada = False
+        Me.MailTextBox.Name = "MailTextBox"
+        Me.MailTextBox.numerico = False
+        Me.MailTextBox.sinEspacio = False
+        Me.MailTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.MailTextBox.TabIndex = 22
+        Me.MailTextBox.texto = False
         '
         'ApellidoLabel
         '
@@ -120,19 +120,19 @@ Partial Class GenerarCompradorForm
         Me.ApellidoLabel.TabIndex = 21
         Me.ApellidoLabel.Text = "Apellido"
         '
-        'PassTextBox
+        'ApellidoTextBox
         '
-        Me.PassTextBox.alfanumerico = False
-        Me.PassTextBox.boton = Nothing
-        Me.PassTextBox.Location = New System.Drawing.Point(93, 43)
-        Me.PassTextBox.nada = False
-        Me.PassTextBox.Name = "PassTextBox"
-        Me.PassTextBox.numerico = False
-        Me.PassTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.PassTextBox.sinEspacio = False
-        Me.PassTextBox.Size = New System.Drawing.Size(140, 20)
-        Me.PassTextBox.TabIndex = 20
-        Me.PassTextBox.texto = False
+        Me.ApellidoTextBox.alfanumerico = False
+        Me.ApellidoTextBox.boton = Nothing
+        Me.ApellidoTextBox.Location = New System.Drawing.Point(93, 43)
+        Me.ApellidoTextBox.nada = False
+        Me.ApellidoTextBox.Name = "ApellidoTextBox"
+        Me.ApellidoTextBox.numerico = False
+        Me.ApellidoTextBox.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.ApellidoTextBox.sinEspacio = False
+        Me.ApellidoTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.ApellidoTextBox.TabIndex = 20
+        Me.ApellidoTextBox.texto = False
         '
         'NombreLabel
         '
@@ -143,18 +143,18 @@ Partial Class GenerarCompradorForm
         Me.NombreLabel.TabIndex = 19
         Me.NombreLabel.Text = "Nombre"
         '
-        'UsuarioTextBox
+        'NombreTextBox
         '
-        Me.UsuarioTextBox.alfanumerico = False
-        Me.UsuarioTextBox.boton = Nothing
-        Me.UsuarioTextBox.Location = New System.Drawing.Point(93, 17)
-        Me.UsuarioTextBox.nada = False
-        Me.UsuarioTextBox.Name = "UsuarioTextBox"
-        Me.UsuarioTextBox.numerico = False
-        Me.UsuarioTextBox.sinEspacio = False
-        Me.UsuarioTextBox.Size = New System.Drawing.Size(140, 20)
-        Me.UsuarioTextBox.TabIndex = 18
-        Me.UsuarioTextBox.texto = False
+        Me.NombreTextBox.alfanumerico = False
+        Me.NombreTextBox.boton = Nothing
+        Me.NombreTextBox.Location = New System.Drawing.Point(93, 17)
+        Me.NombreTextBox.nada = False
+        Me.NombreTextBox.Name = "NombreTextBox"
+        Me.NombreTextBox.numerico = False
+        Me.NombreTextBox.sinEspacio = False
+        Me.NombreTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.NombreTextBox.TabIndex = 18
+        Me.NombreTextBox.texto = False
         '
         'GenerarCompradorButton
         '
@@ -232,18 +232,18 @@ Partial Class GenerarCompradorForm
         Me.NumeroLabel.TabIndex = 34
         Me.NumeroLabel.Text = "Numero"
         '
-        'MyTextBox1
+        'NumeroTextBox
         '
-        Me.MyTextBox1.alfanumerico = False
-        Me.MyTextBox1.boton = Nothing
-        Me.MyTextBox1.Location = New System.Drawing.Point(93, 123)
-        Me.MyTextBox1.nada = False
-        Me.MyTextBox1.Name = "MyTextBox1"
-        Me.MyTextBox1.numerico = False
-        Me.MyTextBox1.sinEspacio = False
-        Me.MyTextBox1.Size = New System.Drawing.Size(140, 20)
-        Me.MyTextBox1.TabIndex = 33
-        Me.MyTextBox1.texto = False
+        Me.NumeroTextBox.alfanumerico = False
+        Me.NumeroTextBox.boton = Nothing
+        Me.NumeroTextBox.Location = New System.Drawing.Point(93, 123)
+        Me.NumeroTextBox.nada = False
+        Me.NumeroTextBox.Name = "NumeroTextBox"
+        Me.NumeroTextBox.numerico = False
+        Me.NumeroTextBox.sinEspacio = False
+        Me.NumeroTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.NumeroTextBox.TabIndex = 33
+        Me.NumeroTextBox.texto = False
         '
         'PisoLabel
         '
@@ -254,18 +254,18 @@ Partial Class GenerarCompradorForm
         Me.PisoLabel.TabIndex = 36
         Me.PisoLabel.Text = "Piso"
         '
-        'MyTextBox2
+        'PisoTextBox
         '
-        Me.MyTextBox2.alfanumerico = False
-        Me.MyTextBox2.boton = Nothing
-        Me.MyTextBox2.Location = New System.Drawing.Point(93, 149)
-        Me.MyTextBox2.nada = False
-        Me.MyTextBox2.Name = "MyTextBox2"
-        Me.MyTextBox2.numerico = False
-        Me.MyTextBox2.sinEspacio = False
-        Me.MyTextBox2.Size = New System.Drawing.Size(140, 20)
-        Me.MyTextBox2.TabIndex = 35
-        Me.MyTextBox2.texto = False
+        Me.PisoTextBox.alfanumerico = False
+        Me.PisoTextBox.boton = Nothing
+        Me.PisoTextBox.Location = New System.Drawing.Point(93, 149)
+        Me.PisoTextBox.nada = False
+        Me.PisoTextBox.Name = "PisoTextBox"
+        Me.PisoTextBox.numerico = False
+        Me.PisoTextBox.sinEspacio = False
+        Me.PisoTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.PisoTextBox.TabIndex = 35
+        Me.PisoTextBox.texto = False
         '
         'Label2
         '
@@ -276,18 +276,18 @@ Partial Class GenerarCompradorForm
         Me.Label2.TabIndex = 38
         Me.Label2.Text = "Codigo Postal"
         '
-        'MyTextBox3
+        'CodPostTextBox
         '
-        Me.MyTextBox3.alfanumerico = False
-        Me.MyTextBox3.boton = Nothing
-        Me.MyTextBox3.Location = New System.Drawing.Point(93, 175)
-        Me.MyTextBox3.nada = False
-        Me.MyTextBox3.Name = "MyTextBox3"
-        Me.MyTextBox3.numerico = False
-        Me.MyTextBox3.sinEspacio = False
-        Me.MyTextBox3.Size = New System.Drawing.Size(140, 20)
-        Me.MyTextBox3.TabIndex = 37
-        Me.MyTextBox3.texto = False
+        Me.CodPostTextBox.alfanumerico = False
+        Me.CodPostTextBox.boton = Nothing
+        Me.CodPostTextBox.Location = New System.Drawing.Point(93, 175)
+        Me.CodPostTextBox.nada = False
+        Me.CodPostTextBox.Name = "CodPostTextBox"
+        Me.CodPostTextBox.numerico = False
+        Me.CodPostTextBox.sinEspacio = False
+        Me.CodPostTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.CodPostTextBox.TabIndex = 37
+        Me.CodPostTextBox.texto = False
         '
         'Label3
         '
@@ -298,44 +298,44 @@ Partial Class GenerarCompradorForm
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "Telefono"
         '
-        'MyTextBox4
+        'TelefonoTextBox
         '
-        Me.MyTextBox4.alfanumerico = False
-        Me.MyTextBox4.boton = Nothing
-        Me.MyTextBox4.Location = New System.Drawing.Point(93, 201)
-        Me.MyTextBox4.nada = False
-        Me.MyTextBox4.Name = "MyTextBox4"
-        Me.MyTextBox4.numerico = False
-        Me.MyTextBox4.sinEspacio = False
-        Me.MyTextBox4.Size = New System.Drawing.Size(140, 20)
-        Me.MyTextBox4.TabIndex = 39
-        Me.MyTextBox4.texto = False
+        Me.TelefonoTextBox.alfanumerico = False
+        Me.TelefonoTextBox.boton = Nothing
+        Me.TelefonoTextBox.Location = New System.Drawing.Point(93, 201)
+        Me.TelefonoTextBox.nada = False
+        Me.TelefonoTextBox.Name = "TelefonoTextBox"
+        Me.TelefonoTextBox.numerico = False
+        Me.TelefonoTextBox.sinEspacio = False
+        Me.TelefonoTextBox.Size = New System.Drawing.Size(140, 20)
+        Me.TelefonoTextBox.TabIndex = 39
+        Me.TelefonoTextBox.texto = False
         '
         'GenerarCompradorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(667, 264)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.MyTextBox4)
+        Me.Controls.Add(Me.TelefonoTextBox)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.MyTextBox3)
+        Me.Controls.Add(Me.CodPostTextBox)
         Me.Controls.Add(Me.PisoLabel)
-        Me.Controls.Add(Me.MyTextBox2)
+        Me.Controls.Add(Me.PisoTextBox)
         Me.Controls.Add(Me.NumeroLabel)
-        Me.Controls.Add(Me.MyTextBox1)
+        Me.Controls.Add(Me.NumeroTextBox)
         Me.Controls.Add(Me.QuitarPreferenciaButton)
         Me.Controls.Add(Me.AgregarPreferenciaButton)
         Me.Controls.Add(Me.PreferenciaDataGrid)
         Me.Controls.Add(Me.PreferenciasLabel)
-        Me.Controls.Add(Me.FamiliaComboBox)
+        Me.Controls.Add(Me.PreferenciaComboBox)
         Me.Controls.Add(Me.DireccionLabel)
-        Me.Controls.Add(Me.ApellidoTextBox)
+        Me.Controls.Add(Me.DireccionTextBox)
         Me.Controls.Add(Me.MailLabel)
-        Me.Controls.Add(Me.NombreTextBox)
+        Me.Controls.Add(Me.MailTextBox)
         Me.Controls.Add(Me.ApellidoLabel)
-        Me.Controls.Add(Me.PassTextBox)
+        Me.Controls.Add(Me.ApellidoTextBox)
         Me.Controls.Add(Me.NombreLabel)
-        Me.Controls.Add(Me.UsuarioTextBox)
+        Me.Controls.Add(Me.NombreTextBox)
         Me.Controls.Add(Me.GenerarCompradorButton)
         Me.Name = "GenerarCompradorForm"
         Me.Text = "Direccion"
@@ -345,15 +345,15 @@ Partial Class GenerarCompradorForm
 
     End Sub
     Friend WithEvents PreferenciasLabel As System.Windows.Forms.Label
-    Friend WithEvents FamiliaComboBox As TicketYa.MyComboBox
+    Friend WithEvents PreferenciaComboBox As TicketYa.MyComboBox
     Friend WithEvents DireccionLabel As System.Windows.Forms.Label
-    Friend WithEvents ApellidoTextBox As TicketYa.MyTextBox
+    Friend WithEvents DireccionTextBox As TicketYa.MyTextBox
     Friend WithEvents MailLabel As System.Windows.Forms.Label
-    Friend WithEvents NombreTextBox As TicketYa.MyTextBox
+    Friend WithEvents MailTextBox As TicketYa.MyTextBox
     Friend WithEvents ApellidoLabel As System.Windows.Forms.Label
-    Friend WithEvents PassTextBox As TicketYa.MyTextBox
+    Friend WithEvents ApellidoTextBox As TicketYa.MyTextBox
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
-    Friend WithEvents UsuarioTextBox As TicketYa.MyTextBox
+    Friend WithEvents NombreTextBox As TicketYa.MyTextBox
     Friend WithEvents GenerarCompradorButton As TicketYa.MyButton
     Friend WithEvents QuitarPreferenciaButton As TicketYa.MyButton
     Friend WithEvents AgregarPreferenciaButton As TicketYa.MyButton
@@ -361,12 +361,12 @@ Partial Class GenerarCompradorForm
     Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PreferenciaDataGrid As TicketYa.MyDataGrid
     Friend WithEvents NumeroLabel As System.Windows.Forms.Label
-    Friend WithEvents MyTextBox1 As TicketYa.MyTextBox
+    Friend WithEvents NumeroTextBox As TicketYa.MyTextBox
     Friend WithEvents PisoLabel As System.Windows.Forms.Label
-    Friend WithEvents MyTextBox2 As TicketYa.MyTextBox
+    Friend WithEvents PisoTextBox As TicketYa.MyTextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents MyTextBox3 As TicketYa.MyTextBox
+    Friend WithEvents CodPostTextBox As TicketYa.MyTextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents MyTextBox4 As TicketYa.MyTextBox
+    Friend WithEvents TelefonoTextBox As TicketYa.MyTextBox
 
 End Class

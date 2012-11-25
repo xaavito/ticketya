@@ -70,7 +70,6 @@
     <Compile Include="ExcepcionBLL.vb" />
     <Compile Include="GestorBackupBLL.vb" />
     <Compile Include="GestorBitacoraBLL.vb" />
-    <Compile Include="GestorCompradorBLL.vb" />
     <Compile Include="GestorFamiliaBLL.vb" />
     <Compile Include="GestorFechaBLL.vb" />
     <Compile Include="GestorFormularioBLL.vb" />
