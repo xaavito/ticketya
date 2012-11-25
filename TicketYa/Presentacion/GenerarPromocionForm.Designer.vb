@@ -145,7 +145,7 @@ Partial Class GenerarPromocionForm
         '
         Me.GenerarPromocionButton.Image = CType(resources.GetObject("GenerarPromocionButton.Image"), System.Drawing.Image)
         Me.GenerarPromocionButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.GenerarPromocionButton.Location = New System.Drawing.Point(276, 16)
+        Me.GenerarPromocionButton.Location = New System.Drawing.Point(255, 14)
         Me.GenerarPromocionButton.Name = "GenerarPromocionButton"
         Me.GenerarPromocionButton.Size = New System.Drawing.Size(75, 23)
         Me.GenerarPromocionButton.TabIndex = 10
@@ -156,7 +156,7 @@ Partial Class GenerarPromocionForm
         'GenerarPromocionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(397, 178)
+        Me.ClientSize = New System.Drawing.Size(376, 168)
         Me.Controls.Add(Me.GenerarPromocionButton)
         Me.Controls.Add(Me.MyTextBox4)
         Me.Controls.Add(Me.DescuentoLabel)

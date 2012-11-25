@@ -100,6 +100,16 @@
 
         VentaCreadaExistosamente
 
+        CompradorNoEncontrado
+
+        CompradorsNoEncontrados
+
+        CompradorCreadoExitosamente
+
+        CompradorEliminadoExitosamente
+
+        CompradorModificadoExitosamente
+
     End Enum
 
     Enum Bitacora
@@ -135,6 +145,8 @@
         FechaCreada
 
         SectorCreadoExitosamente
+
+        CompradorEliminado
 
     End Enum
 

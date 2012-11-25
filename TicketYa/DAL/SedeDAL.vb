@@ -69,4 +69,26 @@
         Return result
     End Function
 
+    Shared Function altaSede(ByVal nombre As String, ByVal capacidad As String, ByVal direccion As String, ByVal numero As String, ByVal telefono As String) As Boolean
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("GENERAR_SEDE_SP")
+            repository.addParam("@nom", nombre)
+            repository.addParam("@capacidad", capacidad)
+            repository.addParam("@dir", direccion)
+            repository.addParam("@num", numero)
+            repository.addParam("@tel", telefono)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.GenerarSedeExcepcion
+            End If
+        Catch ex As Exception
+            Throw New Excepciones.GenerarSedeExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

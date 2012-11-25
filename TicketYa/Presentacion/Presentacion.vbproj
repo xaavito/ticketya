@@ -265,6 +265,12 @@
     <Compile Include="BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ModificarCompradorForm.Designer.vb">
+      <DependentUpon>ModificarCompradorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarCompradorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ModificarFamiliaForm.Designer.vb">
       <DependentUpon>ModificarFamiliaForm.vb</DependentUpon>
     </Compile>
@@ -349,6 +355,9 @@
     <EmbeddedResource Include="BuscarBitacoraForm.resx">
       <DependentUpon>BuscarBitacoraForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BuscarCompradorForm.resx">
+      <DependentUpon>BuscarCompradorForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BuscarFamiliaForm.resx">
       <DependentUpon>BuscarFamiliaForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarCompradorForm.resx">
+      <DependentUpon>ModificarCompradorForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarFamiliaForm.resx">
       <DependentUpon>ModificarFamiliaForm.vb</DependentUpon>
