@@ -154,7 +154,7 @@ Partial Class BuscarShowForm
         'BuscarShowForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(716, 286)
+        Me.ClientSize = New System.Drawing.Size(648, 281)
         Me.Controls.Add(Me.EliminarShowButton)
         Me.Controls.Add(Me.ModificarShowButton)
         Me.Controls.Add(Me.ShowsDataGrid)

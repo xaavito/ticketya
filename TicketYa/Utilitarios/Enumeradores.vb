@@ -110,6 +110,12 @@
 
         CompradorModificadoExitosamente
 
+        PreferenciasNoEncontradas
+
+        ModificarSedeExcepcion
+
+        SedeModificadaExistosamenteExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -147,6 +153,8 @@
         SectorCreadoExitosamente
 
         CompradorEliminado
+
+        SedeModificadaExistosamente
 
     End Enum
 

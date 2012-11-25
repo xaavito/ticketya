@@ -64,3 +64,25 @@ Public Class GenerarSedeExcepcion
         Me.mensaje = ""
     End Sub
 End Class
+
+Public Class ModificarSedeExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ModificarSedeExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+Public Class SedeModificadaExistosamenteExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.SedeModificadaExistosamenteExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class

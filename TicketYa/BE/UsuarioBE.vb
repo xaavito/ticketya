@@ -136,6 +136,28 @@
         End Set
     End Property
 
+
+    Private _piso As String
+    Public Property piso() As String
+        Get
+            Return _piso
+        End Get
+        Set(ByVal value As String)
+            _piso = value
+        End Set
+    End Property
+
+    Private _dpto As String
+    Public Property dpto() As String
+        Get
+            Return _dpto
+        End Get
+        Set(ByVal value As String)
+            _dpto = value
+        End Set
+    End Property
+
+
     Public Function getPermisos() As List(Of PermisoBE)
         Dim listaPermisos As New List(Of PermisoBE)
         listaPermisos.AddRange(Me.permisos)

@@ -43,8 +43,10 @@
             result = repository.executeSearchWithStatus
             If (result <= 0) Then
                 Throw New Excepciones.EliminarSedeExcepcion
+            Else
+                Throw New Excepciones.SedeEliminadaExistosamenteExcepcion
             End If
-        Catch ex As Exception
+        Catch ex As Excepciones.EliminarSedeExcepcion
             Throw New Excepciones.EliminarSedeExcepcion
         End Try
 
@@ -62,7 +64,7 @@
             If (result > 0) Then
                 Throw New Excepciones.SedeTieneShowsAsociadosExcepcion
             End If
-        Catch ex As Exception
+        Catch ex As Excepciones.SedeTieneShowsAsociadosExcepcion
             Throw New Excepciones.SedeTieneShowsAsociadosExcepcion
         End Try
 
@@ -83,9 +85,41 @@
             result = repository.executeSearchWithStatus
             If (result <= 0) Then
                 Throw New Excepciones.GenerarSedeExcepcion
+            Else
+                Throw New Excepciones.SedeCreadaExistosamenteExcepcion
             End If
-        Catch ex As Exception
+        Catch ex As Excepciones.GenerarSedeExcepcion
             Throw New Excepciones.GenerarSedeExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function modificarSede(ByVal identificador As Integer,
+                                  ByVal nombre As String,
+                                  ByVal capacidad As String,
+                                  ByVal direccion As String,
+                                  ByVal numero As String,
+                                  ByVal telefono As String) As Object
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_SEDE_SP")
+            repository.addParam("@idSede", identificador)
+            repository.addParam("@nom", nombre)
+            repository.addParam("@capacidad", capacidad)
+            repository.addParam("@dir", direccion)
+            repository.addParam("@num", numero)
+            repository.addParam("@tel", telefono)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.ModificarSedeExcepcion
+            Else
+                Throw New Excepciones.SedeModificadaExistosamenteExcepcion
+            End If
+        Catch ex As Excepciones.ModificarSedeExcepcion
+            Throw New Excepciones.ModificarSedeExcepcion
         End Try
 
         Return result

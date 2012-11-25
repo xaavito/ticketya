@@ -18,5 +18,9 @@
         Return DAL.SedeDAL.altaSede(nombre, capacidad, direccion, numero, telefono)
     End Function
 
+    Shared Function ModificarSede(ByVal identificador As Integer, ByVal nombre As String, ByVal capacidad As String, ByVal direccion As String, ByVal numero As String, ByVal telefono As String)
+        Return DAL.SedeDAL.modificarSede(identificador, nombre, capacidad, direccion, numero, telefono)
+    End Function
+
 End Class
 

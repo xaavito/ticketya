@@ -103,6 +103,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PermisoDAL.vb" />
+    <Compile Include="PreferenciaDAL.vb" />
     <Compile Include="RepositorioFactory.vb" />
     <Compile Include="RepositorioSQL.vb" />
     <Compile Include="RepositorioTransaccional.vb" />
