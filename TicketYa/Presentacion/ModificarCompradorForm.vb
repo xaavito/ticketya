@@ -1,6 +1,6 @@
 ﻿Public Class ModificarCompradorForm
 
-    Sub addComprador(ByVal usr As BE.CompradorBE)
+    Sub addComprador(ByVal usr As BE.UsuarioBE)
         Throw New NotImplementedException
     End Sub
 

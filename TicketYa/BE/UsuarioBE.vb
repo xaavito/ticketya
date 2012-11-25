@@ -147,4 +147,61 @@
         Return listaPermisos
     End Function
 
+
+    Private _direccion As String
+    Public Property direccion() As String
+        Get
+            Return _direccion
+        End Get
+        Set(ByVal value As String)
+            _direccion = value
+        End Set
+    End Property
+
+
+    Private _numero As Integer
+    Public Property numero() As Integer
+        Get
+            Return _numero
+        End Get
+        Set(ByVal value As Integer)
+            _numero = value
+        End Set
+    End Property
+
+
+    Private _numCliente As Integer
+    Public Property numeroCliente() As Integer
+        Get
+            Return _numCliente
+        End Get
+        Set(ByVal value As Integer)
+            _numCliente = value
+        End Set
+    End Property
+
+
+
+    Private _codPost As Integer
+    Public Property codPost() As Integer
+        Get
+            Return _codPost
+        End Get
+        Set(ByVal value As Integer)
+            _codPost = value
+        End Set
+    End Property
+
+
+
+    Private _tel As String
+    Public Property telefono() As String
+        Get
+            Return _tel
+        End Get
+        Set(ByVal value As String)
+            _tel = value
+        End Set
+    End Property
+
 End Class

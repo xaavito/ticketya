@@ -149,6 +149,11 @@ Public Class BaseForm
                 c = DirectCast(ctrl, MyTextBox)
                 c.Text = ""
             End If
+            If (TypeOf ctrl Is MyDataGrid) Then
+                Dim c As MyDataGrid
+                c = DirectCast(ctrl, MyDataGrid)
+                c.Rows.Clear()
+            End If
         Next
     End Sub
 End Class

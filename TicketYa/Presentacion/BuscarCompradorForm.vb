@@ -7,7 +7,7 @@
     Private Sub ModificarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarCompradorButton.Click
         If CompradoresDataGrid.hasSelectedObject = True Then
             Dim pepe As String = CompradoresDataGrid.SelectedRows.Item(0).Cells.Item(0).Value
-            Dim usr As BE.CompradorBE = DirectCast(CompradoresDataGrid.myObject, BE.CompradorBE)
+            Dim usr As BE.UsuarioBE = DirectCast(CompradoresDataGrid.myObject, BE.UsuarioBE)
             Dim form As ModificarCompradorForm
 
             If (Not usr Is Nothing) Then
@@ -19,12 +19,12 @@
     End Sub
 
     Private Sub EliminarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarCompradorButton.Click
-        Dim usr As BE.CompradorBE
+        Dim usr As BE.UsuarioBE
         If CompradoresDataGrid.hasSelectedObject = True Then
-            usr = DirectCast(CompradoresDataGrid.CurrentRow.DataBoundItem, BE.CompradorBE)
+            usr = DirectCast(CompradoresDataGrid.CurrentRow.DataBoundItem, BE.UsuarioBE)
             If (Not usr Is Nothing) Then
                 Try
-                    If (BLL.GestorCompradorBLL.eliminarComprador(usr) = 1) Then
+                    If (BLL.GestorUsuarioBLL.eliminarComprador(usr) = 1) Then
                         BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, usr.numero, Utilitarios.Enumeradores.Bitacora.CompradorEliminado)
                         buscarComprador(CompradorTextBox.Text)
                         Throw New Excepciones.CompradorEliminadoExistosamenteExcepcion
@@ -39,6 +39,6 @@
     End Sub
 
     Private Sub buscarComprador(ByVal p1 As String)
-        CompradoresDataGrid.DataSource = BLL.GestorCompradorBLL.buscarComprador(CompradorTextBox.Text)
+        CompradoresDataGrid.DataSource = BLL.GestorUsuarioBLL.buscarComprador(CompradorTextBox.Text)
     End Sub
 End Class

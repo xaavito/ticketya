@@ -50,7 +50,7 @@
                                                 getFamilias())) Then
                 Throw New Excepciones.UsuarioCreadoExistosamente
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, UsuarioTextBox.Text, Utilitarios.Enumeradores.Bitacora.CreacionDeUsuario)
-                limpiarParametros()
+                Me.limpiarForm()
             End If
 
         Catch ex As Excepciones.InsertExcepcion
@@ -72,14 +72,6 @@
         Next
         Return listaFamilias
     End Function
-
-    Private Sub limpiarParametros()
-        UsuarioTextBox.Text = ""
-        PassTextBox.Text = ""
-        NombreTextBox.Text = ""
-        ApellidoTextBox.Text = ""
-        FamiliaDataGrid.Rows.Clear()
-    End Sub
 
     Private Sub QuitarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarFamiliaButton.Click
         If (FamiliaDataGrid.SelectedRows.Count > 0) Then

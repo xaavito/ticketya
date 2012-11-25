@@ -94,7 +94,7 @@ Public Class BackupDAL
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
                 Throw New Excepciones.BackupsNoEncontrados
-                shvjksdbgjfxdb()
+                'shvjksdbgjfxdb()
             End If
             For Each pepe As DataRow In table.Rows
                 Dim bu As New BE.BackupBE

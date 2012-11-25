@@ -22,6 +22,7 @@
                 usuario.apellido = pepe.Item(2)
                 usuario.usuario = usr
                 usuario.password = pass
+                usuario.activo = pepe.Item(4)
                 Dim idioma As New BE.IdiomaBE
                 idioma.identificador = pepe.Item(3)
                 usuario.idioma = idioma
@@ -196,6 +197,111 @@
             End If
             'repository.transactionOK()
 
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function buscarComprador(ByVal usr As String) As List(Of BE.UsuarioBE)
+        Dim table As DataTable
+        Dim listaUsuarios As New List(Of BE.UsuarioBE)
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_COMPRADOR_SP")
+            repository.addParam("@usr", usr)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.UsuariosNoEncontradosExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim usuario As New BE.UsuarioBE
+                usuario.identificador = pepe.Item(0)
+                usuario.nombre = pepe.Item(1)
+                usuario.apellido = pepe.Item(2)
+                usuario.usuario = pepe.Item(3)
+                usuario.activo = pepe.Item(4)
+                usuario.fechaAlta = pepe.Item(5)
+                If Not IsDBNull(pepe.Item(6)) Then
+                    usuario.fechaBaja = pepe.Item(6)
+                End If
+            Next
+
+        Catch ex As Excepciones.UsuariosNoEncontradosExcepcion
+            Throw New Excepciones.UsuariosNoEncontradosExcepcion
+        End Try
+
+        Return listaUsuarios
+    End Function
+
+    Shared Function altaComprador(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As List(Of BE.PreferenciaBE)) As Integer
+        Dim result As Integer
+        Dim retorno As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("INSERTAR_COMPRADOR_SP")
+
+            repository.addParam("@nom", p1)
+            repository.addParam("@ape", p2)
+            repository.addParam("@mail", p3)
+            repository.addParam("@dir", p4)
+            repository.addParam("@num", p5)
+            repository.addParam("@cp", p6)
+            repository.addParam("@tel", p7)
+
+            retorno = repository.executeSearchWithReturnValue
+            If (retorno <= 0) Then
+                Throw New Excepciones.InsertExcepcion
+            End If
+
+        Catch ex As Exception
+            Throw New Excepciones.InsertExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function eliminarComprador(ByVal p1 As Integer) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_COMPRADOR_SP")
+            repository.addParam("@usr", p1)
+            result = repository.executeSearchWithStatus()
+            If (result <= 0) Then
+                Throw New Excepciones.DeleteExcepcion
+            End If
+
+        Catch ex As Exception
+            Throw New Excepciones.DeleteExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function modificarComprador(ByVal id As Integer, ByVal usr As String, ByVal pass As String, ByVal nom As String, ByVal ape As String, ByVal act As Integer, ByVal p7 As Integer, ByVal list As List(Of BE.FamiliaBE)) As Integer
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_COMPRADOR_SP")
+
+            repository.addParam("@id", id)
+            repository.addParam("@usr", usr)
+            repository.addParam("@pass", pass)
+            repository.addParam("@nom", nom)
+            repository.addParam("@ape", ape)
+            repository.addParam("@act", act)
+            repository.addParam("@idioma", p7)
+
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.InsertExcepcion
+            End If
         Catch ex As Exception
             Throw New Excepciones.InsertExcepcion
         End Try
