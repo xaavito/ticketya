@@ -25,6 +25,10 @@
     End Sub
 
     Private Sub buscarBackups()
-        BackupDataGrid.DataSource = BLL.GestorBackupBLL.listarBackups()
+        Try
+            BackupDataGrid.DataSource = BLL.GestorBackupBLL.listarBackups()
+        Catch ex As Excepciones.BackupsNoEncontrados
+            My.Application.manejarExcepcion(ex)
+        End Try
     End Sub
 End Class

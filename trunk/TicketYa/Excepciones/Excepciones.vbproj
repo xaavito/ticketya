@@ -67,6 +67,7 @@
     <Compile Include="BackupExcepcion.vb" />
     <Compile Include="BitacoraExcepcion.vb" />
     <Compile Include="ConexionExcepcion.vb" />
+    <Compile Include="CompradorExcepcion.vb" />
     <Compile Include="VentaExcepcion.vb" />
     <Compile Include="PromocionExcepcion.vb" />
     <Compile Include="SectorExcepcion.vb" />

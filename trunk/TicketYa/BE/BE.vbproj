@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="BackupBE.vb" />
     <Compile Include="BitacoraBE.vb" />
+    <Compile Include="CompradorBE.vb" />
     <Compile Include="ControlBE.vb" />
     <Compile Include="PromocionBE.vb" />
     <Compile Include="SectorBE.vb" />
