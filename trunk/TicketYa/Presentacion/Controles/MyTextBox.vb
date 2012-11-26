@@ -72,6 +72,17 @@ Public Class MyTextBox
         End Set
     End Property
 
+
+    'Private _isFecha As Boolean
+    'Public Property isFecha() As Boolean
+    '    Get
+    '        Return _isFecha
+    '    End Get
+    '    Set(ByVal value As Boolean)
+    '        _isFecha = value
+    '    End Set
+    'End Property
+
     Public Sub sinEspacios()
         If Regex.IsMatch(Me.Text, "\s") And Me.Text.Length > 0 Then
             errorProvider.SetError(Me, "No debe tener espacios")
@@ -178,6 +189,10 @@ Public Class MyTextBox
             tieneAlgo()
         End If
 
+        'If isFecha = True Then
+        '    esfecha()
+        'End If
+
         checkFixedError()
     End Sub
 
@@ -187,4 +202,10 @@ Public Class MyTextBox
         End If
         Return False
     End Function
+
+    'Private Sub esfecha()
+    '    Me.m()
+    '    Throw (New NotImplementedException)
+    'End Sub
+
 End Class

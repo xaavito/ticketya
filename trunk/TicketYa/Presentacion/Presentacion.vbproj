@@ -142,6 +142,9 @@
     <Compile Include="Controles\MyDataGrid.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\MyMaskedTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\MyTextBox.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -435,6 +438,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarFamiliaForm.resx">
       <DependentUpon>ModificarFamiliaForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarFechaForm.resx">
+      <DependentUpon>ModificarFechaForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarIdiomaForm.resx">
       <DependentUpon>ModificarIdiomaForm.vb</DependentUpon>

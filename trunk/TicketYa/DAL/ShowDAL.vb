@@ -131,4 +131,83 @@
         Return result
     End Function
 
+    Shared Function buscarFecha(ByVal p1 As String,
+                                ByVal p2 As Date,
+                                ByVal p3 As Date) As List(Of BE.FechaBE)
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.FechaBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("LISTAR_FECHA_SP")
+            repository.addParam("@desc", p1)
+            repository.addParam("@fechaDesde", p2)
+            repository.addParam("@fechaHasta", p3)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.FechasNoEncontradasExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim fecha As New BE.FechaBE
+                fecha.identificador = pepe.Item(0)
+                fecha.descripcion = pepe.Item(1)
+                fecha.fecha = pepe.Item(2)
+                Dim show As New BE.ShowBE
+                show.identificador = pepe.Item(3)
+                fecha.show = show
+
+                lista.Add(fecha)
+            Next
+
+        Catch ex As Excepciones.FechasNoEncontradasExcepcion
+            Throw New Excepciones.FechasNoEncontradasExcepcion
+        End Try
+
+        Return lista
+    End Function
+
+    Shared Function eliminarFecha(ByVal p1 As Integer) As Object
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_FECHA_SP")
+            repository.addParam("@idFecha", p1)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.EliminarFechaExcepcion
+            Else
+                Throw New Excepciones.FechaEliminadaExistosamenteExcepcion
+            End If
+        Catch ex As Excepciones.EliminarFechaExcepcion
+            Throw New Excepciones.EliminarFechaExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function altaFecha(ByVal p1 As String, ByVal p2 As Date, ByVal p3 As Integer) As Boolean
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("GENERAR_FECHA_SP")
+            repository.addParam("@nom", p1)
+            repository.addParam("@fecha", p2)
+            repository.addParam("@idShow", p3)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.GenerarFechaExcepcion
+            Else
+                Throw New Excepciones.FechaCreadaExistosamenteExcepcion
+            End If
+        Catch ex As Excepciones.GenerarFechaExcepcion
+            Throw New Excepciones.GenerarFechaExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

@@ -24,8 +24,8 @@ Partial Class GenerarFechaForm
         Me.ShowLabel = New System.Windows.Forms.Label()
         Me.NombreTextBox = New TicketYa.MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.FechaTextBox = New TicketYa.MyTextBox()
         Me.AltaFechaButton = New TicketYa.MyButton()
+        Me.FechaTextBox = New TicketYa.MyMaskedTextBox()
         Me.SuspendLayout()
         '
         'ShowComboBox
@@ -79,19 +79,6 @@ Partial Class GenerarFechaForm
         Me.NombreLabel.TabIndex = 25
         Me.NombreLabel.Text = "Nombre"
         '
-        'FechaTextBox
-        '
-        Me.FechaTextBox.alfanumerico = False
-        Me.FechaTextBox.boton = Nothing
-        Me.FechaTextBox.Location = New System.Drawing.Point(91, 72)
-        Me.FechaTextBox.nada = False
-        Me.FechaTextBox.Name = "FechaTextBox"
-        Me.FechaTextBox.numerico = False
-        Me.FechaTextBox.sinEspacio = False
-        Me.FechaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FechaTextBox.TabIndex = 31
-        Me.FechaTextBox.texto = False
-        '
         'AltaFechaButton
         '
         Me.AltaFechaButton.Image = Global.TicketYa.My.Resources.Resources.aceptar
@@ -103,6 +90,14 @@ Partial Class GenerarFechaForm
         Me.AltaFechaButton.Text = "Generar"
         Me.AltaFechaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.AltaFechaButton.UseVisualStyleBackColor = True
+        '
+        'FechaTextBox
+        '
+        Me.FechaTextBox.Location = New System.Drawing.Point(91, 72)
+        Me.FechaTextBox.Mask = "00/00/0000"
+        Me.FechaTextBox.Name = "FechaTextBox"
+        Me.FechaTextBox.Size = New System.Drawing.Size(66, 20)
+        Me.FechaTextBox.TabIndex = 31
         '
         'GenerarFechaForm
         '
@@ -127,6 +122,6 @@ Partial Class GenerarFechaForm
     Friend WithEvents ShowLabel As System.Windows.Forms.Label
     Friend WithEvents NombreTextBox As TicketYa.MyTextBox
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
-    Friend WithEvents FechaTextBox As TicketYa.MyTextBox
+    Friend WithEvents FechaTextBox As TicketYa.MyMaskedTextBox
 
 End Class
