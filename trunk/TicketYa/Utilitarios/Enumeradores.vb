@@ -126,6 +126,10 @@
 
         GenerarFechaExcepcion
 
+        ModificarFechaExcepcion
+
+        FechaModificadaExistosamenteExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -167,6 +171,8 @@
         SedeModificadaExistosamente
 
         ShowModificadoExistosamente
+
+        FechaModificadoExistosamente
 
     End Enum
 

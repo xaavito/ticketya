@@ -96,12 +96,22 @@
                                   ByVal p7 As String,
                                   ByVal p8 As Integer,
                                   ByVal p9 As String,
-                                  ByVal p10 As List(Of BE.PreferenciaBE)) As Integer
+                                  ByVal p10 As List(Of BE.TipoShowBE)) As Integer
         Return DAL.UsuarioDAL.altaComprador(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10)
     End Function
 
-    Shared Sub modificarComprador(ByVal p1 As String, ByVal p2 As String, ByVal p3 As Object, ByVal p4 As Object, ByVal p5 As Object, ByVal p6 As Object, ByVal p7 As Object, ByVal p8 As Object, ByVal p9 As Object, ByVal p10 As Object)
-        Throw New NotImplementedException
-    End Sub
+    Shared Function modificarComprador(ByVal p0 As Integer,
+                                  ByVal p1 As String,
+                                  ByVal p2 As String,
+                                  ByVal p3 As String,
+                                  ByVal p4 As String,
+                                  ByVal p5 As String,
+                                  ByVal p6 As String,
+                                  ByVal p7 As String,
+                                  ByVal p8 As Integer,
+                                  ByVal p9 As String,
+                                  ByVal p10 As List(Of BE.TipoShowBE))
+        Return DAL.UsuarioDAL.modificarComprador(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10)
+    End Function
 
 End Class

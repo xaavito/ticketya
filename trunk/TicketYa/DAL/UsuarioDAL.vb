@@ -221,16 +221,21 @@
                 Throw New Excepciones.UsuariosNoEncontradosExcepcion
             End If
             For Each pepe As DataRow In table.Rows
-                'SELECT U.idUsuario,U.nombre,u.apellido,u.mail,u.activo,u.fecha,u.fechaBaja
                 Dim usuario As New BE.UsuarioBE
                 usuario.identificador = pepe.Item(0)
                 usuario.nombre = pepe.Item(1)
                 usuario.apellido = pepe.Item(2)
                 usuario.mail = pepe.Item(3)
-                usuario.activo = pepe.Item(4)
-                usuario.fechaAlta = pepe.Item(5)
-                If Not IsDBNull(pepe.Item(6)) Then
-                    usuario.fechaBaja = pepe.Item(6)
+                usuario.direccion = pepe.Item(4)
+                usuario.numero = pepe.Item(5)
+                usuario.piso = pepe.Item(6)
+                usuario.dpto = pepe.Item(7)
+                usuario.codPost = pepe.Item(8)
+                usuario.telefono = pepe.Item(9)
+                usuario.activo = pepe.Item(10)
+                usuario.fechaAlta = pepe.Item(11)
+                If Not IsDBNull(pepe.Item(12)) Then
+                    usuario.fechaBaja = pepe.Item(12)
                 End If
                 listaUsuarios.Add(usuario)
             Next
@@ -251,7 +256,7 @@
                                   ByVal p7 As String,
                                   ByVal p8 As Integer,
                                   ByVal p9 As String,
-                                  ByVal p10 As List(Of BE.PreferenciaBE)) As Integer
+                                  ByVal p10 As List(Of BE.TipoShowBE)) As Integer
         Dim result As Integer
         Dim retorno As Integer
 
@@ -276,7 +281,7 @@
 
             If (p10.Count > 0) Then
                 repository.crearComando("INSERTAR_USUARIO_PREFERENCIA_SP")
-                For Each pref As BE.PreferenciaBE In p10
+                For Each pref As BE.TipoShowBE In p10
                     repository.addParam("@idUsuario", retorno)
                     repository.addParam("@idPreferencia", pref.identificador)
                     result = repository.executeSearchWithStatus
@@ -314,30 +319,9 @@
         Return result
     End Function
 
-    Shared Function modificarComprador(ByVal id As Integer, ByVal usr As String, ByVal pass As String, ByVal nom As String, ByVal ape As String, ByVal act As Integer, ByVal p7 As Integer, ByVal list As List(Of BE.FamiliaBE)) As Integer
-        Dim result As Integer
-
-        Dim repository As IRepositorio = RepositorioFactory.Create()
-        Try
-            repository.crearComando("MODIFICAR_COMPRADOR_SP")
-
-            repository.addParam("@id", id)
-            repository.addParam("@usr", usr)
-            repository.addParam("@pass", pass)
-            repository.addParam("@nom", nom)
-            repository.addParam("@ape", ape)
-            repository.addParam("@act", act)
-            repository.addParam("@idioma", p7)
-
-            result = repository.executeSearchWithStatus
-            If (result <= 0) Then
-                Throw New Excepciones.InsertExcepcion
-            End If
-        Catch ex As Exception
-            Throw New Excepciones.InsertExcepcion
-        End Try
-
-        Return result
+    Shared Function modificarComprador(ByVal p0 As Integer, ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String, ByVal p8 As Integer, ByVal p9 As String, ByVal p10 As List(Of BE.TipoShowBE)) As Object
+        Throw New NotImplementedException
     End Function
+
 
 End Class

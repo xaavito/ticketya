@@ -1,10 +1,10 @@
 ﻿Public Class PreferenciaDAL
 
-    Shared Function buscarPreferencias(ByVal p1 As Integer) As List(Of BE.PreferenciaBE)
+    Shared Function buscarPreferencias(ByVal p1 As Integer) As List(Of BE.TipoShowBE)
         Dim table As DataTable
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
-        Dim preferencias As New List(Of BE.PreferenciaBE)
+        Dim preferencias As New List(Of BE.TipoShowBE)
         Try
             repository.crearComando("BUSCAR_PREFERENCIA_PERSONA_SP")
             table = New DataTable
@@ -14,7 +14,7 @@
                 Throw New Excepciones.PreferenciasNoEncontradasExcepcion
             End If
             For Each pepe As DataRow In table.Rows
-                Dim preferencia As New BE.PreferenciaBE
+                Dim preferencia As New BE.TipoShowBE
                 preferencia.identificador = pepe.Item(0)
                 preferencia.descripcion = pepe.Item(1)
                 preferencias.Add(preferencia)
@@ -27,11 +27,11 @@
         Return preferencias
     End Function
 
-    Shared Function listarPreferencias() As List(Of BE.PreferenciaBE)
+    Shared Function listarPreferencias() As List(Of BE.TipoShowBE)
         Dim table As DataTable
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
-        Dim preferencias As New List(Of BE.PreferenciaBE)
+        Dim preferencias As New List(Of BE.TipoShowBE)
         Try
             repository.crearComando("LISTAR_PREFERENCIAS_SP")
             table = New DataTable
@@ -40,7 +40,7 @@
                 Throw New Excepciones.PreferenciasNoEncontradasExcepcion
             End If
             For Each pepe As DataRow In table.Rows
-                Dim preferencia As New BE.PreferenciaBE
+                Dim preferencia As New BE.TipoShowBE
                 preferencia.identificador = pepe.Item(0)
                 preferencia.descripcion = pepe.Item(1)
                 preferencias.Add(preferencia)

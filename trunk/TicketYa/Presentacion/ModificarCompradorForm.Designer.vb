@@ -34,7 +34,7 @@ Partial Class ModificarCompradorForm
         Me.AgregarPreferenciaButton = New TicketYa.MyButton()
         Me.PreferenciaDataGrid = New TicketYa.MyDataGrid()
         Me.Identificador = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FamiliaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PreferenciasLabel = New System.Windows.Forms.Label()
         Me.PreferenciaComboBox = New TicketYa.MyComboBox()
         Me.DireccionLabel = New System.Windows.Forms.Label()
@@ -190,8 +190,8 @@ Partial Class ModificarCompradorForm
         Me.PreferenciaDataGrid.AllowUserToResizeRows = False
         Me.PreferenciaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PreferenciaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PreferenciaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.FamiliaColumn})
-        Me.PreferenciaDataGrid.Location = New System.Drawing.Point(340, 120)
+        Me.PreferenciaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Identificador, Me.DescripcionColumn})
+        Me.PreferenciaDataGrid.Location = New System.Drawing.Point(340, 116)
         Me.PreferenciaDataGrid.MultiSelect = False
         Me.PreferenciaDataGrid.Name = "PreferenciaDataGrid"
         Me.PreferenciaDataGrid.ReadOnly = True
@@ -207,12 +207,12 @@ Partial Class ModificarCompradorForm
         Me.Identificador.ReadOnly = True
         Me.Identificador.Visible = False
         '
-        'FamiliaColumn
+        'DescripcionColumn
         '
-        Me.FamiliaColumn.DataPropertyName = "descripcion"
-        Me.FamiliaColumn.HeaderText = "Familia"
-        Me.FamiliaColumn.Name = "FamiliaColumn"
-        Me.FamiliaColumn.ReadOnly = True
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
         '
         'PreferenciasLabel
         '
@@ -382,8 +382,6 @@ Partial Class ModificarCompradorForm
     Friend WithEvents QuitarPreferenciaButton As TicketYa.MyButton
     Friend WithEvents AgregarPreferenciaButton As TicketYa.MyButton
     Friend WithEvents PreferenciaDataGrid As TicketYa.MyDataGrid
-    Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FamiliaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PreferenciasLabel As System.Windows.Forms.Label
     Friend WithEvents PreferenciaComboBox As TicketYa.MyComboBox
     Friend WithEvents DireccionLabel As System.Windows.Forms.Label
@@ -395,5 +393,7 @@ Partial Class ModificarCompradorForm
     Friend WithEvents NombreLabel As System.Windows.Forms.Label
     Friend WithEvents NombreTextBox As TicketYa.MyTextBox
     Friend WithEvents GenerarCompradorButton As TicketYa.MyButton
+    Friend WithEvents Identificador As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
