@@ -32,12 +32,57 @@ Public Class ShowsNoEncontradosExcepcion
     End Sub
 End Class
 
+Public Class TipoShowsNoEncontradosExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.TipoShowsNoEncontrados
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
 Public Class ShowCreadoExistosamenteExcepcion
     Inherits ExceptionManager
 
     Public Sub New()
         MyBase.new("")
         Me.codigo = Utilitarios.Enumeradores.Excepeciones.ShowCreadoExistosamente
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+Public Class GenerarShowExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.GeneracionDeShowFallidaExistosamente
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+Public Class ModificarShowExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ModificacionShowExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+
+Public Class ShowModificadoExistosamenteExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ShowModificadoExistosamente
         Me.tipo = MsgBoxStyle.Exclamation
         Me.mensaje = ""
     End Sub

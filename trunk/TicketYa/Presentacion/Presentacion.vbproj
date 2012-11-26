@@ -445,6 +445,9 @@
     <EmbeddedResource Include="ModificarSedeForm.resx">
       <DependentUpon>ModificarSedeForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarShowForm.resx">
+      <DependentUpon>ModificarShowForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioForm.resx">
       <DependentUpon>ModificarUsuarioForm.vb</DependentUpon>
     </EmbeddedResource>

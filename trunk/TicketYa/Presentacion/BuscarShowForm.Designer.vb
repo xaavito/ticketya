@@ -22,15 +22,15 @@ Partial Class BuscarShowForm
         Me.EliminarShowButton = New TicketYa.MyButton()
         Me.ModificarShowButton = New TicketYa.MyButton()
         Me.ShowsDataGrid = New TicketYa.MyDataGrid()
-        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CapacidadColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DireccionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BuscarShowButton = New TicketYa.MyButton()
         Me.ShowTextBox = New TicketYa.MyTextBox()
         Me.ShowLabel = New System.Windows.Forms.Label()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SedeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TipoShowColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.identSedeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.ShowsDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,7 +65,7 @@ Partial Class BuscarShowForm
         Me.ShowsDataGrid.AllowUserToResizeRows = False
         Me.ShowsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.ShowsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ShowsDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.CapacidadColumn, Me.DireccionColumn, Me.NumeroColumn, Me.TelefonoColumn})
+        Me.ShowsDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.SedeColumn, Me.TipoShowColumn, Me.identSedeColumn, Me.TelefonoColumn})
         Me.ShowsDataGrid.Location = New System.Drawing.Point(44, 69)
         Me.ShowsDataGrid.Name = "ShowsDataGrid"
         Me.ShowsDataGrid.ReadOnly = True
@@ -73,49 +73,6 @@ Partial Class BuscarShowForm
         Me.ShowsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShowsDataGrid.Size = New System.Drawing.Size(454, 157)
         Me.ShowsDataGrid.TabIndex = 10
-        '
-        'IdentificadorColumn
-        '
-        Me.IdentificadorColumn.DataPropertyName = "identificador"
-        Me.IdentificadorColumn.HeaderText = "Identificador"
-        Me.IdentificadorColumn.Name = "IdentificadorColumn"
-        Me.IdentificadorColumn.ReadOnly = True
-        Me.IdentificadorColumn.Visible = False
-        '
-        'DescripcionColumn
-        '
-        Me.DescripcionColumn.DataPropertyName = "descripcion"
-        Me.DescripcionColumn.HeaderText = "Descripcion"
-        Me.DescripcionColumn.Name = "DescripcionColumn"
-        Me.DescripcionColumn.ReadOnly = True
-        '
-        'CapacidadColumn
-        '
-        Me.CapacidadColumn.DataPropertyName = "capacidad"
-        Me.CapacidadColumn.HeaderText = "Capacidad"
-        Me.CapacidadColumn.Name = "CapacidadColumn"
-        Me.CapacidadColumn.ReadOnly = True
-        '
-        'DireccionColumn
-        '
-        Me.DireccionColumn.DataPropertyName = "direccion"
-        Me.DireccionColumn.HeaderText = "Direccion"
-        Me.DireccionColumn.Name = "DireccionColumn"
-        Me.DireccionColumn.ReadOnly = True
-        '
-        'NumeroColumn
-        '
-        Me.NumeroColumn.DataPropertyName = "numero"
-        Me.NumeroColumn.HeaderText = "Numero"
-        Me.NumeroColumn.Name = "NumeroColumn"
-        Me.NumeroColumn.ReadOnly = True
-        '
-        'TelefonoColumn
-        '
-        Me.TelefonoColumn.DataPropertyName = "telefono"
-        Me.TelefonoColumn.HeaderText = "Telefono"
-        Me.TelefonoColumn.Name = "TelefonoColumn"
-        Me.TelefonoColumn.ReadOnly = True
         '
         'BuscarShowButton
         '
@@ -151,6 +108,53 @@ Partial Class BuscarShowForm
         Me.ShowLabel.TabIndex = 7
         Me.ShowLabel.Text = "Show"
         '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
+        Me.IdentificadorColumn.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
+        '
+        'SedeColumn
+        '
+        Me.SedeColumn.DataPropertyName = "sedeDescripcion"
+        Me.SedeColumn.HeaderText = "Sede"
+        Me.SedeColumn.Name = "SedeColumn"
+        Me.SedeColumn.ReadOnly = True
+        Me.SedeColumn.Visible = False
+        '
+        'TipoShowColumn
+        '
+        Me.TipoShowColumn.DataPropertyName = "tipoShowDescripcion"
+        Me.TipoShowColumn.HeaderText = "Tipo"
+        Me.TipoShowColumn.Name = "TipoShowColumn"
+        Me.TipoShowColumn.ReadOnly = True
+        Me.TipoShowColumn.Visible = False
+        '
+        'identSedeColumn
+        '
+        Me.identSedeColumn.DataPropertyName = "sedeIdentificador"
+        Me.identSedeColumn.HeaderText = "identSede"
+        Me.identSedeColumn.Name = "identSedeColumn"
+        Me.identSedeColumn.ReadOnly = True
+        Me.identSedeColumn.Visible = False
+        '
+        'TelefonoColumn
+        '
+        Me.TelefonoColumn.DataPropertyName = "tipoShowIdentificador"
+        Me.TelefonoColumn.HeaderText = "identShow"
+        Me.TelefonoColumn.Name = "TelefonoColumn"
+        Me.TelefonoColumn.ReadOnly = True
+        Me.TelefonoColumn.Visible = False
+        '
         'BuscarShowForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -162,6 +166,7 @@ Partial Class BuscarShowForm
         Me.Controls.Add(Me.ShowTextBox)
         Me.Controls.Add(Me.ShowLabel)
         Me.Name = "BuscarShowForm"
+        Me.Text = "Buscar Show"
         CType(Me.ShowsDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -170,14 +175,14 @@ Partial Class BuscarShowForm
     Friend WithEvents EliminarShowButton As TicketYa.MyButton
     Friend WithEvents ModificarShowButton As TicketYa.MyButton
     Friend WithEvents ShowsDataGrid As TicketYa.MyDataGrid
-    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CapacidadColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DireccionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NumeroColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BuscarShowButton As TicketYa.MyButton
     Friend WithEvents ShowTextBox As TicketYa.MyTextBox
     Friend WithEvents ShowLabel As System.Windows.Forms.Label
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SedeColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TipoShowColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents identSedeColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

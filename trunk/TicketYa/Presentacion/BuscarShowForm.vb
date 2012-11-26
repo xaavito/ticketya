@@ -24,10 +24,9 @@
             Show = DirectCast(ShowsDataGrid.myObject, BE.ShowBE)
             Try
                 BLL.GestorShowBLL.eliminarShow(Show)
+            Catch ex As Excepciones.ShowEliminadoExistosamenteExcepcion
                 buscarShow()
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, Show.descripcion, Utilitarios.Enumeradores.Bitacora.ShowEliminado)
-                Throw New Excepciones.ShowEliminadoExistosamenteExcepcion
-            Catch ex As Excepciones.ShowEliminadoExistosamenteExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.ShowTieneVentasAsociadosExcepcion
                 My.Application.manejarExcepcion(ex)

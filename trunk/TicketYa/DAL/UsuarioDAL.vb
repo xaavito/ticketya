@@ -267,7 +267,7 @@
             repository.addParam("@piso", p6)
             repository.addParam("@dpto", p7)
             repository.addParam("@cp", p8)
-            repository.addParam("@tel", p7)
+            repository.addParam("@tel", p9)
 
             retorno = repository.executeSearchWithReturnValue
             If (retorno <= 0) Then
