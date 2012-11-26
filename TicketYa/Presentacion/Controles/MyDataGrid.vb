@@ -24,4 +24,8 @@
         End If
     End Function
 
+    Function tamanio() As Integer
+        Return Me.Rows.Count
+    End Function
+
 End Class

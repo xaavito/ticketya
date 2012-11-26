@@ -210,4 +210,27 @@
         Return result
     End Function
 
+    Shared Function modificarFecha(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As Integer, ByVal p4 As Date) As Object
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("MODIFICAR_FECHA_SP")
+            repository.addParam("@idFecha", p1)
+            repository.addParam("@desc", p2)
+            repository.addParam("@show", p3)
+            repository.addParam("@fecha", p4)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.ModificarFechaExcepcion
+            Else
+                Throw New Excepciones.FechaModificadaExistosamenteExcepcion
+            End If
+        Catch ex As Excepciones.ModificarFechaExcepcion
+            Throw New Excepciones.ModificarFechaExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

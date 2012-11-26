@@ -22,4 +22,8 @@
         Return DAL.ShowDAL.modificarShow(p1, p2, p3, p4)
     End Function
 
+    Shared Function modificarFecha(ByVal p1 As Integer, ByVal p2 As String, ByVal p3 As Integer, ByVal p4 As Date)
+        Return DAL.ShowDAL.modificarFecha(p1, p2, p3, p4)
+    End Function
+
 End Class
