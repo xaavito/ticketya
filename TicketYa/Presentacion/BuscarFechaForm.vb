@@ -1,4 +1,5 @@
 ﻿Public Class BuscarFechaForm
+
     Private Sub BuscarFechaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarFechaButton.Click
         buscarFecha()
     End Sub
@@ -36,7 +37,9 @@
 
     Public Sub buscarFecha()
         Try
-            FechasDataGrid.DataSource = BLL.GestorFechaBLL.buscarFecha(ShowTextBox.Text)
+            Dim s As String
+            s = FechaDesdeTextBox.Mask
+            FechasDataGrid.DataSource = BLL.GestorFechaBLL.buscarFecha(ShowTextBox.Text, FechaDesdeTextBox.getDateTime, FechaHastaTextBox.getDateTime)
         Catch ex As Excepciones.FechasNoEncontradasExcepcion
             My.Application.manejarExcepcion(ex)
         End Try

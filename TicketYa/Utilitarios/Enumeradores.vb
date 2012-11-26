@@ -124,6 +124,8 @@
 
         ModificacionShowExcepcion
 
+        GenerarFechaExcepcion
+
     End Enum
 
     Enum Bitacora

@@ -20,19 +20,18 @@ Partial Class BuscarFechaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.FechasDataGrid = New TicketYa.MyDataGrid()
-        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CapacidadColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DireccionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ShowTextBox = New TicketYa.MyTextBox()
         Me.ShowLabel = New System.Windows.Forms.Label()
         Me.EliminarFechaButton = New TicketYa.MyButton()
         Me.ModificarFechaButton = New TicketYa.MyButton()
         Me.BuscarFechaButton = New TicketYa.MyButton()
-        Me.FechaTextBox = New TicketYa.MyTextBox()
-        Me.FechaLabel = New System.Windows.Forms.Label()
+        Me.FechaDesdeLabel = New System.Windows.Forms.Label()
+        Me.FechaDesdeTextBox = New TicketYa.MyMaskedTextBox()
+        Me.FechaHastaTextBox = New TicketYa.MyMaskedTextBox()
+        Me.FechaHastaLabel = New System.Windows.Forms.Label()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.FechasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -43,7 +42,7 @@ Partial Class BuscarFechaForm
         Me.FechasDataGrid.AllowUserToResizeRows = False
         Me.FechasDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.FechasDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.FechasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.CapacidadColumn, Me.DireccionColumn, Me.NumeroColumn, Me.TelefonoColumn})
+        Me.FechasDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FechaColumn})
         Me.FechasDataGrid.Location = New System.Drawing.Point(29, 63)
         Me.FechasDataGrid.Name = "FechasDataGrid"
         Me.FechasDataGrid.ReadOnly = True
@@ -52,54 +51,11 @@ Partial Class BuscarFechaForm
         Me.FechasDataGrid.Size = New System.Drawing.Size(454, 157)
         Me.FechasDataGrid.TabIndex = 16
         '
-        'IdentificadorColumn
-        '
-        Me.IdentificadorColumn.DataPropertyName = "identificador"
-        Me.IdentificadorColumn.HeaderText = "Identificador"
-        Me.IdentificadorColumn.Name = "IdentificadorColumn"
-        Me.IdentificadorColumn.ReadOnly = True
-        Me.IdentificadorColumn.Visible = False
-        '
-        'DescripcionColumn
-        '
-        Me.DescripcionColumn.DataPropertyName = "descripcion"
-        Me.DescripcionColumn.HeaderText = "Descripcion"
-        Me.DescripcionColumn.Name = "DescripcionColumn"
-        Me.DescripcionColumn.ReadOnly = True
-        '
-        'CapacidadColumn
-        '
-        Me.CapacidadColumn.DataPropertyName = "capacidad"
-        Me.CapacidadColumn.HeaderText = "Capacidad"
-        Me.CapacidadColumn.Name = "CapacidadColumn"
-        Me.CapacidadColumn.ReadOnly = True
-        '
-        'DireccionColumn
-        '
-        Me.DireccionColumn.DataPropertyName = "direccion"
-        Me.DireccionColumn.HeaderText = "Direccion"
-        Me.DireccionColumn.Name = "DireccionColumn"
-        Me.DireccionColumn.ReadOnly = True
-        '
-        'NumeroColumn
-        '
-        Me.NumeroColumn.DataPropertyName = "numero"
-        Me.NumeroColumn.HeaderText = "Numero"
-        Me.NumeroColumn.Name = "NumeroColumn"
-        Me.NumeroColumn.ReadOnly = True
-        '
-        'TelefonoColumn
-        '
-        Me.TelefonoColumn.DataPropertyName = "telefono"
-        Me.TelefonoColumn.HeaderText = "Telefono"
-        Me.TelefonoColumn.Name = "TelefonoColumn"
-        Me.TelefonoColumn.ReadOnly = True
-        '
         'ShowTextBox
         '
         Me.ShowTextBox.alfanumerico = False
         Me.ShowTextBox.boton = Nothing
-        Me.ShowTextBox.Location = New System.Drawing.Point(82, 18)
+        Me.ShowTextBox.Location = New System.Drawing.Point(66, 18)
         Me.ShowTextBox.nada = False
         Me.ShowTextBox.Name = "ShowTextBox"
         Me.ShowTextBox.numerico = False
@@ -153,34 +109,72 @@ Partial Class BuscarFechaForm
         Me.BuscarFechaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarFechaButton.UseVisualStyleBackColor = True
         '
-        'FechaTextBox
+        'FechaDesdeLabel
         '
-        Me.FechaTextBox.alfanumerico = False
-        Me.FechaTextBox.boton = Nothing
-        Me.FechaTextBox.Location = New System.Drawing.Point(307, 18)
-        Me.FechaTextBox.nada = False
-        Me.FechaTextBox.Name = "FechaTextBox"
-        Me.FechaTextBox.numerico = False
-        Me.FechaTextBox.sinEspacio = False
-        Me.FechaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FechaTextBox.TabIndex = 19
-        Me.FechaTextBox.texto = False
+        Me.FechaDesdeLabel.AutoSize = True
+        Me.FechaDesdeLabel.Location = New System.Drawing.Point(177, 21)
+        Me.FechaDesdeLabel.Name = "FechaDesdeLabel"
+        Me.FechaDesdeLabel.Size = New System.Drawing.Size(71, 13)
+        Me.FechaDesdeLabel.TabIndex = 20
+        Me.FechaDesdeLabel.Text = "Fecha Desde"
         '
-        'FechaLabel
+        'FechaDesdeTextBox
         '
-        Me.FechaLabel.AutoSize = True
-        Me.FechaLabel.Location = New System.Drawing.Point(246, 21)
-        Me.FechaLabel.Name = "FechaLabel"
-        Me.FechaLabel.Size = New System.Drawing.Size(37, 13)
-        Me.FechaLabel.TabIndex = 20
-        Me.FechaLabel.Text = "Fecha"
+        Me.FechaDesdeTextBox.Location = New System.Drawing.Point(249, 18)
+        Me.FechaDesdeTextBox.Mask = "00/00/0000"
+        Me.FechaDesdeTextBox.Name = "FechaDesdeTextBox"
+        Me.FechaDesdeTextBox.Size = New System.Drawing.Size(68, 20)
+        Me.FechaDesdeTextBox.TabIndex = 21
+        Me.FechaDesdeTextBox.ValidatingType = GetType(Date)
+        '
+        'FechaHastaTextBox
+        '
+        Me.FechaHastaTextBox.Location = New System.Drawing.Point(402, 19)
+        Me.FechaHastaTextBox.Mask = "00/00/0000"
+        Me.FechaHastaTextBox.Name = "FechaHastaTextBox"
+        Me.FechaHastaTextBox.Size = New System.Drawing.Size(68, 20)
+        Me.FechaHastaTextBox.TabIndex = 23
+        Me.FechaHastaTextBox.ValidatingType = GetType(Date)
+        '
+        'FechaHastaLabel
+        '
+        Me.FechaHastaLabel.AutoSize = True
+        Me.FechaHastaLabel.Location = New System.Drawing.Point(330, 22)
+        Me.FechaHastaLabel.Name = "FechaHastaLabel"
+        Me.FechaHastaLabel.Size = New System.Drawing.Size(68, 13)
+        Me.FechaHastaLabel.TabIndex = 22
+        Me.FechaHastaLabel.Text = "Fecha Hasta"
+        '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
+        Me.IdentificadorColumn.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
+        '
+        'FechaColumn
+        '
+        Me.FechaColumn.DataPropertyName = "fecha"
+        Me.FechaColumn.HeaderText = "Fecha"
+        Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
         '
         'BuscarFechaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(745, 280)
-        Me.Controls.Add(Me.FechaLabel)
-        Me.Controls.Add(Me.FechaTextBox)
+        Me.ClientSize = New System.Drawing.Size(645, 280)
+        Me.Controls.Add(Me.FechaHastaTextBox)
+        Me.Controls.Add(Me.FechaHastaLabel)
+        Me.Controls.Add(Me.FechaDesdeTextBox)
+        Me.Controls.Add(Me.FechaDesdeLabel)
         Me.Controls.Add(Me.EliminarFechaButton)
         Me.Controls.Add(Me.ModificarFechaButton)
         Me.Controls.Add(Me.FechasDataGrid)
@@ -188,6 +182,7 @@ Partial Class BuscarFechaForm
         Me.Controls.Add(Me.ShowTextBox)
         Me.Controls.Add(Me.ShowLabel)
         Me.Name = "BuscarFechaForm"
+        Me.Text = "Buscar Fecha"
         CType(Me.FechasDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -196,16 +191,15 @@ Partial Class BuscarFechaForm
     Friend WithEvents EliminarFechaButton As TicketYa.MyButton
     Friend WithEvents ModificarFechaButton As TicketYa.MyButton
     Friend WithEvents FechasDataGrid As TicketYa.MyDataGrid
-    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CapacidadColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DireccionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NumeroColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BuscarFechaButton As TicketYa.MyButton
     Friend WithEvents ShowTextBox As TicketYa.MyTextBox
     Friend WithEvents ShowLabel As System.Windows.Forms.Label
-    Friend WithEvents FechaTextBox As TicketYa.MyTextBox
-    Friend WithEvents FechaLabel As System.Windows.Forms.Label
+    Friend WithEvents FechaDesdeLabel As System.Windows.Forms.Label
+    Friend WithEvents FechaDesdeTextBox As TicketYa.MyMaskedTextBox
+    Friend WithEvents FechaHastaTextBox As TicketYa.MyMaskedTextBox
+    Friend WithEvents FechaHastaLabel As System.Windows.Forms.Label
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
