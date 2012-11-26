@@ -116,6 +116,14 @@
 
         SedeModificadaExistosamenteExcepcion
 
+        GeneracionDeShowFallidaExistosamente
+
+        TipoShowsNoEncontrados
+
+        ShowModificadoExistosamente
+
+        ModificacionShowExcepcion
+
     End Enum
 
     Enum Bitacora
@@ -155,6 +163,8 @@
         CompradorEliminado
 
         SedeModificadaExistosamente
+
+        ShowModificadoExistosamente
 
     End Enum
 

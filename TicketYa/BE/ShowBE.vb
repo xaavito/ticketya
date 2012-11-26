@@ -24,5 +24,15 @@
     End Property
 
 
+    Private _sede As BE.SedeBE
+    Public Property sede() As BE.SedeBE
+        Get
+            Return _sede
+        End Get
+        Set(ByVal value As BE.SedeBE)
+            _sede = value
+        End Set
+    End Property
+
 
 End Class
