@@ -37,8 +37,14 @@
 
     Private Sub SectorComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SectorComboBox.SelectedIndexChanged
         If selectedSector.filas <> 0 Then
-            Dim sillasPanel As New MyTableLayoutPanel(selectedSector.filas, selectedSector.columnas)
+            Dim listaSillas As List(Of BE.SillaBE)
+            Try
+                listaSillas = BLL.GestorSillaBLL.getSillas(SectorComboBox.SelectedValue, FechaComboBox.SelectedValue)
+            Catch ex As Exception
 
+            End Try
+
+            Dim sillasPanel As New MyTableLayoutPanel(selectedSector.filas, selectedSector.columnas)
 
             Dim check As CheckBox
 

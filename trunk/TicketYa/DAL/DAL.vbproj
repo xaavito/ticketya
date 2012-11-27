@@ -110,6 +110,7 @@
     <Compile Include="SectorDAL.vb" />
     <Compile Include="SedeDAL.vb" />
     <Compile Include="ShowDAL.vb" />
+    <Compile Include="SillaDAL.vb" />
     <Compile Include="UsuarioDAL.vb" />
   </ItemGroup>
   <ItemGroup>

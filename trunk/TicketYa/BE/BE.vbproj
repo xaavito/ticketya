@@ -71,6 +71,7 @@
     <Compile Include="BackupBE.vb" />
     <Compile Include="BitacoraBE.vb" />
     <Compile Include="ControlBE.vb" />
+    <Compile Include="EstadoSillaBE.vb" />
     <Compile Include="PreferenciaBE.vb" />
     <Compile Include="PromocionBE.vb" />
     <Compile Include="SectorBE.vb" />
@@ -102,6 +103,7 @@
     </Compile>
     <Compile Include="SedeBE.vb" />
     <Compile Include="ShowBE.vb" />
+    <Compile Include="SillaBE.vb" />
     <Compile Include="TipoSectorBE.vb" />
     <Compile Include="TipoShowBE.vb" />
     <Compile Include="UsuarioBE.vb" />
