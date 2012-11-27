@@ -130,6 +130,10 @@
 
         FechaModificadaExistosamenteExcepcion
 
+        TipoSectorNoEncontradoExcepcion
+
+        SectorNoEncontradoExcepcion
+
     End Enum
 
     Enum Bitacora

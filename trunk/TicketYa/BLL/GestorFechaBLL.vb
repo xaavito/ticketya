@@ -12,4 +12,8 @@
         Return DAL.ShowDAL.buscarFecha(p1, p2, p3)
     End Function
 
+    Shared Function listarFechas(ByVal p1 As Integer) As Object
+        Return DAL.ShowDAL.buscarFecha(p1)
+    End Function
+
 End Class

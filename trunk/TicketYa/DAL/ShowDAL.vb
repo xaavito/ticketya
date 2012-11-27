@@ -233,4 +233,34 @@
         Return result
     End Function
 
+    Shared Function buscarFecha(ByVal p1 As Integer) As Object
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.FechaBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_FECHA_SP")
+            repository.addParam("@idShow", p1)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.FechasNoEncontradasExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim fecha As New BE.FechaBE
+                fecha.identificador = pepe.Item(0)
+                fecha.descripcion = pepe.Item(1)
+                fecha.fecha = pepe.Item(2)
+                
+                lista.Add(fecha)
+            Next
+
+        Catch ex As Excepciones.FechasNoEncontradasExcepcion
+            Throw New Excepciones.FechasNoEncontradasExcepcion
+        End Try
+
+        Return lista
+    End Function
+
 End Class
