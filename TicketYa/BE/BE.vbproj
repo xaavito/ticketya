@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="SedeBE.vb" />
     <Compile Include="ShowBE.vb" />
+    <Compile Include="TipoSectorBE.vb" />
     <Compile Include="TipoShowBE.vb" />
     <Compile Include="UsuarioBE.vb" />
   </ItemGroup>

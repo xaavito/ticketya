@@ -145,6 +145,9 @@
     <Compile Include="Controles\MyMaskedTextBox.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\MyTableLayoutPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\MyTextBox.vb">
       <SubType>Component</SubType>
     </Compile>

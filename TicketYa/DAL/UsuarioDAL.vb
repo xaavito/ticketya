@@ -323,5 +323,32 @@
         Throw New NotImplementedException
     End Function
 
+    Shared Function buscarCompradorCombo(ByVal p1 As String) As Object
+        Dim table As DataTable
+        Dim listaUsuarios As New List(Of BE.UsuarioBE)
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_COMPRADOR_COMBO_SP")
+            repository.addParam("@usr", p1)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.UsuariosNoEncontradosExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim usuario As New BE.UsuarioBE
+                usuario.identificador = pepe.Item(0)
+                usuario.nombre = pepe.Item(1)
+                
+                listaUsuarios.Add(usuario)
+            Next
+
+        Catch ex As Excepciones.UsuariosNoEncontradosExcepcion
+            Throw New Excepciones.UsuariosNoEncontradosExcepcion
+        End Try
+
+        Return listaUsuarios
+    End Function
+
 
 End Class

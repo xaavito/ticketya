@@ -27,17 +27,21 @@ Partial Class GenerarVentaForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.NumeroCompradorTextBox = New TicketYa.MyTextBox()
         Me.NombreLabel = New System.Windows.Forms.Label()
-        Me.ShowGroupBox = New System.Windows.Forms.GroupBox()
-        Me.FechaLabel = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.FechasComboBox = New TicketYa.MyComboBox()
-        Me.MyTextBox3 = New TicketYa.MyTextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.SectorComboBox = New TicketYa.MyComboBox()
-        Me.SectorLabel = New System.Windows.Forms.Label()
-        Me.BuscarShowButton = New TicketYa.MyButton()
         Me.NuevoCompradorButton = New TicketYa.MyButton()
         Me.BuscarCompradorButton = New TicketYa.MyButton()
+        Me.ShowGroupBox = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.FechaComboBox = New TicketYa.MyComboBox()
+        Me.ShowLabel = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.BuscarShowButton = New TicketYa.MyButton()
+        Me.ShowComboBox = New TicketYa.MyComboBox()
+        Me.ShowTextBox = New TicketYa.MyTextBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel = New System.Windows.Forms.Panel()
+        Me.SectorComboBox = New TicketYa.MyComboBox()
+        Me.SectorLabel = New System.Windows.Forms.Label()
         Me.CompradorGroupBox.SuspendLayout()
         Me.ShowGroupBox.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -102,7 +106,7 @@ Partial Class GenerarVentaForm
         Me.CompradorGroupBox.Controls.Add(Me.NombreTextBox)
         Me.CompradorGroupBox.Location = New System.Drawing.Point(4, 12)
         Me.CompradorGroupBox.Name = "CompradorGroupBox"
-        Me.CompradorGroupBox.Size = New System.Drawing.Size(765, 70)
+        Me.CompradorGroupBox.Size = New System.Drawing.Size(861, 70)
         Me.CompradorGroupBox.TabIndex = 6
         Me.CompradorGroupBox.TabStop = False
         Me.CompradorGroupBox.Text = "Comprador"
@@ -138,105 +142,6 @@ Partial Class GenerarVentaForm
         Me.NombreLabel.TabIndex = 6
         Me.NombreLabel.Text = "Nombre"
         '
-        'ShowGroupBox
-        '
-        Me.ShowGroupBox.Controls.Add(Me.FechaLabel)
-        Me.ShowGroupBox.Controls.Add(Me.Label3)
-        Me.ShowGroupBox.Controls.Add(Me.BuscarShowButton)
-        Me.ShowGroupBox.Controls.Add(Me.FechasComboBox)
-        Me.ShowGroupBox.Controls.Add(Me.MyTextBox3)
-        Me.ShowGroupBox.Location = New System.Drawing.Point(4, 88)
-        Me.ShowGroupBox.Name = "ShowGroupBox"
-        Me.ShowGroupBox.Size = New System.Drawing.Size(765, 70)
-        Me.ShowGroupBox.TabIndex = 9
-        Me.ShowGroupBox.TabStop = False
-        Me.ShowGroupBox.Text = "Show"
-        '
-        'FechaLabel
-        '
-        Me.FechaLabel.AutoSize = True
-        Me.FechaLabel.Location = New System.Drawing.Point(372, 22)
-        Me.FechaLabel.Name = "FechaLabel"
-        Me.FechaLabel.Size = New System.Drawing.Size(37, 13)
-        Me.FechaLabel.TabIndex = 7
-        Me.FechaLabel.Text = "Fecha"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 23)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(44, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Nombre"
-        '
-        'FechasComboBox
-        '
-        Me.FechasComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.FechasComboBox.emptyItem = Nothing
-        Me.FechasComboBox.FormattingEnabled = True
-        Me.FechasComboBox.lista = Nothing
-        Me.FechasComboBox.Location = New System.Drawing.Point(428, 19)
-        Me.FechasComboBox.Name = "FechasComboBox"
-        Me.FechasComboBox.Size = New System.Drawing.Size(205, 21)
-        Me.FechasComboBox.TabIndex = 4
-        '
-        'MyTextBox3
-        '
-        Me.MyTextBox3.alfanumerico = False
-        Me.MyTextBox3.boton = Nothing
-        Me.MyTextBox3.Location = New System.Drawing.Point(81, 20)
-        Me.MyTextBox3.nada = False
-        Me.MyTextBox3.Name = "MyTextBox3"
-        Me.MyTextBox3.numerico = False
-        Me.MyTextBox3.sinEspacio = False
-        Me.MyTextBox3.Size = New System.Drawing.Size(100, 20)
-        Me.MyTextBox3.TabIndex = 3
-        Me.MyTextBox3.texto = False
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.SectorComboBox)
-        Me.GroupBox1.Controls.Add(Me.SectorLabel)
-        Me.GroupBox1.Location = New System.Drawing.Point(4, 164)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(765, 202)
-        Me.GroupBox1.TabIndex = 10
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Sector"
-        '
-        'SectorComboBox
-        '
-        Me.SectorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.SectorComboBox.emptyItem = Nothing
-        Me.SectorComboBox.FormattingEnabled = True
-        Me.SectorComboBox.lista = Nothing
-        Me.SectorComboBox.Location = New System.Drawing.Point(81, 17)
-        Me.SectorComboBox.Name = "SectorComboBox"
-        Me.SectorComboBox.Size = New System.Drawing.Size(175, 21)
-        Me.SectorComboBox.TabIndex = 1
-        '
-        'SectorLabel
-        '
-        Me.SectorLabel.AutoSize = True
-        Me.SectorLabel.Location = New System.Drawing.Point(8, 20)
-        Me.SectorLabel.Name = "SectorLabel"
-        Me.SectorLabel.Size = New System.Drawing.Size(38, 13)
-        Me.SectorLabel.TabIndex = 0
-        Me.SectorLabel.Text = "Sector"
-        '
-        'BuscarShowButton
-        '
-        Me.BuscarShowButton.Image = Global.TicketYa.My.Resources.Resources.buscar
-        Me.BuscarShowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BuscarShowButton.Location = New System.Drawing.Point(276, 19)
-        Me.BuscarShowButton.Name = "BuscarShowButton"
-        Me.BuscarShowButton.Size = New System.Drawing.Size(75, 23)
-        Me.BuscarShowButton.TabIndex = 5
-        Me.BuscarShowButton.Text = "Buscar"
-        Me.BuscarShowButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BuscarShowButton.UseVisualStyleBackColor = True
-        '
         'NuevoCompradorButton
         '
         Me.NuevoCompradorButton.Image = Global.TicketYa.My.Resources.Resources.nuevo
@@ -261,10 +166,148 @@ Partial Class GenerarVentaForm
         Me.BuscarCompradorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarCompradorButton.UseVisualStyleBackColor = True
         '
+        'ShowGroupBox
+        '
+        Me.ShowGroupBox.Controls.Add(Me.Label4)
+        Me.ShowGroupBox.Controls.Add(Me.Label2)
+        Me.ShowGroupBox.Controls.Add(Me.FechaComboBox)
+        Me.ShowGroupBox.Controls.Add(Me.ShowLabel)
+        Me.ShowGroupBox.Controls.Add(Me.Label3)
+        Me.ShowGroupBox.Controls.Add(Me.BuscarShowButton)
+        Me.ShowGroupBox.Controls.Add(Me.ShowComboBox)
+        Me.ShowGroupBox.Controls.Add(Me.ShowTextBox)
+        Me.ShowGroupBox.Location = New System.Drawing.Point(4, 88)
+        Me.ShowGroupBox.Name = "ShowGroupBox"
+        Me.ShowGroupBox.Size = New System.Drawing.Size(861, 104)
+        Me.ShowGroupBox.TabIndex = 9
+        Me.ShowGroupBox.TabStop = False
+        Me.ShowGroupBox.Text = "Show"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(372, 60)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Fecha"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(372, 60)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(0, 13)
+        Me.Label2.TabIndex = 9
+        '
+        'FechaComboBox
+        '
+        Me.FechaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FechaComboBox.emptyItem = Nothing
+        Me.FechaComboBox.FormattingEnabled = True
+        Me.FechaComboBox.lista = Nothing
+        Me.FechaComboBox.Location = New System.Drawing.Point(428, 57)
+        Me.FechaComboBox.Name = "FechaComboBox"
+        Me.FechaComboBox.Size = New System.Drawing.Size(205, 21)
+        Me.FechaComboBox.TabIndex = 8
+        '
+        'ShowLabel
+        '
+        Me.ShowLabel.AutoSize = True
+        Me.ShowLabel.Location = New System.Drawing.Point(372, 22)
+        Me.ShowLabel.Name = "ShowLabel"
+        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
+        Me.ShowLabel.TabIndex = 7
+        Me.ShowLabel.Text = "Show"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(8, 23)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(44, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "Nombre"
+        '
+        'BuscarShowButton
+        '
+        Me.BuscarShowButton.Image = Global.TicketYa.My.Resources.Resources.buscar
+        Me.BuscarShowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BuscarShowButton.Location = New System.Drawing.Point(276, 19)
+        Me.BuscarShowButton.Name = "BuscarShowButton"
+        Me.BuscarShowButton.Size = New System.Drawing.Size(75, 23)
+        Me.BuscarShowButton.TabIndex = 5
+        Me.BuscarShowButton.Text = "Buscar"
+        Me.BuscarShowButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BuscarShowButton.UseVisualStyleBackColor = True
+        '
+        'ShowComboBox
+        '
+        Me.ShowComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ShowComboBox.emptyItem = Nothing
+        Me.ShowComboBox.FormattingEnabled = True
+        Me.ShowComboBox.lista = Nothing
+        Me.ShowComboBox.Location = New System.Drawing.Point(428, 19)
+        Me.ShowComboBox.Name = "ShowComboBox"
+        Me.ShowComboBox.Size = New System.Drawing.Size(205, 21)
+        Me.ShowComboBox.TabIndex = 4
+        '
+        'ShowTextBox
+        '
+        Me.ShowTextBox.alfanumerico = False
+        Me.ShowTextBox.boton = Nothing
+        Me.ShowTextBox.Location = New System.Drawing.Point(81, 20)
+        Me.ShowTextBox.nada = False
+        Me.ShowTextBox.Name = "ShowTextBox"
+        Me.ShowTextBox.numerico = False
+        Me.ShowTextBox.sinEspacio = False
+        Me.ShowTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ShowTextBox.TabIndex = 3
+        Me.ShowTextBox.texto = False
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Panel)
+        Me.GroupBox1.Controls.Add(Me.SectorComboBox)
+        Me.GroupBox1.Controls.Add(Me.SectorLabel)
+        Me.GroupBox1.Location = New System.Drawing.Point(4, 198)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(861, 236)
+        Me.GroupBox1.TabIndex = 10
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Sector"
+        '
+        'Panel
+        '
+        Me.Panel.Location = New System.Drawing.Point(301, 17)
+        Me.Panel.Name = "Panel"
+        Me.Panel.Size = New System.Drawing.Size(554, 213)
+        Me.Panel.TabIndex = 2
+        '
+        'SectorComboBox
+        '
+        Me.SectorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.SectorComboBox.emptyItem = Nothing
+        Me.SectorComboBox.FormattingEnabled = True
+        Me.SectorComboBox.lista = Nothing
+        Me.SectorComboBox.Location = New System.Drawing.Point(81, 17)
+        Me.SectorComboBox.Name = "SectorComboBox"
+        Me.SectorComboBox.Size = New System.Drawing.Size(175, 21)
+        Me.SectorComboBox.TabIndex = 1
+        '
+        'SectorLabel
+        '
+        Me.SectorLabel.AutoSize = True
+        Me.SectorLabel.Location = New System.Drawing.Point(8, 20)
+        Me.SectorLabel.Name = "SectorLabel"
+        Me.SectorLabel.Size = New System.Drawing.Size(38, 13)
+        Me.SectorLabel.TabIndex = 0
+        Me.SectorLabel.Text = "Sector"
+        '
         'GenerarVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(781, 446)
+        Me.ClientSize = New System.Drawing.Size(877, 446)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ShowGroupBox)
         Me.Controls.Add(Me.CompradorGroupBox)
@@ -292,11 +335,15 @@ Partial Class GenerarVentaForm
     Friend WithEvents ShowGroupBox As System.Windows.Forms.GroupBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents BuscarShowButton As TicketYa.MyButton
-    Friend WithEvents FechasComboBox As TicketYa.MyComboBox
-    Friend WithEvents MyTextBox3 As TicketYa.MyTextBox
-    Friend WithEvents FechaLabel As System.Windows.Forms.Label
+    Friend WithEvents ShowComboBox As TicketYa.MyComboBox
+    Friend WithEvents ShowTextBox As TicketYa.MyTextBox
+    Friend WithEvents ShowLabel As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents SectorComboBox As TicketYa.MyComboBox
     Friend WithEvents SectorLabel As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents FechaComboBox As TicketYa.MyComboBox
+    Friend WithEvents Panel As System.Windows.Forms.Panel
 
 End Class

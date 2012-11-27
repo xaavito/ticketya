@@ -53,3 +53,25 @@ Public Class SectorCreadoExistosamenteExcepcion
         Me.mensaje = ""
     End Sub
 End Class
+
+Public Class TipoSectorNoEncontradoExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.TipoSectorNoEncontradoExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+Public Class SectorNoEncontradoExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.SectorNoEncontradoExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
