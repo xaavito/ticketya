@@ -137,6 +137,7 @@
     <Content Include="BD\BU BD 2012-09-18 v2.sql" />
     <Content Include="BD\BU BD 2012-09-18.sql" />
     <Content Include="BD\BU BD 20121009.sql" />
+    <Content Include="BD\BU20121128.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.vbproj">

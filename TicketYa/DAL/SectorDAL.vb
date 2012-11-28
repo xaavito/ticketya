@@ -79,7 +79,7 @@
             table = New DataTable
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
-                Throw New Excepciones.TipoSectorNoEncontradoExcepcion
+                Throw New Excepciones.SectorNoEncontradoExcepcion
             End If
             For Each pepe As DataRow In table.Rows
                 Dim sector As New BE.SectorBE
@@ -98,8 +98,8 @@
                 lista.Add(sector)
             Next
 
-        Catch ex As Excepciones.TipoSectorNoEncontradoExcepcion
-            Throw New Excepciones.TipoSectorNoEncontradoExcepcion
+        Catch ex As Excepciones.SectorNoEncontradoExcepcion
+            Throw New Excepciones.SectorNoEncontradoExcepcion
         End Try
 
         Return lista

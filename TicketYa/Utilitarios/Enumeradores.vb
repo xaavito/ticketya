@@ -134,6 +134,8 @@
 
         SectorNoEncontradoExcepcion
 
+        SillasNoEncontradasExcepcion
+
     End Enum
 
     Enum Bitacora
