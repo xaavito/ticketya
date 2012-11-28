@@ -69,6 +69,7 @@
     <Compile Include="ConexionExcepcion.vb" />
     <Compile Include="CompradorExcepcion.vb" />
     <Compile Include="PreferenciaExcepcion.vb" />
+    <Compile Include="SillaExcepcion.vb" />
     <Compile Include="VentaExcepcion.vb" />
     <Compile Include="PromocionExcepcion.vb" />
     <Compile Include="SectorExcepcion.vb" />

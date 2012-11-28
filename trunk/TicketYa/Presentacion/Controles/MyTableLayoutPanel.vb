@@ -2,7 +2,7 @@
     Inherits TableLayoutPanel
 
     Public Sub New(ByVal filas As Integer, ByVal col As Integer)
-        Me.Size = New System.Drawing.Size(20 * col, 20 * filas)
+        Me.Size = New System.Drawing.Size((20 * col) + 10, (20 * filas) + 10)
         Me.RowCount = filas
         Me.ColumnCount = col
 
@@ -15,6 +15,6 @@
         Next
 
         Me.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single
-        Me.Dock = DockStyle.Fill
+        'Me.Dock = DockStyle.Fill
     End Sub
 End Class
