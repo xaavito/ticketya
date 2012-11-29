@@ -1,5 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Configuration.Install
+Imports System.Configuration
+Imports System.IO
 
 Public Class Instalador
     Inherits Installer
@@ -7,21 +9,22 @@ Public Class Instalador
     Public Sub New()
         MyBase.New()
 
-        'El Diseñador de componentes requiere esta llamada.
-        InitializeComponent()
-
-        'Agregue el código de inicialización después de llamar a InitializeComponent
-
-    End Sub
-    Public Overrides Sub Commit(ByVal savedState As System.Collections.IDictionary)
-        MyBase.Commit(savedState)
-        'Dim pepe As New MyInstallerForm
-        ' y aca no!
     End Sub
 
-    Protected Overrides Sub OnAfterInstall(ByVal savedState As System.Collections.IDictionary)
-        MyBase.OnAfterInstall(savedState)
 
-        'me pa que va a aca mi codigo
+    Private Sub Instalador_AfterInstall(sender As Object, e As System.Configuration.Install.InstallEventArgs) Handles Me.AfterInstall
+        Dim TargetDirectory As String = Path.GetDirectoryName(Context.Parameters("AssemblyPath"))
+
+        Dim config As Configuration = ConfigurationManager.OpenExeConfiguration(String.Format("{0}\TicketYa.exe", TargetDirectory))
+        Dim dialog As New frmSQLConnectionDialog()
+        dialog.ConnectionString = config.ConnectionStrings.ConnectionStrings("conn").ConnectionString
+        dialog.RootPath = TargetDirectory + "\"
+
+        If dialog.ShowDialog() = DialogResult.OK Then
+            Dim CS As String = dialog.ConnectionString
+            config.ConnectionStrings.ConnectionStrings("conn").ConnectionString = CS
+            config.Save(ConfigurationSaveMode.Modified)
+            ConfigurationManager.RefreshSection("connectionStrings")
+        End If
     End Sub
 End Class
