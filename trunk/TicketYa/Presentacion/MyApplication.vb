@@ -1,9 +1,12 @@
-﻿Namespace My
+﻿Imports System.Configuration
+
+Namespace My
 
     Partial Friend Class MyApplication
         Dim frm As New LoginForm
 
         Protected Overrides Function OnStartup(ByVal eventArgs As Microsoft.VisualBasic.ApplicationServices.StartupEventArgs) As Boolean
+
             Dim Splash As New Intro()
             Splash.Name = "TicketYa"
             'Splash.ProductVersion

@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -353,6 +354,18 @@
     <Compile Include="RealizarRestoreForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SqlConnection\frmSQLConnectionDialog.Designer.vb">
+      <DependentUpon>frmSQLConnectionDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnection\frmSQLConnectionDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SqlConnection\frmSQLConnectionDialogNewDB.Designer.vb">
+      <DependentUpon>frmSQLConnectionDialogNewDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SqlConnection\frmSQLConnectionDialogNewDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BuscarBackupForm.resx">
@@ -472,6 +485,12 @@
     <EmbeddedResource Include="RealizarRestoreForm.resx">
       <DependentUpon>RealizarRestoreForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SqlConnection\frmSQLConnectionDialog.resx">
+      <DependentUpon>frmSQLConnectionDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SqlConnection\frmSQLConnectionDialogNewDB.resx">
+      <DependentUpon>frmSQLConnectionDialogNewDB.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -493,6 +512,10 @@
     <ProjectReference Include="..\BLL\BLL.vbproj">
       <Project>{38F3AABE-4289-404D-B853-FCE763A6604C}</Project>
       <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.vbproj">
+      <Project>{26F85DFA-BF9E-406A-AA43-32F1022EB662}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\Excepciones\Excepciones.vbproj">
       <Project>{3933B96F-EB72-489E-9D03-041867B6DEDC}</Project>
@@ -616,6 +639,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Slide-Show-icon.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="sql\ticketya.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
