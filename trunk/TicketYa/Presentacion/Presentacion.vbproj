@@ -137,6 +137,9 @@
     <Compile Include="Controles\MyButton.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controles\MyChairButton.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Controles\MyComboBox.vb">
       <SubType>Component</SubType>
     </Compile>
@@ -642,6 +645,9 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="Resources\chair-icon-libre.PNG" />
+    <None Include="Resources\chair-icon-ocupada.PNG" />
+    <None Include="Resources\chair-icon-resevada.PNG" />
     <Content Include="sql\ticketya.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

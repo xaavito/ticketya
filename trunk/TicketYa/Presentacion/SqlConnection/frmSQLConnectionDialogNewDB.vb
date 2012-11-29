@@ -1,5 +1,5 @@
 ﻿Imports System.Data.SqlClient
-Imports DataLayer
+'Imports DataLayer
 Imports DAL
 
 Public Class frmSQLConnectionDialogNewDB

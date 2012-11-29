@@ -130,6 +130,27 @@ Namespace My.Resources
             End Get
         End Property
         
+        Friend ReadOnly Property chair_icon_libre() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("chair_icon_libre", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property chair_icon_ocupada() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("chair_icon_ocupada", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        Friend ReadOnly Property chair_icon_resevada() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("chair_icon_resevada", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
         Friend ReadOnly Property configuracion() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("configuracion", resourceCulture)
