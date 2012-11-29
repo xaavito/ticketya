@@ -37,7 +37,7 @@
 
     Private Sub SectorComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SectorComboBox.SelectedIndexChanged
         If selectedSector.filas <> 0 Then
-            Dim listaSillas As List(Of BE.SillaBE)
+            Dim listaSillas As List(Of BE.SillaBE) = Nothing
             Try
                 listaSillas = BLL.GestorSillaBLL.getSillas(SectorComboBox.SelectedValue, FechaComboBox.SelectedValue)
             Catch ex As Exception
@@ -46,16 +46,23 @@
 
             Dim sillasPanel As New MyTableLayoutPanel(selectedSector.filas, selectedSector.columnas)
 
-            Dim check As CheckBox
-
+            Dim check As MyChairButton = Nothing
+            'check.Image = Image.
             For fila = 0 To sillasPanel.RowCount - 1
                 For col = 0 To sillasPanel.ColumnCount - 1
-                    check = New CheckBox
+                    For Each silla As BE.SillaBE In listaSillas
+                        If silla.fila = fila And silla.columna = col Then
+                            check = New MyChairButton(silla.estado.descripcion)
+                        End If
+                    Next
+
                     sillasPanel.Controls.Add(check, col, fila)
                 Next
             Next
 
             Panel.Controls.Add(sillasPanel)
+            Panel.AutoScroll = True
+
         End If
     End Sub
 End Class
