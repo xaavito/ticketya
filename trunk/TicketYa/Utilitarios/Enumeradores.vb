@@ -136,6 +136,10 @@
 
         SillasNoEncontradasExcepcion
 
+        SillaYaReservadaExcepcion
+
+        SillaYaVendidaExcepcion
+
     End Enum
 
     Enum Bitacora

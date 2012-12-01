@@ -42,9 +42,21 @@ Partial Class GenerarVentaForm
         Me.Panel = New System.Windows.Forms.Panel()
         Me.SectorComboBox = New TicketYa.MyComboBox()
         Me.SectorLabel = New System.Windows.Forms.Label()
+        Me.VentaDataGrid = New TicketYa.MyDataGrid()
+        Me.AceptarButton = New TicketYa.MyButton()
+        Me.CancelarButton = New TicketYa.MyButton()
+        Me.idSilla = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idShow = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ShowColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FilaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrecioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CompradorGroupBox.SuspendLayout()
         Me.ShowGroupBox.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.VentaDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ApellidoLabel
@@ -304,10 +316,104 @@ Partial Class GenerarVentaForm
         Me.SectorLabel.TabIndex = 0
         Me.SectorLabel.Text = "Sector"
         '
+        'VentaDataGrid
+        '
+        Me.VentaDataGrid.AllowUserToAddRows = False
+        Me.VentaDataGrid.AllowUserToDeleteRows = False
+        Me.VentaDataGrid.AllowUserToResizeRows = False
+        Me.VentaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.VentaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.VentaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idSilla, Me.idShow, Me.idFecha, Me.ShowColumn, Me.FechaColumn, Me.FilaColumn, Me.ColumnaColumn, Me.PrecioColumn})
+        Me.VentaDataGrid.Location = New System.Drawing.Point(4, 440)
+        Me.VentaDataGrid.Name = "VentaDataGrid"
+        Me.VentaDataGrid.ReadOnly = True
+        Me.VentaDataGrid.RowHeadersVisible = False
+        Me.VentaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.VentaDataGrid.Size = New System.Drawing.Size(861, 211)
+        Me.VentaDataGrid.TabIndex = 11
+        '
+        'AceptarButton
+        '
+        Me.AceptarButton.Image = Global.TicketYa.My.Resources.Resources.aceptar
+        Me.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AceptarButton.Location = New System.Drawing.Point(232, 669)
+        Me.AceptarButton.Name = "AceptarButton"
+        Me.AceptarButton.Size = New System.Drawing.Size(75, 23)
+        Me.AceptarButton.TabIndex = 12
+        Me.AceptarButton.Text = "Aceptar"
+        Me.AceptarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AceptarButton.UseVisualStyleBackColor = True
+        '
+        'CancelarButton
+        '
+        Me.CancelarButton.Image = Global.TicketYa.My.Resources.Resources.cancelar
+        Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CancelarButton.Location = New System.Drawing.Point(492, 669)
+        Me.CancelarButton.Name = "CancelarButton"
+        Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CancelarButton.TabIndex = 13
+        Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CancelarButton.UseVisualStyleBackColor = True
+        '
+        'idSilla
+        '
+        Me.idSilla.HeaderText = "idSilla"
+        Me.idSilla.Name = "idSilla"
+        Me.idSilla.ReadOnly = True
+        Me.idSilla.Visible = False
+        '
+        'idShow
+        '
+        Me.idShow.HeaderText = "idShow"
+        Me.idShow.Name = "idShow"
+        Me.idShow.ReadOnly = True
+        Me.idShow.Visible = False
+        '
+        'idFecha
+        '
+        Me.idFecha.HeaderText = "idFecha"
+        Me.idFecha.Name = "idFecha"
+        Me.idFecha.ReadOnly = True
+        Me.idFecha.Visible = False
+        '
+        'ShowColumn
+        '
+        Me.ShowColumn.HeaderText = "Show"
+        Me.ShowColumn.Name = "ShowColumn"
+        Me.ShowColumn.ReadOnly = True
+        '
+        'FechaColumn
+        '
+        Me.FechaColumn.HeaderText = "Fecha"
+        Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
+        '
+        'FilaColumn
+        '
+        Me.FilaColumn.HeaderText = "Fila"
+        Me.FilaColumn.Name = "FilaColumn"
+        Me.FilaColumn.ReadOnly = True
+        '
+        'ColumnaColumn
+        '
+        Me.ColumnaColumn.HeaderText = "Columna"
+        Me.ColumnaColumn.Name = "ColumnaColumn"
+        Me.ColumnaColumn.ReadOnly = True
+        '
+        'PrecioColumn
+        '
+        Me.PrecioColumn.HeaderText = "Precio"
+        Me.PrecioColumn.Name = "PrecioColumn"
+        Me.PrecioColumn.ReadOnly = True
+        '
         'GenerarVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(877, 446)
+        Me.ClientSize = New System.Drawing.Size(877, 766)
+        Me.Controls.Add(Me.CancelarButton)
+        Me.Controls.Add(Me.AceptarButton)
+        Me.Controls.Add(Me.VentaDataGrid)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.ShowGroupBox)
         Me.Controls.Add(Me.CompradorGroupBox)
@@ -319,6 +425,7 @@ Partial Class GenerarVentaForm
         Me.ShowGroupBox.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.VentaDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -345,5 +452,16 @@ Partial Class GenerarVentaForm
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents FechaComboBox As TicketYa.MyComboBox
     Friend WithEvents Panel As System.Windows.Forms.Panel
+    Friend WithEvents VentaDataGrid As TicketYa.MyDataGrid
+    Friend WithEvents AceptarButton As TicketYa.MyButton
+    Friend WithEvents CancelarButton As TicketYa.MyButton
+    Friend WithEvents idSilla As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idShow As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idFecha As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ShowColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FilaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ColumnaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PrecioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
