@@ -44,7 +44,7 @@
 
     Private Sub addToForm()
         Me.grid.Rows.Add(New String() {Me.miSilla.identificador,
-                                       Me.miSilla.sector.descripcion,
+                                       Me.miSilla.sector.identificador,
                                        Me.miSilla.sector.fecha.show.identificador,
                                        Me.miSilla.sector.fecha.identificador,
                                        Me.miSilla.sector.fecha.show.descripcion,

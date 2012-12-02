@@ -108,6 +108,7 @@
     <Compile Include="TipoSectorBE.vb" />
     <Compile Include="TipoShowBE.vb" />
     <Compile Include="UsuarioBE.vb" />
+    <Compile Include="VentaBE.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">

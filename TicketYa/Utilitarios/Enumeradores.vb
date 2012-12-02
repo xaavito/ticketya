@@ -140,6 +140,12 @@
 
         SillaYaVendidaExcepcion
 
+        GenerarDetalleVentaExcepcion
+
+        GenerarVentaExcepcion
+
+        GenerarPagoVentaExcepcion
+
     End Enum
 
     Enum Bitacora
