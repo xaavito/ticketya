@@ -71,6 +71,7 @@
     <Compile Include="BackupBE.vb" />
     <Compile Include="BitacoraBE.vb" />
     <Compile Include="ControlBE.vb" />
+    <Compile Include="DetalleVentaBE.vb" />
     <Compile Include="EstadoSillaBE.vb" />
     <Compile Include="PreferenciaBE.vb" />
     <Compile Include="PromocionBE.vb" />

@@ -21,9 +21,10 @@
     Private Sub MyChairButton_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Click
         Try
             If Me.miSilla.estado.descripcion = 1 Then
-                Me.Image = TicketYa.My.Resources.Resources.chair_icon_resevada
+                Me.Image = TicketYa.My.Resources.Resources.chair_icon_seleccionada
                 addToForm()
             ElseIf Me.miSilla.estado.descripcion = 2 Then
+                Me.Image = TicketYa.My.Resources.Resources.chair_icon_seleccionada
                 addToForm()
                 Throw New Excepciones.SillaYaReservadaExcepcion
             ElseIf Me.miSilla.estado.descripcion = 3 Then
@@ -42,6 +43,15 @@
     End Sub
 
     Private Sub addToForm()
-        Me.grid.Rows.Add(New String() {Me.miSilla.identificador, Me.miSilla.sector.fecha.show.identificador, Me.miSilla.sector.fecha.identificador, Me.miSilla.sector.fecha.show.descripcion, Me.miSilla.sector.fecha.descripcion, Me.miSilla.fila, Me.miSilla.columna, Me.miSilla.sector.valor})
+        Me.grid.Rows.Add(New String() {Me.miSilla.identificador,
+                                       Me.miSilla.sector.descripcion,
+                                       Me.miSilla.sector.fecha.show.identificador,
+                                       Me.miSilla.sector.fecha.identificador,
+                                       Me.miSilla.sector.fecha.show.descripcion,
+                                       Me.miSilla.sector.fecha.forLista,
+                                       Me.miSilla.sector.descripcion,
+                                       Me.miSilla.fila,
+                                       Me.miSilla.columna,
+                                       Me.miSilla.sector.valor})
     End Sub
 End Class
