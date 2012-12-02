@@ -24,6 +24,17 @@
     End Property
 
 
+    Private _forLista As String
+    Public Property forLista() As String
+        Get
+            Return _forLista
+        End Get
+        Set(ByVal value As String)
+            _forLista = value
+        End Set
+    End Property
+
+
     Private _show As BE.ShowBE
     Public Property show() As BE.ShowBE
         Get

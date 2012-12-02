@@ -252,6 +252,7 @@
                 fecha.identificador = pepe.Item(0)
                 fecha.descripcion = pepe.Item(1)
                 fecha.fecha = pepe.Item(2)
+                fecha.forLista = pepe.Item(1) + ", " + pepe.Item(2)
                 
                 lista.Add(fecha)
             Next

@@ -43,16 +43,27 @@ Partial Class GenerarVentaForm
         Me.SectorComboBox = New TicketYa.MyComboBox()
         Me.SectorLabel = New System.Windows.Forms.Label()
         Me.VentaDataGrid = New TicketYa.MyDataGrid()
-        Me.AceptarButton = New TicketYa.MyButton()
-        Me.CancelarButton = New TicketYa.MyButton()
         Me.idSilla = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.idSector = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idShow = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.idFecha = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ShowColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SectorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FilaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColumnaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.AceptarButton = New TicketYa.MyButton()
+        Me.CancelarButton = New TicketYa.MyButton()
+        Me.SubTotalTextBox = New TicketYa.MyTextBox()
+        Me.SubTotalLabel = New System.Windows.Forms.Label()
+        Me.DescuentoLabel = New System.Windows.Forms.Label()
+        Me.DescuentoTextBox = New TicketYa.MyTextBox()
+        Me.TotalLabel = New System.Windows.Forms.Label()
+        Me.TotalTextBox = New TicketYa.MyTextBox()
+        Me.PromocionLabel = New System.Windows.Forms.Label()
+        Me.PromocionComboBox = New TicketYa.MyComboBox()
+        Me.EfectivoCheckBox = New System.Windows.Forms.CheckBox()
         Me.CompradorGroupBox.SuspendLayout()
         Me.ShowGroupBox.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -323,7 +334,7 @@ Partial Class GenerarVentaForm
         Me.VentaDataGrid.AllowUserToResizeRows = False
         Me.VentaDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.VentaDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.VentaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idSilla, Me.idShow, Me.idFecha, Me.ShowColumn, Me.FechaColumn, Me.FilaColumn, Me.ColumnaColumn, Me.PrecioColumn})
+        Me.VentaDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idSilla, Me.idSector, Me.idShow, Me.idFecha, Me.ShowColumn, Me.FechaColumn, Me.SectorColumn, Me.FilaColumn, Me.ColumnaColumn, Me.PrecioColumn})
         Me.VentaDataGrid.Location = New System.Drawing.Point(4, 440)
         Me.VentaDataGrid.Name = "VentaDataGrid"
         Me.VentaDataGrid.ReadOnly = True
@@ -332,36 +343,19 @@ Partial Class GenerarVentaForm
         Me.VentaDataGrid.Size = New System.Drawing.Size(861, 211)
         Me.VentaDataGrid.TabIndex = 11
         '
-        'AceptarButton
-        '
-        Me.AceptarButton.Image = Global.TicketYa.My.Resources.Resources.aceptar
-        Me.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AceptarButton.Location = New System.Drawing.Point(232, 669)
-        Me.AceptarButton.Name = "AceptarButton"
-        Me.AceptarButton.Size = New System.Drawing.Size(75, 23)
-        Me.AceptarButton.TabIndex = 12
-        Me.AceptarButton.Text = "Aceptar"
-        Me.AceptarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.AceptarButton.UseVisualStyleBackColor = True
-        '
-        'CancelarButton
-        '
-        Me.CancelarButton.Image = Global.TicketYa.My.Resources.Resources.cancelar
-        Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.CancelarButton.Location = New System.Drawing.Point(492, 669)
-        Me.CancelarButton.Name = "CancelarButton"
-        Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
-        Me.CancelarButton.TabIndex = 13
-        Me.CancelarButton.Text = "Cancelar"
-        Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.CancelarButton.UseVisualStyleBackColor = True
-        '
         'idSilla
         '
         Me.idSilla.HeaderText = "idSilla"
         Me.idSilla.Name = "idSilla"
         Me.idSilla.ReadOnly = True
         Me.idSilla.Visible = False
+        '
+        'idSector
+        '
+        Me.idSector.HeaderText = "idSector"
+        Me.idSector.Name = "idSector"
+        Me.idSector.ReadOnly = True
+        Me.idSector.Visible = False
         '
         'idShow
         '
@@ -389,6 +383,12 @@ Partial Class GenerarVentaForm
         Me.FechaColumn.Name = "FechaColumn"
         Me.FechaColumn.ReadOnly = True
         '
+        'SectorColumn
+        '
+        Me.SectorColumn.HeaderText = "Sector"
+        Me.SectorColumn.Name = "SectorColumn"
+        Me.SectorColumn.ReadOnly = True
+        '
         'FilaColumn
         '
         Me.FilaColumn.HeaderText = "Fila"
@@ -407,10 +407,139 @@ Partial Class GenerarVentaForm
         Me.PrecioColumn.Name = "PrecioColumn"
         Me.PrecioColumn.ReadOnly = True
         '
+        'AceptarButton
+        '
+        Me.AceptarButton.Image = Global.TicketYa.My.Resources.Resources.aceptar
+        Me.AceptarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AceptarButton.Location = New System.Drawing.Point(305, 750)
+        Me.AceptarButton.Name = "AceptarButton"
+        Me.AceptarButton.Size = New System.Drawing.Size(75, 23)
+        Me.AceptarButton.TabIndex = 12
+        Me.AceptarButton.Text = "Aceptar"
+        Me.AceptarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.AceptarButton.UseVisualStyleBackColor = True
+        '
+        'CancelarButton
+        '
+        Me.CancelarButton.Image = Global.TicketYa.My.Resources.Resources.cancelar
+        Me.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.CancelarButton.Location = New System.Drawing.Point(495, 750)
+        Me.CancelarButton.Name = "CancelarButton"
+        Me.CancelarButton.Size = New System.Drawing.Size(75, 23)
+        Me.CancelarButton.TabIndex = 13
+        Me.CancelarButton.Text = "Cancelar"
+        Me.CancelarButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.CancelarButton.UseVisualStyleBackColor = True
+        '
+        'SubTotalTextBox
+        '
+        Me.SubTotalTextBox.alfanumerico = False
+        Me.SubTotalTextBox.boton = Nothing
+        Me.SubTotalTextBox.Location = New System.Drawing.Point(774, 658)
+        Me.SubTotalTextBox.nada = False
+        Me.SubTotalTextBox.Name = "SubTotalTextBox"
+        Me.SubTotalTextBox.numerico = False
+        Me.SubTotalTextBox.sinEspacio = False
+        Me.SubTotalTextBox.Size = New System.Drawing.Size(91, 20)
+        Me.SubTotalTextBox.TabIndex = 14
+        Me.SubTotalTextBox.texto = False
+        '
+        'SubTotalLabel
+        '
+        Me.SubTotalLabel.AutoSize = True
+        Me.SubTotalLabel.Location = New System.Drawing.Point(706, 661)
+        Me.SubTotalLabel.Name = "SubTotalLabel"
+        Me.SubTotalLabel.Size = New System.Drawing.Size(50, 13)
+        Me.SubTotalLabel.TabIndex = 15
+        Me.SubTotalLabel.Text = "SubTotal"
+        '
+        'DescuentoLabel
+        '
+        Me.DescuentoLabel.AutoSize = True
+        Me.DescuentoLabel.Location = New System.Drawing.Point(706, 687)
+        Me.DescuentoLabel.Name = "DescuentoLabel"
+        Me.DescuentoLabel.Size = New System.Drawing.Size(59, 13)
+        Me.DescuentoLabel.TabIndex = 17
+        Me.DescuentoLabel.Text = "Descuento"
+        '
+        'DescuentoTextBox
+        '
+        Me.DescuentoTextBox.alfanumerico = False
+        Me.DescuentoTextBox.boton = Nothing
+        Me.DescuentoTextBox.Location = New System.Drawing.Point(774, 684)
+        Me.DescuentoTextBox.nada = False
+        Me.DescuentoTextBox.Name = "DescuentoTextBox"
+        Me.DescuentoTextBox.numerico = False
+        Me.DescuentoTextBox.sinEspacio = False
+        Me.DescuentoTextBox.Size = New System.Drawing.Size(91, 20)
+        Me.DescuentoTextBox.TabIndex = 16
+        Me.DescuentoTextBox.texto = False
+        '
+        'TotalLabel
+        '
+        Me.TotalLabel.AutoSize = True
+        Me.TotalLabel.Location = New System.Drawing.Point(706, 713)
+        Me.TotalLabel.Name = "TotalLabel"
+        Me.TotalLabel.Size = New System.Drawing.Size(31, 13)
+        Me.TotalLabel.TabIndex = 19
+        Me.TotalLabel.Text = "Total"
+        '
+        'TotalTextBox
+        '
+        Me.TotalTextBox.alfanumerico = False
+        Me.TotalTextBox.boton = Nothing
+        Me.TotalTextBox.Location = New System.Drawing.Point(774, 710)
+        Me.TotalTextBox.nada = False
+        Me.TotalTextBox.Name = "TotalTextBox"
+        Me.TotalTextBox.numerico = False
+        Me.TotalTextBox.sinEspacio = False
+        Me.TotalTextBox.Size = New System.Drawing.Size(91, 20)
+        Me.TotalTextBox.TabIndex = 18
+        Me.TotalTextBox.texto = False
+        '
+        'PromocionLabel
+        '
+        Me.PromocionLabel.AutoSize = True
+        Me.PromocionLabel.Location = New System.Drawing.Point(439, 687)
+        Me.PromocionLabel.Name = "PromocionLabel"
+        Me.PromocionLabel.Size = New System.Drawing.Size(57, 13)
+        Me.PromocionLabel.TabIndex = 20
+        Me.PromocionLabel.Text = "Promocion"
+        '
+        'PromocionComboBox
+        '
+        Me.PromocionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.PromocionComboBox.emptyItem = Nothing
+        Me.PromocionComboBox.FormattingEnabled = True
+        Me.PromocionComboBox.lista = Nothing
+        Me.PromocionComboBox.Location = New System.Drawing.Point(516, 684)
+        Me.PromocionComboBox.Name = "PromocionComboBox"
+        Me.PromocionComboBox.Size = New System.Drawing.Size(184, 21)
+        Me.PromocionComboBox.TabIndex = 21
+        '
+        'EfectivoCheckBox
+        '
+        Me.EfectivoCheckBox.AutoSize = True
+        Me.EfectivoCheckBox.Location = New System.Drawing.Point(774, 736)
+        Me.EfectivoCheckBox.Name = "EfectivoCheckBox"
+        Me.EfectivoCheckBox.Size = New System.Drawing.Size(65, 17)
+        Me.EfectivoCheckBox.TabIndex = 22
+        Me.EfectivoCheckBox.Text = "Efectivo"
+        Me.EfectivoCheckBox.UseVisualStyleBackColor = True
+        '
         'GenerarVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(877, 766)
+        Me.ClientSize = New System.Drawing.Size(871, 785)
+        Me.Controls.Add(Me.EfectivoCheckBox)
+        Me.Controls.Add(Me.PromocionComboBox)
+        Me.Controls.Add(Me.PromocionLabel)
+        Me.Controls.Add(Me.TotalLabel)
+        Me.Controls.Add(Me.TotalTextBox)
+        Me.Controls.Add(Me.DescuentoLabel)
+        Me.Controls.Add(Me.DescuentoTextBox)
+        Me.Controls.Add(Me.SubTotalLabel)
+        Me.Controls.Add(Me.SubTotalTextBox)
         Me.Controls.Add(Me.CancelarButton)
         Me.Controls.Add(Me.AceptarButton)
         Me.Controls.Add(Me.VentaDataGrid)
@@ -427,6 +556,7 @@ Partial Class GenerarVentaForm
         Me.GroupBox1.PerformLayout()
         CType(Me.VentaDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents NuevoCompradorButton As TicketYa.MyButton
@@ -456,12 +586,23 @@ Partial Class GenerarVentaForm
     Friend WithEvents AceptarButton As TicketYa.MyButton
     Friend WithEvents CancelarButton As TicketYa.MyButton
     Friend WithEvents idSilla As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents idSector As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idShow As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents idFecha As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ShowColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SectorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FilaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ColumnaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PrecioColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SubTotalTextBox As TicketYa.MyTextBox
+    Friend WithEvents SubTotalLabel As System.Windows.Forms.Label
+    Friend WithEvents DescuentoLabel As System.Windows.Forms.Label
+    Friend WithEvents DescuentoTextBox As TicketYa.MyTextBox
+    Friend WithEvents TotalLabel As System.Windows.Forms.Label
+    Friend WithEvents TotalTextBox As TicketYa.MyTextBox
+    Friend WithEvents PromocionLabel As System.Windows.Forms.Label
+    Friend WithEvents PromocionComboBox As TicketYa.MyComboBox
+    Friend WithEvents EfectivoCheckBox As System.Windows.Forms.CheckBox
 
 End Class

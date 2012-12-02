@@ -2,11 +2,18 @@
     Dim selectedSector As New BE.SectorBE
     Dim selectedFecha As New BE.FechaBE
     Dim selectedShow As New BE.ShowBE
+    Dim selectedComprador As New BE.UsuarioBE
     
     Private Sub BuscarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarCompradorButton.Click
-        CompradoresComboBox.DataSource = BLL.GestorUsuarioBLL.buscarCompradorCombo(ApellidoTextBox.Text)
-        CompradoresComboBox.DisplayMember = "nombre"
-        CompradoresComboBox.ValueMember = "identificador"
+        Try
+            CompradoresComboBox.DataSource = BLL.GestorUsuarioBLL.buscarCompradorCombo(ApellidoTextBox.Text)
+            CompradoresComboBox.DisplayMember = "nombre"
+            CompradoresComboBox.ValueMember = "identificador"
+
+        Catch ex As Excepciones.CompradorNoEncontradoExcepcion
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
 
     Private Sub BuscarShowButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarShowButton.Click
@@ -29,7 +36,7 @@
                 My.Application.manejarExcepcion(ex)
             End Try
 
-            FechaComboBox.DisplayMember = "descripcion"
+            FechaComboBox.DisplayMember = "forLista"
             FechaComboBox.ValueMember = "identificador"
         End If
         
@@ -41,24 +48,30 @@
                 selectedFecha = DirectCast(FechaComboBox.SelectedItem, BE.FechaBE)
                 selectedFecha.show = selectedShow
                 SectorComboBox.DataSource = BLL.GestorSectorBLL.buscarSectorPorFecha(FechaComboBox.SelectedValue)
+                SectorComboBox.DisplayMember = "descripcion"
+                SectorComboBox.ValueMember = "identificador"
+
+                selectedSector = DirectCast(SectorComboBox.SelectedItem, BE.SectorBE)
+                selectedSector.fecha = selectedFecha
             Catch ex As Excepciones.SectorNoEncontradoExcepcion
                 My.Application.manejarExcepcion(ex)
             End Try
-
-            SectorComboBox.DisplayMember = "descripcion"
-            SectorComboBox.ValueMember = "identificador"
-            selectedSector = DirectCast(SectorComboBox.SelectedItem, BE.SectorBE)
-            selectedSector.fecha = DirectCast(FechaComboBox.SelectedItem, BE.FechaBE)
         End If
     End Sub
 
     Private Sub SectorComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SectorComboBox.SelectedIndexChanged
         If selectedSector IsNot Nothing And selectedSector.filas <> 0 Then
+            selectedSector = DirectCast(SectorComboBox.SelectedItem, BE.SectorBE)
+            selectedSector.fecha = selectedFecha
+
             Dim listaSillas As List(Of BE.SillaBE) = Nothing
             Try
                 selectedSector.fecha = selectedFecha
                 listaSillas = BLL.GestorSillaBLL.getSillas(SectorComboBox.SelectedValue, FechaComboBox.SelectedValue)
             Catch ex As Excepciones.SillasNoEncontradasExcepcion
+                SectorComboBox.DataSource = Nothing
+                SectorComboBox.Enabled = False
+                Panel.Controls.Clear()
                 My.Application.manejarExcepcion(ex)
             End Try
 
@@ -78,7 +91,7 @@
                     sillasPanel.Controls.Add(check, col, fila)
                 Next
             Next
-
+            Panel.Controls.Clear()
             Panel.Controls.Add(sillasPanel)
             Panel.AutoScroll = True
 
@@ -86,10 +99,43 @@
     End Sub
 
     Private Sub AceptarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AceptarButton.Click
+        Dim detalleVenta As BE.DetalleVentaBE
+        Dim listaVentas As New List(Of BE.DetalleVentaBE)
+        For Each venta As DataGridViewRow In VentaDataGrid.Rows
+            detalleVenta = New BE.DetalleVentaBE
+
+            detalleVenta.idSilla = venta.Cells.Item("idSilla").Value
+            detalleVenta.idSector = venta.Cells.Item("idSector").Value
+            detalleVenta.idShow = venta.Cells.Item("idShow").Value
+            detalleVenta.idFecha = venta.Cells.Item("idFecha").Value
+            detalleVenta.show = venta.Cells.Item("show").Value
+            detalleVenta.fecha = venta.Cells.Item("fecha").Value
+            detalleVenta.sector = venta.Cells.Item("sector").Value
+            detalleVenta.fila = venta.Cells.Item("fila").Value
+            detalleVenta.columna = venta.Cells.Item("columna").Value
+            detalleVenta.valor = venta.Cells.Item("valor").Value
+
+            listaVentas.Add(detalleVenta)
+        Next
 
     End Sub
 
     Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarButton.Click
         Me.Close()
+    End Sub
+
+    Private Sub VentaDataGrid_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles VentaDataGrid.RowsAdded
+        Dim valor As Decimal
+        For Each pepe As DataGridViewRow In VentaDataGrid.Rows
+            valor += pepe.Cells.Item(9).Value
+        Next
+
+        SubTotalTextBox.Text = valor
+        DescuentoTextBox.Text = "0"
+        TotalTextBox.Text = Decimal.Parse(valor) - Decimal.Parse(DescuentoTextBox.Text)
+    End Sub
+
+    Private Sub CompradoresComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompradoresComboBox.SelectedIndexChanged
+        selectedComprador = DirectCast(CompradoresComboBox.SelectedItem, BE.UsuarioBE)
     End Sub
 End Class

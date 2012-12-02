@@ -648,6 +648,7 @@
     <None Include="Resources\chair-icon-libre.PNG" />
     <None Include="Resources\chair-icon-ocupada.PNG" />
     <None Include="Resources\chair-icon-resevada.PNG" />
+    <None Include="Resources\chair-icon-seleccionada.PNG" />
     <Content Include="sql\ticketya.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
