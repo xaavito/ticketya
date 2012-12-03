@@ -6,10 +6,10 @@
 
     Public Sub buscarVentas()
         Try
-            VentasDataGrid.DataSource = BLL.GestorVentaBLL.buscarVenta(FechaDesdeTextBox.Text,
-                                                                       FechaHastaTextBox.Text,
-                                                                       MontoDesdeTextBox.Text,
-                                                                       MontoHastaTextBox.Text,
+            VentasDataGrid.DataSource = BLL.GestorVentaBLL.buscarVenta(FechaDesdeTextBox.getDateTime,
+                                                                       FechaHastaTextBox.getDateTime,
+                                                                       Decimal.Parse(MontoDesdeTextBox.Text),
+                                                                       Decimal.Parse(MontoHastaTextBox.Text),
                                                                        VendedorComboBox.SelectedIndex,
                                                                        PromocionComboBox.SelectedIndex)
         Catch ex As Excepciones.VentasNoEncontradasExcepcion

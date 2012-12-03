@@ -102,6 +102,55 @@
         Return listaUsuarios
     End Function
 
+    Shared Function buscarUsuarioPorId(ByVal id As Integer) As BE.UsuarioBE
+        Dim table As DataTable
+        'Dim listaUsuarios As New List(Of BE.UsuarioBE)
+        Dim usuario As New BE.UsuarioBE
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_USUARIO_POR_ID_SP")
+            repository.addParam("@idUsr", id)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.UsuariosNoEncontradosExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                usuario.identificador = pepe.Item(0)
+                usuario.nombre = pepe.Item(1)
+                usuario.apellido = pepe.Item(2)
+                If Not IsDBNull(pepe.Item(3)) Then
+                    usuario.usuario = pepe.Item(3)
+                End If
+
+                If Not IsDBNull(pepe.Item(4)) Then
+                    usuario.activo = pepe.Item(4)
+                End If
+                If Not IsDBNull(pepe.Item(5)) Then
+                    usuario.fechaAlta = pepe.Item(5)
+                End If
+
+                If Not IsDBNull(pepe.Item(6)) Then
+                    usuario.fechaBaja = pepe.Item(6)
+                End If
+
+                If Not IsDBNull(pepe.Item(7)) Then
+                    Dim idioma As New BE.IdiomaBE
+                    idioma.identificador = pepe.Item(7)
+                    usuario.idioma = idioma
+                End If
+                If Not IsDBNull(pepe.Item(8)) Then
+                    usuario.password = pepe.Item(8)
+                End If
+            Next
+
+        Catch ex As Exception
+            Throw New Excepciones.UsuariosNoEncontradosExcepcion
+        End Try
+
+        Return usuario
+    End Function
+
     Shared Function altaUsuario(ByVal p1 As String, ByVal p2 As String, ByVal p3 As String, ByVal p4 As String, ByVal idiomaBE As BE.IdiomaBE, ByVal list As List(Of BE.FamiliaBE)) As Integer
         Dim result As Integer
         Dim retorno As Integer
