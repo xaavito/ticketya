@@ -8,7 +8,7 @@ Public Class MyMaskedTextBox
         Me.Width = 66
     End Sub
 
-    Public Function getDateTime() As DateTime
+    Public Function getDateTime() As Date
         Try
             Return Date.ParseExact(Me.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)
         Catch ex As Exception

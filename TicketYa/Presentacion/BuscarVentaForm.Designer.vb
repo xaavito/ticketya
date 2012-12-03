@@ -27,9 +27,7 @@ Partial Class BuscarVentaForm
         Me.NumeroColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BuscarVentaButton = New TicketYa.MyButton()
-        Me.FechaDesdeTextBox = New TicketYa.MyTextBox()
         Me.DesdeLabel = New System.Windows.Forms.Label()
-        Me.FechaHastaTextBox = New TicketYa.MyTextBox()
         Me.HastaLabel = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.VendedorComboBox = New TicketYa.MyComboBox()
@@ -41,6 +39,8 @@ Partial Class BuscarVentaForm
         Me.Label4 = New System.Windows.Forms.Label()
         Me.MontoDesdeTextBox = New TicketYa.MyTextBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.FechaDesdeTextBox = New TicketYa.MyMaskedTextBox()
+        Me.FechaHastaTextBox = New TicketYa.MyMaskedTextBox()
         CType(Me.VentasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.FechaGroupBox.SuspendLayout()
         Me.MontoGroupBox.SuspendLayout()
@@ -117,19 +117,6 @@ Partial Class BuscarVentaForm
         Me.BuscarVentaButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarVentaButton.UseVisualStyleBackColor = True
         '
-        'FechaDesdeTextBox
-        '
-        Me.FechaDesdeTextBox.alfanumerico = False
-        Me.FechaDesdeTextBox.boton = Nothing
-        Me.FechaDesdeTextBox.Location = New System.Drawing.Point(69, 19)
-        Me.FechaDesdeTextBox.nada = False
-        Me.FechaDesdeTextBox.Name = "FechaDesdeTextBox"
-        Me.FechaDesdeTextBox.numerico = False
-        Me.FechaDesdeTextBox.sinEspacio = False
-        Me.FechaDesdeTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FechaDesdeTextBox.TabIndex = 8
-        Me.FechaDesdeTextBox.texto = False
-        '
         'DesdeLabel
         '
         Me.DesdeLabel.AutoSize = True
@@ -138,19 +125,6 @@ Partial Class BuscarVentaForm
         Me.DesdeLabel.Size = New System.Drawing.Size(38, 13)
         Me.DesdeLabel.TabIndex = 7
         Me.DesdeLabel.Text = "Desde"
-        '
-        'FechaHastaTextBox
-        '
-        Me.FechaHastaTextBox.alfanumerico = False
-        Me.FechaHastaTextBox.boton = Nothing
-        Me.FechaHastaTextBox.Location = New System.Drawing.Point(254, 19)
-        Me.FechaHastaTextBox.nada = False
-        Me.FechaHastaTextBox.Name = "FechaHastaTextBox"
-        Me.FechaHastaTextBox.numerico = False
-        Me.FechaHastaTextBox.sinEspacio = False
-        Me.FechaHastaTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.FechaHastaTextBox.TabIndex = 14
-        Me.FechaHastaTextBox.texto = False
         '
         'HastaLabel
         '
@@ -204,8 +178,8 @@ Partial Class BuscarVentaForm
         'FechaGroupBox
         '
         Me.FechaGroupBox.Controls.Add(Me.FechaHastaTextBox)
-        Me.FechaGroupBox.Controls.Add(Me.HastaLabel)
         Me.FechaGroupBox.Controls.Add(Me.FechaDesdeTextBox)
+        Me.FechaGroupBox.Controls.Add(Me.HastaLabel)
         Me.FechaGroupBox.Controls.Add(Me.DesdeLabel)
         Me.FechaGroupBox.Location = New System.Drawing.Point(12, 6)
         Me.FechaGroupBox.Name = "FechaGroupBox"
@@ -271,6 +245,22 @@ Partial Class BuscarVentaForm
         Me.Label5.TabIndex = 7
         Me.Label5.Text = "Desde"
         '
+        'FechaDesdeTextBox
+        '
+        Me.FechaDesdeTextBox.Location = New System.Drawing.Point(69, 20)
+        Me.FechaDesdeTextBox.Mask = "00/00/0000"
+        Me.FechaDesdeTextBox.Name = "FechaDesdeTextBox"
+        Me.FechaDesdeTextBox.Size = New System.Drawing.Size(66, 20)
+        Me.FechaDesdeTextBox.TabIndex = 14
+        '
+        'FechaHastaTextBox
+        '
+        Me.FechaHastaTextBox.Location = New System.Drawing.Point(243, 19)
+        Me.FechaHastaTextBox.Mask = "00/00/0000"
+        Me.FechaHastaTextBox.Name = "FechaHastaTextBox"
+        Me.FechaHastaTextBox.Size = New System.Drawing.Size(66, 20)
+        Me.FechaHastaTextBox.TabIndex = 15
+        '
         'BuscarVentaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -302,9 +292,7 @@ Partial Class BuscarVentaForm
     Friend WithEvents NumeroColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BuscarVentaButton As TicketYa.MyButton
-    Friend WithEvents FechaDesdeTextBox As TicketYa.MyTextBox
     Friend WithEvents DesdeLabel As System.Windows.Forms.Label
-    Friend WithEvents FechaHastaTextBox As TicketYa.MyTextBox
     Friend WithEvents HastaLabel As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents VendedorComboBox As TicketYa.MyComboBox
@@ -316,5 +304,7 @@ Partial Class BuscarVentaForm
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents MontoDesdeTextBox As TicketYa.MyTextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents FechaHastaTextBox As TicketYa.MyMaskedTextBox
+    Friend WithEvents FechaDesdeTextBox As TicketYa.MyMaskedTextBox
 
 End Class

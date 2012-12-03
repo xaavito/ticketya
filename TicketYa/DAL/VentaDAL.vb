@@ -73,4 +73,41 @@
         Return result
     End Function
 
+    Shared Function buscarVenta(ByVal p1 As Date, ByVal p2 As Date, ByVal p3 As Decimal, ByVal p4 As Decimal, ByVal p5 As Integer, ByVal p6 As Integer) As Object
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.VentaBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_VENTAS_SP")
+
+            repository.addParam("@fechaDesde", p1)
+            repository.addParam("@fechaHasta", p2)
+            repository.addParam("@montoDesde", p3)
+            repository.addParam("@montoHasta", p4)
+            repository.addParam("@vendedor", p5)
+            repository.addParam("@promocion", p6)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.VentasNoEncontradasExcepcion
+            End If
+            For Each row As DataRow In table.Rows
+                Dim venta As New BE.VentaBE
+                venta.identificador = row.Item(0)
+                venta.total = row.Item(1)
+                venta.comprador = DAL.UsuarioDAL.buscarUsuarioPorId(row.Item(2))
+                venta.vendedor = DAL.UsuarioDAL.buscarUsuarioPorId(row.Item(3))
+                'venta.promocion = row.Item(0)
+                lista.Add(venta)
+            Next
+
+        Catch ex As Excepciones.VentasNoEncontradasExcepcion
+            Throw New Excepciones.VentasNoEncontradasExcepcion
+        End Try
+
+        Return lista
+    End Function
+
 End Class
