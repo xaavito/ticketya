@@ -124,12 +124,22 @@
         venta.promocion = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)
         venta.total = TotalTextBox.Text
 
-        If EfectivoCheckBox.Checked = True Then
-            BLL.GestorVentasBLL.generarVenta(venta, listaVentas, True)
-        Else
-            BLL.GestorVentasBLL.generarVenta(venta, listaVentas, False)
-        End If
-
+        Try
+            If EfectivoCheckBox.Checked = True Then
+                BLL.GestorVentasBLL.generarVenta(venta, listaVentas, True)
+            Else
+                BLL.GestorVentasBLL.generarVenta(venta, listaVentas, False)
+            End If
+        Catch ex As Excepciones.VentaGeneradaExitosamente
+            Me.Close()
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Excepciones.GenerarDetalleVentaExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Excepciones.GenerarPagoVentaExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Excepciones.GenerarVentaExcepcion
+            My.Application.manejarExcepcion(ex)
+        End Try
     End Sub
 
     Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarButton.Click
