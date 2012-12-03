@@ -10,9 +10,14 @@
             tranRepo.crearComando("GENERAR_VENTA_SP")
             tranRepo.addParam("@comp", venta.comprador.identificador)
             tranRepo.addParam("@vend", venta.vendedor.identificador)
-            tranRepo.addParam("@promo", venta.promocion.identificador)
+            If venta.promocion Is Nothing Then
+                tranRepo.addParam("@promo", 0)
+            Else
+                tranRepo.addParam("@promo", venta.promocion.identificador)
+            End If
+
             tranRepo.addParam("@total", venta.total)
-            idVenta = tranRepo.executeSearchWithReturnValue
+            idVenta = tranRepo.executeSearch
             If (idVenta <= 0) Then
                 Throw New Excepciones.GenerarVentaExcepcion
             End If
@@ -25,7 +30,6 @@
         If idVenta > 0 Then
             Try
                 For Each det As BE.DetalleVentaBE In listaVentas
-                    pepe()
                     tranRepo.crearComando("GENERAR_DETALLE_VENTA_SP")
                     tranRepo.addParam("@idVenta", idVenta)
                     tranRepo.addParam("@idFecha", det.idFecha)
@@ -46,12 +50,18 @@
 
         If pago = True Then
             Try
-                tranRepo.crearComando("GENERAR_PAGO_VENTA_SP")
-                tranRepo.addParam("@idVenta", idVenta)
-                result = tranRepo.executeSearchWithStatus
-                If (result <= 0) Then
-                    Throw New Excepciones.GenerarPagoVentaExcepcion
-                End If
+                For Each det As BE.DetalleVentaBE In listaVentas
+                    tranRepo.crearComando("GENERAR_PAGO_VENTA_SP")
+                    tranRepo.addParam("@idVenta", idVenta)
+                    tranRepo.addParam("@idFecha", det.idFecha)
+                    tranRepo.addParam("@idSector", det.idSector)
+                    tranRepo.addParam("@idShow", det.idShow)
+                    tranRepo.addParam("@idSilla", det.idSilla)
+                    result = tranRepo.executeSearchWithStatus
+                    If (result <= 0) Then
+                        Throw New Excepciones.GenerarPagoVentaExcepcion
+                    End If
+                Next
             Catch ex As Excepciones.ConexionImposibleExcepcion
                 Throw New Excepciones.ConexionImposibleExcepcion
             Catch ex As Excepciones.InsertExcepcion

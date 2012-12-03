@@ -53,3 +53,14 @@ Public Class GenerarPagoVentaExcepcion
         Me.mensaje = ""
     End Sub
 End Class
+
+Public Class VentaGeneradaExitosamente
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.VentaGeneradaExitosamente
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class

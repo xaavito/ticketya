@@ -43,15 +43,34 @@
     End Sub
 
     Private Sub addToForm()
-        Me.grid.Rows.Add(New String() {Me.miSilla.identificador,
-                                       Me.miSilla.sector.identificador,
-                                       Me.miSilla.sector.fecha.show.identificador,
-                                       Me.miSilla.sector.fecha.identificador,
-                                       Me.miSilla.sector.fecha.show.descripcion,
-                                       Me.miSilla.sector.fecha.forLista,
-                                       Me.miSilla.sector.descripcion,
-                                       Me.miSilla.fila,
-                                       Me.miSilla.columna,
-                                       Me.miSilla.sector.valor})
+        Dim found As Boolean = False
+        Dim rowToDelete As DataGridViewRow = Nothing
+        For Each row As DataGridViewRow In Me.grid.Rows
+            If Me.miSilla.identificador = row.Cells.Item("idSilla").Value And
+                Me.miSilla.sector.identificador = row.Cells.Item("idSector").Value And
+                Me.miSilla.sector.fecha.show.identificador = row.Cells.Item("idShow").Value And
+                Me.miSilla.sector.fecha.identificador = row.Cells.Item("idFecha").Value And found = False Then
+                found = True
+                rowToDelete = row
+            Else
+                found = False
+            End If
+        Next
+
+        If found = False Then
+            Me.grid.Rows.Add(New String() {Me.miSilla.identificador,
+                                           Me.miSilla.sector.identificador,
+                                           Me.miSilla.sector.fecha.show.identificador,
+                                           Me.miSilla.sector.fecha.identificador,
+                                           Me.miSilla.sector.fecha.show.descripcion,
+                                           Me.miSilla.sector.fecha.forLista,
+                                           Me.miSilla.sector.descripcion,
+                                           Me.miSilla.fila,
+                                           Me.miSilla.columna,
+                                           Me.miSilla.sector.valor})
+        Else
+            Me.grid.Rows.Remove(rowToDelete)
+        End If
+        
     End Sub
 End Class

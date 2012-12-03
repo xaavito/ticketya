@@ -146,6 +146,8 @@
 
         GenerarPagoVentaExcepcion
 
+        VentaGeneradaExitosamente
+
     End Enum
 
     Enum Bitacora
