@@ -3,6 +3,22 @@
     Dim selectedFecha As New BE.FechaBE
     Dim selectedShow As New BE.ShowBE
     Dim selectedComprador As New BE.UsuarioBE
+
+    Public Sub New()
+
+        ' Llamada necesaria para el diseñador.
+        InitializeComponent()
+
+        Try
+            PromocionComboBox.DataSource = BLL.GestorVentasBLL.buscarPromociones()
+            PromocionComboBox.DisplayMember = "descripcion"
+            PromocionComboBox.ValueMember = "identificador"
+        Catch ex As Excepciones.PromocionesNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        End Try
+        ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        
+    End Sub
     
     Private Sub BuscarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarCompradorButton.Click
         Try

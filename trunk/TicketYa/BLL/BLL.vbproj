@@ -81,7 +81,6 @@
     <Compile Include="GestorShowBLL.vb" />
     <Compile Include="GestorSillaBLL.vb" />
     <Compile Include="GestorUsuarioBLL.vb" />
-    <Compile Include="GestorVentaBLL.vb" />
     <Compile Include="GestorVentasBLL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

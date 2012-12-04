@@ -73,7 +73,7 @@
         Return result
     End Function
 
-    Shared Function buscarVenta(ByVal p1 As Date, ByVal p2 As Date, ByVal p3 As Decimal, ByVal p4 As Decimal, ByVal p5 As Integer, ByVal p6 As Integer) As Object
+    Shared Function buscarVenta(ByVal p1 As Date, ByVal p2 As Date, ByVal p5 As Integer) As Object
         Dim table As DataTable
 
         Dim lista As New List(Of BE.VentaBE)
@@ -84,10 +84,7 @@
 
             repository.addParam("@fechaDesde", p1)
             repository.addParam("@fechaHasta", p2)
-            repository.addParam("@montoDesde", p3)
-            repository.addParam("@montoHasta", p4)
             repository.addParam("@vendedor", p5)
-            repository.addParam("@promocion", p6)
             table = New DataTable
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
@@ -99,12 +96,48 @@
                 venta.total = row.Item(1)
                 venta.comprador = DAL.UsuarioDAL.buscarUsuarioPorId(row.Item(2))
                 venta.vendedor = DAL.UsuarioDAL.buscarUsuarioPorId(row.Item(3))
-                'venta.promocion = row.Item(0)
+                venta.fecha = row.Item(4)
                 lista.Add(venta)
             Next
 
         Catch ex As Excepciones.VentasNoEncontradasExcepcion
             Throw New Excepciones.VentasNoEncontradasExcepcion
+        End Try
+
+        Return lista
+    End Function
+
+    Shared Function buscarPromociones() As Object
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.PromocionBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("LISTAR_PROMOCIONES_SP")
+
+            'repository.addParam("@fechaDesde", p1)
+            'repository.addParam("@fechaHasta", p2)
+            'repository.addParam("@vendedor", p5)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.PromocionesNoEncontradasExcepcion
+            End If
+            For Each row As DataRow In table.Rows
+                Dim promo As New BE.PromocionBE
+                'SELECT p.identificador,p.descripcion,p.tipoDescuento,p.descuento,p.desde,p.hasta
+                promo.identificador = row.Item(0)
+                promo.descripcion = row.Item(1)
+                promo.tipoDescuento = row.Item(2)
+                promo.descuento = row.Item(3)
+                promo.desde = row.Item(4)
+                promo.hasta = row.Item(5)
+                lista.Add(promo)
+            Next
+
+        Catch ex As Excepciones.PromocionesNoEncontradasExcepcion
+            Throw New Excepciones.PromocionesNoEncontradasExcepcion
         End Try
 
         Return lista

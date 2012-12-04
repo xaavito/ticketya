@@ -52,4 +52,22 @@
         End Set
     End Property
 
+
+
+    Private _vendedorNombre As String
+    Public ReadOnly Property vendedorNombre() As String
+        Get
+            Return _vendedor.apellido + ", " + _vendedor.nombre
+        End Get
+    End Property
+
+
+
+    Private _compradorNombre As String
+    Public ReadOnly Property compradorNombre() As String
+        Get
+            Return _comprador.apellido + ", " + _comprador.nombre
+        End Get
+    End Property
+
 End Class
