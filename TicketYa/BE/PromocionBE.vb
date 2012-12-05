@@ -56,5 +56,24 @@
         End Set
     End Property
 
+    Private _fecha As BE.FechaBE
+    Public Property fecha() As BE.FechaBE
+        Get
+            Return _fecha
+        End Get
+        Set(ByVal value As BE.FechaBE)
+            _fecha = value
+        End Set
+    End Property
+
+    Private _sector As BE.SectorBE
+    Public Property sector() As BE.SectorBE
+        Get
+            Return _sector
+        End Get
+        Set(ByVal value As BE.SectorBE)
+            _sector = value
+        End Set
+    End Property
 
 End Class

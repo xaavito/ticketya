@@ -143,4 +143,94 @@
         Return lista
     End Function
 
+    Shared Function buscarPromocion(ByVal sector As Integer, ByVal fecha As Integer) As BE.PromocionBE
+        Dim table As DataTable
+        Dim result As BE.PromocionBE = Nothing
+        Dim lista As New List(Of BE.PromocionBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_PROMOCION_SP")
+            repository.addParam("@idSector", sector)
+            repository.addParam("@idFecha", fecha)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.PromocionesNoEncontradasExcepcion
+            End If
+            For Each row As DataRow In table.Rows
+                result = New BE.PromocionBE
+                'SELECT p.identificador,p.descripcion,p.tipoDescuento,p.descuento,p.desde,p.hasta
+                result.identificador = row.Item(0)
+                result.descripcion = row.Item(1)
+                result.tipoDescuento = row.Item(2)
+                result.descuento = row.Item(3)
+                result.desde = row.Item(4)
+                result.hasta = row.Item(5)
+                Dim fech As New BE.FechaBE
+                fech.identificador = row.Item(6)
+                result.fecha = fech
+                Dim sect As New BE.SectorBE
+                sect.identificador = row.Item(7)
+                result.sector = sect
+            Next
+
+        Catch ex As Excepciones.PromocionesNoEncontradasExcepcion
+            Throw New Excepciones.PromocionesNoEncontradasExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function generarPromocion(ByVal p1 As String, ByVal p2 As Date, ByVal p3 As Date, ByVal p4 As Integer, ByVal p5 As Decimal, ByVal p6 As Integer, ByVal p7 As Integer) As Object
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            'DescripcionTextBox.Text,
+            'DesdeTextBox.getDateTime,
+            'HastaTextBox.getDateTime,
+            'TipoDescuentoComboBox.SelectedValue,
+            'FechaComboBox.SelectedValue,
+            'SectorComboBox.SelectedValue
+            repository.crearComando("GENERAR_PROMOCION_SP")
+            repository.addParam("@desc", p1)
+            repository.addParam("@desde", p2)
+            repository.addParam("@hasta", p3)
+            repository.addParam("@tipo", p4)
+            repository.addParam("@descuento", p5)
+            repository.addParam("@fecha", p6)
+            repository.addParam("@sector", p7)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.GenerarPromocionExcepcion
+            Else
+                Throw New Excepciones.PromocionCreadaExistosamenteExcepcion
+            End If
+        Catch ex As Excepciones.GenerarPromocionExcepcion
+            Throw New Excepciones.GenerarPromocionExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Sub checkearReservaPrevia(ByVal listaVentas As List(Of BE.DetalleVentaBE))
+        Dim result As Integer
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim tranRepo As New RepositorioTransaccional(repository)
+
+        For Each det As BE.DetalleVentaBE In listaVentas
+            tranRepo.crearComando("GENERAR_DETALLE_VENTA_SP")
+            'tranRepo.addParam("@idVenta", idVenta)
+            tranRepo.addParam("@idFecha", det.idFecha)
+            tranRepo.addParam("@idSector", det.idSector)
+            tranRepo.addParam("@idShow", det.idShow)
+            tranRepo.addParam("@idSilla", det.idSilla)
+            result = tranRepo.executeSearchWithStatus
+            If (result > 0) Then
+                Throw New Excepciones.ReservasCaidasExcepcion
+            End If
+        Next
+    End Sub
+
 End Class

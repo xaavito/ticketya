@@ -148,6 +148,12 @@
 
         VentaGeneradaExitosamente
 
+        PromocionNoGeneradaExcepcion
+
+        GenerarPromocionExcepcion
+
+        PromocionCreadaExistosamenteExcepcion
+
     End Enum
 
     Enum Bitacora

@@ -9,15 +9,17 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
-        Try
-            PromocionComboBox.DataSource = BLL.GestorVentasBLL.buscarPromociones()
-            PromocionComboBox.DisplayMember = "descripcion"
-            PromocionComboBox.ValueMember = "identificador"
-        Catch ex As Excepciones.PromocionesNoEncontradasExcepcion
-            My.Application.manejarExcepcion(ex)
-        End Try
+        'Try
+        '    PromocionComboBox.DataSource = BLL.GestorVentasBLL.buscarPromociones()
+        '    PromocionComboBox.DisplayMember = "descripcion"
+        '    PromocionComboBox.ValueMember = "identificador"
+        'Catch ex As Excepciones.PromocionesNoEncontradasExcepcion
+        '    My.Application.manejarExcepcion(ex)
+        'End Try
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        
+        TotalTextBox.Text = "0"
+        SubTotalTextBox.Text = "0"
+        DescuentoTextBox.Text = "0"
     End Sub
     
     Private Sub BuscarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarCompradorButton.Click
@@ -164,16 +166,38 @@
 
     Private Sub VentaDataGrid_RowsAdded(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowsAddedEventArgs) Handles VentaDataGrid.RowsAdded
         Dim valor As Decimal
+        Dim listaPromociones As New List(Of BE.PromocionBE)
+        Dim promo As BE.PromocionBE
         For Each pepe As DataGridViewRow In VentaDataGrid.Rows
             valor += pepe.Cells.Item(9).Value
+            Try
+                promo = BLL.GestorPromocionBLL.buscarPromocion(pepe.Cells.Item(1).Value, pepe.Cells.Item(3).Value)
+                listaPromociones.Add(promo)
+            Catch ex As Exception
+
+            End Try
+            
         Next
 
+        PromocionComboBox.DataSource = listaPromociones
+        PromocionComboBox.DisplayMember = "descripcion"
+        PromocionComboBox.ValueMember = "identificador"
+
         SubTotalTextBox.Text = valor
-        DescuentoTextBox.Text = "0"
         TotalTextBox.Text = Decimal.Parse(valor) - Decimal.Parse(DescuentoTextBox.Text)
     End Sub
 
     Private Sub CompradoresComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CompradoresComboBox.SelectedIndexChanged
         selectedComprador = DirectCast(CompradoresComboBox.SelectedItem, BE.UsuarioBE)
+    End Sub
+
+    Private Sub PromocionComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PromocionComboBox.SelectedIndexChanged
+        Dim promo As BE.PromocionBE
+        promo = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)
+        If promo.tipoDescuento = 1 And Not String.IsNullOrWhiteSpace(TotalTextBox.Text) Then
+            DescuentoTextBox.Text = Decimal.Parse(TotalTextBox.Text) * Decimal.Parse(promo.descuento)
+        Else
+            DescuentoTextBox.Text = Decimal.Parse(promo.descuento)
+        End If
     End Sub
 End Class
