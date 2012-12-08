@@ -20,6 +20,9 @@ Partial Class BuscarFechaForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.FechasDataGrid = New TicketYa.MyDataGrid()
+        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ShowTextBox = New TicketYa.MyTextBox()
         Me.ShowLabel = New System.Windows.Forms.Label()
         Me.EliminarFechaButton = New TicketYa.MyButton()
@@ -29,9 +32,7 @@ Partial Class BuscarFechaForm
         Me.FechaDesdeTextBox = New TicketYa.MyMaskedTextBox()
         Me.FechaHastaTextBox = New TicketYa.MyMaskedTextBox()
         Me.FechaHastaLabel = New System.Windows.Forms.Label()
-        Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReportesButton = New TicketYa.MyButton()
         CType(Me.FechasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -50,6 +51,28 @@ Partial Class BuscarFechaForm
         Me.FechasDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.FechasDataGrid.Size = New System.Drawing.Size(454, 157)
         Me.FechasDataGrid.TabIndex = 16
+        '
+        'IdentificadorColumn
+        '
+        Me.IdentificadorColumn.DataPropertyName = "identificador"
+        Me.IdentificadorColumn.HeaderText = "Identificador"
+        Me.IdentificadorColumn.Name = "IdentificadorColumn"
+        Me.IdentificadorColumn.ReadOnly = True
+        Me.IdentificadorColumn.Visible = False
+        '
+        'DescripcionColumn
+        '
+        Me.DescripcionColumn.DataPropertyName = "descripcion"
+        Me.DescripcionColumn.HeaderText = "Descripcion"
+        Me.DescripcionColumn.Name = "DescripcionColumn"
+        Me.DescripcionColumn.ReadOnly = True
+        '
+        'FechaColumn
+        '
+        Me.FechaColumn.DataPropertyName = "fecha"
+        Me.FechaColumn.HeaderText = "Fecha"
+        Me.FechaColumn.Name = "FechaColumn"
+        Me.FechaColumn.ReadOnly = True
         '
         'ShowTextBox
         '
@@ -77,7 +100,7 @@ Partial Class BuscarFechaForm
         '
         Me.EliminarFechaButton.Image = Global.TicketYa.My.Resources.Resources.basura
         Me.EliminarFechaButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EliminarFechaButton.Location = New System.Drawing.Point(513, 156)
+        Me.EliminarFechaButton.Location = New System.Drawing.Point(513, 136)
         Me.EliminarFechaButton.Name = "EliminarFechaButton"
         Me.EliminarFechaButton.Size = New System.Drawing.Size(75, 23)
         Me.EliminarFechaButton.TabIndex = 18
@@ -145,32 +168,23 @@ Partial Class BuscarFechaForm
         Me.FechaHastaLabel.TabIndex = 22
         Me.FechaHastaLabel.Text = "Fecha Hasta"
         '
-        'IdentificadorColumn
+        'ReportesButton
         '
-        Me.IdentificadorColumn.DataPropertyName = "identificador"
-        Me.IdentificadorColumn.HeaderText = "Identificador"
-        Me.IdentificadorColumn.Name = "IdentificadorColumn"
-        Me.IdentificadorColumn.ReadOnly = True
-        Me.IdentificadorColumn.Visible = False
-        '
-        'DescripcionColumn
-        '
-        Me.DescripcionColumn.DataPropertyName = "descripcion"
-        Me.DescripcionColumn.HeaderText = "Descripcion"
-        Me.DescripcionColumn.Name = "DescripcionColumn"
-        Me.DescripcionColumn.ReadOnly = True
-        '
-        'FechaColumn
-        '
-        Me.FechaColumn.DataPropertyName = "fecha"
-        Me.FechaColumn.HeaderText = "Fecha"
-        Me.FechaColumn.Name = "FechaColumn"
-        Me.FechaColumn.ReadOnly = True
+        Me.ReportesButton.Image = Global.TicketYa.My.Resources.Resources.Graphics_icon
+        Me.ReportesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReportesButton.Location = New System.Drawing.Point(513, 197)
+        Me.ReportesButton.Name = "ReportesButton"
+        Me.ReportesButton.Size = New System.Drawing.Size(75, 23)
+        Me.ReportesButton.TabIndex = 24
+        Me.ReportesButton.Text = "Reportes"
+        Me.ReportesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesButton.UseVisualStyleBackColor = True
         '
         'BuscarFechaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(645, 280)
+        Me.Controls.Add(Me.ReportesButton)
         Me.Controls.Add(Me.FechaHastaTextBox)
         Me.Controls.Add(Me.FechaHastaLabel)
         Me.Controls.Add(Me.FechaDesdeTextBox)
@@ -201,5 +215,6 @@ Partial Class BuscarFechaForm
     Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ReportesButton As TicketYa.MyButton
 
 End Class

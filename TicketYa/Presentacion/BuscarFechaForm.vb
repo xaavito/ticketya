@@ -44,4 +44,21 @@
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
+
+    Private Sub ReportesButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportesButton.Click
+        Dim Fecha As BE.FechaBE
+        If FechasDataGrid.hasSelectedObject = True Then
+            Fecha = DirectCast(FechasDataGrid.myObject, BE.FechaBE)
+            Try
+                BLL.GestorReportesBLL.buscarSectores(Fecha)
+                'buscarFecha()
+                'BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, Fecha.descripcion, Utilitarios.Enumeradores.Bitacora.FechaEliminada)
+                'Throw New Excepciones.FechaEliminadaExistosamenteExcepcion
+            Catch ex As Excepciones.FechaEliminadaExistosamenteExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
+                My.Application.manejarExcepcion(ex)
+            End Try
+        End If
+    End Sub
 End Class

@@ -49,12 +49,15 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -357,6 +360,12 @@
     <Compile Include="RealizarRestoreForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReporteSectores.Designer.vb">
+      <DependentUpon>ReporteSectores.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteSectores.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SqlConnection\frmSQLConnectionDialog.Designer.vb">
       <DependentUpon>frmSQLConnectionDialog.vb</DependentUpon>
     </Compile>
@@ -488,6 +497,10 @@
     <EmbeddedResource Include="RealizarRestoreForm.resx">
       <DependentUpon>RealizarRestoreForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteSector.rdlc" />
+    <EmbeddedResource Include="ReporteSectores.resx">
+      <DependentUpon>ReporteSectores.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SqlConnection\frmSQLConnectionDialog.resx">
       <DependentUpon>frmSQLConnectionDialog.vb</DependentUpon>
     </EmbeddedResource>
@@ -501,6 +514,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\BE.SectorReporte.datasource" />
+    <None Include="My Project\DataSources\BE.VentaBE.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -649,6 +664,7 @@
     <None Include="Resources\chair-icon-ocupada.PNG" />
     <None Include="Resources\chair-icon-resevada.PNG" />
     <None Include="Resources\chair-icon-seleccionada.PNG" />
+    <None Include="Resources\Misc-Graphics-icon.png" />
     <Content Include="sql\ticketya.sql">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

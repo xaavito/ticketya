@@ -19,6 +19,9 @@ Partial Class BuscarSectorForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.ReportesButton = New TicketYa.MyButton()
+        Me.EliminarSectorButton = New TicketYa.MyButton()
+        Me.ModificarSectorButton = New TicketYa.MyButton()
         Me.SectoresDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -26,15 +29,49 @@ Partial Class BuscarSectorForm
         Me.DireccionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NumeroColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShowTextBox = New TicketYa.MyTextBox()
-        Me.ShowLabel = New System.Windows.Forms.Label()
-        Me.EliminarSectorButton = New TicketYa.MyButton()
-        Me.ModificarSectorButton = New TicketYa.MyButton()
         Me.BuscarSectorButton = New TicketYa.MyButton()
-        Me.SectorTextBox = New TicketYa.MyTextBox()
-        Me.SectorLabel = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ShowLabel = New System.Windows.Forms.Label()
+        Me.FechaComboBox = New TicketYa.MyComboBox()
+        Me.ShowComboBox = New TicketYa.MyComboBox()
         CType(Me.SectoresDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'ReportesButton
+        '
+        Me.ReportesButton.Image = Global.TicketYa.My.Resources.Resources.Graphics_icon
+        Me.ReportesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReportesButton.Location = New System.Drawing.Point(524, 190)
+        Me.ReportesButton.Name = "ReportesButton"
+        Me.ReportesButton.Size = New System.Drawing.Size(75, 23)
+        Me.ReportesButton.TabIndex = 21
+        Me.ReportesButton.Text = "Reportes"
+        Me.ReportesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesButton.UseVisualStyleBackColor = True
+        '
+        'EliminarSectorButton
+        '
+        Me.EliminarSectorButton.Image = Global.TicketYa.My.Resources.Resources.basura
+        Me.EliminarSectorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.EliminarSectorButton.Location = New System.Drawing.Point(524, 137)
+        Me.EliminarSectorButton.Name = "EliminarSectorButton"
+        Me.EliminarSectorButton.Size = New System.Drawing.Size(75, 23)
+        Me.EliminarSectorButton.TabIndex = 18
+        Me.EliminarSectorButton.Text = "Eliminar"
+        Me.EliminarSectorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.EliminarSectorButton.UseVisualStyleBackColor = True
+        '
+        'ModificarSectorButton
+        '
+        Me.ModificarSectorButton.Image = Global.TicketYa.My.Resources.Resources.editar
+        Me.ModificarSectorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ModificarSectorButton.Location = New System.Drawing.Point(524, 88)
+        Me.ModificarSectorButton.Name = "ModificarSectorButton"
+        Me.ModificarSectorButton.Size = New System.Drawing.Size(75, 23)
+        Me.ModificarSectorButton.TabIndex = 17
+        Me.ModificarSectorButton.Text = "Modificar"
+        Me.ModificarSectorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ModificarSectorButton.UseVisualStyleBackColor = True
         '
         'SectoresDataGrid
         '
@@ -44,7 +81,7 @@ Partial Class BuscarSectorForm
         Me.SectoresDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SectoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SectoresDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.CapacidadColumn, Me.DireccionColumn, Me.NumeroColumn, Me.TelefonoColumn})
-        Me.SectoresDataGrid.Location = New System.Drawing.Point(40, 71)
+        Me.SectoresDataGrid.Location = New System.Drawing.Point(44, 88)
         Me.SectoresDataGrid.Name = "SectoresDataGrid"
         Me.SectoresDataGrid.ReadOnly = True
         Me.SectoresDataGrid.RowHeadersVisible = False
@@ -95,52 +132,6 @@ Partial Class BuscarSectorForm
         Me.TelefonoColumn.Name = "TelefonoColumn"
         Me.TelefonoColumn.ReadOnly = True
         '
-        'ShowTextBox
-        '
-        Me.ShowTextBox.alfanumerico = False
-        Me.ShowTextBox.boton = Nothing
-        Me.ShowTextBox.Location = New System.Drawing.Point(93, 26)
-        Me.ShowTextBox.nada = False
-        Me.ShowTextBox.Name = "ShowTextBox"
-        Me.ShowTextBox.numerico = False
-        Me.ShowTextBox.sinEspacio = False
-        Me.ShowTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ShowTextBox.TabIndex = 14
-        Me.ShowTextBox.texto = False
-        '
-        'ShowLabel
-        '
-        Me.ShowLabel.AutoSize = True
-        Me.ShowLabel.Location = New System.Drawing.Point(37, 29)
-        Me.ShowLabel.Name = "ShowLabel"
-        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
-        Me.ShowLabel.TabIndex = 13
-        Me.ShowLabel.Text = "Show"
-        '
-        'EliminarSectorButton
-        '
-        Me.EliminarSectorButton.Image = Global.TicketYa.My.Resources.Resources.basura
-        Me.EliminarSectorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EliminarSectorButton.Location = New System.Drawing.Point(524, 164)
-        Me.EliminarSectorButton.Name = "EliminarSectorButton"
-        Me.EliminarSectorButton.Size = New System.Drawing.Size(75, 23)
-        Me.EliminarSectorButton.TabIndex = 18
-        Me.EliminarSectorButton.Text = "Eliminar"
-        Me.EliminarSectorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.EliminarSectorButton.UseVisualStyleBackColor = True
-        '
-        'ModificarSectorButton
-        '
-        Me.ModificarSectorButton.Image = Global.TicketYa.My.Resources.Resources.editar
-        Me.ModificarSectorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.ModificarSectorButton.Location = New System.Drawing.Point(524, 88)
-        Me.ModificarSectorButton.Name = "ModificarSectorButton"
-        Me.ModificarSectorButton.Size = New System.Drawing.Size(75, 23)
-        Me.ModificarSectorButton.TabIndex = 17
-        Me.ModificarSectorButton.Text = "Modificar"
-        Me.ModificarSectorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.ModificarSectorButton.UseVisualStyleBackColor = True
-        '
         'BuscarSectorButton
         '
         Me.BuscarSectorButton.Image = Global.TicketYa.My.Resources.Resources.buscar
@@ -153,41 +144,61 @@ Partial Class BuscarSectorForm
         Me.BuscarSectorButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.BuscarSectorButton.UseVisualStyleBackColor = True
         '
-        'SectorTextBox
+        'Label4
         '
-        Me.SectorTextBox.alfanumerico = False
-        Me.SectorTextBox.boton = Nothing
-        Me.SectorTextBox.Location = New System.Drawing.Point(335, 26)
-        Me.SectorTextBox.nada = False
-        Me.SectorTextBox.Name = "SectorTextBox"
-        Me.SectorTextBox.numerico = False
-        Me.SectorTextBox.sinEspacio = False
-        Me.SectorTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.SectorTextBox.TabIndex = 20
-        Me.SectorTextBox.texto = False
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(41, 40)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.TabIndex = 42
+        Me.Label4.Text = "Fecha"
         '
-        'SectorLabel
+        'ShowLabel
         '
-        Me.SectorLabel.AutoSize = True
-        Me.SectorLabel.Location = New System.Drawing.Point(279, 29)
-        Me.SectorLabel.Name = "SectorLabel"
-        Me.SectorLabel.Size = New System.Drawing.Size(38, 13)
-        Me.SectorLabel.TabIndex = 19
-        Me.SectorLabel.Text = "Sector"
+        Me.ShowLabel.AutoSize = True
+        Me.ShowLabel.Location = New System.Drawing.Point(41, 15)
+        Me.ShowLabel.Name = "ShowLabel"
+        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
+        Me.ShowLabel.TabIndex = 41
+        Me.ShowLabel.Text = "Show"
+        '
+        'FechaComboBox
+        '
+        Me.FechaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.FechaComboBox.emptyItem = Nothing
+        Me.FechaComboBox.FormattingEnabled = True
+        Me.FechaComboBox.lista = Nothing
+        Me.FechaComboBox.Location = New System.Drawing.Point(108, 37)
+        Me.FechaComboBox.Name = "FechaComboBox"
+        Me.FechaComboBox.Size = New System.Drawing.Size(205, 21)
+        Me.FechaComboBox.TabIndex = 40
+        '
+        'ShowComboBox
+        '
+        Me.ShowComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ShowComboBox.emptyItem = Nothing
+        Me.ShowComboBox.FormattingEnabled = True
+        Me.ShowComboBox.lista = Nothing
+        Me.ShowComboBox.Location = New System.Drawing.Point(108, 12)
+        Me.ShowComboBox.Name = "ShowComboBox"
+        Me.ShowComboBox.Size = New System.Drawing.Size(205, 21)
+        Me.ShowComboBox.TabIndex = 39
         '
         'BuscarSectorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(693, 277)
-        Me.Controls.Add(Me.SectorTextBox)
-        Me.Controls.Add(Me.SectorLabel)
+        Me.ClientSize = New System.Drawing.Size(797, 350)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.ShowLabel)
+        Me.Controls.Add(Me.FechaComboBox)
+        Me.Controls.Add(Me.ShowComboBox)
+        Me.Controls.Add(Me.ReportesButton)
         Me.Controls.Add(Me.EliminarSectorButton)
         Me.Controls.Add(Me.ModificarSectorButton)
         Me.Controls.Add(Me.SectoresDataGrid)
         Me.Controls.Add(Me.BuscarSectorButton)
-        Me.Controls.Add(Me.ShowTextBox)
-        Me.Controls.Add(Me.ShowLabel)
         Me.Name = "BuscarSectorForm"
+        Me.Text = "Buscar Sector"
         CType(Me.SectoresDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -203,9 +214,10 @@ Partial Class BuscarSectorForm
     Friend WithEvents NumeroColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BuscarSectorButton As TicketYa.MyButton
-    Friend WithEvents ShowTextBox As TicketYa.MyTextBox
+    Friend WithEvents ReportesButton As TicketYa.MyButton
+    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ShowLabel As System.Windows.Forms.Label
-    Friend WithEvents SectorTextBox As TicketYa.MyTextBox
-    Friend WithEvents SectorLabel As System.Windows.Forms.Label
+    Friend WithEvents FechaComboBox As TicketYa.MyComboBox
+    Friend WithEvents ShowComboBox As TicketYa.MyComboBox
 
 End Class
