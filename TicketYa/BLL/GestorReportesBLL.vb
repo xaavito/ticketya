@@ -8,4 +8,8 @@
         Return DAL.ShowDAL.buscarSectorReporte(sector)
     End Function
 
+    Shared Function buscarShowReporte(ByVal show As BE.ShowBE)
+        Return DAL.ShowDAL.buscarShowReporte(show)
+    End Function
+
 End Class

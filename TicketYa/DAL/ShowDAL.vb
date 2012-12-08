@@ -267,7 +267,7 @@
     Shared Function buscarSectoresPorFecha(ByVal Fecha As BE.FechaBE) As Object
         Dim table As DataTable
 
-        Dim lista As New List(Of BE.SectorReporte)
+        Dim lista As New List(Of BE.FechaReporte)
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
         Try
@@ -279,9 +279,12 @@
                 Throw New Excepciones.SectoresNoEncontradosExcepcion
             End If
             For Each pepe As DataRow In table.Rows
-                Dim sec As New BE.SectorReporte
-                sec.descripcion = pepe.Item(0)
-                sec.cantidad = pepe.Item(1)
+                Dim sec As New BE.FechaReporte
+                sec.descFecha = pepe.Item(0)
+                sec.fecha = pepe.Item(1)
+                sec.descripcion = pepe.Item(2)
+                sec.estado = pepe.Item(3)
+                sec.cantidad = pepe.Item(4)
                 lista.Add(sec)
             Next
 
@@ -316,6 +319,38 @@
 
         Catch ex As Excepciones.SectoresNoEncontradosExcepcion
             Throw New Excepciones.SectoresNoEncontradosExcepcion
+        End Try
+
+        Return lista
+    End Function
+
+    Shared Function buscarShowReporte(ByVal show As BE.ShowBE) As Object
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.ShowReporte)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_SHOW_REPORTE_SP")
+            repository.addParam("@idShow", show.identificador)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.ShowsNoEncontradosExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim sec As New BE.ShowReporte
+                sec.show = pepe.Item(0)
+                sec.descFecha = pepe.Item(1)
+                sec.fecha = pepe.Item(2)
+                sec.descripcion = pepe.Item(3)
+                sec.estado = pepe.Item(4)
+                sec.cantidad = pepe.Item(5)
+                lista.Add(sec)
+            Next
+
+        Catch ex As Excepciones.ShowsNoEncontradosExcepcion
+            Throw New Excepciones.ShowsNoEncontradosExcepcion
         End Try
 
         Return lista

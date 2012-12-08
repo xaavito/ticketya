@@ -73,6 +73,7 @@
     <Compile Include="ControlBE.vb" />
     <Compile Include="DetalleVentaBE.vb" />
     <Compile Include="EstadoSillaBE.vb" />
+    <Compile Include="FechaReporte.vb" />
     <Compile Include="InforReservacion.vb" />
     <Compile Include="PreferenciaBE.vb" />
     <Compile Include="PromocionBE.vb" />
@@ -106,6 +107,7 @@
     <Compile Include="SectorReporte.vb" />
     <Compile Include="SedeBE.vb" />
     <Compile Include="ShowBE.vb" />
+    <Compile Include="ShowReporte.vb" />
     <Compile Include="SillaBE.vb" />
     <Compile Include="TipoDescuentoBE.vb" />
     <Compile Include="TipoSectorBE.vb" />

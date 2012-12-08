@@ -25,10 +25,9 @@ Partial Class BuscarSectorForm
         Me.SectoresDataGrid = New TicketYa.MyDataGrid()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CapacidadColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DireccionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NumeroColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FilasColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ColumnasColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ValorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BuscarSectorButton = New TicketYa.MyButton()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ShowLabel = New System.Windows.Forms.Label()
@@ -80,7 +79,7 @@ Partial Class BuscarSectorForm
         Me.SectoresDataGrid.AllowUserToResizeRows = False
         Me.SectoresDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.SectoresDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SectoresDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.CapacidadColumn, Me.DireccionColumn, Me.NumeroColumn, Me.TelefonoColumn})
+        Me.SectoresDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.FilasColumn, Me.ColumnasColumn, Me.ValorColumn})
         Me.SectoresDataGrid.Location = New System.Drawing.Point(44, 88)
         Me.SectoresDataGrid.Name = "SectoresDataGrid"
         Me.SectoresDataGrid.ReadOnly = True
@@ -104,33 +103,26 @@ Partial Class BuscarSectorForm
         Me.DescripcionColumn.Name = "DescripcionColumn"
         Me.DescripcionColumn.ReadOnly = True
         '
-        'CapacidadColumn
+        'FilasColumn
         '
-        Me.CapacidadColumn.DataPropertyName = "capacidad"
-        Me.CapacidadColumn.HeaderText = "Capacidad"
-        Me.CapacidadColumn.Name = "CapacidadColumn"
-        Me.CapacidadColumn.ReadOnly = True
+        Me.FilasColumn.DataPropertyName = "filas"
+        Me.FilasColumn.HeaderText = "Filas"
+        Me.FilasColumn.Name = "FilasColumn"
+        Me.FilasColumn.ReadOnly = True
         '
-        'DireccionColumn
+        'ColumnasColumn
         '
-        Me.DireccionColumn.DataPropertyName = "direccion"
-        Me.DireccionColumn.HeaderText = "Direccion"
-        Me.DireccionColumn.Name = "DireccionColumn"
-        Me.DireccionColumn.ReadOnly = True
+        Me.ColumnasColumn.DataPropertyName = "columnas"
+        Me.ColumnasColumn.HeaderText = "Columnas"
+        Me.ColumnasColumn.Name = "ColumnasColumn"
+        Me.ColumnasColumn.ReadOnly = True
         '
-        'NumeroColumn
+        'ValorColumn
         '
-        Me.NumeroColumn.DataPropertyName = "numero"
-        Me.NumeroColumn.HeaderText = "Numero"
-        Me.NumeroColumn.Name = "NumeroColumn"
-        Me.NumeroColumn.ReadOnly = True
-        '
-        'TelefonoColumn
-        '
-        Me.TelefonoColumn.DataPropertyName = "telefono"
-        Me.TelefonoColumn.HeaderText = "Telefono"
-        Me.TelefonoColumn.Name = "TelefonoColumn"
-        Me.TelefonoColumn.ReadOnly = True
+        Me.ValorColumn.DataPropertyName = "valor"
+        Me.ValorColumn.HeaderText = "Valor"
+        Me.ValorColumn.Name = "ValorColumn"
+        Me.ValorColumn.ReadOnly = True
         '
         'BuscarSectorButton
         '
@@ -187,7 +179,7 @@ Partial Class BuscarSectorForm
         'BuscarSectorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(797, 350)
+        Me.ClientSize = New System.Drawing.Size(630, 261)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.ShowLabel)
         Me.Controls.Add(Me.FechaComboBox)
@@ -207,17 +199,16 @@ Partial Class BuscarSectorForm
     Friend WithEvents EliminarSectorButton As TicketYa.MyButton
     Friend WithEvents ModificarSectorButton As TicketYa.MyButton
     Friend WithEvents SectoresDataGrid As TicketYa.MyDataGrid
-    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CapacidadColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DireccionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NumeroColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents BuscarSectorButton As TicketYa.MyButton
     Friend WithEvents ReportesButton As TicketYa.MyButton
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents ShowLabel As System.Windows.Forms.Label
     Friend WithEvents FechaComboBox As TicketYa.MyComboBox
     Friend WithEvents ShowComboBox As TicketYa.MyComboBox
+    Friend WithEvents IdentificadorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FilasColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ColumnasColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ValorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

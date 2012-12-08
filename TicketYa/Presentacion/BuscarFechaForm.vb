@@ -50,15 +50,16 @@
         If FechasDataGrid.hasSelectedObject = True Then
             Fecha = DirectCast(FechasDataGrid.myObject, BE.FechaBE)
             Try
-                BLL.GestorReportesBLL.buscarSectores(Fecha)
-                'buscarFecha()
-                'BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, Fecha.descripcion, Utilitarios.Enumeradores.Bitacora.FechaEliminada)
-                'Throw New Excepciones.FechaEliminadaExistosamenteExcepcion
-            Catch ex As Excepciones.FechaEliminadaExistosamenteExcepcion
+                Dim report As New ReporteFechas
+                report.addData(BLL.GestorReportesBLL.buscarSectores(Fecha))
+                report.ShowDialog()
+            Catch ex As Excepciones.SectoresNoEncontradosExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
                 My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
+
+
 End Class

@@ -125,12 +125,6 @@
     <Compile Include="BuscarSedeForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BuscarSillaForm.Designer.vb">
-      <DependentUpon>BuscarSillaForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BuscarSillaForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="BuscarVentaForm.Designer.vb">
       <DependentUpon>BuscarVentaForm.vb</DependentUpon>
     </Compile>
@@ -360,10 +354,22 @@
     <Compile Include="RealizarRestoreForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReporteFechas.Designer.vb">
+      <DependentUpon>ReporteFechas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteFechas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ReporteSectores.Designer.vb">
       <DependentUpon>ReporteSectores.vb</DependentUpon>
     </Compile>
     <Compile Include="ReporteSectores.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReporteShowForm.Designer.vb">
+      <DependentUpon>ReporteShowForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteShowForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SqlConnection\frmSQLConnectionDialog.Designer.vb">
@@ -497,9 +503,17 @@
     <EmbeddedResource Include="RealizarRestoreForm.resx">
       <DependentUpon>RealizarRestoreForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteShow.rdlc" />
+    <EmbeddedResource Include="ReporteFecha.rdlc" />
+    <EmbeddedResource Include="ReporteFechas.resx">
+      <DependentUpon>ReporteFechas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteSector.rdlc" />
     <EmbeddedResource Include="ReporteSectores.resx">
       <DependentUpon>ReporteSectores.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteShowForm.resx">
+      <DependentUpon>ReporteShowForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SqlConnection\frmSQLConnectionDialog.resx">
       <DependentUpon>frmSQLConnectionDialog.vb</DependentUpon>
@@ -514,7 +528,9 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\BE.FechaReporte.datasource" />
     <None Include="My Project\DataSources\BE.SectorReporte.datasource" />
+    <None Include="My Project\DataSources\BE.ShowReporte.datasource" />
     <None Include="My Project\DataSources\BE.VentaBE.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
