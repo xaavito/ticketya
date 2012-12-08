@@ -41,4 +41,20 @@
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
+
+    Private Sub ReportesButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ReportesButton.Click
+        Dim show As BE.ShowBE
+        If ShowsDataGrid.hasSelectedObject = True Then
+            show = DirectCast(ShowsDataGrid.myObject, BE.ShowBE)
+            Try
+                Dim report As New ReporteShowForm
+                report.addData(BLL.GestorReportesBLL.buscarShowReporte(show))
+                report.ShowDialog()
+            Catch ex As Excepciones.ShowsNoEncontradosExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
+                My.Application.manejarExcepcion(ex)
+            End Try
+        End If
+    End Sub
 End Class

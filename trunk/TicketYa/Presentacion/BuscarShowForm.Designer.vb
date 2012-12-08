@@ -22,15 +22,16 @@ Partial Class BuscarShowForm
         Me.EliminarShowButton = New TicketYa.MyButton()
         Me.ModificarShowButton = New TicketYa.MyButton()
         Me.ShowsDataGrid = New TicketYa.MyDataGrid()
-        Me.BuscarShowButton = New TicketYa.MyButton()
-        Me.ShowTextBox = New TicketYa.MyTextBox()
-        Me.ShowLabel = New System.Windows.Forms.Label()
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SedeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TipoShowColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.identSedeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TelefonoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BuscarShowButton = New TicketYa.MyButton()
+        Me.ShowTextBox = New TicketYa.MyTextBox()
+        Me.ShowLabel = New System.Windows.Forms.Label()
+        Me.ReportesButton = New TicketYa.MyButton()
         CType(Me.ShowsDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,7 +39,7 @@ Partial Class BuscarShowForm
         '
         Me.EliminarShowButton.Image = Global.TicketYa.My.Resources.Resources.basura
         Me.EliminarShowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.EliminarShowButton.Location = New System.Drawing.Point(528, 162)
+        Me.EliminarShowButton.Location = New System.Drawing.Point(528, 140)
         Me.EliminarShowButton.Name = "EliminarShowButton"
         Me.EliminarShowButton.Size = New System.Drawing.Size(75, 23)
         Me.EliminarShowButton.TabIndex = 12
@@ -73,40 +74,6 @@ Partial Class BuscarShowForm
         Me.ShowsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ShowsDataGrid.Size = New System.Drawing.Size(454, 157)
         Me.ShowsDataGrid.TabIndex = 10
-        '
-        'BuscarShowButton
-        '
-        Me.BuscarShowButton.Image = Global.TicketYa.My.Resources.Resources.buscar
-        Me.BuscarShowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BuscarShowButton.Location = New System.Drawing.Point(528, 22)
-        Me.BuscarShowButton.Name = "BuscarShowButton"
-        Me.BuscarShowButton.Size = New System.Drawing.Size(75, 23)
-        Me.BuscarShowButton.TabIndex = 9
-        Me.BuscarShowButton.Text = "Buscar"
-        Me.BuscarShowButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.BuscarShowButton.UseVisualStyleBackColor = True
-        '
-        'ShowTextBox
-        '
-        Me.ShowTextBox.alfanumerico = False
-        Me.ShowTextBox.boton = Nothing
-        Me.ShowTextBox.Location = New System.Drawing.Point(97, 24)
-        Me.ShowTextBox.nada = False
-        Me.ShowTextBox.Name = "ShowTextBox"
-        Me.ShowTextBox.numerico = False
-        Me.ShowTextBox.sinEspacio = False
-        Me.ShowTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ShowTextBox.TabIndex = 8
-        Me.ShowTextBox.texto = False
-        '
-        'ShowLabel
-        '
-        Me.ShowLabel.AutoSize = True
-        Me.ShowLabel.Location = New System.Drawing.Point(41, 27)
-        Me.ShowLabel.Name = "ShowLabel"
-        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
-        Me.ShowLabel.TabIndex = 7
-        Me.ShowLabel.Text = "Show"
         '
         'IdentificadorColumn
         '
@@ -155,10 +122,57 @@ Partial Class BuscarShowForm
         Me.TelefonoColumn.ReadOnly = True
         Me.TelefonoColumn.Visible = False
         '
+        'BuscarShowButton
+        '
+        Me.BuscarShowButton.Image = Global.TicketYa.My.Resources.Resources.buscar
+        Me.BuscarShowButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BuscarShowButton.Location = New System.Drawing.Point(528, 22)
+        Me.BuscarShowButton.Name = "BuscarShowButton"
+        Me.BuscarShowButton.Size = New System.Drawing.Size(75, 23)
+        Me.BuscarShowButton.TabIndex = 9
+        Me.BuscarShowButton.Text = "Buscar"
+        Me.BuscarShowButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.BuscarShowButton.UseVisualStyleBackColor = True
+        '
+        'ShowTextBox
+        '
+        Me.ShowTextBox.alfanumerico = False
+        Me.ShowTextBox.boton = Nothing
+        Me.ShowTextBox.Location = New System.Drawing.Point(97, 24)
+        Me.ShowTextBox.nada = False
+        Me.ShowTextBox.Name = "ShowTextBox"
+        Me.ShowTextBox.numerico = False
+        Me.ShowTextBox.sinEspacio = False
+        Me.ShowTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ShowTextBox.TabIndex = 8
+        Me.ShowTextBox.texto = False
+        '
+        'ShowLabel
+        '
+        Me.ShowLabel.AutoSize = True
+        Me.ShowLabel.Location = New System.Drawing.Point(41, 27)
+        Me.ShowLabel.Name = "ShowLabel"
+        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
+        Me.ShowLabel.TabIndex = 7
+        Me.ShowLabel.Text = "Show"
+        '
+        'ReportesButton
+        '
+        Me.ReportesButton.Image = Global.TicketYa.My.Resources.Resources.Graphics_icon
+        Me.ReportesButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.ReportesButton.Location = New System.Drawing.Point(528, 203)
+        Me.ReportesButton.Name = "ReportesButton"
+        Me.ReportesButton.Size = New System.Drawing.Size(75, 23)
+        Me.ReportesButton.TabIndex = 22
+        Me.ReportesButton.Text = "Reportes"
+        Me.ReportesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.ReportesButton.UseVisualStyleBackColor = True
+        '
         'BuscarShowForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.ClientSize = New System.Drawing.Size(648, 281)
+        Me.Controls.Add(Me.ReportesButton)
         Me.Controls.Add(Me.EliminarShowButton)
         Me.Controls.Add(Me.ModificarShowButton)
         Me.Controls.Add(Me.ShowsDataGrid)
@@ -184,5 +198,6 @@ Partial Class BuscarShowForm
     Friend WithEvents TipoShowColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents identSedeColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TelefonoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ReportesButton As TicketYa.MyButton
 
 End Class

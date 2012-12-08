@@ -23,8 +23,6 @@ Partial Class BuscarFechaForm
         Me.IdentificadorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ShowTextBox = New TicketYa.MyTextBox()
-        Me.ShowLabel = New System.Windows.Forms.Label()
         Me.EliminarFechaButton = New TicketYa.MyButton()
         Me.ModificarFechaButton = New TicketYa.MyButton()
         Me.BuscarFechaButton = New TicketYa.MyButton()
@@ -33,6 +31,8 @@ Partial Class BuscarFechaForm
         Me.FechaHastaTextBox = New TicketYa.MyMaskedTextBox()
         Me.FechaHastaLabel = New System.Windows.Forms.Label()
         Me.ReportesButton = New TicketYa.MyButton()
+        Me.ShowTextBox = New TicketYa.MyTextBox()
+        Me.ShowLabel = New System.Windows.Forms.Label()
         CType(Me.FechasDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -73,28 +73,6 @@ Partial Class BuscarFechaForm
         Me.FechaColumn.HeaderText = "Fecha"
         Me.FechaColumn.Name = "FechaColumn"
         Me.FechaColumn.ReadOnly = True
-        '
-        'ShowTextBox
-        '
-        Me.ShowTextBox.alfanumerico = False
-        Me.ShowTextBox.boton = Nothing
-        Me.ShowTextBox.Location = New System.Drawing.Point(66, 18)
-        Me.ShowTextBox.nada = False
-        Me.ShowTextBox.Name = "ShowTextBox"
-        Me.ShowTextBox.numerico = False
-        Me.ShowTextBox.sinEspacio = False
-        Me.ShowTextBox.Size = New System.Drawing.Size(100, 20)
-        Me.ShowTextBox.TabIndex = 14
-        Me.ShowTextBox.texto = False
-        '
-        'ShowLabel
-        '
-        Me.ShowLabel.AutoSize = True
-        Me.ShowLabel.Location = New System.Drawing.Point(26, 21)
-        Me.ShowLabel.Name = "ShowLabel"
-        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
-        Me.ShowLabel.TabIndex = 13
-        Me.ShowLabel.Text = "Show"
         '
         'EliminarFechaButton
         '
@@ -180,6 +158,28 @@ Partial Class BuscarFechaForm
         Me.ReportesButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ReportesButton.UseVisualStyleBackColor = True
         '
+        'ShowTextBox
+        '
+        Me.ShowTextBox.alfanumerico = False
+        Me.ShowTextBox.boton = Nothing
+        Me.ShowTextBox.Location = New System.Drawing.Point(66, 18)
+        Me.ShowTextBox.nada = False
+        Me.ShowTextBox.Name = "ShowTextBox"
+        Me.ShowTextBox.numerico = False
+        Me.ShowTextBox.sinEspacio = False
+        Me.ShowTextBox.Size = New System.Drawing.Size(100, 20)
+        Me.ShowTextBox.TabIndex = 14
+        Me.ShowTextBox.texto = False
+        '
+        'ShowLabel
+        '
+        Me.ShowLabel.AutoSize = True
+        Me.ShowLabel.Location = New System.Drawing.Point(26, 21)
+        Me.ShowLabel.Name = "ShowLabel"
+        Me.ShowLabel.Size = New System.Drawing.Size(34, 13)
+        Me.ShowLabel.TabIndex = 13
+        Me.ShowLabel.Text = "Show"
+        '
         'BuscarFechaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -206,8 +206,6 @@ Partial Class BuscarFechaForm
     Friend WithEvents ModificarFechaButton As TicketYa.MyButton
     Friend WithEvents FechasDataGrid As TicketYa.MyDataGrid
     Friend WithEvents BuscarFechaButton As TicketYa.MyButton
-    Friend WithEvents ShowTextBox As TicketYa.MyTextBox
-    Friend WithEvents ShowLabel As System.Windows.Forms.Label
     Friend WithEvents FechaDesdeLabel As System.Windows.Forms.Label
     Friend WithEvents FechaDesdeTextBox As TicketYa.MyMaskedTextBox
     Friend WithEvents FechaHastaTextBox As TicketYa.MyMaskedTextBox
@@ -216,5 +214,7 @@ Partial Class BuscarFechaForm
     Friend WithEvents DescripcionColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ReportesButton As TicketYa.MyButton
+    Friend WithEvents ShowTextBox As TicketYa.MyTextBox
+    Friend WithEvents ShowLabel As System.Windows.Forms.Label
 
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class ReporteSectoresForm
+Partial Class ReporteFechas
     Inherits TicketYa.BaseForm
 
     'Form invalida a Dispose para limpiar la lista de componentes.
@@ -21,38 +21,38 @@ Partial Class ReporteSectoresForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.FechaReporteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.SectorReporteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.SectorReporteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FechaReporteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'FechaReporteBindingSource
+        '
+        Me.FechaReporteBindingSource.DataSource = GetType(BE.FechaReporte)
         '
         'ReportViewer1
         '
-        ReportDataSource1.Name = "SectorData"
-        ReportDataSource1.Value = Me.SectorReporteBindingSource
+        ReportDataSource1.Name = "DataSet2"
+        ReportDataSource1.Value = Me.FechaReporteBindingSource
         Me.ReportViewer1.LocalReport.DataSources.Add(ReportDataSource1)
-        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TicketYa.ReporteSector.rdlc"
-        Me.ReportViewer1.Location = New System.Drawing.Point(12, 19)
+        Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "TicketYa.ReporteFecha.rdlc"
+        Me.ReportViewer1.Location = New System.Drawing.Point(13, 13)
         Me.ReportViewer1.Name = "ReportViewer1"
-        Me.ReportViewer1.Size = New System.Drawing.Size(736, 349)
+        Me.ReportViewer1.Size = New System.Drawing.Size(808, 286)
         Me.ReportViewer1.TabIndex = 0
         '
-        'SectorReporteBindingSource
-        '
-        Me.SectorReporteBindingSource.DataSource = GetType(BE.SectorReporte)
-        '
-        'ReporteSectoresForm
+        'ReporteFechas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(760, 380)
+        Me.ClientSize = New System.Drawing.Size(833, 311)
         Me.Controls.Add(Me.ReportViewer1)
-        Me.Name = "ReporteSectoresForm"
-        Me.Text = "Reporte Sectores"
-        CType(Me.SectorReporteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Name = "ReporteFechas"
+        Me.Text = "Reporte Fechas"
+        CType(Me.FechaReporteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
-    Friend WithEvents SectorReporteBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents FechaReporteBindingSource As System.Windows.Forms.BindingSource
 
 End Class
