@@ -300,7 +300,7 @@
             End If
         Next
 
-        Throw New Excepciones.SinReservasExcepcion
+        Return result
     End Function
 
 End Class
