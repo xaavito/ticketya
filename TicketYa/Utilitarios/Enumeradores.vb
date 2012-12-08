@@ -154,6 +154,12 @@
 
         PromocionCreadaExistosamenteExcepcion
 
+        ReservasCaidasExcepcion
+
+        SinReservasExcepcion
+
+        ReservasPreviaExcepcion
+
     End Enum
 
     Enum Bitacora
