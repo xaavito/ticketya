@@ -73,6 +73,7 @@
     <Compile Include="ControlBE.vb" />
     <Compile Include="DetalleVentaBE.vb" />
     <Compile Include="EstadoSillaBE.vb" />
+    <Compile Include="InforReservacion.vb" />
     <Compile Include="PreferenciaBE.vb" />
     <Compile Include="PromocionBE.vb" />
     <Compile Include="SectorBE.vb" />

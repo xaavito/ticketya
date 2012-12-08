@@ -9,9 +9,9 @@ Public Class Mailer
                                ByVal referencia As String,
                                ByVal contenido As String)
 
-        para = "javiermartingonzalez@gmail.com"
-        referencia = "Ticket Ya"
-        contenido = "Nada, solo testing por ahora"
+        'para = "javiermartingonzalez@gmail.com"
+        'referencia = "Ticket Ya"
+        'contenido = "Nada, solo testing por ahora"
         'Start by creating a mail message object
         Dim MyMailMessage As New MailMessage()
 

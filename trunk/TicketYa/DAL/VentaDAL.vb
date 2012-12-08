@@ -217,20 +217,90 @@
     Shared Sub checkearReservaPrevia(ByVal listaVentas As List(Of BE.DetalleVentaBE))
         Dim result As Integer
         Dim repository As IRepositorio = RepositorioFactory.Create()
-        Dim tranRepo As New RepositorioTransaccional(repository)
+        'Dim tranRepo As New RepositorioTransaccional(repository)
 
         For Each det As BE.DetalleVentaBE In listaVentas
-            tranRepo.crearComando("GENERAR_DETALLE_VENTA_SP")
-            'tranRepo.addParam("@idVenta", idVenta)
-            tranRepo.addParam("@idFecha", det.idFecha)
-            tranRepo.addParam("@idSector", det.idSector)
-            tranRepo.addParam("@idShow", det.idShow)
-            tranRepo.addParam("@idSilla", det.idSilla)
-            result = tranRepo.executeSearchWithStatus
+            repository.crearComando("CHECKEAR_RESERVA_PREVIA_SP")
+            repository.addParam("@idFecha", det.idFecha)
+            repository.addParam("@idSector", det.idSector)
+            repository.addParam("@idShow", det.idShow)
+            repository.addParam("@idSilla", det.idSilla)
+            result = repository.executeSearch
             If (result > 0) Then
-                Throw New Excepciones.ReservasCaidasExcepcion
+                Throw New Excepciones.ReservasPreviaExcepcion
             End If
         Next
+
+        Throw New Excepciones.SinReservasExcepcion
     End Sub
+
+    Shared Function notificarMasDeUnaReserva(ByVal listaVentas As List(Of BE.DetalleVentaBE))
+        Dim result As New List(Of BE.InforReservacion)
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim table As DataTable
+
+        'SELECT u.nombre,u.apellido,u.mail,sh.descripcion, fe.descripcion,fe.fecha,se.descripcion,si.columna,si.fila
+        For Each det As BE.DetalleVentaBE In listaVentas
+            repository.crearComando("BUSCAR_COMPRADOR_RESERVAS_SP")
+            repository.addParam("@idFecha", det.idFecha)
+            repository.addParam("@idSector", det.idSector)
+            repository.addParam("@idShow", det.idShow)
+            repository.addParam("@idSilla", det.idSilla)
+            table = repository.executeSearchWithAdapter
+            If (table.Rows.Count > 0) Then
+                For Each row As DataRow In table.Rows
+                    Dim info As New BE.InforReservacion
+                    info.nombre = row.Item(0)
+                    info.apellido = row.Item(1)
+                    info.mail = row.Item(2)
+                    info.show = row.Item(3)
+                    info.fecha = row.Item(4)
+                    info.fechaFecha = row.Item(5)
+                    info.sector = row.Item(6)
+                    info.columna = row.Item(7)
+                    info.fila = row.Item(8)
+                    result.Add(info)
+                Next
+            Else
+                Throw New Excepciones.ReservasPreviaExcepcion
+            End If
+        Next
+
+        Return result
+    End Function
+
+    Shared Function notificarReservaCaida(ByVal listaVentas As List(Of BE.DetalleVentaBE))
+        Dim result As New List(Of BE.InforReservacion)
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim table As DataTable
+
+        For Each det As BE.DetalleVentaBE In listaVentas
+            repository.crearComando("BUSCAR_COMPRADOR_RESERVAS_SP")
+            repository.addParam("@idFecha", det.idFecha)
+            repository.addParam("@idSector", det.idSector)
+            repository.addParam("@idShow", det.idShow)
+            repository.addParam("@idSilla", det.idSilla)
+            table = repository.executeSearchWithAdapter
+            If (table.Rows.Count > 0) Then
+                For Each row As DataRow In table.Rows
+                    Dim info As New BE.InforReservacion
+                    info.nombre = row.Item(0)
+                    info.apellido = row.Item(1)
+                    info.mail = row.Item(2)
+                    info.show = row.Item(3)
+                    info.fecha = row.Item(4)
+                    info.fechaFecha = row.Item(5)
+                    info.sector = row.Item(6)
+                    info.columna = row.Item(7)
+                    info.fila = row.Item(8)
+                    result.Add(info)
+                Next
+            Else
+                Throw New Excepciones.ReservasPreviaExcepcion
+            End If
+        Next
+
+        Throw New Excepciones.SinReservasExcepcion
+    End Function
 
 End Class

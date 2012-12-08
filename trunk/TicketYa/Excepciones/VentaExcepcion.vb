@@ -64,3 +64,37 @@ Public Class VentaGeneradaExitosamente
         Me.mensaje = ""
     End Sub
 End Class
+
+
+Public Class ReservasCaidasExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ReservasCaidasExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+Public Class SinReservasExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.SinReservasExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+
+Public Class ReservasPreviaExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ReservasPreviaExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
