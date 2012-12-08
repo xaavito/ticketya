@@ -6,9 +6,14 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
-        ShowComboBox.DisplayMember = "descripcion"
-        ShowComboBox.ValueMember = "identificador"
+        Try
+            ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
+            ShowComboBox.DisplayMember = "descripcion"
+            ShowComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
     Private Sub BuscarSectorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarSectorButton.Click
         buscarSector()
@@ -41,6 +46,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.SectorTieneVentasAsociadasExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -49,6 +56,8 @@
         Try
             'SectoresDataGrid.DataSource = BLL.GestorSectorBLL.buscarSector(SectorTextBox.Text)
         Catch ex As Excepciones.SectoresNoEncontradosExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
@@ -68,6 +77,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -80,6 +91,8 @@
                 FechaComboBox.ValueMember = "identificador"
             Catch ex As Excepciones.FechasNoEncontradasExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
 
         End If
@@ -90,6 +103,8 @@
             Try
                 SectoresDataGrid.DataSource = BLL.GestorSectorBLL.buscarSectorPorFecha(FechaComboBox.SelectedValue)
             Catch ex As Excepciones.SectorNoEncontradoExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
         End If

@@ -30,6 +30,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.SedeTieneShowsAsociadosExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -38,6 +40,8 @@
         Try
             SedesDataGrid.DataSource = BLL.GestorSedeBLL.buscarSede(SedeTextBox.Text)
         Catch ex As Excepciones.SedesNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

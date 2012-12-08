@@ -6,27 +6,31 @@
         InitializeComponent()
 
         'FamiliaDataGrid.AutoGenerateColumns = False
+        Try
+            Dim idiomas As List(Of BE.IdiomaBE)
+            idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
+            IdiomaComboBox.DataSource = idiomas
+            IdiomaComboBox.DisplayMember = "descripcion"
+            IdiomaComboBox.ValueMember = "identificador"
+
+            Dim familias As List(Of BE.FamiliaBE)
+            familias = BLL.GestorFamiliaBLL.listarFamilias()
+            FamiliaComboBox.DataSource = familias
+            FamiliaComboBox.DisplayMember = "descripcion"
+            FamiliaComboBox.ValueMember = "identificador"
+
+            UsuarioTextBox.sinEspacio = True
+            UsuarioTextBox.boton = GenerarUsuarioButton
+            PassTextBox.sinEspacio = True
+            PassTextBox.boton = GenerarUsuarioButton
+            NombreTextBox.texto = True
+            NombreTextBox.boton = GenerarUsuarioButton
+            ApellidoTextBox.texto = True
+            ApellidoTextBox.boton = GenerarUsuarioButton
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
         
-        Dim idiomas As List(Of BE.IdiomaBE)
-        idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
-        IdiomaComboBox.DataSource = idiomas
-        IdiomaComboBox.DisplayMember = "descripcion"
-        IdiomaComboBox.ValueMember = "identificador"
-
-        Dim familias As List(Of BE.FamiliaBE)
-        familias = BLL.GestorFamiliaBLL.listarFamilias()
-        FamiliaComboBox.DataSource = familias
-        FamiliaComboBox.DisplayMember = "descripcion"
-        FamiliaComboBox.ValueMember = "identificador"
-
-        UsuarioTextBox.sinEspacio = True
-        UsuarioTextBox.boton = GenerarUsuarioButton
-        PassTextBox.sinEspacio = True
-        PassTextBox.boton = GenerarUsuarioButton
-        NombreTextBox.texto = True
-        NombreTextBox.boton = GenerarUsuarioButton
-        ApellidoTextBox.texto = True
-        ApellidoTextBox.boton = GenerarUsuarioButton
     End Sub
 
     Private Sub AgregarFamiliaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarFamiliaButton.Click
@@ -56,6 +60,8 @@
         Catch ex As Excepciones.InsertExcepcion
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.UsuarioCreadoExistosamente
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
 

@@ -12,6 +12,8 @@
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.ConexionImposibleExcepcion
             My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 End Class

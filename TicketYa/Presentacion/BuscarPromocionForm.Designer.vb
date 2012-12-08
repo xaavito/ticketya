@@ -34,9 +34,6 @@ Partial Class BuscarPromocionForm
         Me.DescuentoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DesdeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HastaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SectorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.PromocionesDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -71,7 +68,7 @@ Partial Class BuscarPromocionForm
         Me.PromocionesDataGrid.AllowUserToResizeRows = False
         Me.PromocionesDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.PromocionesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PromocionesDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.DescuentoColumn, Me.DesdeColumn, Me.HastaColumn, Me.TipoColumn, Me.FechaColumn, Me.SectorColumn})
+        Me.PromocionesDataGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdentificadorColumn, Me.DescripcionColumn, Me.DescuentoColumn, Me.DesdeColumn, Me.HastaColumn})
         Me.PromocionesDataGrid.Location = New System.Drawing.Point(12, 104)
         Me.PromocionesDataGrid.Name = "PromocionesDataGrid"
         Me.PromocionesDataGrid.ReadOnly = True
@@ -188,27 +185,6 @@ Partial Class BuscarPromocionForm
         Me.HastaColumn.Name = "HastaColumn"
         Me.HastaColumn.ReadOnly = True
         '
-        'TipoColumn
-        '
-        Me.TipoColumn.DataPropertyName = "tipo"
-        Me.TipoColumn.HeaderText = "Tipo"
-        Me.TipoColumn.Name = "TipoColumn"
-        Me.TipoColumn.ReadOnly = True
-        '
-        'FechaColumn
-        '
-        Me.FechaColumn.DataPropertyName = "fechaNombre"
-        Me.FechaColumn.HeaderText = "Fecha"
-        Me.FechaColumn.Name = "FechaColumn"
-        Me.FechaColumn.ReadOnly = True
-        '
-        'SectorColumn
-        '
-        Me.SectorColumn.DataPropertyName = "sectorNombre"
-        Me.SectorColumn.HeaderText = "Sector"
-        Me.SectorColumn.Name = "SectorColumn"
-        Me.SectorColumn.ReadOnly = True
-        '
         'BuscarPromocionForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -245,8 +221,5 @@ Partial Class BuscarPromocionForm
     Friend WithEvents DescuentoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DesdeColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents HastaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TipoColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FechaColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents SectorColumn As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class

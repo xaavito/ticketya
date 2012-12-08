@@ -30,19 +30,30 @@
         If Not FamiliasDataGrid.CurrentRow.DataBoundItem Is Nothing Then
             fam = DirectCast(FamiliasDataGrid.CurrentRow.DataBoundItem, BE.FamiliaBE)
             If (Not fam Is Nothing) Then
-                If (BLL.GestorFamiliaBLL.eliminarFamilia(fam) = 1) Then
+                Try
+                    BLL.GestorFamiliaBLL.eliminarFamilia(fam)
+                Catch ex As Excepciones.FamiliaEliminadaExitosamenteExcepcion
                     buscarFamilia(FamiliaTextBox.Text)
-                    Throw New Excepciones.FamiliaEliminadaExitosamenteExcepcion
                     BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, FamiliaTextBox.Text, Utilitarios.Enumeradores.Bitacora.FamiliaEliminada)
-                Else
-                    Throw New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion
-                End If
+                    My.Application.manejarExcepcion(ex)
+                Catch ex As Excepciones.FamiliaTieneUsuariosAsociadosExcepcion
+                    My.Application.manejarExcepcion(ex)
+                Catch ex As Exception
+                    My.Application.manejarExcepcion(ex)
+                End Try
             End If
         End If
     End Sub
 
     Private Sub buscarFamilia(ByVal p1 As String)
-        FamiliasDataGrid.DataSource = BLL.GestorFamiliaBLL.buscarFamilia(p1)
+        Try
+            FamiliasDataGrid.DataSource = BLL.GestorFamiliaBLL.buscarFamilia(p1)
+        Catch ex As Excepciones.FamiliaNoEncontradaExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+
     End Sub
 
 End Class

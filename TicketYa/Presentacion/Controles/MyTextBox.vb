@@ -9,6 +9,7 @@ Public Class MyTextBox
     Dim hasExistingErrorOnText As Boolean = False
     Dim hasExistingErrorOnNumber As Boolean = False
     Dim hasExistingErrorOnNothing As Boolean = False
+    Dim hasExistingErrorOnMail As Boolean = False
 
     Private _boton As Button
     Public Property boton() As Button
@@ -72,6 +73,16 @@ Public Class MyTextBox
         End Set
     End Property
 
+    Private _mail As Boolean
+    Public Property mail() As Boolean
+        Get
+            Return _mail
+        End Get
+        Set(ByVal value As Boolean)
+            _mail = value
+        End Set
+    End Property
+
 
     'Private _isFecha As Boolean
     'Public Property isFecha() As Boolean
@@ -98,6 +109,19 @@ Public Class MyTextBox
         If Not String.IsNullOrEmpty(Me.Text) Then
             If Not Regex.IsMatch(Me.Text, "^[A-Za-z]*$") Then
                 errorProvider.SetError(Me, "Debe ser solo texto")
+                hasExistingErrorOnText = True
+                Return
+            Else
+                hasExistingErrorOnText = False
+            End If
+        End If
+        hasExistingErrorOnText = False
+    End Sub
+
+    Public Sub soloMail()
+        If Not String.IsNullOrEmpty(Me.Text) Then
+            If Not Regex.IsMatch(Me.Text, "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$") Then
+                errorProvider.SetError(Me, "Debe ser mail")
                 hasExistingErrorOnText = True
                 Return
             Else
@@ -150,7 +174,8 @@ Public Class MyTextBox
 
     Private Sub checkFixedError()
         If (hasExistingErrorOnAlfanumerico = False And hasExistingErrorOnSpace = False And
-            hasExistingErrorOnText = False And hasExistingErrorOnNumber = False And hasExistingErrorOnNothing = False) Then
+            hasExistingErrorOnText = False And hasExistingErrorOnNumber = False And
+            hasExistingErrorOnNothing = False And hasExistingErrorOnMail = False) Then
             errorProvider.Clear()
 
             If Not boton Is Nothing Then
@@ -189,9 +214,9 @@ Public Class MyTextBox
             tieneAlgo()
         End If
 
-        'If isFecha = True Then
-        '    esfecha()
-        'End If
+        If mail = True Then
+            soloMail()
+        End If
 
         checkFixedError()
     End Sub
@@ -203,9 +228,5 @@ Public Class MyTextBox
         Return False
     End Function
 
-    'Private Sub esfecha()
-    '    Me.m()
-    '    Throw (New NotImplementedException)
-    'End Sub
 
 End Class

@@ -20,6 +20,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FalloAlRealizarRestore
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -28,6 +30,8 @@
         Try
             BackupDataGrid.DataSource = BLL.GestorBackupBLL.listarBackups()
         Catch ex As Excepciones.BackupsNoEncontrados
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

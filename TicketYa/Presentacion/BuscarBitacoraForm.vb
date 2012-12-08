@@ -4,37 +4,42 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        BitacorasDataGrid.AutoGenerateColumns = False
+        'BitacorasDataGrid.AutoGenerateColumns = False
 
-        Dim usuarios As List(Of BE.UsuarioBE)
-        usuarios = BLL.GestorUsuarioBLL.listarUsuarios()
-        'UsuarioComboBox.DataSource = usuarios
+        Try
+            Dim usuarios As List(Of BE.UsuarioBE)
+            usuarios = BLL.GestorUsuarioBLL.listarUsuarios()
+            'UsuarioComboBox.DataSource = usuarios
 
-        Dim usrTodos As New BE.UsuarioBE
-        usrTodos.identificador = 0
-        usrTodos.nombre = ""
-        UsuarioComboBox.Items.Add(usrTodos)
+            Dim usrTodos As New BE.UsuarioBE
+            usrTodos.identificador = 0
+            usrTodos.nombre = ""
+            UsuarioComboBox.Items.Add(usrTodos)
 
-        UsuarioComboBox.Items.AddRange(usuarios.ToArray)
-        UsuarioComboBox.SelectedIndex = 0
-        UsuarioComboBox.DisplayMember = "nombre"
-        UsuarioComboBox.ValueMember = "identificador"
+            UsuarioComboBox.Items.AddRange(usuarios.ToArray)
+            UsuarioComboBox.SelectedIndex = 0
+            UsuarioComboBox.DisplayMember = "nombre"
+            UsuarioComboBox.ValueMember = "identificador"
 
-        Dim bitacoras As List(Of BE.BitacoraBE)
-        bitacoras = BLL.GestorBitacoraBLL.listarTipoBitacoras()
+            Dim bitacoras As List(Of BE.BitacoraBE)
+            bitacoras = BLL.GestorBitacoraBLL.listarTipoBitacoras()
 
-        Dim bitTodos As New BE.BitacoraBE
-        bitTodos.identificador = 0
-        bitTodos.mensaje = ""
-        'TipoBitacoraComboBox.emptyItem = bitTodos
-        'TipoBitacoraComboBox.lista = bitacoras
-        TipoBitacoraComboBox.Items.Add(bitTodos)
+            Dim bitTodos As New BE.BitacoraBE
+            bitTodos.identificador = 0
+            bitTodos.mensaje = ""
+            'TipoBitacoraComboBox.emptyItem = bitTodos
+            'TipoBitacoraComboBox.lista = bitacoras
+            TipoBitacoraComboBox.Items.Add(bitTodos)
 
-        TipoBitacoraComboBox.Items.AddRange(bitacoras.ToArray)
-        TipoBitacoraComboBox.SelectedIndex = 0
-        'TipoBitacoraComboBox.DataSource = bitacoras
-        TipoBitacoraComboBox.DisplayMember = "mensaje"
-        TipoBitacoraComboBox.ValueMember = "identificador"
+            TipoBitacoraComboBox.Items.AddRange(bitacoras.ToArray)
+            TipoBitacoraComboBox.SelectedIndex = 0
+            'TipoBitacoraComboBox.DataSource = bitacoras
+            TipoBitacoraComboBox.DisplayMember = "mensaje"
+            TipoBitacoraComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
 
     End Sub
 
@@ -43,6 +48,8 @@
             BitacorasDataGrid.DataSource = BLL.GestorBitacoraBLL.buscarBitacora(DirectCast(UsuarioComboBox.SelectedItem, BE.UsuarioBE),
                                                                                 DirectCast(TipoBitacoraComboBox.SelectedItem, BE.BitacoraBE).identificador)
         Catch ex As Excepciones.BitacoraNoEncontradaExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

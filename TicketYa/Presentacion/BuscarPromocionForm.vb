@@ -6,9 +6,16 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
-        ShowComboBox.DisplayMember = "descripcion"
-        ShowComboBox.ValueMember = "identificador"
+        Try
+            ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
+            ShowComboBox.DisplayMember = "descripcion"
+            ShowComboBox.ValueMember = "identificador"
+        Catch ex As Excepciones.ShowsNoEncontradosExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
     Private Sub BuscarPromocionButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarPromocionButton.Click
         buscarPromocion()
@@ -41,6 +48,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.PromocionTieneVentasAsociadasExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -49,6 +58,8 @@
         Try
             'PromocionesDataGrid.DataSource = BLL.GestorPromocionBLL.buscarPromocion("")
         Catch ex As Excepciones.PromocionesNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
@@ -60,6 +71,8 @@
                 FechaComboBox.DisplayMember = "forLista"
                 FechaComboBox.ValueMember = "identificador"
             Catch ex As Excepciones.FechasNoEncontradasExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
 

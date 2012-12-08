@@ -48,7 +48,7 @@
             Next
 
         Catch ex As Exception
-            Throw New Excepciones.FamiliaNoEncontradaExcepcion
+            Throw New Excepciones.SearchExcepcion
         End Try
 
         Return familias
@@ -138,14 +138,17 @@
 
                 result = repository.executeSearchWithStatus
                 If (result <= 0) Then
-                    Throw New Excepciones.InsertExcepcion
+                    Throw New Excepciones.DeleteExcepcion
                 End If
+            Else
+                Throw New Excepciones.FamiliaTieneUsuariosAsociadosExcepcion
             End If
 
-        Catch ex As Exception
-            Throw New Excepciones.InsertExcepcion
+        Catch ex As Excepciones.DeleteExcepcion
+            Throw New Excepciones.DeleteExcepcion
         End Try
 
+        Throw New Excepciones.FamiliaEliminadaExitosamenteExcepcion
         Return result
     End Function
 

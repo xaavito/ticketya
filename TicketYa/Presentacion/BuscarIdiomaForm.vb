@@ -25,6 +25,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.IdiomaTieneUsuariosAsociadosExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
         
@@ -45,6 +47,11 @@
     End Sub
 
     Private Sub buscarIdiomas()
-        IdiomasDataGrid.DataSource = BLL.GestorIdiomaBLL.listarIdiomas(IdiomaTextBox.Text)
+        Try
+            IdiomasDataGrid.DataSource = BLL.GestorIdiomaBLL.listarIdiomas(IdiomaTextBox.Text)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+
     End Sub
 End Class

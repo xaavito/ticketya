@@ -18,6 +18,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FalloAlCrearBackup
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -34,6 +36,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FalloAlEliminarBackup
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -42,6 +46,8 @@
         Try
             BackupDataGrid.DataSource = BLL.GestorBackupBLL.listarBackups()
         Catch ex As Excepciones.BackupsNoEncontrados
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

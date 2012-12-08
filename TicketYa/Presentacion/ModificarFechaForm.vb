@@ -7,9 +7,14 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
-        ShowComboBox.ValueMember = "identificador"
-        ShowComboBox.DisplayMember = "descripcion"
+        Try
+            ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
+            ShowComboBox.ValueMember = "identificador"
+            ShowComboBox.DisplayMember = "descripcion"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
 
     End Sub
     Sub addFecha(ByVal Fecha As BE.FechaBE)
@@ -31,6 +36,8 @@
             limpiarForm()
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.InsertExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
