@@ -36,11 +36,11 @@
         Dim repository As IRepositorio = RepositorioFactory.Create()
         Try
             repository.crearComando("BUSCAR_SECTOR_POR_DESCRIPCION_SP")
-            repository.addParam("@idFecha", p1)
+            repository.addParam("@desc", p1)
             table = New DataTable
             table = repository.executeSearchWithAdapter()
             If (table.Rows.Count <= 0) Then
-                Throw New Excepciones.SectorNoEncontradoExcepcion
+                Throw New Excepciones.SectoresNoEncontradosExcepcion
             End If
             For Each pepe As DataRow In table.Rows
                 Dim sector As New BE.SectorBE
@@ -60,8 +60,8 @@
                 lista.Add(sector)
             Next
 
-        Catch ex As Excepciones.SectorNoEncontradoExcepcion
-            Throw New Excepciones.SectorNoEncontradoExcepcion
+        Catch ex As Excepciones.SectoresNoEncontradosExcepcion
+            Throw New Excepciones.SectoresNoEncontradosExcepcion
         End Try
 
         Return lista

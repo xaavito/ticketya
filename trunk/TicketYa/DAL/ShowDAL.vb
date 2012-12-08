@@ -264,4 +264,61 @@
         Return lista
     End Function
 
+    Shared Function buscarSectoresPorFecha(ByVal Fecha As BE.FechaBE) As Object
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.SectorReporte)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_SECTORES_POR_FECHA_SP")
+            repository.addParam("@idFecha", Fecha.identificador)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.SectoresNoEncontradosExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim sec As New BE.SectorReporte
+                sec.descripcion = pepe.Item(0)
+                sec.cantidad = pepe.Item(1)
+                lista.Add(sec)
+            Next
+
+        Catch ex As Excepciones.SectoresNoEncontradosExcepcion
+            Throw New Excepciones.SectoresNoEncontradosExcepcion
+        End Try
+
+        Return lista
+    End Function
+
+    Shared Function buscarSectorReporte(ByVal sector As BE.SectorBE) As Object
+        Dim table As DataTable
+
+        Dim lista As New List(Of BE.SectorReporte)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_SECTOR_REPORTE_SP")
+            repository.addParam("@idSector", sector.identificador)
+            repository.addParam("@idFecha", sector.fecha.identificador)
+            table = New DataTable
+            table = repository.executeSearchWithAdapter()
+            If (table.Rows.Count <= 0) Then
+                Throw New Excepciones.SectoresNoEncontradosExcepcion
+            End If
+            For Each pepe As DataRow In table.Rows
+                Dim sec As New BE.SectorReporte
+                sec.descripcion = pepe.Item(0)
+                sec.cantidad = pepe.Item(1)
+                lista.Add(sec)
+            Next
+
+        Catch ex As Excepciones.SectoresNoEncontradosExcepcion
+            Throw New Excepciones.SectoresNoEncontradosExcepcion
+        End Try
+
+        Return lista
+    End Function
+
 End Class
