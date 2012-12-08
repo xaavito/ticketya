@@ -30,14 +30,21 @@
 
         Catch ex As Excepciones.CompradorNoEncontradoExcepcion
             My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
         End Try
         
     End Sub
 
     Private Sub BuscarShowButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarShowButton.Click
-        ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow(ShowTextBox.Text)
-        ShowComboBox.DisplayMember = "descripcion"
-        ShowComboBox.ValueMember = "identificador"
+        Try
+            ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow(ShowTextBox.Text)
+            ShowComboBox.DisplayMember = "descripcion"
+            ShowComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
 
     Private Sub NuevoCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoCompradorButton.Click
@@ -51,6 +58,8 @@
                 selectedShow = DirectCast(ShowComboBox.SelectedItem, BE.ShowBE)
                 FechaComboBox.DataSource = BLL.GestorFechaBLL.listarFechas(ShowComboBox.SelectedValue)
             Catch ex As Excepciones.FechasNoEncontradasExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
 
@@ -73,6 +82,8 @@
                 selectedSector.fecha = selectedFecha
             Catch ex As Excepciones.SectorNoEncontradoExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -90,6 +101,8 @@
                 SectorComboBox.DataSource = Nothing
                 SectorComboBox.Enabled = False
                 Panel.Controls.Clear()
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
 
@@ -157,6 +170,8 @@
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.GenerarVentaExcepcion
             My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 
@@ -174,7 +189,7 @@
                 promo = BLL.GestorPromocionBLL.buscarPromocion(pepe.Cells.Item(1).Value, pepe.Cells.Item(3).Value)
                 listaPromociones.Add(promo)
             Catch ex As Exception
-
+                My.Application.manejarExcepcion(ex)
             End Try
             
         Next
@@ -192,12 +207,18 @@
     End Sub
 
     Private Sub PromocionComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PromocionComboBox.SelectedIndexChanged
-        Dim promo As BE.PromocionBE
-        promo = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)
-        If promo.tipoDescuento = 1 And Not String.IsNullOrWhiteSpace(TotalTextBox.Text) Then
-            DescuentoTextBox.Text = Decimal.Parse(TotalTextBox.Text) * Decimal.Parse(promo.descuento)
-        Else
-            DescuentoTextBox.Text = Decimal.Parse(promo.descuento)
-        End If
+
+        Try
+            Dim promo As BE.PromocionBE
+            promo = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)
+            If promo.tipoDescuento = 1 And Not String.IsNullOrWhiteSpace(TotalTextBox.Text) Then
+                DescuentoTextBox.Text = Decimal.Parse(TotalTextBox.Text) * Decimal.Parse(promo.descuento)
+            Else
+                DescuentoTextBox.Text = Decimal.Parse(promo.descuento)
+            End If
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
 End Class

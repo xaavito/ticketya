@@ -8,14 +8,18 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
+        Try
+            Dim permisos As List(Of BE.PermisoBE)
+            permisos = BLL.GestorPermisoBLL.listarPermisos()
+            PermisoDataGrid.DataSource = permisos
 
-        Dim permisos As List(Of BE.PermisoBE)
-        permisos = BLL.GestorPermisoBLL.listarPermisos()
-        PermisoDataGrid.DataSource = permisos
+            Dim familias As List(Of BE.FamiliaBE)
+            familias = BLL.GestorFamiliaBLL.listarFamilias()
+            FamiliaDataGrid.DataSource = familias
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
 
-        Dim familias As List(Of BE.FamiliaBE)
-        familias = BLL.GestorFamiliaBLL.listarFamilias()
-        FamiliaDataGrid.DataSource = familias
     End Sub
 
     Private Sub FamiliaDataGrid_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellMouseEventArgs) Handles FamiliaDataGrid.CellMouseClick
@@ -33,6 +37,8 @@
                     PermisosFamiliaDataGrid.Rows.Add(row)
                 Next
             Catch ex As Excepciones.PermisoNoEncontradoExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
         End If
@@ -77,6 +83,8 @@
         Catch ex As Excepciones.AsociacionDePermisosExcepcion
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.AsociacionDePermisosExitosa
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

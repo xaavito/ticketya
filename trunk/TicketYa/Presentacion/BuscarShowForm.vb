@@ -30,6 +30,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.ShowTieneVentasAsociadosExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -38,6 +40,8 @@
         Try
             ShowsDataGrid.DataSource = BLL.GestorShowBLL.buscarShow(ShowTextBox.Text)
         Catch ex As Excepciones.ShowsNoEncontradosExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
@@ -53,6 +57,8 @@
             Catch ex As Excepciones.ShowsNoEncontradosExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
         End If

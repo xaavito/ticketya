@@ -49,7 +49,12 @@
     End Sub
 
     Private Sub buscarUsuario(ByVal p1 As String)
-        UsuariosDataGrid.DataSource = BLL.GestorUsuarioBLL.buscarUsuario(UsuarioTextBox.Text)
+        Try
+            UsuariosDataGrid.DataSource = BLL.GestorUsuarioBLL.buscarUsuario(UsuarioTextBox.Text)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+
     End Sub
 
 End Class

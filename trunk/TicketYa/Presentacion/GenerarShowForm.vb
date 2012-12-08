@@ -12,6 +12,8 @@
             TipoShowComboBox.DisplayMember = "descripcion"
         Catch ex As Excepciones.TipoShowsNoEncontradosExcepcion
             My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
         End Try
         
         Try
@@ -19,6 +21,8 @@
             SedeComboBox.ValueMember = "identificador"
             SedeComboBox.DisplayMember = "descripcion"
         Catch ex As Excepciones.SedesNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
         
@@ -31,6 +35,8 @@
             limpiarForm()
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.InsertExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

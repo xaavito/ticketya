@@ -31,6 +31,8 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
                 My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
             End Try
         End If
     End Sub
@@ -41,6 +43,8 @@
             s = FechaDesdeTextBox.Mask
             FechasDataGrid.DataSource = BLL.GestorFechaBLL.buscarFecha(ShowTextBox.Text, FechaDesdeTextBox.getDateTime, FechaHastaTextBox.getDateTime)
         Catch ex As Excepciones.FechasNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub
@@ -56,6 +60,8 @@
             Catch ex As Excepciones.SectoresNoEncontradosExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.FechaTieneVentasAsociadasExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
                 My.Application.manejarExcepcion(ex)
             End Try
         End If

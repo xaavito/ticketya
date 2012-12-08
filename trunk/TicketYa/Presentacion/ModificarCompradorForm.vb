@@ -9,11 +9,16 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        Dim preferencias As List(Of BE.TipoShowBE) = Nothing
-        preferencias = BLL.GestorPreferenciaBLL.listarPreferencias
-        PreferenciaComboBox.DataSource = preferencias
-        PreferenciaComboBox.DisplayMember = "descripcion"
-        PreferenciaComboBox.ValueMember = "identificador"
+        Try
+            Dim preferencias As List(Of BE.TipoShowBE) = Nothing
+            preferencias = BLL.GestorPreferenciaBLL.listarPreferencias
+            PreferenciaComboBox.DataSource = preferencias
+            PreferenciaComboBox.DisplayMember = "descripcion"
+            PreferenciaComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
 
     End Sub
     Sub addComprador(ByVal usr As BE.UsuarioBE)
@@ -65,6 +70,8 @@
                 PreferenciaDataGrid.Rows.Add(row)
             Next
         Catch ex As Excepciones.PreferenciasNoEncontradasExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
 

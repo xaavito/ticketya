@@ -5,49 +5,58 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
-        Dim preferencias As List(Of BE.TipoShowBE) = Nothing
-        preferencias = BLL.GestorPreferenciaBLL.listarPreferencias
-        PreferenciaComboBox.DataSource = preferencias
-        PreferenciaComboBox.DisplayMember = "descripcion"
-        PreferenciaComboBox.ValueMember = "identificador"
+        Try
+            Dim preferencias As List(Of BE.TipoShowBE) = Nothing
+            preferencias = BLL.GestorPreferenciaBLL.listarPreferencias
+            PreferenciaComboBox.DataSource = preferencias
+            PreferenciaComboBox.DisplayMember = "descripcion"
+            PreferenciaComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        'NombreTextBox.sinEspacio = True
-        'NombreTextBox.boton = GenerarCompradorButton
-        'ApellidoTextBox.sinEspacio = True
-        'ApellidoTextBox.boton = GenerarCompradorButton
-        'MailTextBox.texto = True
-        'MailTextBox.boton = GenerarCompradorButton
-        'DireccionTextBox.texto = True
-        'DireccionTextBox.boton = GenerarCompradorButton
+        NombreTextBox.sinEspacio = True
+        NombreTextBox.boton = GenerarCompradorButton
+        ApellidoTextBox.sinEspacio = True
+        ApellidoTextBox.boton = GenerarCompradorButton
+        MailTextBox.mail = True
+        MailTextBox.boton = GenerarCompradorButton
+        DireccionTextBox.texto = True
+        DireccionTextBox.boton = GenerarCompradorButton
     End Sub
     Private Sub GenerarUsuarioButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarCompradorButton.Click
         If (Not String.IsNullOrEmpty(NombreTextBox.Text) And Not String.IsNullOrEmpty(ApellidoTextBox.Text) And
-            Not String.IsNullOrEmpty(MailTextBox.Text) And Not String.IsNullOrEmpty(DireccionTextBox.Text)) Then
+            Not String.IsNullOrEmpty(MailTextBox.Text) And Not String.IsNullOrEmpty(DireccionTextBox.Text) And
+            Not String.IsNullOrEmpty(TelefonoTextBox.Text)) Then
 
+            Try
+                BLL.GestorUsuarioBLL.altaComprador(NombreTextBox.Text,
+                                                       ApellidoTextBox.Text,
+                                                       MailTextBox.Text,
+                                                       DireccionTextBox.Text,
+                                                       NumeroTextBox.Text,
+                                                       PisoTextBox.Text,
+                                                       DptoTextBox.Text,
+                                                       CodPostTextBox.Text,
+                                                       TelefonoTextBox.Text,
+                                                       getPreferencias())
+
+                'Throw New Excepciones.UsuarioCreadoExistosamente
+
+
+            Catch ex As Excepciones.InsertExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.UsuarioCreadoExistosamente
+                BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, NombreTextBox.Text, Utilitarios.Enumeradores.Bitacora.CreacionDeUsuario)
+                Me.limpiarForm()
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
+            End Try
         End If
-        Try
-            BLL.GestorUsuarioBLL.altaComprador(NombreTextBox.Text,
-                                                   ApellidoTextBox.Text,
-                                                   MailTextBox.Text,
-                                                   DireccionTextBox.Text,
-                                                   NumeroTextBox.Text,
-                                                   PisoTextBox.Text,
-                                                   DptoTextBox.Text,
-                                                   CodPostTextBox.Text,
-                                                   TelefonoTextBox.Text,
-                                                   getPreferencias())
-
-            'Throw New Excepciones.UsuarioCreadoExistosamente
-            
-
-        Catch ex As Excepciones.InsertExcepcion
-            My.Application.manejarExcepcion(ex)
-        Catch ex As Excepciones.UsuarioCreadoExistosamente
-            BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, NombreTextBox.Text, Utilitarios.Enumeradores.Bitacora.CreacionDeUsuario)
-            Me.limpiarForm()
-            My.Application.manejarExcepcion(ex)
-        End Try
+        
     End Sub
 
     Private Sub AgregarPreferenciaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPreferenciaButton.Click

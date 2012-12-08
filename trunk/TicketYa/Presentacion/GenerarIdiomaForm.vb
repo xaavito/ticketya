@@ -4,12 +4,16 @@
 
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
-
-        Dim idiomas As List(Of BE.IdiomaBE)
-        idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
-        IdiomaComboBox.DataSource = idiomas
-        IdiomaComboBox.DisplayMember = "descripcion"
-        IdiomaComboBox.ValueMember = "identificador"
+        Try
+            Dim idiomas As List(Of BE.IdiomaBE)
+            idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
+            IdiomaComboBox.DataSource = idiomas
+            IdiomaComboBox.DisplayMember = "descripcion"
+            IdiomaComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
 
     End Sub
 
@@ -36,6 +40,8 @@
         Catch ex As Excepciones.InsertExcepcion
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.GeneracionDeIdiomaExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

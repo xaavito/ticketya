@@ -7,18 +7,23 @@
         ' Llamada necesaria para el diseñador.
         InitializeComponent()
 
+        Try
+            Dim permisos As List(Of BE.PermisoBE)
+            permisos = BLL.GestorPermisoBLL.listarPermisos()
+            PermisoDataGrid.DataSource = permisos
+
+            Dim usuarios As List(Of BE.UsuarioBE)
+            usuarios = BLL.GestorUsuarioBLL.listarUsuarios
+            UsuariosDataGrid.DataSource = usuarios
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
         'PermisoDataGrid.AutoGenerateColumns = False
         'UsuariosDataGrid.AutoGenerateColumns = False
         'PermisosUsuarioDataGrid.AutoGenerateColumns = False
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
-        Dim permisos As List(Of BE.PermisoBE)
-        permisos = BLL.GestorPermisoBLL.listarPermisos()
-        PermisoDataGrid.DataSource = permisos
 
-        Dim usuarios As List(Of BE.UsuarioBE)
-        usuarios = BLL.GestorUsuarioBLL.listarUsuarios
-        UsuariosDataGrid.DataSource = usuarios
     End Sub
 
     Private Sub AgregarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AgregarPermisoButton.Click, AgregarPermisoUsuarioButton.Click
@@ -62,6 +67,8 @@
             My.Application.manejarExcepcion(ex)
         Catch ex As Excepciones.AsociacionDePermisosExitosa
             My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
         End Try
     End Sub
 
@@ -94,6 +101,8 @@
                 PermisosUsuarioDataGrid.Rows.Add(row)
             Next
         Catch ex As Excepciones.PermisoNoEncontradoExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
     End Sub

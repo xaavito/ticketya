@@ -230,12 +230,6 @@
     <Compile Include="GenerarPermisoFamiliaForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GenerarSillaForm.Designer.vb">
-      <DependentUpon>GenerarSillaForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="GenerarSillaForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="GenerarUsuarioForm.Designer.vb">
       <DependentUpon>GenerarUsuarioForm.vb</DependentUpon>
     </Compile>

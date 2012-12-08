@@ -6,17 +6,22 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        Dim usuarios As List(Of BE.UsuarioBE)
-        usuarios = BLL.GestorUsuarioBLL.listarUsuarios()
-        Dim usrTodos As New BE.UsuarioBE
-        usrTodos.identificador = 0
-        usrTodos.nombre = ""
-        VendedorComboBox.Items.Add(usrTodos)
+        Try
+            Dim usuarios As List(Of BE.UsuarioBE)
+            usuarios = BLL.GestorUsuarioBLL.listarUsuarios()
+            Dim usrTodos As New BE.UsuarioBE
+            usrTodos.identificador = 0
+            usrTodos.nombre = ""
+            VendedorComboBox.Items.Add(usrTodos)
 
-        VendedorComboBox.Items.AddRange(usuarios.ToArray)
-        VendedorComboBox.SelectedIndex = 0
-        VendedorComboBox.DisplayMember = "nombre"
-        VendedorComboBox.ValueMember = "identificador"
+            VendedorComboBox.Items.AddRange(usuarios.ToArray)
+            VendedorComboBox.SelectedIndex = 0
+            VendedorComboBox.DisplayMember = "nombre"
+            VendedorComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
 
     Private Sub BuscarSedeButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarVentaButton.Click

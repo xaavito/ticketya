@@ -1,12 +1,7 @@
 ﻿Public Class BuscarCompradorForm
 
     Private Sub BuscarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BuscarCompradorButton.Click
-        Try
-            buscarComprador(CompradorTextBox.Text)
-        Catch ex As Excepciones.UsuariosNoEncontradosExcepcion
-            My.Application.manejarExcepcion(ex)
-        End Try
-
+        buscarComprador(CompradorTextBox.Text)
     End Sub
 
     Private Sub ModificarCompradorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarCompradorButton.Click
@@ -42,6 +37,13 @@
     End Sub
 
     Private Sub buscarComprador(ByVal p1 As String)
-        CompradoresDataGrid.DataSource = BLL.GestorUsuarioBLL.buscarComprador(CompradorTextBox.Text)
+        Try
+            CompradoresDataGrid.DataSource = BLL.GestorUsuarioBLL.buscarComprador(CompradorTextBox.Text)
+        Catch ex As Excepciones.UsuariosNoEncontradosExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+
     End Sub
 End Class

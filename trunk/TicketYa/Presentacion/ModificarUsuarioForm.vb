@@ -13,16 +13,20 @@
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
         'listaFamilias = New List(Of BE.FamiliaBE)
+        Try
+            Dim idiomas As List(Of BE.IdiomaBE)
+            idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
+            IdiomaComboBox.DataSource = idiomas
+            IdiomaComboBox.DisplayMember = "descripcion"
+            IdiomaComboBox.ValueMember = "identificador"
 
-        Dim idiomas As List(Of BE.IdiomaBE)
-        idiomas = BLL.GestorIdiomaBLL.listarIdiomas("")
-        IdiomaComboBox.DataSource = idiomas
-        IdiomaComboBox.DisplayMember = "descripcion"
-        IdiomaComboBox.ValueMember = "identificador"
-
-        Dim familias As List(Of BE.FamiliaBE)
-        familias = BLL.GestorFamiliaBLL.listarFamilias()
-        FamiliasDataGrid.DataSource = familias
+            Dim familias As List(Of BE.FamiliaBE)
+            familias = BLL.GestorFamiliaBLL.listarFamilias()
+            FamiliasDataGrid.DataSource = familias
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
     End Sub
 
     Sub addUsuario(ByVal usr As BE.UsuarioBE)
@@ -46,6 +50,8 @@
                 FamiliaDataGrid.Rows.Add(row)
             Next
         Catch ex As Excepciones.FamiliaNoEncontradaExcepcion
+            My.Application.manejarExcepcion(ex)
+        Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
 
