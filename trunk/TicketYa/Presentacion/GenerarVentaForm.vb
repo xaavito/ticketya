@@ -194,10 +194,14 @@
             
         Next
 
-        PromocionComboBox.DataSource = listaPromociones
-        PromocionComboBox.DisplayMember = "descripcion"
-        PromocionComboBox.ValueMember = "identificador"
-
+        Try
+            PromocionComboBox.DataSource = listaPromociones
+            PromocionComboBox.DisplayMember = "descripcion"
+            PromocionComboBox.ValueMember = "identificador"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
         SubTotalTextBox.Text = valor
         TotalTextBox.Text = Decimal.Parse(valor) - Decimal.Parse(DescuentoTextBox.Text)
     End Sub
@@ -207,7 +211,6 @@
     End Sub
 
     Private Sub PromocionComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PromocionComboBox.SelectedIndexChanged
-
         Try
             Dim promo As BE.PromocionBE
             promo = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)

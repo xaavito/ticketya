@@ -25,7 +25,9 @@
         Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
-        
+
+        NombreTextBox.texto = True
+        NombreTextBox.boton = AltaShowButton
     End Sub
     Private Sub AltaShowButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaShowButton.Click
         Try

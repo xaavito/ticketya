@@ -27,7 +27,11 @@
         Catch ex As Exception
             My.Application.manejarExcepcion(ex)
         End Try
-        
+
+        DescripcionTextBox.alfanumerico = True
+        DescripcionTextBox.boton = GenerarPromocionButton
+        DescuentoTextBox.numerico = True
+        DescuentoTextBox.boton = GenerarPromocionButton
     End Sub
 
     Private Sub ShowComboBox_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ShowComboBox.SelectedIndexChanged
