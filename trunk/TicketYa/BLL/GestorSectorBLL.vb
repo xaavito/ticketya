@@ -13,7 +13,7 @@
     End Sub
 
     Shared Function altaSector(ByVal p1 As String, ByVal p2 As Integer, ByVal p3 As Integer, ByVal p4 As Integer, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String) As Boolean
-        Throw New NotImplementedException
+        Return DAL.SectorDAL.altaSector(p1, p2, p3, p4, p5, p6, p7)
     End Function
 
     Shared Function listarTipoSector() As Object

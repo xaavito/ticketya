@@ -70,6 +70,7 @@ Partial Class GenerarSectorForm
         Me.NombreTextBox.alfanumerico = False
         Me.NombreTextBox.boton = Nothing
         Me.NombreTextBox.Location = New System.Drawing.Point(97, 12)
+        Me.NombreTextBox.mail = False
         Me.NombreTextBox.nada = False
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.numerico = False
@@ -91,7 +92,7 @@ Partial Class GenerarSectorForm
         '
         Me.AltaSectorButton.Image = Global.TicketYa.My.Resources.Resources.aceptar
         Me.AltaSectorButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.AltaSectorButton.Location = New System.Drawing.Point(371, 10)
+        Me.AltaSectorButton.Location = New System.Drawing.Point(321, 12)
         Me.AltaSectorButton.Name = "AltaSectorButton"
         Me.AltaSectorButton.Size = New System.Drawing.Size(75, 23)
         Me.AltaSectorButton.TabIndex = 36
@@ -135,6 +136,7 @@ Partial Class GenerarSectorForm
         Me.FilasTextBox.alfanumerico = False
         Me.FilasTextBox.boton = Nothing
         Me.FilasTextBox.Location = New System.Drawing.Point(97, 118)
+        Me.FilasTextBox.mail = False
         Me.FilasTextBox.nada = False
         Me.FilasTextBox.Name = "FilasTextBox"
         Me.FilasTextBox.numerico = False
@@ -157,6 +159,7 @@ Partial Class GenerarSectorForm
         Me.ColumnasTextBox.alfanumerico = False
         Me.ColumnasTextBox.boton = Nothing
         Me.ColumnasTextBox.Location = New System.Drawing.Point(218, 118)
+        Me.ColumnasTextBox.mail = False
         Me.ColumnasTextBox.nada = False
         Me.ColumnasTextBox.Name = "ColumnasTextBox"
         Me.ColumnasTextBox.numerico = False
@@ -179,6 +182,7 @@ Partial Class GenerarSectorForm
         Me.PrecioTextBox.alfanumerico = False
         Me.PrecioTextBox.boton = Nothing
         Me.PrecioTextBox.Location = New System.Drawing.Point(97, 144)
+        Me.PrecioTextBox.mail = False
         Me.PrecioTextBox.nada = False
         Me.PrecioTextBox.Name = "PrecioTextBox"
         Me.PrecioTextBox.numerico = False
@@ -199,7 +203,7 @@ Partial Class GenerarSectorForm
         'GenerarSectorForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(458, 184)
+        Me.ClientSize = New System.Drawing.Size(415, 184)
         Me.Controls.Add(Me.PrecioTextBox)
         Me.Controls.Add(Me.PrecioLabel)
         Me.Controls.Add(Me.ColumnasTextBox)
