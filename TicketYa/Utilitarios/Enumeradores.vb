@@ -160,6 +160,10 @@
 
         ReservasPreviaExcepcion
 
+        GeneracionSectorExcepcion
+
+        RellenarSectorExcepcion
+
     End Enum
 
     Enum Bitacora

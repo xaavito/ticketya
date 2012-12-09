@@ -105,4 +105,53 @@
         Return lista
     End Function
 
+    Shared Function altaSector(ByVal p1 As String, ByVal p2 As Integer, ByVal p3 As Integer, ByVal p4 As Integer, ByVal p5 As String, ByVal p6 As String, ByVal p7 As String) As Boolean
+        Dim result As Integer
+        Dim lista As New List(Of BE.SectorBE)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim tranRepo As New RepositorioTransaccional(repository)
+        'tranRepo.transactionON()
+        Try
+            'NombreTextBox.Text,
+            'ShowComboBox.SelectedValue,
+            'TipoSectorComboBox.SelectedValue,
+            'FechaComboBox.SelectedValue,
+            'FilasTextBox.Text,
+            'ColumnasTextBox.Text,
+            'PrecioTextBox.Text
+            tranRepo.crearComando("GENERAR_SECTOR_SP")
+
+            tranRepo.addParam("@nom", p1)
+            tranRepo.addParam("@tipo", p3)
+            tranRepo.addParam("@filas", p5)
+            tranRepo.addParam("@columnas", p6)
+            tranRepo.addParam("@precio", p7)
+            result = tranRepo.executeSearch
+            If (result <= 0) Then
+                Throw New Excepciones.GeneracionSectorExcepcion
+            End If
+
+            tranRepo.crearComando("RELLENAR_SECTOR_SP")
+            tranRepo.addParam("@idFecha", p4)
+            tranRepo.addParam("@idSector", result)
+            tranRepo.addParam("@filas", p5)
+            tranRepo.addParam("@columnas", p6)
+            result = tranRepo.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.RellenarSectorExcepcion
+            End If
+
+        Catch ex As Excepciones.RellenarSectorExcepcion
+            tranRepo.transactionCancel()
+            Throw New Excepciones.RellenarSectorExcepcion
+        Catch ex As Excepciones.GeneracionSectorExcepcion
+            tranRepo.transactionCancel()
+            Throw New Excepciones.GeneracionSectorExcepcion
+        End Try
+
+        tranRepo.transactionOK()
+        Return result
+    End Function
+
 End Class

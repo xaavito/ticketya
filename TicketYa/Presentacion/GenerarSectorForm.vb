@@ -34,12 +34,18 @@
     End Sub
 
     Private Sub AltaSectorButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaSectorButton.Click
-        If True Then
+        If Not NombreTextBox.esVacio And
+            ShowComboBox.SelectedValue > 0 And
+            TipoSectorComboBox.SelectedValue > 0 And
+            FechaComboBox.SelectedValue > 0 And
+            Not FilasTextBox.esVacio And
+            Not ColumnasTextBox.esVacio And
+            Not PrecioTextBox.esVacio Then
             Try
                 If (BLL.GestorSectorBLL.altaSector(NombreTextBox.Text,
                                                    ShowComboBox.SelectedValue,
                                                    TipoSectorComboBox.SelectedValue,
-                                                   FechaComboBox.SelectedIndex,
+                                                   FechaComboBox.SelectedValue,
                                                    FilasTextBox.Text,
                                                    ColumnasTextBox.Text,
                                                    PrecioTextBox.Text)) Then
