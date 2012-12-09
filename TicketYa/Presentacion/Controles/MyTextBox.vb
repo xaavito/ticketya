@@ -94,7 +94,7 @@ Public Class MyTextBox
     '    End Set
     'End Property
 
-    Public Sub sinEspacios()
+    Private Sub sinEspacios()
         If Regex.IsMatch(Me.Text, "\s") And Me.Text.Length > 0 Then
             errorProvider.SetError(Me, "No debe tener espacios")
             hasExistingErrorOnSpace = True
@@ -105,7 +105,7 @@ Public Class MyTextBox
         hasExistingErrorOnSpace = False
     End Sub
 
-    Public Sub soloTexto()
+    Private Sub soloTexto()
         If Not String.IsNullOrEmpty(Me.Text) Then
             If Not Regex.IsMatch(Me.Text, "^[A-Za-z]*$") Then
                 errorProvider.SetError(Me, "Debe ser solo texto")
@@ -118,7 +118,7 @@ Public Class MyTextBox
         hasExistingErrorOnText = False
     End Sub
 
-    Public Sub soloMail()
+    Private Sub soloMail()
         If Not String.IsNullOrEmpty(Me.Text) Then
             If Not Regex.IsMatch(Me.Text, "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$") Then
                 errorProvider.SetError(Me, "Debe ser mail")
@@ -131,7 +131,7 @@ Public Class MyTextBox
         hasExistingErrorOnText = False
     End Sub
 
-    Public Sub soloNumeros()
+    Private Sub soloNumeros()
         If Not String.IsNullOrEmpty(Me.Text) Then
             If Not Regex.IsMatch(Me.Text, "^[0-9]*$") Then
                 errorProvider.SetError(Me, "Debe ser solo numero")
@@ -144,7 +144,7 @@ Public Class MyTextBox
         hasExistingErrorOnNumber = False
     End Sub
 
-    Public Sub esAlfanumerico()
+    Private Sub esAlfanumerico()
         If Not String.IsNullOrEmpty(Me.Text) Then
             If Not Regex.IsMatch(Me.Text, "^[A-Z0-9 a-z]*$") Then
                 errorProvider.SetError(Me, "Debe tener un valor")

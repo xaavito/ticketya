@@ -6,9 +6,14 @@
         InitializeComponent()
 
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
-        ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
-        ShowComboBox.ValueMember = "identificador"
-        ShowComboBox.DisplayMember = "descripcion"
+        Try
+            ShowComboBox.DataSource = BLL.GestorShowBLL.buscarShow("")
+            ShowComboBox.ValueMember = "identificador"
+            ShowComboBox.DisplayMember = "descripcion"
+        Catch ex As Exception
+            My.Application.manejarExcepcion(ex)
+        End Try
+        
 
     End Sub
     Private Sub AltaFechaButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaFechaButton.Click

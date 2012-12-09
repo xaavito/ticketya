@@ -50,7 +50,7 @@
                 My.Application.manejarExcepcion(ex)
             Catch ex As Excepciones.UsuarioCreadoExistosamente
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, NombreTextBox.Text, Utilitarios.Enumeradores.Bitacora.CreacionDeUsuario)
-                Me.limpiarForm()
+                limpiarForm()
                 My.Application.manejarExcepcion(ex)
             Catch ex As Exception
                 My.Application.manejarExcepcion(ex)

@@ -38,6 +38,7 @@ Partial Class GenerarFamiliaForm
         Me.FamiliaTextBox.alfanumerico = False
         Me.FamiliaTextBox.boton = Nothing
         Me.FamiliaTextBox.Location = New System.Drawing.Point(136, 26)
+        Me.FamiliaTextBox.mail = False
         Me.FamiliaTextBox.nada = False
         Me.FamiliaTextBox.Name = "FamiliaTextBox"
         Me.FamiliaTextBox.numerico = False
@@ -61,7 +62,7 @@ Partial Class GenerarFamiliaForm
         'GenerarFamiliaForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.ClientSize = New System.Drawing.Size(632, 156)
+        Me.ClientSize = New System.Drawing.Size(510, 84)
         Me.Controls.Add(Me.FamiliaLabel)
         Me.Controls.Add(Me.FamiliaTextBox)
         Me.Controls.Add(Me.AltaFamiliaButton)
