@@ -1,4 +1,6 @@
-﻿Public Class LoginForm
+﻿Imports System.Reflection
+
+Public Class LoginForm
     Inherits BaseForm
 
     Public Sub Start()
@@ -31,8 +33,56 @@
 
         PassTextBox.sinEspacio = True
         PassTextBox.alfanumerico = True
-        PassTextBox.nada = false
+        PassTextBox.nada = False
         PassTextBox.boton = AceptarButton
+
+        'Dim myAssembly As System.Reflection.Assembly = System.Reflection.Assembly.GetExecutingAssembly()
+        'Dim types As Type() = myAssembly.GetTypes()
+        'For Each myType In types
+        '    ' mytype
+        '    If myType.BaseType.FullName = "TicketYa.BaseForm" Then
+        '        'Debug.Print("-----" + myType.Name)
+        '        Dim form As BaseForm
+        '        form = Activator.CreateInstance(myType)
+        '        Debug.Print("----------------------------Form: " + form.Name + " --------------------------------")
+        '        For Each ctrl As Control In form.Controls
+        '            If TypeOf ctrl Is MenuStrip Then
+        '                Dim menu As MenuStrip
+        '                menu = DirectCast(ctrl, MenuStrip)
+        '                For Each cabeceraMenu As ToolStripMenuItem In menu.Items
+        '                    For Each itemMenu As ToolStripMenuItem In cabeceraMenu.DropDownItems
+        '                        Debug.Print("Item menu: " + itemMenu.Name)
+        '                        'Next
+        '                    Next
+        '                    'If cabeceraMenu.Name.Equals(mens.control) Then
+        '                    Debug.Print("Cabecera menu: " + cabeceraMenu.Name)
+        '                    'cabeceraMenu.Text = mens.mensaje
+        '                    'End If
+        '                Next cabeceraMenu
+        '            End If
+        '            If (TypeOf ctrl Is Label Or
+        '                TypeOf ctrl Is Button)  Then
+        '                Debug.Print("Boton o label: " + ctrl.Name)
+        '            End If
+
+        '            If (TypeOf ctrl Is DataGridView) Then
+        '                Dim dataGrid As DataGridView
+        '                dataGrid = DirectCast(ctrl, DataGridView)
+        '                For Each col As DataGridViewColumn In dataGrid.Columns
+        '                    'Debug.Print(col.Name)
+        '                    Debug.Print("Columna: " + col.Name)
+        '                Next
+        '            End If
+        '        Next
+        '        'form = CType(myType, BaseForm)
+        '        'GetMethods, GetFields, GetProperties, GetEvents, GetConstructors, GetInterfaces
+        '        'Dim Members = myType.GetMembers
+
+        '        'For Each item As MemberInfo In Members
+        '        'Debug.Print(item.ToString)
+        '        'Next
+        '    End If
+        'Next
     End Sub
 
     Private Sub AceptarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AceptarButton.Click

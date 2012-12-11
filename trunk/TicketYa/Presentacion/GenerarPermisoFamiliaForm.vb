@@ -66,7 +66,7 @@
 
     Private Sub QuitarPermisoButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles QuitarPermisoButton.Click, QuitarPermisoFamiliaButton.Click
         If (PermisosFamiliaDataGrid.SelectedRows.Count > 0) Then
-            PermisosFamiliaDataGrid.Rows.Remove(PermisosFamiliaDataGrid.myObject)
+            PermisosFamiliaDataGrid.Rows.Remove(PermisosFamiliaDataGrid.SelectedRows(0))
         End If
     End Sub
 
