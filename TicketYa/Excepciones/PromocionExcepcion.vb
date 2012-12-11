@@ -38,7 +38,7 @@ Public Class PromocionesNoEncontradasExcepcion
 
     Public Sub New()
         MyBase.new("")
-        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ShowsNoEncontrados
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.PromocionNoEncontradaExcepcion
         Me.tipo = MsgBoxStyle.Exclamation
         Me.mensaje = ""
     End Sub

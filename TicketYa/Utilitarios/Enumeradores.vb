@@ -103,6 +103,8 @@
         GeneracionSectorExcepcion = 100
         RellenarSectorExcepcion = 101
 
+        PromocionNoEncontradaExcepcion = 102
+
     End Enum
 
     Enum Bitacora
