@@ -342,7 +342,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="prueba.vb" />
     <Compile Include="RealizarRestoreForm.Designer.vb">
       <DependentUpon>RealizarRestoreForm.vb</DependentUpon>
     </Compile>
