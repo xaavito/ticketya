@@ -117,7 +117,8 @@ Public Class BaseForm
                         Dim menu As MenuStrip
                         menu = DirectCast(ctrl, MenuStrip)
                         For Each cabeceraMenu As ToolStripMenuItem In menu.Items
-                            If (Not cabeceraMenu.Name.Equals("Logout")) Then
+                            If (Not cabeceraMenu.Name.Equals("Logout") And
+                                Not cabeceraMenu.Name.Equals("MiUsuario")) Then
                                 cabeceraMenu.Enabled = False
                             End If
 
