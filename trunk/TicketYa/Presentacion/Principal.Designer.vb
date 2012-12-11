@@ -29,7 +29,7 @@ Partial Class Principal
         Me.BuscarVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.Negocio = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Sede = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Sedes = New System.Windows.Forms.ToolStripMenuItem()
         Me.BuscarSede = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarSede = New System.Windows.Forms.ToolStripMenuItem()
         Me.Show = New System.Windows.Forms.ToolStripMenuItem()
@@ -110,19 +110,19 @@ Partial Class Principal
         '
         'Negocio
         '
-        Me.Negocio.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Sede, Me.Show, Me.Fecha, Me.Sector, Me.Promociones, Me.Compradores, Me.TipoShow})
+        Me.Negocio.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Sedes, Me.Show, Me.Fecha, Me.Sector, Me.Promociones, Me.Compradores, Me.TipoShow})
         Me.Negocio.Image = Global.TicketYa.My.Resources.Resources.negocios
         Me.Negocio.Name = "Negocio"
         Me.Negocio.Size = New System.Drawing.Size(73, 20)
         Me.Negocio.Text = "Negocio"
         '
-        'Sede
+        'Sedes
         '
-        Me.Sede.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarSede, Me.GenerarSede})
-        Me.Sede.Image = Global.TicketYa.My.Resources.Resources.stadium
-        Me.Sede.Name = "Sede"
-        Me.Sede.Size = New System.Drawing.Size(152, 22)
-        Me.Sede.Text = "Sedes"
+        Me.Sedes.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BuscarSede, Me.GenerarSede})
+        Me.Sedes.Image = Global.TicketYa.My.Resources.Resources.stadium
+        Me.Sedes.Name = "Sedes"
+        Me.Sedes.Size = New System.Drawing.Size(152, 22)
+        Me.Sedes.Text = "Sedes"
         '
         'BuscarSede
         '
@@ -260,14 +260,14 @@ Partial Class Principal
         '
         Me.BuscarTipo.Image = Global.TicketYa.My.Resources.Resources.buscar
         Me.BuscarTipo.Name = "BuscarTipo"
-        Me.BuscarTipo.Size = New System.Drawing.Size(152, 22)
+        Me.BuscarTipo.Size = New System.Drawing.Size(147, 22)
         Me.BuscarTipo.Text = "Buscar Tipo"
         '
         'GenerarTipo
         '
         Me.GenerarTipo.Image = Global.TicketYa.My.Resources.Resources.nuevo
         Me.GenerarTipo.Name = "GenerarTipo"
-        Me.GenerarTipo.Size = New System.Drawing.Size(152, 22)
+        Me.GenerarTipo.Size = New System.Drawing.Size(147, 22)
         Me.GenerarTipo.Text = "Generar Tipo"
         '
         'Administracion
@@ -480,7 +480,7 @@ Partial Class Principal
     Friend WithEvents BuscarVenta As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GenerarVenta As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Negocio As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Sede As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Sedes As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Show As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Sector As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Promociones As System.Windows.Forms.ToolStripMenuItem
