@@ -25,11 +25,16 @@
             Sector = DirectCast(SectoresDataGrid.myObject, BE.SectorBE)
             Dim form As ModificarSectorForm
 
-            If (Not Sector Is Nothing) Then
-                form = New ModificarSectorForm
-                form.addSector(Sector)
-                form.ShowDialog()
-            End If
+            Try
+                If (Not Sector Is Nothing) Then
+                    form = New ModificarSectorForm
+                    form.addSector(Sector)
+                    form.ShowDialog()
+                End If
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
+            End Try
+            
         End If
     End Sub
 
