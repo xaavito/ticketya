@@ -29,6 +29,7 @@ Partial Class BaseForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(393, 277)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

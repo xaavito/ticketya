@@ -37,9 +37,14 @@ Public Class GestorVentasBLL
             End If
 
         Catch ex As Excepciones.SinReservasExcepcion
-            result = DAL.VentaDAL.generarVenta(venta, listaVentas, pago)
-            Throw New Excepciones.VentaGeneradaExitosamente
+            'do nada
         End Try
+        result = DAL.VentaDAL.generarVenta(venta, listaVentas, pago)
+        If pago = True Then
+            DAL.VentaDAL.generarPreferencias(venta, listaVentas)
+        End If
+
+        Throw New Excepciones.VentaGeneradaExitosamente
 
         Return result
     End Function
