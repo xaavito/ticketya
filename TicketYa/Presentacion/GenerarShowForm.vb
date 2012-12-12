@@ -31,7 +31,7 @@
     End Sub
     Private Sub AltaShowButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaShowButton.Click
         Try
-            BLL.GestorShowBLL.altaShow(NombreTextBox.Text, TipoShowComboBox.SelectedValue, SedeComboBox.SelectedValue)
+            BLL.GestorShowBLL.altaShow(NombreTextBox.Text, TipoShowComboBox.SelectedItem, SedeComboBox.SelectedItem)
         Catch ex As Excepciones.ShowCreadoExistosamenteExcepcion
             BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, NombreTextBox.Text, Utilitarios.Enumeradores.Bitacora.ShowCreadoExistosamente)
             limpiarForm()

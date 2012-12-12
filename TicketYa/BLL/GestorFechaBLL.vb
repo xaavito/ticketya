@@ -1,7 +1,13 @@
 ﻿Public Class GestorFechaBLL
 
-    Shared Function eliminarFecha(ByVal Fecha As BE.FechaBE)
-        Return DAL.ShowDAL.eliminarFecha(Fecha.identificador)
+    Shared Function eliminarFecha(ByVal fecha As BE.FechaBE)
+        Try
+            DAL.ShowDAL.checkVentasAsociadasFecha(fecha)
+        Catch ex As Excepciones.FechaTieneSectoresAsociadasExcepcion
+            'Excepciones.FechaTieneVentasAsociadasExcepcion
+            Throw New Excepciones.FechaTieneSectoresAsociadasExcepcion
+        End Try
+        Return DAL.ShowDAL.eliminarFecha(fecha.identificador)
     End Function
 
     Shared Function altaFecha(ByVal p1 As String, ByVal p2 As Date, ByVal p3 As Integer) As Boolean
