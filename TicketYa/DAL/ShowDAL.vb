@@ -356,4 +356,46 @@
         Return lista
     End Function
 
+    Shared Function checkFechasAsignadas(ByVal show As BE.ShowBE)
+        Dim result As Integer = 0
+
+        Dim lista As New List(Of BE.ShowReporte)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_FECHAS_ASIGNADAS_SP")
+            repository.addParam("@idShow", show.identificador)
+            result = repository.executeSearch
+            If (result > 0) Then
+                Throw New Excepciones.ShowTieneFechasAsociadosExcepcion
+            End If
+
+        Catch ex As Excepciones.ShowTieneFechasAsociadosExcepcion
+            Throw New Excepciones.ShowTieneFechasAsociadosExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function checkSectoresAsociadasFecha(ByVal fecha As BE.FechaBE)
+        Dim result As Integer = 0
+
+        Dim lista As New List(Of BE.ShowReporte)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_SECTORES_ASIGNADOS_SP")
+            repository.addParam("@idShow", fecha.identificador)
+            result = repository.executeSearch
+            If (result > 0) Then
+                Throw New Excepciones.FechaTieneSectoresAsociadasExcepcion
+            End If
+
+        Catch ex As Excepciones.FechaTieneSectoresAsociadasExcepcion
+            Throw New Excepciones.FechaTieneSectoresAsociadasExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class

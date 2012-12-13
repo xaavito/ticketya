@@ -87,3 +87,15 @@ Public Class ModificarFechaExcepcion
         Me.mensaje = ""
     End Sub
 End Class
+
+Public Class FechaTieneSectoresAsociadasExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.FechaTieneSectoresAsociadasExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
+

@@ -105,6 +105,10 @@
 
         PromocionNoEncontradaExcepcion = 102
 
+        ShowTieneFechasAsociadosExcepcion
+
+        FechaTieneSectoresAsociadasExcepcion
+
     End Enum
 
     Enum Bitacora

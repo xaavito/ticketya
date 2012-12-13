@@ -2,7 +2,7 @@
 
     Shared Function eliminarFecha(ByVal fecha As BE.FechaBE)
         Try
-            DAL.ShowDAL.checkVentasAsociadasFecha(fecha)
+            DAL.ShowDAL.checkSectoresAsociadasFecha(fecha)
         Catch ex As Excepciones.FechaTieneSectoresAsociadasExcepcion
             'Excepciones.FechaTieneVentasAsociadasExcepcion
             Throw New Excepciones.FechaTieneSectoresAsociadasExcepcion

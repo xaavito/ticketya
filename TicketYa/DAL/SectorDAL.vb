@@ -154,4 +154,45 @@
         Return result
     End Function
 
+    Shared Function eliminarSector(ByVal p1 As Integer) As Object
+        Dim result As Integer
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("ELIMINAR_SECTOR_SP")
+            repository.addParam("@idSector", p1)
+            result = repository.executeSearchWithStatus
+            If (result <= 0) Then
+                Throw New Excepciones.EliminarSectorExcepcion
+            Else
+                Throw New Excepciones.SectorEliminadoExistosamenteExcepcion
+            End If
+        Catch ex As Excepciones.EliminarSectorExcepcion
+            Throw New Excepciones.EliminarSectorExcepcion
+        End Try
+
+        Return result
+    End Function
+
+    Shared Function checkVentasAsignadas(ByVal sector As BE.SectorBE)
+        Dim result As Integer = 0
+
+        Dim lista As New List(Of BE.ShowReporte)
+
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Try
+            repository.crearComando("BUSCAR_VENTAS_ASIGNADAS_SP")
+            repository.addParam("@idSector", sector.identificador)
+            result = repository.executeSearch
+            If (result > 0) Then
+                Throw New Excepciones.FechaTieneSectoresAsociadasExcepcion
+            End If
+
+        Catch ex As Excepciones.FechaTieneSectoresAsociadasExcepcion
+            Throw New Excepciones.FechaTieneSectoresAsociadasExcepcion
+        End Try
+
+        Return result
+    End Function
+
 End Class
