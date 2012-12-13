@@ -187,12 +187,6 @@
 
         Dim repository As IRepositorio = RepositorioFactory.Create()
         Try
-            'DescripcionTextBox.Text,
-            'DesdeTextBox.getDateTime,
-            'HastaTextBox.getDateTime,
-            'TipoDescuentoComboBox.SelectedValue,
-            'FechaComboBox.SelectedValue,
-            'SectorComboBox.SelectedValue
             repository.crearComando("GENERAR_PROMOCION_SP")
             repository.addParam("@desc", p1)
             repository.addParam("@desde", p2)
@@ -300,6 +294,44 @@
             End If
         Next
 
+        Return result
+    End Function
+
+    Shared Function checkPreferencias(ByVal p2 As BE.TipoShowBE) As List(Of BE.UsuarioBE)
+        Dim result As New List(Of BE.UsuarioBE)
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        Dim table As DataTable
+
+        repository.crearComando("BUSCAR_PREFERENCIAS_SP")
+        repository.addParam("@idTipoShow", p2.identificador)
+        table = repository.executeSearchWithAdapter
+        If (table.Rows.Count > 0) Then
+            For Each row As DataRow In table.Rows
+                Dim info As New BE.UsuarioBE
+                info.nombre = row.Item(0)
+                info.apellido = row.Item(1)
+                info.mail = row.Item(2)
+                result.Add(info)
+            Next
+        End If
+
+        Return result
+    End Function
+
+    Shared Function generarPreferencias(ByVal venta As BE.VentaBE, ByVal listaVentas As List(Of BE.DetalleVentaBE))
+        Dim result As Integer
+        Dim repository As IRepositorio = RepositorioFactory.Create()
+        
+        For Each det As BE.DetalleVentaBE In listaVentas
+            repository.crearComando("GENERAR_PREFERENCIAS_SP")
+            repository.addParam("@idComprador", det.idFecha)
+            repository.addParam("@idShow", det.idShow)
+            result = repository.executeSearch
+            If (result <= 0) Then
+                Throw New Excepciones.FalloGeneracionPreferenciasExcepcion
+            End If
+        Next
+        Throw New Excepciones.GeneracionPreferenciasExitosaExcepcion
         Return result
     End Function
 

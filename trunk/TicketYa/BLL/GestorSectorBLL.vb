@@ -11,8 +11,8 @@
     Shared Function eliminarSector(ByVal sector As BE.SectorBE)
         Try
             DAL.SectorDAL.checkVentasAsignadas(sector)
-        Catch ex As Excepciones.SectorTieneSillasAsociadosExcepcion
-            Throw New Excepciones.SectorTieneSillasAsociadosExcepcion
+        Catch ex As Excepciones.SectorTieneVentasAsociadasExcepcion
+            Throw New Excepciones.SectorTieneVentasAsociadasExcepcion
         End Try
 
         Return DAL.SectorDAL.eliminarSector(sector.identificador)

@@ -28,7 +28,7 @@
                 buscarShow()
                 BLL.BitacoraBLL.setBitacora(BLL.Actual.usuario, Show.descripcion, Utilitarios.Enumeradores.Bitacora.ShowEliminado)
                 My.Application.manejarExcepcion(ex)
-            Catch ex As Excepciones.ShowTieneVentasAsociadosExcepcion
+            Catch ex As Excepciones.ShowTieneFechasAsociadosExcepcion
                 My.Application.manejarExcepcion(ex)
             Catch ex As Exception
                 My.Application.manejarExcepcion(ex)

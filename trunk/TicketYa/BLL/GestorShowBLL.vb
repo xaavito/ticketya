@@ -8,7 +8,7 @@ Public Class GestorShowBLL
 
     Shared Function eliminarShow(ByVal show As BE.ShowBE)
         Try
-            DAL.ShowDAL.checkVentasAsignadas(show)
+            DAL.ShowDAL.checkFechasAsignadas(show)
         Catch ex As Excepciones.ShowTieneFechasAsociadosExcepcion
             Throw New Excepciones.ShowTieneFechasAsociadosExcepcion
         End Try
@@ -32,9 +32,8 @@ Public Class GestorShowBLL
             lista = DAL.VentaDAL.checkPreferencias(p2)
             asunto = "Reserva realizada sobre sus asientos"
             For Each info As BE.UsuarioBE In lista
-                texto = "Querido usuario " + info.apellido.ToString + ", " + info.nombre.ToString + " su reserva para el show " + info.show.ToString +
-                    " para el sector " + info.sector.ToString + " fecha " + info.fecha.ToString + " del dia " + info.fechaFecha.ToString + " fila: " + info.fila.ToString + " columna " + info.columna.ToString +
-                    " ha sido reservada por otro usuario, por favor apresurece a pagar la reserva para hacerse de los tickets"
+                texto = "Querido usuario " + info.apellido.ToString + ", " + info.nombre.ToString + " un nuevo show se ha dado de alta, " + p1 +
+                    " creemos que puede interasarle! desde una vuelta por Ticket Ya! y reserve ya mismo!"
                 mail = info.mail
                 t = New Thread(AddressOf EnviarMail)
                 t.Start()

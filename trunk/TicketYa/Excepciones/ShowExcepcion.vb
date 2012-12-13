@@ -87,3 +87,14 @@ Public Class ShowModificadoExistosamenteExcepcion
         Me.mensaje = ""
     End Sub
 End Class
+
+Public Class ShowTieneFechasAsociadosExcepcion
+    Inherits ExceptionManager
+
+    Public Sub New()
+        MyBase.new("")
+        Me.codigo = Utilitarios.Enumeradores.Excepeciones.ShowTieneFechasAsociadosExcepcion
+        Me.tipo = MsgBoxStyle.Exclamation
+        Me.mensaje = ""
+    End Sub
+End Class
