@@ -105,9 +105,9 @@
 
         PromocionNoEncontradaExcepcion = 102
 
-        ShowTieneFechasAsociadosExcepcion
+        ShowTieneFechasAsociadosExcepcion = 103
 
-        FechaTieneSectoresAsociadasExcepcion
+        FechaTieneSectoresAsociadasExcepcion = 104
 
     End Enum
 
