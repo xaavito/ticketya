@@ -27,6 +27,13 @@ Public Class BaseForm
                                 Next
                             Next cabeceraMenu
                         End If
+                        If TypeOf ctrl Is GroupBox Then
+                            For Each c As Control In ctrl.Controls
+                                If ctrl.Name.Equals(permiso.componente) Then
+                                    ctrl.Enabled = True
+                                End If
+                            Next
+                        End If
                         If TypeOf ctrl Is Button Then
                             If ctrl.Name.Equals(permiso.componente) Then
                                 ctrl.Enabled = True
@@ -67,7 +74,13 @@ Public Class BaseForm
                         ctrl.Name.Equals(mens.control) Then
                         ctrl.Text = mens.mensaje
                     End If
-
+                    If TypeOf ctrl Is GroupBox Then
+                        For Each c As Control In ctrl.Controls
+                            If c.Name.Equals(mens.control) Then
+                                c.Text = mens.mensaje
+                            End If
+                        Next
+                    End If
                     If (TypeOf ctrl Is DataGridView) Then
                         Dim dataGrid As DataGridView
                         dataGrid = DirectCast(ctrl, DataGridView)

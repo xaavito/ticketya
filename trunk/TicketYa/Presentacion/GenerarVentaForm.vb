@@ -130,49 +130,51 @@
     End Sub
 
     Private Sub AceptarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AceptarButton.Click
-        Dim detalleVenta As BE.DetalleVentaBE
-        Dim listaVentas As New List(Of BE.DetalleVentaBE)
-        For Each detVenta As DataGridViewRow In VentaDataGrid.Rows
-            detalleVenta = New BE.DetalleVentaBE
+        If VentaDataGrid.Rows.Count > 0 Then
+            Dim detalleVenta As BE.DetalleVentaBE
+            Dim listaVentas As New List(Of BE.DetalleVentaBE)
+            For Each detVenta As DataGridViewRow In VentaDataGrid.Rows
+                detalleVenta = New BE.DetalleVentaBE
 
-            detalleVenta.idSilla = detVenta.Cells.Item("idSilla").Value
-            detalleVenta.idSector = detVenta.Cells.Item("idSector").Value
-            detalleVenta.idShow = detVenta.Cells.Item("idShow").Value
-            detalleVenta.idFecha = detVenta.Cells.Item("idFecha").Value
-            detalleVenta.show = detVenta.Cells.Item("ShowColumn").Value
-            detalleVenta.fecha = detVenta.Cells.Item("FechaColumn").Value
-            detalleVenta.sector = detVenta.Cells.Item("SectorColumn").Value
-            detalleVenta.fila = detVenta.Cells.Item("FilaColumn").Value
-            detalleVenta.columna = detVenta.Cells.Item("ColumnaColumn").Value
-            detalleVenta.valor = detVenta.Cells.Item("PrecioColumn").Value
+                detalleVenta.idSilla = detVenta.Cells.Item("idSilla").Value
+                detalleVenta.idSector = detVenta.Cells.Item("idSector").Value
+                detalleVenta.idShow = detVenta.Cells.Item("idShow").Value
+                detalleVenta.idFecha = detVenta.Cells.Item("idFecha").Value
+                detalleVenta.show = detVenta.Cells.Item("ShowColumn").Value
+                detalleVenta.fecha = detVenta.Cells.Item("FechaColumn").Value
+                detalleVenta.sector = detVenta.Cells.Item("SectorColumn").Value
+                detalleVenta.fila = detVenta.Cells.Item("FilaColumn").Value
+                detalleVenta.columna = detVenta.Cells.Item("ColumnaColumn").Value
+                detalleVenta.valor = detVenta.Cells.Item("PrecioColumn").Value
 
-            listaVentas.Add(detalleVenta)
-        Next
+                listaVentas.Add(detalleVenta)
+            Next
 
-        Dim venta As New BE.VentaBE
-        venta.comprador = selectedComprador
-        venta.vendedor = BLL.Actual.usuario
-        venta.promocion = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)
-        venta.total = TotalTextBox.Text
+            Dim venta As New BE.VentaBE
+            venta.comprador = selectedComprador
+            venta.vendedor = BLL.Actual.usuario
+            venta.promocion = DirectCast(PromocionComboBox.SelectedItem, BE.PromocionBE)
+            venta.total = TotalTextBox.Text
 
-        Try
-            If EfectivoCheckBox.Checked = True Then
-                BLL.GestorVentasBLL.generarVenta(venta, listaVentas, True)
-            Else
-                BLL.GestorVentasBLL.generarVenta(venta, listaVentas, False)
-            End If
-        Catch ex As Excepciones.VentaGeneradaExitosamente
-            Me.Close()
-            My.Application.manejarExcepcion(ex)
-        Catch ex As Excepciones.GenerarDetalleVentaExcepcion
-            My.Application.manejarExcepcion(ex)
-        Catch ex As Excepciones.GenerarPagoVentaExcepcion
-            My.Application.manejarExcepcion(ex)
-        Catch ex As Excepciones.GenerarVentaExcepcion
-            My.Application.manejarExcepcion(ex)
-        Catch ex As Exception
-            My.Application.manejarExcepcion(ex)
-        End Try
+            Try
+                If EfectivoCheckBox.Checked = True Then
+                    BLL.GestorVentasBLL.generarVenta(venta, listaVentas, True)
+                Else
+                    BLL.GestorVentasBLL.generarVenta(venta, listaVentas, False)
+                End If
+            Catch ex As Excepciones.VentaGeneradaExitosamente
+                Me.Close()
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.GenerarDetalleVentaExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.GenerarPagoVentaExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Excepciones.GenerarVentaExcepcion
+                My.Application.manejarExcepcion(ex)
+            Catch ex As Exception
+                My.Application.manejarExcepcion(ex)
+            End Try
+        End If
     End Sub
 
     Private Sub CancelarButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CancelarButton.Click
